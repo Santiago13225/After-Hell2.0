@@ -179,19 +179,19 @@ if(accept_key){
 			TransitionStart(rm_TM16, sqFadeOut, sqFadeIn);
 			break;
 		case 16:
-			/*global.screenShake = true;
+			global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM17, sqFadeOut, sqFadeIn);*/
+			TransitionStart(rm_TM17, sqFadeOut, sqFadeIn);
 			break;
 		case 17:
-			/*global.screenShake = true;
+			global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM18, sqFadeOut, sqFadeIn);*/
+			TransitionStart(rm_TM18, sqFadeOut, sqFadeIn);
 			break;
 		case 18:
-			/*global.screenShake = true;
+			global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM19, sqFadeOut, sqFadeIn);*/
+			TransitionStart(rm_TM19, sqFadeOut, sqFadeIn);
 			break;
 		case 19:
 			global.screenShake = true;
