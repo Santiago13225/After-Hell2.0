@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sndLaugh2",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":8.515918,
+  "exportDir":"",
+  "name":"sndLaugh2",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sndLaugh2.mp3",
+  "volume":1.0,
+}

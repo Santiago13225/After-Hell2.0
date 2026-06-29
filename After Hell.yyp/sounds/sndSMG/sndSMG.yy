@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sndSMG",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":0,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":0,
+  "conversionMode":0,
+  "duration":1.968,
+  "exportDir":"",
+  "name":"sndSMG",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":5512,
+  "soundFile":"sndSMG.mp3",
+  "volume":1.0,
+}

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sndShot",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":0,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":0,
+  "conversionMode":0,
+  "duration":0.303946,
+  "exportDir":"",
+  "name":"sndShot",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":5512,
+  "soundFile":"sndShot.wav",
+  "volume":1.0,
+}

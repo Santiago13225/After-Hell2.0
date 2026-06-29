@@ -1,0 +1,25 @@
+///oIntro Create Event
+/*This object represents an intro object.*/
+//This event is responsible for setting some variables for the intro object.
+xpos = 1280;
+a = 1;
+fadeout = 0;
+
+str = "";
+print = "";
+
+l = 0;
+next = 0;
+
+holdspace = 0;
+
+global.dialog_active = true;//Disable silhouette drawing.
+//else if (room == rm_TM1){
+	//sndUniversal = sndTestLevelTheme;
+//audio_play_sound(sndAmbient, 8, true);
+	//audio_play_sound(sndUniversal, 8, true);
+//}
+
+strings[0] = "- Temple -\nLost ruins whisper of ancient powers best left undisturbed. Something watches from within the shadows.";
+//strings[1] = "- Temple -\nThey stumble upon an ancient temple, hidden from the world for centuries.";
+skipTimer = 30 * 60;//30 seconds

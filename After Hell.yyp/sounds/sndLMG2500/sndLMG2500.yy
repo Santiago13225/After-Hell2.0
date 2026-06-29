@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sndLMG2500",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.38449,
+  "exportDir":"",
+  "name":"sndLMG2500",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sndLMG2500.mp3",
+  "volume":1.0,
+}

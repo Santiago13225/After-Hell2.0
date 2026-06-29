@@ -1,0 +1,97 @@
+///oMedkit Step Event
+/*This object represents a medkit.*/
+//This event is responsible for handling medkit behavior.
+
+fade_start_time = 60 * 5;//last 5 seconds
+
+if screen_pause(){//Pause self
+	exit;
+}
+
+//Lifetime countdown
+timer++;
+if(timer >= lifetime){
+	destroy = true;
+}
+
+var time_left = lifetime - timer;
+
+if(time_left <= fade_start_time){
+    image_alpha = time_left / fade_start_time;
+	
+	//Optional flicker
+	if(time_left < 60 * 2){//last 2 seconds
+		image_alpha *= 0.5 + random(0.5);
+	}
+}else{
+    image_alpha = 1;
+}
+
+//Float in Place
+//floatDir += floatSpd;
+//y = ystart + lengthdir_y(2, floatDir);
+//y = ystart + dsin(floatDir)*2;//alternative to line above
+//var hpVar
+
+if(destroy){
+	create_animated_vfx(sPoof, x, y, depth);
+	instance_destroy();
+}
+
+#region
+var hpVar;
+if(global.juggernaut){
+	hpVar = 200;
+}else if(global.weakness){
+	hpVar = 50;
+}else {
+	hpVar = 100;
+}
+
+var _radius = 256;
+if(global.magnet) {
+	if(instance_exists(oPlayer)) {
+		if(oPlayer.hp < hpVar){
+			var _dist = point_distance(x, y, oPlayer.x, oPlayer.y);
+
+			if(_dist < _radius) {
+				//calculate direction to player
+				var _dir = point_direction(x, y, oPlayer.x, oPlayer.y);
+				//var _spd = 1;
+				//calculate speed (faster when closer)
+				var _spd = lerp(0, 3, 1 - (_dist / _radius));//Faster when closer
+				//update x and y positions based on the direction and speed
+				x += lengthdir_x(_spd, _dir);
+				y += lengthdir_y(_spd, _dir);
+			}
+		}
+	}
+}
+
+//get collected by the player
+if place_meeting(x, y, oPlayer){
+	//heal the player
+	//if(oPlayer.hp < 100){
+	if(oPlayer.hp < hpVar){
+		oPlayer.hp += heal;
+		instance_create_depth(x, y, -8000, oHealEffect);
+		//instance_create_depth(x, y, -8000, oHealScreen);
+		//play a sound effect
+		//audio_play_sound(sndPickup, 8, false);
+		oSFX.pickupSnd = true;
+
+		instance_destroy();//destroy self
+	}
+}
+#endregion
+
+//sprite_index = item.sprite;
+/*
+if place_meeting(x, y, oPlayer){//If it touches the player...
+	if item_add(item) == true {//If it can be added to the inventory...
+		oSFX.pickupSnd = true;//Play the pickup sound effect.
+		//item_add(global.item_list2.medkit);
+		//item = global.item_list.medkit;
+		instance_destroy();//Destroy the medkit.
+	}
+}*/

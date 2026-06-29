@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sndRGBlast",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":0,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":0,
+  "conversionMode":0,
+  "duration":0.835918,
+  "exportDir":"",
+  "name":"sndRGBlast",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":5512,
+  "soundFile":"sndRGBlast.mp3",
+  "volume":0.6,
+}

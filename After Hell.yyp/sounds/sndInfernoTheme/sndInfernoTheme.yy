@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sndInfernoTheme",
+  "audioGroupId":{
+    "name":"agMusic",
+    "path":"audiogroups/agMusic",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":115.2,
+  "exportDir":"",
+  "name":"sndInfernoTheme",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sndInfernoTheme.ogg",
+  "volume":1.0,
+}

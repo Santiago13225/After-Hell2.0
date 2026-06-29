@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sndSniperBlast",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":0,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":0,
+  "conversionMode":0,
+  "duration":3.936,
+  "exportDir":"",
+  "name":"sndSniperBlast",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":5512,
+  "soundFile":"sndSniperBlast.mp3",
+  "volume":1.0,
+}

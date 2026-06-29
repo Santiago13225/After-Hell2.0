@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sndRoundEnd2",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":9.6,
+  "exportDir":"",
+  "name":"sndRoundEnd2",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sndRoundEnd2.wav",
+  "volume":1.0,
+}

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sndWaterStationTheme1",
+  "audioGroupId":{
+    "name":"agMusic",
+    "path":"audiogroups/agMusic",
+  },
+  "bitDepth":0,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":0,
+  "conversionMode":0,
+  "duration":129.5412,
+  "exportDir":"",
+  "name":"sndWaterStationTheme1",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":5512,
+  "soundFile":"sndWaterStationTheme1.mp3",
+  "volume":1.0,
+}
