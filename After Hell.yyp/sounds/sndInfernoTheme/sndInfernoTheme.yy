@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":115.2,
+  "duration":105.882355,
   "exportDir":"",
   "name":"sndInfernoTheme",
   "parent":{
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sndInfernoTheme.ogg",
+  "soundFile":"sndInfernoTheme.mp3",
   "volume":1.0,
 }

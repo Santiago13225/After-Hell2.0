@@ -521,11 +521,11 @@ if(lowHealth) {
 	image_blend = c_white;
 }
 
-with(oShotgunWallbuy2) {
+with(oShotgunWallbuy2){
 	scr_HandleWallbuy(500, 40, global.WeaponList.shotgun, global.WeaponList.hshotgun, global.WeaponList.ushotgun, oShotgun);
 }
 
-with(oRaygunWallbuy2) {
+with(oRaygunWallbuy2){
 	scr_HandleWallbuy(
 		5000,										//cost
 		40,											//ammoAdd
@@ -536,59 +536,24 @@ with(oRaygunWallbuy2) {
 	);
 }
 
-with(oSniperWallbuy2) {
-	scr_HandleWallbuy(
-		1500,										//cost
-		25,											//ammoAdd
-		global.WeaponList.sniper,					//base
-		global.WeaponList.hsniper,					//hardcore
-		global.WeaponList.usniper,					//ultra
-		oSniper										//object to create
-	);
+with(oSniperWallbuy2){
+	scr_HandleWallbuy(1500, 25, global.WeaponList.sniper, global.WeaponList.hsniper, global.WeaponList.usniper, oSniper);
 }
 
-with(oAssaultWallbuy2) {
-	scr_HandleWallbuy(
-		1500,										//cost
-		120,										//ammoAdd
-		global.WeaponList.assault,					//base
-		global.WeaponList.hassault,					//hardcore
-		global.WeaponList.uassault,					//ultra
-		oAssault									//object to create
-	);
+with(oAssaultWallbuy2){
+	scr_HandleWallbuy(1500, 120, global.WeaponList.assault, global.WeaponList.hassault, global.WeaponList.uassault, oAssault);
 }
 
-with(oBazookaWallbuy2) {
-	scr_HandleWallbuy(
-		6000,										//cost
-		10,											//ammoAdd
-		global.WeaponList.bazooka,					//base
-		global.WeaponList.hbazooka,					//hardcore
-		global.WeaponList.ubazooka,					//ultra
-		oBazooka									//object to create
-	);
+with(oBazookaWallbuy2){
+	scr_HandleWallbuy(6000, 10, global.WeaponList.bazooka, global.WeaponList.hbazooka, global.WeaponList.ubazooka, oBazooka);
 }
 
-with(oSMGWallbuy2) {
-	scr_HandleWallbuy(
-		1300,										//cost
-		150,										//ammoAdd
-		global.WeaponList.smg,						//base
-		global.WeaponList.hsmg,						//hardcore
-		global.WeaponList.usmg,						//ultra
-		oSMG										//object to create
-	);
+with(oSMGWallbuy2){
+	scr_HandleWallbuy(1300, 150, global.WeaponList.smg, global.WeaponList.hsmg, global.WeaponList.usmg, oSMG);
 }
 
-with(oLMGWallbuy2) {
-	scr_HandleWallbuy(
-		2500,										//cost
-		200,										//ammoAdd
-		global.WeaponList.lmg,						//base
-		global.WeaponList.hlmg,						//hardcore
-		global.WeaponList.ulmg,						//ultra
-		oLMG										//object to create
-	);
+with(oLMGWallbuy2){
+	scr_HandleWallbuy(2500, 200, global.WeaponList.lmg, global.WeaponList.hlmg, global.WeaponList.ulmg, oLMG);
 }
 
 #region

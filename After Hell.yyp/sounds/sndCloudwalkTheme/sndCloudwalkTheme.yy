@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":215.2751,
+  "duration":104.72728,
   "exportDir":"",
   "name":"sndCloudwalkTheme",
   "parent":{
