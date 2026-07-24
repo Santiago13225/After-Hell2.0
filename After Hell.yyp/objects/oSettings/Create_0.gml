@@ -4,3 +4,4 @@
 //global.font_main = font_add_sprite(sMainFont, 32, true, 1);
 global.font_main = font_add_sprite(sHUDFont, 32, true, 1);
 //audio_play_sound(sndMenuTheme, 8, true);
+global.screenShake = true;

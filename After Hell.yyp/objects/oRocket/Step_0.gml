@@ -90,7 +90,7 @@ if place_meeting(x, y, oSolidWall){
 		audio_play_sound(sndExplosion, 8, false);
 	
 		//Screen pause
-		create_screen_pause();
+		//create_screen_pause();
 	
 		//screen shake
 		if(global.screenShake){
@@ -114,7 +114,7 @@ if point_distance(xstart, ystart, x, y) > maxDist{
 		audio_play_sound(sndExplosion, 8, false);
 	
 		//Screen pause
-		create_screen_pause();
+		//create_screen_pause();
 	
 		//Screen shake
 		if(global.screenShake){

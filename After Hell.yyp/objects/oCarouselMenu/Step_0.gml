@@ -99,102 +99,102 @@ if(accept_key){
 
 	switch(global.selectedMapSprite){
 		case 0:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM1_2, sqFadeOut, sqFadeIn);
 			break;
 		case 1:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM2_2, sqFadeOut, sqFadeIn);
 			break;
 		case 2:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM3_2, sqFadeOut, sqFadeIn);
 			break;
 		case 3:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM4_2, sqFadeOut, sqFadeIn);
 			break;
 		case 4:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM5_2, sqFadeOut, sqFadeIn);
 			break;
 		case 5:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM6_2, sqFadeOut, sqFadeIn);
 			break;
 		case 6://Labyrinth
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM7_3, sqFadeOut, sqFadeIn);
 			break;
 		case 7:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM8, sqFadeOut, sqFadeIn);
 			break;
 		case 8:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM9_2, sqFadeOut, sqFadeIn);
 			break;
 		case 9:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM10, sqFadeOut, sqFadeIn);
 			break;
 		case 10:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM11, sqFadeOut, sqFadeIn);
 			break;
 		case 11:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM12_2, sqFadeOut, sqFadeIn);
 			break;
 		case 12:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM13, sqFadeOut, sqFadeIn);
 			break;
 		case 13:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM14, sqFadeOut, sqFadeIn);
 			break;
 		case 14:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM15, sqFadeOut, sqFadeIn);
 			break;
 		case 15:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM16, sqFadeOut, sqFadeIn);
 			break;
 		case 16:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM17, sqFadeOut, sqFadeIn);
 			break;
 		case 17:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM18, sqFadeOut, sqFadeIn);
 			break;
 		case 18:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM19, sqFadeOut, sqFadeIn);
 			break;
 		case 19:
-			global.screenShake = true;
+			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM20, sqFadeOut, sqFadeIn);
 			break;

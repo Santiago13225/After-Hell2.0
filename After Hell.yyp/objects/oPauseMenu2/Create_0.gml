@@ -37,13 +37,22 @@ option[0, 2] = "Quit";
 option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
 option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 option[1, 2] = "Input: Keyboard and Mouse";
-// Set the initial control mode based on a global variable
+//Set the initial control mode based on a global variable
 if(global.controllerMode == 0) {
     option[1, 2] = "Input: Keyboard and Mouse";
 }else {
     option[1, 2] = "Input: Controller";
 }
-option[1, 3] = "Back";
+
+if(global.screenShake == true){
+    option[1, 3] = "Screen Shake: On";
+}else{
+    option[1, 3] = "Screen Shake: Off";
+}
+//option[1, 3] = "Screen Shake: On";
+option[1, 4] = "Back";//shift Back down by one
+
+//option[1, 3] = "Back";
 /*
 //Settings Menu
 option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";

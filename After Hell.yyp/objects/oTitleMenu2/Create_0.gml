@@ -17,6 +17,8 @@ global.weakness = false;
 global.nomedkit = false;
 global.slowfirerate = false;
 
+//global.screenShake = true;
+
 arrowLeftAnim = 0;
 arrowRightAnim = 0;
 
@@ -84,20 +86,29 @@ control_options = ["Input: Keyboard and Mouse", "Input: Controller"];
 
 //Determine longest string for the Controls option
 control_longest_text = "";
-for(var i = 0; i < array_length(control_options); i++) {
-	if(string_width(control_options[i]) > string_width(control_longest_text)) {
+for(var i = 0; i < array_length(control_options); i++){
+	if(string_width(control_options[i]) > string_width(control_longest_text)){
 		control_longest_text = control_options[i];
 	}
 }
 
 //Set the initial control mode based on a global variable
-if(global.controllerMode == 0) {
+if(global.controllerMode == 0){
     option[6, 2] = "Input: Keyboard and Mouse";
-}else {
+}else{
     option[6, 2] = "Input: Controller";
 }
 //if global.controllerMode == 0 option[6, 2] = "Controls: Controller"; else option[6, 2] = "Controls: Keyboard";
-option[6, 3] = "Back";
+if(global.screenShake == true){
+    option[6, 3] = "Screen Shake: On";
+}else{
+    option[6, 3] = "Screen Shake: Off";
+}
+
+//option[6, 3] = "Screen Shake: On";
+option[6, 4] = "Back";//shift Back down by one
+
+//option[6, 3] = "Back";
 
 //Extras
 option[7, 0] = "CentillionEons";

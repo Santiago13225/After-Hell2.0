@@ -350,10 +350,24 @@ if accept_key{
 						audio_play_sound(sndCancel, 10, false);
 					}
 					break;
-				//Back
 				case 3:
+					if(global.screenShake == true){
+						audio_play_sound(sndBeep, 10, false);
+						option[1, 3] = "Screen Shake: Off";
+						global.screenShake = false;
+					}else{
+						audio_play_sound(sndBeep, 10, false);
+						option[1, 3] = "Screen Shake: On";
+						global.screenShake = true;
+					}
+					break;
+				case 4://was case 3 before
 					menu_level = 0;
 					break;
+				//Back
+				/*case 3:
+					menu_level = 0;
+					break;*/
 			}
 			break;
 	}

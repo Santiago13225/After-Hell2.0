@@ -280,7 +280,7 @@ if(get_damage(oDamagePlayer, true)){
 	instance_create_depth(0, 0, 0, oHitScreen);
 	
 	//Screen pause
-	create_screen_pause(25);
+	//create_screen_pause(25);
 	
 	//Shake the screen
 	if(global.screenShake){

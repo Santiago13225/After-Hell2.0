@@ -1,7 +1,7 @@
 /// oFireTrap Step Event
 /* Controls trap behavior and lifetime. */
 
-if screen_pause() {
+if screen_pause(){
 	exit;
 }
 

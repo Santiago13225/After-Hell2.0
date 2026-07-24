@@ -410,7 +410,7 @@ if(accept_key){
 					global.nomedkit = false;
 					global.slowfirerate = false;
 					oHUD2.playerTotalScore = 500;
-					global.screenShake = true;
+					//global.screenShake = true;
 					//TransitionStart(rm_Mission0_2, sqFadeOut, sqFadeIn);
 					TransitionStart(rm_TM0, sqFadeOut, sqFadeIn);
 					//menu_level = 1;
@@ -685,10 +685,24 @@ if(accept_key){
 						audio_play_sound(sndCancel, 10, false);
 					}
 					break;
-				//Back
 				case 3:
+					if(global.screenShake == true){
+						audio_play_sound(sndBeep, 10, false);
+						option[6, 3] = "Screen Shake: Off";
+						global.screenShake = false;
+					}else{
+						audio_play_sound(sndBeep, 10, false);
+						option[6, 3] = "Screen Shake: On";
+						global.screenShake = true;
+					}
+					break;
+				case 4://was case 3 before
 					menu_level = 0;
 					break;
+				//Back
+				/*case 3:
+					menu_level = 0;
+					break;*/
 			}
 			break;
 			

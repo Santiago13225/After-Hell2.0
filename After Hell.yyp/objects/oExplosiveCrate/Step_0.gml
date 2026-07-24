@@ -18,7 +18,7 @@ if hp <= 0{//If HP is less than or equal to 0...
 	
 	audio_play_sound(sndExplosion, 8, false);//Play a sound effect.
 	
-	create_screen_pause();//Screen pause.
+	//create_screen_pause();//Screen pause.
 
 	if(global.screenShake){
 		screen_shake(8);//Screen shake.

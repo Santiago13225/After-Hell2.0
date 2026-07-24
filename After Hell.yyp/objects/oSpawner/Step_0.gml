@@ -67,8 +67,7 @@ if timer >= spawnTime && !place_meeting(x, y, oZombie)
 
 // Step event
 // Pause self
-if screen_pause() 
-{
+if screen_pause(){
     exit;
 }
 

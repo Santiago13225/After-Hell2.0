@@ -3,7 +3,7 @@
     {"name":"Dialogue System","order":12,"path":"folders/Dialogue System.yy",},
     {"name":"Enemies","order":14,"path":"folders/Enemies.yy",},
     {"name":"Extensions","order":13,"path":"folders/Extensions.yy",},
-    {"name":"Fonts","order":1,"path":"folders/Extensions/Fonts.yy",},
+    {"name":"Steamworks","order":1,"path":"folders/Extensions/Steamworks.yy",},
     {"name":"Game Control","order":3,"path":"folders/Game Control.yy",},
     {"name":"Menu System","order":6,"path":"folders/Menu System.yy",},
     {"name":"Other Unused Stuff","order":9,"path":"folders/Other Unused Stuff.yy",},
