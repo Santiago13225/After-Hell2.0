@@ -368,17 +368,50 @@ if(accept_key){
 			audio_play_sound(sndBeep, 10, false);
 			instance_destroy(oVictoryScreen2);
 
+			//Stop audio cleanly
+			set_song_ingame(noone, 0, 0, false);
+			if(audio_is_playing(sndLowHealth)){
+				audio_stop_sound(sndLowHealth);
+			}
+
 			//instance_activate_object(oPlayer);
 			//instance_deactivate_object(oPlayer);
 			//TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
 			reset_wave_variables();
 			clear_weapons();
-			array_resize(global.PlayerAmmo, 1);
+			//array_resize(global.PlayerAmmo, 1);
+			array_resize(global.PlayerMag, 1);
+			array_resize(global.PlayerReserve, 1);
 			array_resize(global.PlayerWeapons, 1);
-			instance_deactivate_object(oPlayer);
+			
+			global.PlayerMag[0] = global.WeaponList.pistol.magSize;
+			global.PlayerReserve[0] = -1;
+			
+			//Reset perk globals
+			global.firerate = false;
+			global.energyshield = false;
+			global.juggernaut = false;
+			global.speed = false;
+			global.luck = false;
+			global.magnet = false;
+			global.flakjacket = false;
+			global.instakill = false;
+			global.badluck = false;
+			global.lowspeed = false;
+			global.weakness = false;
+			global.nomedkit = false;
+			global.slowfirerate = false;
+
 			cursor_sprite = -1;
 			window_set_cursor(cr_none);
-			game_restart();//Reset wave-related data.
+
+			//instance_deactivate_object(oPlayer);
+			if(instance_exists(oPlayer)){
+				instance_destroy(oPlayer);
+			}
+
+			TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
+			//game_restart();//Reset wave-related data.
 			//audio_pause_sound(sndLaugh);
 			break;
 	}

@@ -8,6 +8,10 @@ var _wy = display_get_gui_height();
 draw_set_font(global.fontHUD);
 //draw_set_font(fnt8Bit);//Should be 8-bit, see part 10 on the YouTube series?
 
+if(instance_exists(oVictoryScreen2)){
+	exit;
+}
+
 if(instance_exists(oPlayer)){
 	if(instance_exists(oInvisibleSpawner2)){//If spawner exists...
 		draw_set_font(fnt8Bit);//Should be 8-bit, see part 10 on the YouTube series?

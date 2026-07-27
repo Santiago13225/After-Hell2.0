@@ -18,7 +18,7 @@ var iconScale = 1;//Scale
 var spacing = 8;//Padding between icons
 
 //Ensure the map sprite icon variable exists for tutorial and sandbox levels
-if(!variable_global_exists("selectedMapSprite")) {
+if(!variable_global_exists("selectedMapSprite")){
     global.selectedMapSprite = 19;//20th frame
 }
 
@@ -26,7 +26,7 @@ draw_sprite_ext(sScoreboardScreen, 0, _cX, _cY, 1, 1, 0, c_white, alpha);
 
 //Draw the selected modifier label below the map selection menu
 var mapText;
-switch(global.selectedMapSprite) {
+switch(global.selectedMapSprite){
 	case 0: mapText = "House"; break;
 	case 1: mapText = "Facility"; break;
 	case 2: mapText = "Temple"; break;
@@ -52,7 +52,7 @@ switch(global.selectedMapSprite) {
 
 //Draw match setting label below the modifiers menu
 var matchText;
-switch(global.matchPresetIndex) {
+switch(global.matchPresetIndex){
     case 0: matchText = "Standard"; break;
     case 1: matchText = "Elite Invasion"; break;
     case 2: matchText = "Deadlier Forces"; break;
@@ -73,12 +73,12 @@ switch(global.matchPresetIndex) {
 }
 
 //Ensure the map text variable exists for tutorial level
-if(room == rm_Tutorial_Level) {
+if(room == rm_Tutorial_Level){
     mapText = "Tutorial Level";
 }
 
 //Ensure the map text variable exists for sandbox level
-if(room == rm_Mission0_2) {
+if(room == rm_Mission0_2){
     mapText = "Test_Level";
 }
 
@@ -86,7 +86,7 @@ draw_text_transformed(_cX + 160, _cY + 90, mapText + " - " + matchText, 1, 1, 0)
 
 //Draw the selected modifier label below the map selection menu
 var modifierText;
-switch(global.perkIndex) {
+switch(global.perkIndex){
     case 0: modifierText = "None"; break;
     case 1: modifierText = "Rapid Fire"; break;
     case 2: modifierText = "Energy Shield"; break;
@@ -107,7 +107,7 @@ switch(global.perkIndex) {
 }
 
 var modifierText2;
-switch(global.perkIndex2) {
+switch(global.perkIndex2){
     case 0: modifierText2 = "None"; break;
     case 1: modifierText2 = "Rapid Fire"; break;
     case 2: modifierText2 = "Energy Shield"; break;
@@ -141,7 +141,7 @@ if(room == rm_Mission0_2){
 }
 
 //Draw the selected map icon
-if(global.selectedMapSprite != undefined) {
+if(global.selectedMapSprite != undefined){
 	draw_sprite_ext(sCarouselMenu3, global.selectedMapSprite, _cX + 160 + 32 + 20, _cY + 90 + 32 + 26, 1, 1, 0, c_white, alpha);
 }
 
@@ -151,12 +151,12 @@ if(global.selectedMapSprite != undefined) {
 }*/
 
 //Draw the 1st selected modifier icon
-if(global.perkIndex != undefined) {
+if(global.perkIndex != undefined){
 	draw_sprite_ext(sPerksCarouselMenu, global.perkIndex, _cX + 320, _cY + 90 + 32 + 26, 1, 1, 0, c_white, alpha);
 }
 
 //Draw the 2nd selected modifier icon
-if(global.perkIndex2 != undefined) {
+if(global.perkIndex2 != undefined){
 	draw_sprite_ext(sPerksCarouselMenu, global.perkIndex2, _cX + 480 - 32 - 20, _cY + 90 + 32 + 26, 1, 1, 0, c_white, alpha);
 }
 
@@ -174,10 +174,10 @@ if(room == rm_Mission0_2){
 //Time survived display
 var _secondsTotal;
 
-if(instance_exists(oPlayer)) {
+if(instance_exists(oPlayer)){
     //_timeMS = current_time - oPlayer.spawnTime;
 	_secondsTotal = floor(oPlayer.survivalSteps / room_speed);
-}else {
+}else{
 	//_timeMS = global.playerSurvivalTime;
 	_secondsTotal = global.playerSurvivalTime;//backup if player is gone
 }
@@ -321,7 +321,7 @@ op_length = array_length(option[menu_level]);
 
 //Input (controller)
 var _gamePad = 0;
-if(gamepad_is_connected(_gamePad)) {
+if(gamepad_is_connected(_gamePad)){
 	//D-pad
 	up_key |= gamepad_button_check_pressed(_gamePad, gp_padu);
 	down_key |= gamepad_button_check_pressed(_gamePad, gp_padd);
@@ -383,13 +383,11 @@ if(pos < 0){
 //using the options
 if(accept_key){
 	var _sml = menu_level;
-	
-	switch(menu_level)
-	{
+
+	switch(menu_level){
 		//pause menu
 		case 0:
-			switch(pos)
-			{
+			switch(pos){
 				//restart
 				case 0:
 					room_restart();
@@ -411,7 +409,7 @@ if(accept_key){
 			break;
 	}
 	//set position back
-	if _sml != menu_level{
+	if(_sml != menu_level){
 		pos = 0;
 	}
 	//correct option length

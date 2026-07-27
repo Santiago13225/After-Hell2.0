@@ -175,7 +175,13 @@ if accept_key{
 			{
 				//Resume
 				case 0:
-				global.dialog_active = false;				
+				global.dialog_active = false;
+				//Resume low health sound if player is still in low health
+				if(oPlayer.lowHealth){
+					if(audio_is_paused(sndLowHealth)){
+						audio_resume_sound(sndLowHealth);
+					}
+				}
 /*
 #region
 				if room == rm_House_Level1{
@@ -306,8 +312,13 @@ if accept_key{
 					instance_deactivate_object(oPlayer);
 					//TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
 					clear_weapons();
-					array_resize(global.PlayerAmmo, 1);
+					//array_resize(global.PlayerAmmo, 1);
+					array_resize(global.PlayerMag, 1);
+					array_resize(global.PlayerReserve, 1);
 					array_resize(global.PlayerWeapons, 1);
+					
+					global.PlayerMag[0] = global.WeaponList.pistol.magSize;
+					global.PlayerReserve[0] = -1;
 					
 					//Stop all level music
 					audio_stop_all();
@@ -322,8 +333,7 @@ if accept_key{
 			break;
 		//Settings
 		case 1:
-			switch(pos)
-			{
+			switch(pos){
 				//Music
 				case 0:
 					//option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";

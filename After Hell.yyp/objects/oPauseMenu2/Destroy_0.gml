@@ -1,4 +1,4 @@
-with(oEnemyParent) {
+with(oEnemyParent){
     //Only start pathfinding if the player exists
     if(instance_exists(oPlayer)){
         if(path_exists(path)) path_delete(path);//Clean up
@@ -7,7 +7,7 @@ with(oEnemyParent) {
         target_x = oPlayer.x;
         target_y = oPlayer.y;
 
-        if(mp_grid_path(oSetupPathway.grid, path, x, y, target_x, target_y, true)) {
+        if(mp_grid_path(oSetupPathway.grid, path, x, y, target_x, target_y, true)){
             pathspeed = 0.5;//or whatever your normal path speed is
             path_start(path, pathspeed, path_action_stop, true);
             usingPathfinding = true;

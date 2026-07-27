@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":0,
   "conversionMode":0,
-  "duration":0.39185,
+  "duration":0.3918723,
   "exportDir":"",
   "name":"sndEmpty",
   "parent":{

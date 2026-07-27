@@ -1,7 +1,7 @@
 ///@description Play the correct music
-if(room == rm_Trademark_Screen){
+/*if(room == rm_Trademark_Screen){
 	set_song_ingame(sndAmbient, 2*60, 10*60, true);
-}
+}*/
 
 if(room == rm_Title_Screen){
 	set_song_ingame(sndMenuTheme, 2*60, 10*60, true);

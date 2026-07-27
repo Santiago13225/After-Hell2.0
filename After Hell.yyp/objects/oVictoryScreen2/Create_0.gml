@@ -22,7 +22,7 @@ op_space = 16;
 pos = 0;
 
 //Return to menu
-option[0, 0] = " -- Finish Tutorial -- \nThe game will restart.";
+option[0, 0] = "Back to menu";
 
 op_length = 0;
 menu_level = 0;

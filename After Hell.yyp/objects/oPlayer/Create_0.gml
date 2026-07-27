@@ -2,6 +2,9 @@
 /*This object represents the player object.*/
 //This event is responsible for setting some variables for the player object.
 
+reloadTimer = 0;
+isReloading = false;
+
 pause_lock_timer = room_speed * 5;//5 seconds in frames
 
 if(room == rm_Mission0_2){
@@ -39,7 +42,7 @@ shieldRegenTimer = 0;
 shieldRegenDelay = 180;//Frames to wait before regen starts (e.g., 3 seconds)
 shieldRegenRate = 0.25;//Shield regen per frame (adjust as needed)
 */
-if(global.energyshield) {
+if(global.energyshield){
     maxShield = 50;//Or however much you want
     shield = maxShield;
 }
@@ -81,12 +84,14 @@ if !array_contains(global.PlayerWeapons, global.WeaponList.pistol){
 }*/
 
 //Add weapons to player inventory
-if !array_contains(global.PlayerWeapons, global.WeaponList.pistol){
-    if item_add(item) == true{
-        //Add the weapon to global.PlayerWeapons
+if(!array_contains(global.PlayerWeapons, global.WeaponList.pistol)){
+	if(item_add(item) == true){
+		//Add the weapon to global.PlayerWeapons
 		array_push(global.PlayerWeapons, global.WeaponList.pistol);
-		array_push(global.PlayerAmmo, 999);
-    }	
+		//array_push(global.PlayerAmmo, 999);
+		array_push(global.PlayerMag, global.WeaponList.pistol.magSize);//full mag
+		array_push(global.PlayerReserve, -1);//-1 means unlimited reserve
+	}
 }
 
 //array_push(global.PlayerWeapons,  global.WeaponList.pistol);

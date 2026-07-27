@@ -25,8 +25,26 @@ if(instance_exists(oInvisibleSpawner2)){//If spawner exists...
 		//audio_pause_sound(global.MUSIC);//Pause the music.
 		audio_pause_all();
 
-		instance_deactivate_all(oHUD2);//Deactivates HUD.
+		//instance_deactivate_all(oHUD2);//Deactivates HUD.
 		
+		//Stop low health sound if playing
+		if(audio_is_playing(sndLowHealth)){
+			audio_stop_sound(sndLowHealth);
+		}
+		
+		//Close scoreboard if open
+		if(instance_exists(oScoreboard)){
+			instance_destroy(oScoreboard);
+		}
+
+		//Collapse map view if expanded
+		if(instance_exists(oRadar)){
+			oRadar.show_full_map = false;
+		}
+		
+		//Update dialog_active
+		//global.dialog_active = true;
+
 	    if(!instance_exists(oVictoryScreen2)){//If victory screen does not already exist...
 			instance_create_depth(0, 0, 0, oVictoryScreen2);//Create a victory screen.
 	    }

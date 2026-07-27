@@ -2,6 +2,10 @@
 /*This object represents a pause menu.*/
 //This event is responsible for setting some variables for the pause menu.
 
+if(audio_is_playing(sndLowHealth)){
+	audio_pause_sound(sndLowHealth);
+}
+
 alpha = .6;
 
 depth = -8500;//Let's you see the health and enemy count.

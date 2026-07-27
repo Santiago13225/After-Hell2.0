@@ -54,16 +54,60 @@ if!(instance_exists(oPauseMenu2) || instance_exists(oVictoryScreen2) || instance
 	draw_text_transformed_color(_ammoX, _ammoY, "Ammo: " + string(global.PlayerAmmo[oPlayer.selectedWeapon]), 2, 2, 0, _color, _color, _color, _color, 1);
 	*/
 	
-	if(oPlayer.selectedWeapon == 0) {
-		//Any pistol variant will be at index 0 → unlimited ammo
-		ammoText = "Ammo: Unlimited";
-	}else {
+	if(oPlayer.selectedWeapon == 0){
+		if(oPlayer.isReloading){
+			ammoText = "Reloading";
+			_color = c_yellow;
+			//Draw reload progress bar
+			var _barWidth = 130;
+			var _barHeight = 24;
+			var _progress = 1 - (oPlayer.reloadTimer / oPlayer.weapon.reloadTime);
+			draw_set_color(c_dkgray);
+			//draw_rectangle(_ammoX - _barWidth/2, _ammoY + 3, _ammoX + _barWidth/2, _ammoY + 3 + _barHeight, false);
+			draw_roundrect(_ammoX - _barWidth/2, _ammoY + 3, _ammoX + _barWidth/2, _ammoY + 3 + _barHeight, false);
+			//draw_roundrect_ext(_ammoX - _barWidth/2, _ammoY + 3, _ammoX + _barWidth/2, _ammoY + 3 + _barHeight, 1, 1, false);
+			draw_set_color(c_yellow);
+			//draw_rectangle(_ammoX - _barWidth/2, _ammoY + 3, _ammoX - _barWidth/2 + _barWidth * _progress, _ammoY + 3 + _barHeight, false);
+			draw_roundrect(_ammoX - _barWidth/2, _ammoY + 3, _ammoX - _barWidth/2 + _barWidth * _progress, _ammoY + 3 + _barHeight, false);
+			draw_set_color(c_white);
+		}else{
+			//Any pistol variant will be at index 0 → unlimited ammo
+			//ammoText = "Ammo: Unlimited";
+			//Pistol - show mag/unlimited
+			ammoText = string(global.PlayerMag[oPlayer.selectedWeapon]) + " | Unlimited";
+		}
+	}else{
 	    //Non‐pistol weapons → show actual ammo
-	    var ammoCount = global.PlayerAmmo[oPlayer.selectedWeapon];
+	    /*var ammoCount = global.PlayerAmmo[oPlayer.selectedWeapon];
 	    if(ammoCount == 0) {
 	        _color = c_red;
 	    }
-	    ammoText = "Ammo: " + string(ammoCount);
+	    ammoText = "Ammo: " + string(ammoCount);*/
+		// Other weapons - show mag/reserve
+		var _mag = global.PlayerMag[oPlayer.selectedWeapon];
+		var _reserve = global.PlayerReserve[oPlayer.selectedWeapon];
+
+		if(_mag == 0){
+			_color = c_red;
+		}
+
+		if(oPlayer.isReloading){
+			ammoText = "Reloading";
+			_color = c_yellow;
+			//Draw reload progress bar
+			var _barWidth = 130;
+			var _barHeight = 24;
+			var _progress = 1 - (oPlayer.reloadTimer / oPlayer.weapon.reloadTime);
+			draw_set_color(c_dkgray);
+			//draw_rectangle(_ammoX - _barWidth/2, _ammoY + 3, _ammoX + _barWidth/2, _ammoY + 3 + _barHeight, false);
+			draw_roundrect(_ammoX - _barWidth/2, _ammoY + 3, _ammoX + _barWidth/2, _ammoY + 3 + _barHeight, false);
+			draw_set_color(c_yellow);
+			//draw_rectangle(_ammoX - _barWidth/2, _ammoY + 3, _ammoX - _barWidth/2 + _barWidth * _progress, _ammoY + 3 + _barHeight, false);
+			draw_roundrect(_ammoX - _barWidth/2, _ammoY + 3, _ammoX - _barWidth/2 + _barWidth * _progress, _ammoY + 3 + _barHeight, false);
+			draw_set_color(c_white);
+		}else{
+			ammoText = string(_mag) + " | " + string(_reserve);
+		}
 	}
 
 	draw_text_transformed_color(_ammoX, _ammoY, ammoText, 2, 2, 0, _color, _color, _color, _color, 1);

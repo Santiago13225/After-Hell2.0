@@ -21,7 +21,7 @@ var createObj   = argument5;*/
 
 	//Only interact when in range and the textbox exists
 	if(distance_to_object(oPlayer) < 32 && instance_exists(oTextbox2)){
-		//if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)) {
+		//if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
 		if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 			//1)If player can afford AND doesn’t own any variant → buy
 			var ownsBase     = false;
@@ -59,7 +59,8 @@ var createObj   = argument5;*/
 				if(oHUD2.playerScore >= ammoCost){
 					oHUD2.playerScore -= ammoCost;
 					audio_play_sound(sndBuy, 8, false);
-					global.PlayerAmmo[slot] += ammoAdd;
+					//global.PlayerAmmo[slot] += ammoAdd;//old ammo system code
+					global.PlayerReserve[slot] += ammoAdd;//changed from PlayerAmmo to PlayerReserve
 				}else{
 					audio_play_sound(sndNoMoney, 8, false);
 					if(!audio_is_playing(sndBroke)) audio_play_sound(sndBroke, 10, false);

@@ -2,7 +2,7 @@
 /*This object represents light ammo.*/
 //This event is responsible for handling light ammo behavior.
 
-if screen_pause(){//Pause self
+if(screen_pause()){//Pause self
 	exit;
 }
 
@@ -53,11 +53,11 @@ if place_meeting(x, y, oPlayer){//If it touches the player...
 #endregion
 
 var _radius = 256;
-if(global.magnet) {
-	if(instance_exists(oPlayer)) {
+if(global.magnet){
+	if(instance_exists(oPlayer)){
 		var _dist = point_distance(x, y, oPlayer.x, oPlayer.y);
 
-		if(_dist < _radius) {
+		if(_dist < _radius){
 			//calculate direction to player
 			var _dir = point_direction(x, y, oPlayer.x, oPlayer.y);
 			//var _spd = 1;
@@ -70,7 +70,7 @@ if(global.magnet) {
 	}
 }
 
-if place_meeting(x, y, oPlayer) {
+if(place_meeting(x, y, oPlayer)){
     //1)Scan the inventory
     var hasSMG = false;
     var pos = -1;
@@ -88,7 +88,8 @@ if place_meeting(x, y, oPlayer) {
     //2)If found, give ammo and destroy
     if(hasSMG){
 		audio_play_sound(sndAmmo, 8, false);//Play sound effect.
-        global.PlayerAmmo[pos] += ammoAdd;
+        //global.PlayerAmmo[pos] += ammoAdd;
+		global.PlayerReserve[pos] += ammoAdd;
         instance_destroy();
     }
 }

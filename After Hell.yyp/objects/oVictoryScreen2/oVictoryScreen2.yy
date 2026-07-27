@@ -13,7 +13,10 @@
     "name":"Game Control",
     "path":"folders/Game Control.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oScreenPause",
+    "path":"objects/oScreenPause/oScreenPause.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

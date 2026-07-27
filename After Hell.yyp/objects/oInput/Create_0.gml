@@ -17,12 +17,13 @@ global.shootKey = 0;
 global.swapKeyPressed = 0;
 global.upSwapKeyPressed = 0;
 global.downSwapKeyPressed = 0;
+global.reloadKeyPressed = 0;
 
 global.startKeyPressed = 0;
 global.selectKeyPressed = 0;//For controller handling
 
-global.rightKeyPressed = 0;
-controllerRightKeyPressed = 0;
+//global.rightKeyPressed = 0;
+//controllerRightKeyPressed = 0;
 
 //Controller mode option
 global.controllerMode = 0;

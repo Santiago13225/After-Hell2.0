@@ -16,6 +16,7 @@ if global.controllerMode == 0{//If set to keyboard and mouse mode.
 	global.swapKeyPressed = mouse_check_button_pressed(mb_right);
 	global.upSwapKeyPressed = mouse_wheel_up();
 	global.downSwapKeyPressed = mouse_wheel_down();
+	global.reloadKeyPressed = keyboard_check_pressed(ord("R"));
 
 	global.startKeyPressed = keyboard_check_pressed(vk_enter);
 	//Toggle scoreboard with I
@@ -66,6 +67,7 @@ if global.controllerMode == 1{//Controller Mode
 		global.swapKeyPressed = gamepad_button_check_pressed(_gamePad, gp_shoulderlb);
 		global.upSwapKeyPressed = gamepad_button_check_pressed(_gamePad, gp_shoulderr);
 		global.downSwapKeyPressed = gamepad_button_check_pressed(_gamePad, gp_shoulderl);
+		global.reloadKeyPressed = gamepad_button_check_pressed(_gamePad, gp_face3);
 
 		global.startKeyPressed = gamepad_button_check_pressed(_gamePad, gp_start);
 		global.selectKeyPressed = gamepad_button_check_pressed(_gamePad, gp_select);

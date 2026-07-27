@@ -9,27 +9,27 @@ var _camH = camera_get_view_height(view_camera[0]);//Get the camera's height.
 //global.sequenceLayer = layer_sequence_create(_lay, 0, 0, sqSlideOut);
 
 //Center on the Player
-if instance_exists(oPlayer){//If the player object exists...
+if(instance_exists(oPlayer)){//If the player object exists...
 	x = oPlayer.x - _camW/2;//Set x to player's x coordinate.
 	y = oPlayer.centerY - _camH/2;//Set x to player's y coordinate.
 }
 
 //Camera Shaking
 //x shake
-if xShakeAmount > 0{
+if(xShakeAmount > 0){
 	xShakeDir += xShakeDirSpd;
 	xShakeAmount -= xShakeAmountSpd;
-} else {
+}else{
 	xShakeAmount = 0;
 	xShakeDir = 0;
 }
 xShake = dsin(xShakeDir) * xShakeAmount;
 
 //y shake
-if yShakeAmount > 0{
+if(yShakeAmount > 0){
 	yShakeDir += yShakeDirSpd;
 	yShakeAmount -= yShakeAmountSpd;
-} else {
+}else{
 	yShakeAmount = 0;
 	yShakeDir = 0;
 }

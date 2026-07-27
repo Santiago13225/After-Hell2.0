@@ -6,8 +6,12 @@ var _wy = display_get_gui_height();
 
 draw_set_font(global.font);
 
-if instance_exists(oPlayer) {
-    with (oPlayer) {
+if(instance_exists(oVictoryScreen2) || global.midTransition){
+	exit;
+}
+
+if(instance_exists(oPlayer)){
+    with(oPlayer){
         //1) pickupSprite holds the small, crisp icon for HUD
         var icon = weapon.pickupSprite;    //your create_weapon’s last arg :contentReference[oaicite:3]{index=3}
         
@@ -56,7 +60,7 @@ if instance_exists(oPlayer) {
 			c_white, c_white, c_white, c_white, 1
 		);
 
-}
+	}
 }
 
 /*

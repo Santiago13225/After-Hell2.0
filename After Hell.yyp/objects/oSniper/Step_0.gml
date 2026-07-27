@@ -3,7 +3,7 @@
 //This event is responsible for handling sniper object behavior.
 
 //Pause Self
-if screen_pause(){
+if(screen_pause()){
 	exit;
 }
 
@@ -29,17 +29,21 @@ for(var i = 0; i < _size; i++){
 }
 
 //Add weapon to player's list
-if place_meeting(x, y, oPlayer){
+if(place_meeting(x, y, oPlayer)){
 	//array_push(global.PlayerWeapons, weapon);
-    if item_add(item) == true{
+    if(item_add(item) == true){
         //Add the weapon to global.PlayerWeapons
         //array_push(global.PlayerWeapons, weapon);
 		if(!_playerHas){
 			array_push(global.PlayerWeapons,  global.WeaponList.sniper);
-			array_push(global.PlayerAmmo, 0);
+			//array_push(global.PlayerAmmo, 0);
+			array_push(global.PlayerMag, global.WeaponList.sniper.magSize);//start with full mag
+			array_push(global.PlayerReserve, 0);//start with no reserve
 		}
 		
-		global.PlayerAmmo[array_length(global.PlayerAmmo) - 1] += ammoAdd;
+		//Add ammo to reserve instead of mag
+		global.PlayerReserve[array_length(global.PlayerReserve) - 1] += ammoAdd;
+		//global.PlayerAmmo[array_length(global.PlayerAmmo) - 1] += ammoAdd;
 		
 		//Set as the player's weapon
         audio_play_sound(sndReload, 8, false);

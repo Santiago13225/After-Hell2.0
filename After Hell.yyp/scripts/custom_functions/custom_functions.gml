@@ -240,7 +240,7 @@ function get_damage(_damageObj, _iframes = false){
 }
 
 function clear_weapons(){
-	if instance_exists(oItemManager3){
+	if(instance_exists(oItemManager3)){
 		var weaponsToRemove = [global.WeaponList.shotgun, 
 		global.WeaponList.raygun, global.WeaponList.sniper, global.WeaponList.assault,
 	    global.WeaponList.smg, global.WeaponList.lmg, global.WeaponList.bazooka, 
@@ -252,29 +252,39 @@ function clear_weapons(){
 		var arrayLength = array_length(weaponsToRemove);
 		var playerWeaponsLength = array_length(global.PlayerWeapons);
 
-		for (var i = 0; i < arrayLength; i++){
-			for (var j = 0; j < playerWeaponsLength; j++){
-				if (global.PlayerWeapons[j] == weaponsToRemove[i]){
+		for(var i = 0; i < arrayLength; i++){
+			for(var j = 0; j < playerWeaponsLength; j++){
+				if(global.PlayerWeapons[j] == weaponsToRemove[i]){
 					array_delete(global.PlayerWeapons, j, 1);
 					j--;//Decrement j to account for the removed element.
 					playerWeaponsLength--;//Update the length of the array.
 				}
-				
-				if (global.PlayerWeapons[j] == global.WeaponList.hpistol){
+
+				if(global.PlayerWeapons[j] == global.WeaponList.hpistol){
 					array_set(global.PlayerWeapons, 0, global.WeaponList.pistol);
 					array_set(oItemManager3.inv, 0, global.item_list2.pistol);
 				}
-				
-				if (global.PlayerWeapons[j] == global.WeaponList.upistol){
+
+				if(global.PlayerWeapons[j] == global.WeaponList.upistol){
 					array_set(global.PlayerWeapons, 0, global.WeaponList.pistol);
 					array_set(oItemManager3.inv, 0, global.item_list2.pistol);
 				}
-				
+
 			}
 		}
 		oItemManager3.inv = [global.item_list2.pistol];
 		oHUD2.playerScore = 500;
 		//oHUD2.playerTotalScore = 500;
+		
+		//Reset all ammo arrays
+		//array_resize(global.PlayerAmmo, 1);
+		array_resize(global.PlayerMag, 1);
+		array_resize(global.PlayerReserve, 1);
+
+		//Reset pistol mag and reserve
+		global.PlayerMag[0] = global.WeaponList.pistol.magSize;
+		global.PlayerReserve[0] = -1;//unlimited
+		
 	}else {
 		show_debug_message("No item manager exists?");
 	}

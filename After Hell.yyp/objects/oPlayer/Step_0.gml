@@ -14,13 +14,13 @@ shootKey = global.shootKey;
 swapKeyPressed = global.swapKeyPressed;
 upSwapKeyPressed = global.upSwapKeyPressed;
 downSwapKeyPressed = global.downSwapKeyPressed;
+reloadKeyPressed = global.reloadKeyPressed && !instance_exists(oTextbox2);
 startKeyPressed = global.startKeyPressed;
 selectKeyPressed = global.selectKeyPressed;
 
 #endregion
 /*
-if global.rightKeyPressed == true
-{
+if global.rightKeyPressed == true{
 	x += 20;
 }*/
 /*
@@ -29,7 +29,7 @@ x += hspd;
 */
 //Pause menu
 if(startKeyPressed && pause_lock_timer <= 0){//if the start key is pressed and pause lock timer is less than or equal to 0.
-	if(!instance_exists(oScoreboard) && !oRadar.show_full_map){//if not the case that the scoreboard object exists and not the case that the map has been expanded
+	if(!instance_exists(oScoreboard) && !oRadar.show_full_map && !instance_exists(oVictoryScreen2)){//if not the case that the scoreboard object exists and not the case that the map has been expanded
 		if(!instance_exists(oPauseMenu2)){//if not the case that the pause menu already exists
 			//global.dialog_active = true;//Disable silhouette drawing.
 			/*if audio_is_playing(sndTutorialTheme){
@@ -113,7 +113,7 @@ if(startKeyPressed && pause_lock_timer <= 0){//if the start key is pressed and p
 }
 
 if(selectKeyPressed){//if the select key is pressed
-	if(!instance_exists(oPauseMenu2) && !oRadar.show_full_map){//if not the case that the pause menu exists and not the case that the map has been expanded
+	if(!instance_exists(oPauseMenu2) && !oRadar.show_full_map && !instance_exists(oVictoryScreen2)){//if not the case that the pause menu exists and not the case that the map has been expanded
 		if(!instance_exists(oScoreboard)){//if not the case that the scoreboard already exists
 			//global.dialog_active = true;//Disable silhouette drawing.
 			audio_play_sound(sndBeep, 8, false);//beep
@@ -306,7 +306,7 @@ if place_meeting(x, y, oMedkit){
 centerY = y + centerYOffset;//Set in step event
 //Aim
 //Keyboard and Mouse
-if global.controllerMode == 0{
+if(global.controllerMode == 0){
 	aimDir = point_direction(x, centerY, mouse_x, mouse_y);
 }
 
@@ -341,7 +341,11 @@ if(global.controllerMode == 1){
 if(swapKeyPressed){//same as upswap key
 	//Change the selection and wrap around
 	if(array_length(_playerWeapons) > 1){
+		audio_stop_sound(weapon.reloadSound);//stop reload sound on switch
 		audio_play_sound(sndCock, 8, false);//Play a sound effect
+		//Cancel reload only when actually switching weapons
+		isReloading = false;
+		reloadTimer = 0;
 	}else{
 		audio_play_sound(sndBeep, 8, false);//Play a sound effect
 	}
@@ -349,7 +353,9 @@ if(swapKeyPressed){//same as upswap key
 	if(selectedWeapon >= array_length(_playerWeapons)){
 		selectedWeapon = 0;	
 	}
-
+	//Cancel reload on weapon switch
+	//isReloading = false;
+	//reloadTimer = 0;
 	//Set the new weapon
 	//weapon = _playerWeapons[selectedWeapon];//optimal
 }
@@ -358,7 +364,11 @@ if(swapKeyPressed){//same as upswap key
 if(upSwapKeyPressed){
 	//Change the selection and wrap around
 	if(array_length(_playerWeapons) > 1){
+		audio_stop_sound(weapon.reloadSound);//stop reload sound on switch
 		audio_play_sound(sndCock, 8, false);//Play a sound effect
+		//Cancel reload only when actually switching weapons
+		isReloading = false;
+		reloadTimer = 0;
 	}else{
 		audio_play_sound(sndBeep, 8, false);//Play a sound effect
 	}
@@ -366,7 +376,9 @@ if(upSwapKeyPressed){
 	if(selectedWeapon >= array_length(_playerWeapons)){
 		selectedWeapon = 0;	
 	}
-
+	//Cancel reload on weapon switch
+	//isReloading = false;
+	//reloadTimer = 0;
 	//Set the new weapon
 	//weapon = _playerWeapons[selectedWeapon];//optimal
 }
@@ -375,7 +387,11 @@ if(upSwapKeyPressed){
 if(downSwapKeyPressed){
 	//Change the selection and wrap around
 	if(array_length(_playerWeapons) > 1){
+		audio_stop_sound(weapon.reloadSound);//stop reload sound on switch
 		audio_play_sound(sndCock, 8, false);//Play a sound effect
+		//Cancel reload only when actually switching weapons
+		isReloading = false;
+		reloadTimer = 0;
 	}else{
 		audio_play_sound(sndBeep, 8, false);//Play a sound effect
 	}
@@ -383,56 +399,100 @@ if(downSwapKeyPressed){
 	if(selectedWeapon < 0){
 		selectedWeapon = array_length(_playerWeapons) - 1;	
 	}
-
+	//Cancel reload on weapon switch
+	//isReloading = false;
+	//reloadTimer = 0;
 	//Set the new weapon
 	//weapon = _playerWeapons[selectedWeapon];//optimal
 }
 
 //Set the new weapon
 weapon = _playerWeapons[selectedWeapon];//For manual weapon pickup but less optimal as code is being run more often here
-
 #endregion
+
+//Reload timer
+if(isReloading){
+	/*if(!audio_is_playing(sndReload)){
+		audio_play_sound(sndReload, 8, false);
+	}*/
+	reloadTimer--;
+	if(reloadTimer <= 0){
+		isReloading = false;
+		reloadTimer = 0;
+
+		//Calculate how many rounds to load
+		var _magSize = weapon.magSize;
+		var _reserve = global.PlayerReserve[selectedWeapon];
+		var _currentMag = global.PlayerMag[selectedWeapon];
+		var _needed = _magSize - _currentMag;//how many rounds needed to fill mag
+
+		if(_reserve == -1){
+			//Unlimited reserve (pistol) - just fill the mag
+			//audio_play_sound(sndReload, 8, false);
+			global.PlayerMag[selectedWeapon] = _magSize;
+		}else{
+			//Limited reserve
+			if(_reserve >= _needed){
+				//Enough in reserve to fill mag
+				//audio_play_sound(sndReload, 8, false);
+				global.PlayerMag[selectedWeapon] = _magSize;
+				global.PlayerReserve[selectedWeapon] -= _needed;
+			}else{
+				//Not enough to fill mag, use whatever is left
+				//audio_play_sound(sndReload, 8, false);
+				global.PlayerMag[selectedWeapon] += _reserve;
+				global.PlayerReserve[selectedWeapon] = 0;
+			}
+		}
+	}
+}
+
+//Auto reload if mag is empty and reserve has ammo
+if(!isReloading && global.PlayerMag[selectedWeapon] <= 0){
+	var _reserve = global.PlayerReserve[selectedWeapon];
+	if(_reserve > 0 || _reserve == -1){
+		isReloading = true;
+		reloadTimer = weapon.reloadTime;
+		audio_play_sound(weapon.reloadSound, 8, false);
+	}
+}
 
 //Shoot the weapon
 if(shootTimer > 0){
 	shootTimer--;
 }
 
-if(shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] > 0 || weapon == global.WeaponList.pistol)){
-	
-	//subtract ammo
+//if(shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] > 0 || weapon == global.WeaponList.pistol)){//old ammo system
+if(shootKey && shootTimer <= 0 && !isReloading && global.PlayerMag[selectedWeapon] > 0){
+	//Subtract ammo from magazine
 	if(weapon != global.WeaponList.pistol && weapon != global.WeaponList.hpistol && weapon != global.WeaponList.upistol){
-		global.PlayerAmmo[selectedWeapon]--;
+		global.PlayerMag[selectedWeapon]--;
+	}else{
+		//Pistol uses mag but has unlimited reserve
+		global.PlayerMag[selectedWeapon]--;
 	}
-	
 	//Reset the timer
 	//shootTimer = shootCooldown;
 	//shootTimer = weapon.cooldown;//Old code
-	
 	//Modify cooldown if perk is active
 	var modifiedCooldown = weapon.cooldown;
-	if(global.firerate) {
+	if(global.firerate){
 		modifiedCooldown = max(1, round(weapon.cooldown * 0.75));//25% faster shooting
 	}else if(global.slowfirerate){
 		modifiedCooldown = max(1, round(weapon.cooldown * 1.25));//25% slower shooting
 	}
-
 	//Reset the timer
 	shootTimer = modifiedCooldown;
-	
 	//Shooting
 	//Create the bullet
 	var _xOffset = lengthdir_x(weapon.length + weaponOffsetDist, aimDir);
 	var _yOffset = lengthdir_y(weapon.length + weaponOffsetDist, aimDir);
-	
 	var _spread = weapon.spread;
-	var _spreadDiv = _spread / max(weapon.bulletNum-1, 1);
-	
+	var _spreadDiv = _spread / max(weapon.bulletNum - 1, 1);
 	var _weaponTipX = x + _xOffset;
 	var _weaponTipY = centerY + _yOffset; 
-	
 	//Create weapon flash
-	create_animated_vfx(sShootFlash, _weaponTipX, _weaponTipY, depth-10, aimDir);
+	create_animated_vfx(sShootFlash, _weaponTipX, _weaponTipY, depth - 10, aimDir);
 	//Play a sound effect
 	//audio_play_sound(snd8BitExplosion1, 8, false);
 	if(weapon == global.WeaponList.pistol || weapon == global.WeaponList.hpistol || weapon == global.WeaponList.upistol){
@@ -456,12 +516,10 @@ if(shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] > 0 || weap
 	}
 	//Create the correct number of bullets
 	for(var i = 0; i < weapon.bulletNum; i++){
-		var _bulletInst = instance_create_depth( _weaponTipX,  _weaponTipY, depth-100, weapon.bulletObj);
-	
+		var _bulletInst = instance_create_depth( _weaponTipX,  _weaponTipY, depth - 100, weapon.bulletObj);
 		//Change the bullet's direction
 		with(_bulletInst){
 			dir = other.aimDir - _spread/2 + _spreadDiv * i;
-			
 			//Turn the bullet to the correct direction at creation if necessary
 			if(dirFix == true){
 				image_angle = dir;
@@ -471,17 +529,33 @@ if(shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] > 0 || weap
 	//Screen pause
 	//create_screen_pause(2);//use if you want to slow down time when shooting
 }
-
-if(shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] == 0)){
+//empty mag sound
+//if(shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] == 0)){
+if(shootKey && shootTimer <= 0 && !isReloading && global.PlayerMag[selectedWeapon] <= 0){
 	//shootTimer = weapon.cooldown;//Old code
-	var modifiedCooldown = weapon.cooldown;
+	/*var modifiedCooldown = weapon.cooldown;
 	if(global.firerate) {
 		modifiedCooldown = max(1, round(weapon.cooldown * 0.75));
 	}else if(global.slowfirerate){
 		modifiedCooldown = max(1, round(weapon.cooldown * 1.25));
 	}
 	shootTimer = modifiedCooldown;
-	audio_play_sound(sndEmpty, 6, false);	
+	audio_play_sound(sndEmpty, 6, false);*/
+	
+	shootTimer = 60;//fixed cooldown for empty sound, adjust to taste
+	audio_play_sound(sndEmpty, 6, false);
+}
+
+//Manual reload with R key
+//if(keyboard_check_pressed(ord("R")) && !isReloading){
+if(reloadKeyPressed && !isReloading){
+	var _reserve = global.PlayerReserve[selectedWeapon];
+	var _currentMag = global.PlayerMag[selectedWeapon];
+	if((_reserve > 0 || _reserve == -1) && _currentMag < weapon.magSize){
+		isReloading = true;
+		reloadTimer = weapon.reloadTime;
+		audio_play_sound(weapon.reloadSound, 8, false);
+	}
 }
 
 //Check for low health condition (adjust the threshold as needed)
@@ -948,17 +1022,25 @@ if(instance_exists(oArmoryAugmentor2)){
 					    }
 					}*/
 					
-					if(oPlayer.weapon == global.WeaponList.pistol) {
+					if(oPlayer.weapon == global.WeaponList.pistol){
 						audio_play_sound(sndBuy, 8, false);
 						array_set(global.PlayerWeapons, 0, global.WeaponList.hpistol);
 						array_set(oItemManager3.inv, 0, global.item_list2.hpistol);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcorePistol);
-					}else if(oPlayer.weapon == global.WeaponList.hpistol) {
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[0] = global.WeaponList.hpistol.magSize;
+						}
+					}else if(oPlayer.weapon == global.WeaponList.hpistol){
 						audio_play_sound(sndBuy, 8, false);
 						array_set(global.PlayerWeapons, 0, global.WeaponList.upistol);
 						array_set(oItemManager3.inv, 0, global.item_list2.upistol);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcorePistol);
-					}else if(oPlayer.weapon == global.WeaponList.raygun) {
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[0] = global.WeaponList.upistol.magSize;
+						}
+					}else if(oPlayer.weapon == global.WeaponList.raygun){
 						audio_play_sound(sndBuy, 8, false);
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
@@ -966,8 +1048,14 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hraygun);
-						global.PlayerAmmo[_ar_id1] += 60;//add ammo
-						
+						//global.PlayerAmmo[_ar_id1] += 60;//add ammo
+						global.PlayerReserve[_ar_id1] += 60;//add ammo
+
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[_ar_id1] = global.WeaponList.hraygun.magSize;
+						}
+
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
 						    return _val == global.item_list2.raygun;
@@ -983,7 +1071,13 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hsniper);
-						global.PlayerAmmo[_ar_id1] += 35;//add ammo
+						//global.PlayerAmmo[_ar_id1] += 35;//add ammo
+						global.PlayerReserve[_ar_id1] += 35;//add ammo
+						
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[_ar_id1] = global.WeaponList.hsniper.magSize;
+						}
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -1000,7 +1094,13 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hshotgun);
-						global.PlayerAmmo[_ar_id1] += 60;//add ammo
+						//global.PlayerAmmo[_ar_id1] += 60;//add ammo
+						global.PlayerReserve[_ar_id1] += 60;//add ammo
+						
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[_ar_id1] = global.WeaponList.hshotgun.magSize;
+						}
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -1017,7 +1117,13 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hassault);
-						global.PlayerAmmo[_ar_id1] += 150;//add ammo
+						//global.PlayerAmmo[_ar_id1] += 150;//add ammo
+						global.PlayerReserve[_ar_id1] += 150;//add ammo
+						
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[_ar_id1] = global.WeaponList.hassault.magSize;
+						}
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -1034,7 +1140,13 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hsmg);
-						global.PlayerAmmo[_ar_id1] += 180;//add ammo
+						//global.PlayerAmmo[_ar_id1] += 180;//add ammo
+						global.PlayerReserve[_ar_id1] += 180;//add ammo
+						
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[_ar_id1] = global.WeaponList.hsmg.magSize;
+						}
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -1051,7 +1163,13 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hlmg);
-						global.PlayerAmmo[_ar_id1] += 300;//add ammo
+						//global.PlayerAmmo[_ar_id1] += 300;//add ammo
+						global.PlayerReserve[_ar_id1] += 300;//add ammo
+						
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[_ar_id1] = global.WeaponList.hlmg.magSize;
+						}
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -1068,7 +1186,13 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hbazooka);
-						global.PlayerAmmo[_ar_id1] += 20;//add ammo
+						//global.PlayerAmmo[_ar_id1] += 20;//add ammo
+						global.PlayerReserve[_ar_id1] += 20;//add ammo
+						
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[_ar_id1] = global.WeaponList.hbazooka.magSize;
+						}
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -1085,7 +1209,13 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.uraygun);
-						global.PlayerAmmo[_ar_id1] += 80;//add ammo
+						//global.PlayerAmmo[_ar_id1] += 80;//add ammo
+						global.PlayerReserve[_ar_id1] += 80;//add ammo
+						
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[_ar_id1] = global.WeaponList.uraygun.magSize;
+						}
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -1102,7 +1232,13 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.usniper);
-						global.PlayerAmmo[_ar_id1] += 45;//add ammo
+						//global.PlayerAmmo[_ar_id1] += 45;//add ammo
+						global.PlayerReserve[_ar_id1] += 45;//add ammo
+						
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[_ar_id1] = global.WeaponList.usniper.magSize;
+						}
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -1119,7 +1255,13 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.ushotgun);
-						global.PlayerAmmo[_ar_id1] += 80;//add ammo
+						//global.PlayerAmmo[_ar_id1] += 80;//add ammo
+						global.PlayerReserve[_ar_id1] += 80;//add ammo
+						
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[_ar_id1] = global.WeaponList.ushotgun.magSize;
+						}
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -1136,7 +1278,13 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.uassault);
-						global.PlayerAmmo[_ar_id1] += 180;//add ammo
+						//global.PlayerAmmo[_ar_id1] += 180;//add ammo
+						global.PlayerReserve[_ar_id1] += 180;//add ammo
+						
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[_ar_id1] = global.WeaponList.uassault.magSize;
+						}
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -1153,7 +1301,13 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.usmg);
-						global.PlayerAmmo[_ar_id1] += 210;//add ammo
+						//global.PlayerAmmo[_ar_id1] += 210;//add ammo
+						global.PlayerReserve[_ar_id1] += 210;//add ammo
+						
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[_ar_id1] = global.WeaponList.usmg.magSize;
+						}
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -1170,7 +1324,13 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.ulmg);
-						global.PlayerAmmo[_ar_id1] += 400;//add ammo
+						//global.PlayerAmmo[_ar_id1] += 400;//add ammo
+						global.PlayerReserve[_ar_id1] += 400;//add ammo
+						
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[_ar_id1] = global.WeaponList.ulmg.magSize;
+						}
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -1187,7 +1347,13 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.ubazooka);
-						global.PlayerAmmo[_ar_id1] += 30;//add ammo
+						//global.PlayerAmmo[_ar_id1] += 30;//add ammo
+						global.PlayerReserve[_ar_id1] += 30;//add ammo
+						
+						//Fill mag to new weapon's mag size if not reloading
+						if(!oPlayer.isReloading){
+							global.PlayerMag[_ar_id1] = global.WeaponList.ubazooka.magSize;
+						}
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -1236,9 +1402,14 @@ if(hp <= 0){
 	create_animated_vfx(sPoof, x, y, depth);
 	oHUD2.playerScore = 500;
 	clear_weapons();
-	array_resize(global.PlayerAmmo, 1);
+	//array_resize(global.PlayerAmmo, 1);
+	array_resize(global.PlayerMag, 1);
+	array_resize(global.PlayerReserve, 1);
 	array_resize(global.PlayerWeapons, 1);
 	//global.PlayerAmmo = [];//Completely reset the ammo array.
+	//Reset pistol mag and reserve
+	global.PlayerMag[0] = global.WeaponList.pistol.magSize;
+	global.PlayerReserve[0] = -1;//unlimited
 	instance_destroy();//Destroy Ourself.
 }
 

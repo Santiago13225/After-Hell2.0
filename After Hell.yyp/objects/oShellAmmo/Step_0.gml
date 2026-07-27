@@ -4,7 +4,7 @@
 
 fade_start_time = 60 * 5;//last 5 seconds
 
-if screen_pause(){//Pause self
+if(screen_pause()){//Pause self
 	exit;
 }
 
@@ -79,11 +79,11 @@ if place_meeting(x, y, oPlayer){//If it touches the player...
 #endregion
 
 var _radius = 256;
-if(global.magnet) {
-	if(instance_exists(oPlayer)) {
+if(global.magnet){
+	if(instance_exists(oPlayer)){
 		var _dist = point_distance(x, y, oPlayer.x, oPlayer.y);
 
-		if(_dist < _radius) {
+		if(_dist < _radius){
 			//calculate direction to player
 			var _dir = point_direction(x, y, oPlayer.x, oPlayer.y);
 			//var _spd = 1;
@@ -96,7 +96,7 @@ if(global.magnet) {
 	}
 }
 
-if place_meeting(x, y, oPlayer) {
+if(place_meeting(x, y, oPlayer)){
     //1)Scan the inventory
     var hasShotgun = false;
     var pos = -1;
@@ -108,13 +108,14 @@ if place_meeting(x, y, oPlayer) {
             hasShotgun = true;
             pos = i;
             break;//exit loop early :contentReference[oaicite:1]{index=1}
-        }
-    }
+		}
+	}
 
-    //2)If found, give ammo and destroy
-    if(hasShotgun){
+	//2)If found, give ammo and destroy
+	if(hasShotgun){
 		audio_play_sound(sndAmmo, 8, false);//Play sound effect.
-        global.PlayerAmmo[pos] += ammoAdd;
-        instance_destroy();
-    }
+		//global.PlayerAmmo[pos] += ammoAdd;//old ammo system code
+		global.PlayerReserve[pos] += ammoAdd;//changed from PlayerAmmo to PlayerReserve
+		instance_destroy();
+	}
 }

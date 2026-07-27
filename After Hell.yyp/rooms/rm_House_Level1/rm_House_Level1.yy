@@ -273,7 +273,6 @@
     {"name":"inst_3C98126C","path":"rooms/rm_House_Level1/rm_House_Level1.yy",},
     {"name":"inst_5A01435C","path":"rooms/rm_House_Level1/rm_House_Level1.yy",},
     {"name":"inst_46AAF39B","path":"rooms/rm_House_Level1/rm_House_Level1.yy",},
-    {"name":"inst_6C546361","path":"rooms/rm_House_Level1/rm_House_Level1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -619,7 +618,6 @@
         {"$GMRInstance":"v4","%Name":"inst_32DE1A10","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_32DE1A10","objectId":{"name":"oPineTree","path":"objects/oPineTree/oPineTree.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":480.0,"y":0.0,},
         {"$GMRInstance":"v4","%Name":"inst_3C98126C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3C98126C","objectId":{"name":"oMusicBlockHouse","path":"objects/oMusicBlockHouse/oMusicBlockHouse.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":448.0,"y":976.0,},
         {"$GMRInstance":"v4","%Name":"inst_46AAF39B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_46AAF39B","objectId":{"name":"oMouse","path":"objects/oMouse/oMouse.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":32.0,},
-        {"$GMRInstance":"v4","%Name":"inst_6C546361","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6C546361","objectId":{"name":"oBazooka","path":"objects/oBazooka/oBazooka.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1104.0,"y":640.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
     {"$GMRTileLayer":"","%Name":"background_tiles","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"background_tiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":143,"SerialiseWidth":120,"TileCompressedData":[
           -1825,4,1,70,-65,58,1,59,-53,4,1,71,-65,4,1,71,-53,4,1,71,-65,4,1,71,-53,4,1,71,-65,4,1,71,-53,4,1,71,
