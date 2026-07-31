@@ -11,7 +11,7 @@ back_key = keyboard_check_pressed(vk_backspace);
 // --- TRACK PERK 1 CHANGES AND RESET PERK 2 ---
 if(!variable_instance_exists(id, "perk_index_prev")) perk_index_prev = perk_index;
 
-if(perk_index != perk_index_prev) {
+if(perk_index != perk_index_prev){
 	perk_index2 = 0;//always reset Perk 2 to None
 	option[3,1] = "  Mod 2: " + perk_names[perk_index2] + "  ";//update text
 	perk_index_prev = perk_index;//store new Perk 1 value
@@ -89,7 +89,7 @@ if is_controller_connected{
 
 	//Check input
 	if(stick_delay <= 0){
-		if(lx > deadzone) {
+		if(lx > deadzone){
 			right_key = true;
 			//audio_play_sound(sndClick, 10, false);
 			moved = true;
@@ -107,7 +107,7 @@ if is_controller_connected{
 			moved = true;
 		}
 
-		if(moved) {
+		if(moved){
 			if(!stick_held){
 				stick_delay = delay_initial;//first delay
 				stick_held = true;
@@ -140,7 +140,7 @@ if(menu_level == 6 && pos == 0){//Check if in the Settings menu and the first op
 		option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
     }
 
-	if(global.musicvolume != old_volume) {
+	if(global.musicvolume != old_volume){
 		audio_play_sound(sndClick, 10, false);
 	}
 }
@@ -158,17 +158,17 @@ if(menu_level == 6 && pos == 1){//Check if in the Settings menu and the second o
 		option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
     }
 	
-	if(global.sfxvolume != old_sfx) {
+	if(global.sfxvolume != old_sfx){
 		audio_play_sound(sndClick, 10, false);
 	}
 }
 
 //Detect entering main menu
-if(!variable_instance_exists(id, "prev_menu_level")) {
+if(!variable_instance_exists(id, "prev_menu_level")){
     prev_menu_level = menu_level;
 }
 
-if(menu_level == 0 && prev_menu_level != 0) {
+if(menu_level == 0 && prev_menu_level != 0){
 	//We just ENTERED the main menu, so reset everything
 	//Reset preset
 	global.matchPresetIndex = 0;
@@ -312,7 +312,7 @@ if(menu_level == 3 && pos == 1){
 			}
 		}*/
 #endregion
-	}else {
+	}else{
 		//Perk 1 is "None", Perk 2 must be "None"
 		perk_index2 = 0;
 	}
@@ -343,25 +343,25 @@ if(pos < 0){
 	pos = op_length-1;
 }
 
-if(menu_level == 6) {
-    if(oControllerIndicator.controller_count == 0) {
+if(menu_level == 6){
+    if(oControllerIndicator.controller_count == 0){
         //Lock to Keyboard
         global.controllerMode = 0;
         option[6, 2] = "Input: Keyboard and Mouse";
-    }else {
+    }else{
         //Unlock - keep the toggleable text
-        if(global.controllerMode == 0) {
+        if(global.controllerMode == 0){
             option[6, 2] = "Input: Keyboard and Mouse";
-        }else {
+        }else{
             option[6, 2] = "Input: Controller";
         }
     }
 }
 
-if(back_key && menu_level != 0) {
+if(back_key && menu_level != 0){
 	var _prev = menu_level;//store previous menu
 
-	switch(menu_level) {
+	switch(menu_level){
 		case 1: menu_level = 0; break;
 		case 2: menu_level = 0; break;
 		case 3: menu_level = 2; break;
@@ -371,7 +371,7 @@ if(back_key && menu_level != 0) {
 		case 7: menu_level = 0; break;
 	}
 
-	if(menu_level != _prev) {//Only run if something actually changed
+	if(menu_level != _prev){//Only run if something actually changed
 		audio_play_sound(sndBeep, 10, false);
 	}
 	pos = 0;//reset cursor position
@@ -382,12 +382,10 @@ if(back_key && menu_level != 0) {
 if(accept_key){
 	var _sml = menu_level;
 	
-	switch(menu_level)
-	{
+	switch(menu_level){
 		//Main Menu
 		case 0:
-			switch(pos)
-			{
+			switch(pos){
 				//Story Mode
 				case 0:
 					audio_play_sound(sndBeep, 10, false);
@@ -400,11 +398,13 @@ if(accept_key){
 					global.energyshield = false;
 					global.juggernaut = false;
 					global.speed = false;
+					global.reload = false;
 					global.luck = false;
 					global.magnet = false;
 					global.flakjacket = false;
 					global.instakill = false;
 					global.badluck = false;
+					global.slowreload = false;
 					global.lowspeed = false;
 					global.weakness = false;
 					global.nomedkit = false;
@@ -433,6 +433,7 @@ if(accept_key){
 					//Instead of switching menu pages, destroy the title menu and create the carousel menu object.
 					//instance_destroy();
 					//instance_create_layer(0, 0, "Instances", oSettingsCarouselMenu);
+					//instance_create_layer(0, 0, "Instances", oPerkCarouselMenu);
 					break;
 				//Multiplayer Mode
 				case 2:
@@ -455,8 +456,7 @@ if(accept_key){
 
 		//Story
 		case 1:
-			switch(pos)
-			{
+			switch(pos){
 				//Tutorial
 				case 0:
 					TransitionStart(rm_Mission0_2, sqFadeOut, sqFadeIn);
@@ -478,8 +478,7 @@ if(accept_key){
 
 		//Presets
 		case 2:
-			switch(pos)
-			{
+			switch(pos){
 				//Preset option
 				case 0:
 					audio_play_sound(sndBeep, 10, false);
@@ -503,8 +502,7 @@ if(accept_key){
 
 		//Perks
 		case 3:
-			switch(pos)
-			{
+			switch(pos){
 				//Perk option 1
 				case 0:
 					audio_play_sound(sndBeep, 10, false);
@@ -529,30 +527,34 @@ if(accept_key){
 						case 2: global.energyshield = true; break;
 						case 3: global.juggernaut = true; break;
 						case 4: global.speed = true; break;
-						case 5: global.luck = true; break;
-						case 6: global.magnet = true; break;
-						case 7: global.flakjacket = true; break;
-						case 8:
+						case 5: global.reload = true; break;
+						case 6: global.luck = true; break;
+						case 7: global.magnet = true; break;
+						case 8: global.flakjacket = true; break;
+						case 9:
 							global.firerate = true;
 							global.energyshield = true;
 							global.juggernaut = true;
 							global.speed = true;
+							global.reload = true;
 							global.luck = true;
 							global.magnet = true;
 							global.flakjacket = true;
 							break;
-						case 9:
+						case 10:
 							global.instakill = true;
 							global.badluck = true;
+							global.slowreload = true;
 							global.lowspeed = true;
 							global.slowfirerate = true;
 							break;
-						case 10: global.instakill = true; break;
-						case 11: global.badluck = true; break;
-						case 12: global.lowspeed = true; break;
-						case 13: global.weakness = true; break;
-						case 14: global.nomedkit = true; break;
-						case 15: global.slowfirerate = true; break;
+						case 11: global.instakill = true; break;
+						case 12: global.badluck = true; break;
+						case 13: global.slowreload = true; break;
+						case 14: global.lowspeed = true; break;
+						case 15: global.weakness = true; break;
+						case 16: global.nomedkit = true; break;
+						case 17: global.slowfirerate = true; break;
 					}
 					
 					//Apply perk effect 2(same as carousel)
@@ -562,30 +564,34 @@ if(accept_key){
 						case 2: global.energyshield = true; break;
 						case 3: global.juggernaut = true; break;
 						case 4: global.speed = true; break;
-						case 5: global.luck = true; break;
-						case 6: global.magnet = true; break;
-						case 7: global.flakjacket = true; break;
-						case 8:
+						case 5: global.reload = true; break;
+						case 6: global.luck = true; break;
+						case 7: global.magnet = true; break;
+						case 8: global.flakjacket = true; break;
+						case 9:
 							global.firerate = true;
 							global.energyshield = true;
 							global.juggernaut = true;
 							global.speed = true;
+							global.reload = true;
 							global.luck = true;
 							global.magnet = true;
 							global.flakjacket = true;
 							break;
-						case 9:
+						case 10:
 							global.instakill = true;
 							global.badluck = true;
+							global.slowreload = true;
 							global.lowspeed = true;
 							global.slowfirerate = true;
 							break;
-						case 10: global.instakill = true; break;
-						case 11: global.badluck = true; break;
-						case 12: global.lowspeed = true; break;
-						case 13: global.weakness = true; break;
-						case 14: global.nomedkit = true; break;
-						case 15: global.slowfirerate = true; break;
+						case 11: global.instakill = true; break;
+						case 12: global.badluck = true; break;
+						case 13: global.slowreload = true; break;
+						case 14: global.lowspeed = true; break;
+						case 15: global.weakness = true; break;
+						case 16: global.nomedkit = true; break;
+						case 17: global.slowfirerate = true; break;
 					}
 
 					instance_destroy();
@@ -599,8 +605,7 @@ if(accept_key){
 			break;
 	
 		case 4:
-			switch(pos)
-			{
+			switch(pos){
 				//Museum
 				case 0:
 					TransitionStart(rm_TM9, sqFadeOut, sqFadeIn);
@@ -637,8 +642,7 @@ if(accept_key){
 			break;
 			
 		case 5:
-			switch(pos)
-			{
+			switch(pos){
 				//Test Level
 				case 0:
 					TransitionStart(rm_TM20, sqFadeOut, sqFadeIn);
@@ -657,8 +661,7 @@ if(accept_key){
 	
 		//Settings
 		case 6:
-			switch(pos)
-			{
+			switch(pos){
 				//Music
 				case 0:
 					//Update the displayed volume percentage
@@ -708,8 +711,7 @@ if(accept_key){
 			
 		//Extras
 		case 7:
-			switch(pos)
-			{
+			switch(pos){
 				//YouTube
 				case 0:
 					audio_play_sound(sndBeep, 10, false);

@@ -9,4 +9,4 @@ item = global.item_list2.hsniper
 floatDir = 0;
 floatSpd = 6;
 
-ammoAdd = 35;
+ammoAdd = 20;

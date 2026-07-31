@@ -9,4 +9,4 @@ item = global.item_list2.ubazooka
 floatDir = 0;
 floatSpd = 6;
 
-ammoAdd = 30;
+ammoAdd = 9;

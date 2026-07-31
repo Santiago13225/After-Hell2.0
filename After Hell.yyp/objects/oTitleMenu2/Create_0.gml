@@ -7,11 +7,13 @@ global.firerate = false;
 global.energyshield = false;
 global.juggernaut = false;
 global.speed = false;
+global.reload = false;
 global.luck = false;
 global.magnet = false;
 global.flakjacket = false;
 global.instakill = false;
 global.badluck = false;
+global.slowreload = false;
 global.lowspeed = false;
 global.weakness = false;
 global.nomedkit = false;
@@ -162,43 +164,47 @@ preset_names = [
 ];
 
 perk_names = [
-"None",
-"Rapid Fire",
-"Energy Shield",
-"Toughness",
-"Lightweight",
-"Extra Luck",
-"Magnet",
-"Flak Jacket",
-"Wild Card",
-"Last Stand",
-"Sudden Death",
-"Bad Luck",
-"Sluggish",
-"Weakness",
-"Deprivation",
-"Heavy Trigger"
+"None",//0
+"Rapid Fire",//1
+"Energy Shield",//2
+"Toughness",//3
+"Lightweight",//4
+"Fast Hands",//5
+"Extra Luck",//6
+"Magnet",//7
+"Flak Jacket",//8
+"Wild Card",//9
+"Last Stand",//10
+"Sudden Death",//11
+"Bad Luck",//12
+"Slow Hands",//13
+"Sluggish",//14
+"Weakness",//15
+"Deprivation",//16
+"Heavy Trigger"//17
 ];
 
 //perk incompatibility list (index corresponds to perk_names)
 //each element is an array of perk indices that cannot be selected together with this perk
 perk_incompatibility = [
-	[],													//0 - None
-	[15, 8, 9],											//1 - Rapid Fire, incompatible with Heavy Trigger, Wild Card, Last Stand
-	[8],												//2 - Energy Shield, incompatible with Wild Card
-	[13, 10, 8, 9],										//3 - Toughness, incompatible with Weakness, Sudden Death, Wild Card, Last Stand
-	[12, 8, 9],											//4 - Lightweight, incompatible with Sluggish, Wild Card, Last Stand
-	[11, 8, 9],											//5 - Extra Luck, incompatible with Bad Luck, Wild Card, Last Stand,
-	[11, 8, 9],											//6 - Magnet, incompatible with Bad Luck, Wild Card, Last Stand
-	[8],												//7 - Flak Jacket, incompatible with Wild Card
-	[1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15],	//8 - Wild Card, incompatible with Rapid Fire, Energy Shield, Toughness, Lightweight, Extra Luck, Magnet, Flak Jacket, Last Stand, Sudden Death, Bad Luck, Sluggish, Weakness, Deprivation, Heavy Trigger
-	[1, 3, 4, 5, 6, 8, 10, 11, 12, 13, 14, 15],			//9 - Last Stand, incompatible with Rapid Fire, Toughness, Lightweight, Extra Luck, Magnet, Wild Card, Sudden Death, Bad Luck, Sluggish, Weakness, Deprivation, Heavy Trigger
-	[3, 8, 9, 13, 14],									//10 - Sudden Death, incompatible with Toughness, Wild Card, Last Stand, Weakness, Deprivation
-	[5, 6, 8, 9],										//11 - Bad Luck, incompatible with Extra Luck, Magnet, Wild Card, Last Stand
-	[4, 8, 9],											//12 - Sluggish, incompatible with Lightweight, Wild Card, Last Stand
-	[3, 8, 9, 10],										//13 - Weakness, incompatible with Toughness, Wild Card, Last Stand, Sudden Death
-	[8, 9],												//14 - Deprivation, incompatible with Wild Card, Last Stand
-	[1, 8, 9]											//15 - Heavy Trigger, incompatible with Rapid Fire, Wild Card, Last Stand
+	[],															//0 - None
+	[17, 9, 10],												//1 - Rapid Fire, incompatible with Heavy Trigger, Wild Card, Last Stand
+	[9],														//2 - Energy Shield, incompatible with Wild Card
+	[15, 11, 9, 10],											//3 - Toughness, incompatible with Weakness, Sudden Death, Wild Card, Last Stand
+	[14, 9, 10],												//4 - Lightweight, incompatible with Sluggish, Wild Card, Last Stand
+	[13, 9, 10],												//5 - Fast Hands, incompatible with Slow Hands, Wild Card, Last Stand
+	[12, 9, 10],												//6 - Extra Luck, incompatible with Bad Luck, Wild Card, Last Stand
+	[12, 9, 10],												//7 - Magnet, incompatible with Bad Luck, Wild Card, Last Stand
+	[9],														//8 - Flak Jacket, incompatible with Wild Card
+	[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17],	//9 - Wild Card, incompatible with Rapid Fire, Energy Shield, Toughness, Lightweight, Fast Hands, Extra Luck, Magnet, Flak Jacket, Last Stand, Sudden Death, Bad Luck, Slow Hands, Sluggish, Weakness, Deprivation, Heavy Trigger
+	[1, 3, 4, 5, 6, 7, 9, 11, 12, 13, 14, 15, 16, 17],			//10 - Last Stand, incompatible with Rapid Fire, Toughness, Lightweight, Fast Hands, Extra Luck, Magnet, Wild Card, Sudden Death, Bad Luck, Slow Hands, Sluggish, Weakness, Deprivation, Heavy Trigger
+	[3, 9, 10, 15, 16],											//11 - Sudden Death, incompatible with Toughness, Wild Card, Last Stand, Weakness, Deprivation
+	[6, 7, 9, 10],												//12 - Bad Luck, incompatible with Extra Luck, Magnet, Wild Card, Last Stand
+	[5, 9, 10],													//13 - Slow Hands, incompatible with Fast Hands, Wild Card, Last Stand
+	[4, 9, 10],													//14 - Sluggish, incompatible with Lightweight, Wild Card, Last Stand
+	[3, 9, 10, 11],												//15 - Weakness, incompatible with Toughness, Wild Card, Last Stand, Sudden Death
+	[9, 10],													//16 - Deprivation, incompatible with Wild Card, Last Stand
+	[1, 9, 10]													//17 - Heavy Trigger, incompatible with Rapid Fire, Wild Card, Last Stand
 ];
 
 option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";

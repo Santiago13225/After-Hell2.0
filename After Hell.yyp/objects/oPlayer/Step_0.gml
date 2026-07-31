@@ -452,7 +452,13 @@ if(!isReloading && global.PlayerMag[selectedWeapon] <= 0){
 	var _reserve = global.PlayerReserve[selectedWeapon];
 	if(_reserve > 0 || _reserve == -1){
 		isReloading = true;
-		reloadTimer = weapon.reloadTime;
+		var reloadTime = weapon.reloadTime;
+		if(global.reload){
+			reloadTime = ceil(reloadTime * 0.75);
+		}else if(global.slowreload){
+			reloadTime = ceil(reloadTime * 1.25);
+		}
+		reloadTimer = reloadTime;
 		audio_play_sound(weapon.reloadSound, 8, false);
 	}
 }
@@ -553,23 +559,29 @@ if(reloadKeyPressed && !isReloading){
 	var _currentMag = global.PlayerMag[selectedWeapon];
 	if((_reserve > 0 || _reserve == -1) && _currentMag < weapon.magSize){
 		isReloading = true;
-		reloadTimer = weapon.reloadTime;
+		var reloadTime = weapon.reloadTime;
+		if(global.reload){
+			reloadTime = ceil(reloadTime * 0.75);
+		}else if(global.slowreload){
+			reloadTime = ceil(reloadTime * 1.25);
+		}
+		reloadTimer = reloadTime;
 		audio_play_sound(weapon.reloadSound, 8, false);
 	}
 }
 
 //Check for low health condition (adjust the threshold as needed)
-if(global.juggernaut) {
+if(global.juggernaut){
 	var lowHealthThreshold = 60;
 }else if(global.instakill){
 	var lowHealthThreshold = 0;
 }else if(global.weakness){
 	var lowHealthThreshold = 15;
-}else {
+}else{
 	var lowHealthThreshold = 30;//Set the desired low health threshold here
 }
 
-if(hp <= lowHealthThreshold && !lowHealth) {
+if(hp <= lowHealthThreshold && !lowHealth){
     lowHealth = true;
 	//audio_loop_sound
 	audio_play_sound(sndLowHealth, 9, true);
@@ -579,14 +591,14 @@ if(hp <= lowHealthThreshold && !lowHealth) {
 }
 
 //Check if the player recovered health and stop the effects
-if(hp > lowHealthThreshold && lowHealth) {
+if(hp > lowHealthThreshold && lowHealth){
     lowHealth = false;
     audio_stop_sound(sndLowHealth);//Stop the looped sound
     draw_set_alpha(1);//Reset the screen color when health is not low
 }
 
 //Call the screen flashing effect when the player's health is low
-if(lowHealth) {
+if(lowHealth){
 	//scr_flash
 	image_blend = c_red;
 	scr_flash_screen();
@@ -596,13 +608,13 @@ if(lowHealth) {
 }
 
 with(oShotgunWallbuy2){
-	scr_HandleWallbuy(500, 40, global.WeaponList.shotgun, global.WeaponList.hshotgun, global.WeaponList.ushotgun, oShotgun);
+	scr_HandleWallbuy(500, 32, global.WeaponList.shotgun, global.WeaponList.hshotgun, global.WeaponList.ushotgun, oShotgun);
 }
 
 with(oRaygunWallbuy2){
 	scr_HandleWallbuy(
 		5000,										//cost
-		40,											//ammoAdd
+		60,											//ammoAdd
 		global.WeaponList.raygun,					//base
 		global.WeaponList.hraygun,					//hardcore
 		global.WeaponList.uraygun,					//ultra
@@ -611,7 +623,7 @@ with(oRaygunWallbuy2){
 }
 
 with(oSniperWallbuy2){
-	scr_HandleWallbuy(1500, 25, global.WeaponList.sniper, global.WeaponList.hsniper, global.WeaponList.usniper, oSniper);
+	scr_HandleWallbuy(1500, 20, global.WeaponList.sniper, global.WeaponList.hsniper, global.WeaponList.usniper, oSniper);
 }
 
 with(oAssaultWallbuy2){
@@ -619,7 +631,7 @@ with(oAssaultWallbuy2){
 }
 
 with(oBazookaWallbuy2){
-	scr_HandleWallbuy(6000, 10, global.WeaponList.bazooka, global.WeaponList.hbazooka, global.WeaponList.ubazooka, oBazooka);
+	scr_HandleWallbuy(6000, 9, global.WeaponList.bazooka, global.WeaponList.hbazooka, global.WeaponList.ubazooka, oBazooka);
 }
 
 with(oSMGWallbuy2){
@@ -1072,7 +1084,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hsniper);
 						//global.PlayerAmmo[_ar_id1] += 35;//add ammo
-						global.PlayerReserve[_ar_id1] += 35;//add ammo
+						global.PlayerReserve[_ar_id1] += 20;//add ammo
 						
 						//Fill mag to new weapon's mag size if not reloading
 						if(!oPlayer.isReloading){
@@ -1095,7 +1107,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hshotgun);
 						//global.PlayerAmmo[_ar_id1] += 60;//add ammo
-						global.PlayerReserve[_ar_id1] += 60;//add ammo
+						global.PlayerReserve[_ar_id1] += 32;//add ammo
 						
 						//Fill mag to new weapon's mag size if not reloading
 						if(!oPlayer.isReloading){
@@ -1118,7 +1130,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hassault);
 						//global.PlayerAmmo[_ar_id1] += 150;//add ammo
-						global.PlayerReserve[_ar_id1] += 150;//add ammo
+						global.PlayerReserve[_ar_id1] += 120;//add ammo
 						
 						//Fill mag to new weapon's mag size if not reloading
 						if(!oPlayer.isReloading){
@@ -1141,7 +1153,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hsmg);
 						//global.PlayerAmmo[_ar_id1] += 180;//add ammo
-						global.PlayerReserve[_ar_id1] += 180;//add ammo
+						global.PlayerReserve[_ar_id1] += 150;//add ammo
 						
 						//Fill mag to new weapon's mag size if not reloading
 						if(!oPlayer.isReloading){
@@ -1164,7 +1176,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hlmg);
 						//global.PlayerAmmo[_ar_id1] += 300;//add ammo
-						global.PlayerReserve[_ar_id1] += 300;//add ammo
+						global.PlayerReserve[_ar_id1] += 200;//add ammo
 						
 						//Fill mag to new weapon's mag size if not reloading
 						if(!oPlayer.isReloading){
@@ -1187,7 +1199,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hbazooka);
 						//global.PlayerAmmo[_ar_id1] += 20;//add ammo
-						global.PlayerReserve[_ar_id1] += 20;//add ammo
+						global.PlayerReserve[_ar_id1] += 9;//add ammo
 						
 						//Fill mag to new weapon's mag size if not reloading
 						if(!oPlayer.isReloading){
@@ -1210,7 +1222,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.uraygun);
 						//global.PlayerAmmo[_ar_id1] += 80;//add ammo
-						global.PlayerReserve[_ar_id1] += 80;//add ammo
+						global.PlayerReserve[_ar_id1] += 60;//add ammo
 						
 						//Fill mag to new weapon's mag size if not reloading
 						if(!oPlayer.isReloading){
@@ -1233,7 +1245,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.usniper);
 						//global.PlayerAmmo[_ar_id1] += 45;//add ammo
-						global.PlayerReserve[_ar_id1] += 45;//add ammo
+						global.PlayerReserve[_ar_id1] += 20;//add ammo
 						
 						//Fill mag to new weapon's mag size if not reloading
 						if(!oPlayer.isReloading){
@@ -1256,7 +1268,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.ushotgun);
 						//global.PlayerAmmo[_ar_id1] += 80;//add ammo
-						global.PlayerReserve[_ar_id1] += 80;//add ammo
+						global.PlayerReserve[_ar_id1] += 32;//add ammo
 						
 						//Fill mag to new weapon's mag size if not reloading
 						if(!oPlayer.isReloading){
@@ -1279,7 +1291,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.uassault);
 						//global.PlayerAmmo[_ar_id1] += 180;//add ammo
-						global.PlayerReserve[_ar_id1] += 180;//add ammo
+						global.PlayerReserve[_ar_id1] += 120;//add ammo
 						
 						//Fill mag to new weapon's mag size if not reloading
 						if(!oPlayer.isReloading){
@@ -1302,7 +1314,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.usmg);
 						//global.PlayerAmmo[_ar_id1] += 210;//add ammo
-						global.PlayerReserve[_ar_id1] += 210;//add ammo
+						global.PlayerReserve[_ar_id1] += 150;//add ammo
 						
 						//Fill mag to new weapon's mag size if not reloading
 						if(!oPlayer.isReloading){
@@ -1325,7 +1337,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.ulmg);
 						//global.PlayerAmmo[_ar_id1] += 400;//add ammo
-						global.PlayerReserve[_ar_id1] += 400;//add ammo
+						global.PlayerReserve[_ar_id1] += 200;//add ammo
 						
 						//Fill mag to new weapon's mag size if not reloading
 						if(!oPlayer.isReloading){
@@ -1348,7 +1360,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.ubazooka);
 						//global.PlayerAmmo[_ar_id1] += 30;//add ammo
-						global.PlayerReserve[_ar_id1] += 30;//add ammo
+						global.PlayerReserve[_ar_id1] += 9;//add ammo
 						
 						//Fill mag to new weapon's mag size if not reloading
 						if(!oPlayer.isReloading){

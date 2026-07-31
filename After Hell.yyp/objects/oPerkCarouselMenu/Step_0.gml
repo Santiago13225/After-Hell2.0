@@ -8,7 +8,7 @@ right_key = keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D"))
 var _gamePad = 0;
 var is_controller_connected = gamepad_is_connected(_gamePad);
 
-if is_controller_connected{
+if(is_controller_connected){
 	left_key |= gamepad_button_check_pressed(_gamePad, gp_padl);
 	right_key |= gamepad_button_check_pressed(_gamePad, gp_padr);
 	accept_key |= gamepad_button_check_pressed(_gamePad, gp_face1);
@@ -31,30 +31,30 @@ if is_controller_connected{
 	if(stick_delay > 0) stick_delay--;
 
 	//Check input
-	if(stick_delay <= 0) {
-		if(lx > deadzone) { right_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
-		else if(lx < -deadzone) { left_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
+	if(stick_delay <= 0){
+		if(lx > deadzone){ right_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
+		else if(lx < -deadzone){ left_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
 		//else if(ly > deadzone) { down_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
 		//else if(ly < -deadzone) { up_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
 
-		if(moved) {
-			if(!stick_held) {
+		if(moved){
+			if(!stick_held){
 				stick_delay = delay_initial;//first delay
 				stick_held = true;
-			}else {
+			}else{
 				stick_delay = delay_repeat;//repeat delay
 			}
-		}else {
+		}else{
 			stick_held = false;//reset if neutral
 		}
 	}
 }
 
 //Navigation input
-if(right_key) {
+if(right_key){
     selected -= 1;
     arrowRightAnim = 1;
-}else if(left_key) {
+}else if(left_key){
     selected += 1;
     arrowLeftAnim = 1;
 }
@@ -77,7 +77,7 @@ if(accept_key){
 	instance_destroy();
 	instance_create_layer(0, 0, "Instances", oCarouselMenu);
 
-	switch(global.perkIndex) {
+	switch(global.perkIndex){
 	    case 0:
 			break;//None
 	    case 1:
@@ -93,46 +93,54 @@ if(accept_key){
 			global.speed = true;
 			break;
 		case 5:
-			global.luck = true;
+			global.reload = true;
 			break;
 		case 6:
-			global.magnet = true;
+			global.luck = true;
 			break;
 		case 7:
-			global.flakjacket = true;
+			global.magnet = true;
 			break;
 		case 8:
+			global.flakjacket = true;
+			break;
+		case 9:
 			global.firerate = true;
 			global.energyshield = true;
 			global.juggernaut = true;
 			global.speed = true;
+			global.reload = true;
 			global.luck = true;
 			global.magnet = true;
 			global.flakjacket = true;
 			break;
-		case 9:
+		case 10:
 			global.instakill = true;
 			global.badluck = true;
+			global.slowreload = true;
 			global.lowspeed = true;
 			//global.nomedkit = true;
 			global.slowfirerate = true;
 			break;
-		case 10:
+		case 11:
 			global.instakill = true;
 			break;
-		case 11:
+		case 12:
 			global.badluck = true;
 			break;
-		case 12:
-			global.lowspeed = true;
-			break;
 		case 13:
-			global.weakness = true;
+			global.slowreload = true;
 			break;
 		case 14:
-			global.nomedkit = true;
+			global.lowspeed = true;
 			break;
 		case 15:
+			global.weakness = true;
+			break;
+		case 16:
+			global.nomedkit = true;
+			break;
+		case 17:
 			global.slowfirerate = true;
 			break;
 	    //future cases: global.perkShield = true, etc.

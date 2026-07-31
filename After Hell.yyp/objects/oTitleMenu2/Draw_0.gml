@@ -67,7 +67,7 @@ y = _camY + _camH/2 - (height/2);
 //Draw the menu background
 draw_sprite_ext(sprite_index, image_index, x, y, width/sprite_width, height/sprite_height, 0, c_white, 1);
 
-if(menu_level == 6) {
+if(menu_level == 6){
     //Define bar dimensions (adjust these values as needed)
     var barX = x + op_border;//start
     var barY = y + op_border + op_space * 0;//for Music Volume (first option)
@@ -121,7 +121,7 @@ for(var i = 0; i < op_length; i++){
 			draw_sprite_ext(sPixel, 0, x, y + op_border + op_space * i, width, string_height(option[menu_level, i]), 0, c_red, 0.5);
 		}
 		_c = c_gray;
-	}else if(menu_level == 6 && i == 2 && oControllerIndicator.controller_count == 0) {//Make "Controls" gray if locked
+	}else if(menu_level == 6 && i == 2 && oControllerIndicator.controller_count == 0){//Make "Controls" gray if locked
         if(pos == i){
 			draw_sprite_ext(sPixel, 0, x, y + op_border + op_space * i, width, string_height(option[menu_level, i]), 0, c_red, 0.5);
 		}
@@ -220,17 +220,19 @@ if(menu_level == 3 && pos == 0){
         case 2: description = "Gives the player a second health bar that can regenerate over time."; break;
         case 3: description = "Doubles player health and boosts medkit healing effects."; break;
         case 4: description = "Increases player movement speed by 25%."; break;
-        case 5: description = "Improves enemy loot drops."; break;
-        case 6: description = "Allows the player to attract nearby loot drops."; break;
-        case 7: description = "Gives the player complete immunity to explosive damage."; break;
-        case 8: description = "Gives the player all beneficial modifiers."; break;
-        case 9: description = "Gives the player all detrimental modifiers."; break;
-        case 10: description = "Player HP set to 1. One hit and it's game over."; break;
-        case 11: description = "No loot drops from enemies."; break;
-        case 12: description = "Reduces player movement speed by 25%."; break;
-        case 13: description = "Halves player health and weakens medkit healing effects."; break;
-        case 14: description = "Disables medkits. No health regeneration allowed."; break;
-        case 15: description = "Applies a 25% fire rate reduction to all weapons."; break;
+		case 5: description = "Increases player reload speed by 25%."; break;
+        case 6: description = "Improves enemy loot drops."; break;
+        case 7: description = "Allows the player to attract nearby loot drops."; break;
+        case 8: description = "Gives the player complete immunity to explosive damage."; break;
+        case 9: description = "Gives the player all beneficial modifiers."; break;
+        case 10: description = "Gives the player all detrimental modifiers."; break;
+        case 11: description = "Player HP set to 1. One hit and it's game over."; break;
+        case 12: description = "No loot drops from enemies."; break;
+		case 13: description = "Reduces player reload speed by 25%."; break;
+        case 14: description = "Reduces player movement speed by 25%."; break;
+        case 15: description = "Halves player health and weakens medkit healing effects."; break;
+        case 16: description = "Disables medkits. No health regeneration allowed."; break;
+        case 17: description = "Applies a 25% fire rate reduction to all weapons."; break;
     }
     draw_set_halign(fa_center);
 	draw_set_valign(fa_top);
@@ -247,17 +249,19 @@ if(menu_level == 3 && pos == 1){
         case 2: description = "Gives the player a second health bar that can regenerate over time."; break;
         case 3: description = "Doubles player health and boosts medkit healing effects."; break;
         case 4: description = "Increases player movement speed by 25%."; break;
-        case 5: description = "Improves enemy loot drops."; break;
-        case 6: description = "Allows the player to attract nearby loot drops."; break;
-        case 7: description = "Gives the player complete immunity to explosive damage."; break;
-        case 8: description = "Gives the player all beneficial modifiers."; break;
-        case 9: description = "Gives the player all detrimental modifiers."; break;
-        case 10: description = "Player HP set to 1. One hit and it's game over."; break;
-        case 11: description = "No loot drops from enemies."; break;
-        case 12: description = "Reduces player movement speed by 25%."; break;
-        case 13: description = "Halves player health and weakens medkit healing effects."; break;
-        case 14: description = "Disables medkits. No health regeneration allowed."; break;
-        case 15: description = "Applies a 25% fire rate reduction to all weapons."; break;
+		case 5: description = "Increases player reload speed by 25%."; break;
+        case 6: description = "Improves enemy loot drops."; break;
+        case 7: description = "Allows the player to attract nearby loot drops."; break;
+        case 8: description = "Gives the player complete immunity to explosive damage."; break;
+        case 9: description = "Gives the player all beneficial modifiers."; break;
+        case 10: description = "Gives the player all detrimental modifiers."; break;
+        case 11: description = "Player HP set to 1. One hit and it's game over."; break;
+        case 12: description = "No loot drops from enemies."; break;
+		case 13: description = "Reduces player reload speed by 25%."; break;
+        case 14: description = "Reduces player movement speed by 25%."; break;
+        case 15: description = "Halves player health and weakens medkit healing effects."; break;
+        case 16: description = "Disables medkits. No health regeneration allowed."; break;
+        case 17: description = "Applies a 25% fire rate reduction to all weapons."; break;
     }
     draw_set_halign(fa_center);
 	draw_set_valign(fa_top);

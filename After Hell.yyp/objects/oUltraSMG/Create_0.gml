@@ -9,4 +9,4 @@ item = global.item_list2.usmg
 floatDir = 0;
 floatSpd = 6;
 
-ammoAdd = 210;
+ammoAdd = 150;

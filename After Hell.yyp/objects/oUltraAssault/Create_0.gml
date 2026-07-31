@@ -9,4 +9,4 @@ item = global.item_list2.uassault
 floatDir = 0;
 floatSpd = 6;
 
-ammoAdd = 180;
+ammoAdd = 120;

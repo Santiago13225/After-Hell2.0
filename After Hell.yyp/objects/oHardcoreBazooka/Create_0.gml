@@ -10,4 +10,4 @@ item = global.item_list2.hbazooka
 floatDir = 0;
 floatSpd = 6;
 
-ammoAdd = 20;
+ammoAdd = 9;

@@ -9,4 +9,4 @@ item = global.item_list2.hlmg
 floatDir = 0;
 floatSpd = 6;
 
-ammoAdd = 300;
+ammoAdd = 200;

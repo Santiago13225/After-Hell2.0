@@ -9,4 +9,4 @@ item = global.item_list2.hassault
 floatDir = 0;
 floatSpd = 6;
 
-ammoAdd = 150;
+ammoAdd = 120;

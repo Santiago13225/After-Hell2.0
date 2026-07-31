@@ -9,4 +9,4 @@ item = global.item_list2.sniper
 floatDir = 0;
 floatSpd = 6;
 
-ammoAdd = 25;
+ammoAdd = 20;

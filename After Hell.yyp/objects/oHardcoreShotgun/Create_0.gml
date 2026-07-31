@@ -9,4 +9,4 @@ item = global.item_list2.hshotgun
 floatDir = 0;
 floatSpd = 6;
 
-ammoAdd = 60;
+ammoAdd = 32;

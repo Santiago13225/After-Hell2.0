@@ -57,7 +57,7 @@ if!(instance_exists(oPauseMenu2) || instance_exists(oVictoryScreen2) || instance
 	if(oPlayer.selectedWeapon == 0){
 		if(oPlayer.isReloading){
 			ammoText = "Reloading";
-			_color = c_yellow;
+			_color = c_lime;
 			//Draw reload progress bar
 			var _barWidth = 130;
 			var _barHeight = 24;
@@ -93,7 +93,7 @@ if!(instance_exists(oPauseMenu2) || instance_exists(oVictoryScreen2) || instance
 
 		if(oPlayer.isReloading){
 			ammoText = "Reloading";
-			_color = c_yellow;
+			_color = c_lime;
 			//Draw reload progress bar
 			var _barWidth = 130;
 			var _barHeight = 24;

@@ -9,4 +9,4 @@ item = global.item_list2.raygun;
 floatDir = 0;
 floatSpd = 6;
 
-ammoAdd = 40;
+ammoAdd = 60;

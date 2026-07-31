@@ -3,7 +3,7 @@
 //This event is responsible for setting some variables for the ultra rocket object.
 
 //Pause Self
-if screen_pause(){
+if(screen_pause()){
 	exit;	
 }
 
@@ -40,7 +40,7 @@ if destroy == true{
 	
 		//Screen shake
 		if(global.screenShake){
-			screen_shake(16);
+			screen_shake(8);
 		}
 
 		//Destroy self
@@ -63,7 +63,7 @@ if destroy == true{
 	
 		//Screen shake
 		if(global.screenShake){
-			screen_shake(16);
+			screen_shake(8);
 		}
 
 		//Destroy self
@@ -95,7 +95,7 @@ if place_meeting(x, y, oSolidWall){
 	
 		//Screen shake
 		if(global.screenShake){
-			screen_shake(16);
+			screen_shake(8);
 		}
 
 		//Destroy self
@@ -119,7 +119,7 @@ if point_distance(xstart, ystart, x, y) > maxDist{
 	
 		//Screen shake
 		if(global.screenShake){
-			screen_shake(16);
+			screen_shake(8);
 		}
 		
 		//Destroy self

@@ -1,7 +1,7 @@
 var pr = ds_priority_create();
 var i = 0;
 
-repeat(image_number) {
+repeat(image_number){
     ds_priority_add(pr, i, lengthdir_y(1, (rot - 90) + i * (360 / image_number)));
     i += 1;
 }
@@ -9,7 +9,7 @@ repeat(image_number) {
 var normSelected = -selected mod image_number;
 if (normSelected < 0) normSelected += image_number;
 
-repeat(image_number) {
+repeat(image_number){
 	i = ds_priority_delete_min(pr);
 	draw_sprite_ext(sprite_index, i, menu_x + lengthdir_x(menu_width / 2, 
 	(rot - 90) + i * (360 / image_number)), menu_y + lengthdir_y(menu_height / 2, 
@@ -23,23 +23,25 @@ ds_priority_destroy(pr);
 
 //Perk name text
 var text;
-switch(item) {
+switch(item){
 	case 0: text = "None"; break;
 	case 1: text = "Rapid Fire"; break;
 	case 2: text = "Energy Shield"; break;
 	case 3: text = "Toughness"; break;
 	case 4: text = "Lightweight"; break;
-	case 5: text = "Extra Luck"; break;
-	case 6: text = "Magnet"; break;
-	case 7: text = "Flak Jacket"; break;
-	case 8: text = "Wild Card"; break;
-	case 9: text = "Last Stand"; break;
-	case 10: text = "Sudden Death"; break;
-	case 11: text = "Bad Luck"; break;
-	case 12: text = "Sluggish"; break;
-	case 13: text = "Weakness"; break;
-	case 14: text = "Deprivation"; break;
-	case 15: text = "Heavy Trigger"; break;
+	case 5: text = "Fast Hands"; break;
+	case 6: text = "Extra Luck"; break;
+	case 7: text = "Magnet"; break;
+	case 8: text = "Flak Jacket"; break;
+	case 9: text = "Wild Card"; break;
+	case 10: text = "Last Stand"; break;
+	case 11: text = "Sudden Death"; break;
+	case 12: text = "Bad Luck"; break;
+	case 13: text = "Slow Hands"; break;
+	case 14: text = "Sluggish"; break;
+	case 15: text = "Weakness"; break;
+	case 16: text = "Deprivation"; break;
+	case 17: text = "Heavy Trigger"; break;
 	default: text = "???"; break;
 }
 
@@ -51,7 +53,7 @@ if(global.controllerMode == 0){
 	draw_set_font(global.font_main);
 	draw_text_transformed(menu_x, menu_y + menu_height/2 + 60, "Press [Space] to Select", 1, 1, 0);
 	draw_text_transformed(menu_x, menu_y + menu_height/2 + 75, "Press [Backspace] to Go Back", 1, 1, 0);
-}else {
+}else{
 	draw_set_font(global.fontController);//Controller
 	draw_text_transformed(menu_x, menu_y + menu_height/2 + 60, "Press [@] to Select", 1, 1, 0);
 	draw_text_transformed(menu_x, menu_y + menu_height/2 + 75, "Press [#] to Go Back", 1, 1, 0);
@@ -59,23 +61,25 @@ if(global.controllerMode == 0){
 
 //Draw Description Text
 var description;
-switch(item) {
+switch(item){
 	case 0: description = "No modifiers applied."; break;
 	case 1: description = "Applies a 25% fire rate boost to all weapons."; break;
 	case 2: description = "Gives the player a second health bar that can regenerate over time."; break;
 	case 3: description = "Doubles player health and medkit effectiveness."; break;
 	case 4: description = "Increases player movement speed by 25%."; break;
-	case 5: description = "Improves enemy loot drops."; break;
-	case 6: description = "Allows the player to attract nearby loot drops."; break;
-	case 7: description = "Gives the player complete immunity to explosive damage."; break;
-	case 8: description = "Gives the player all beneficial modifiers."; break;
-	case 9: description = "Gives the player all detrimental modifiers."; break;
-	case 10: description = "Player HP set to 1. One hit and it's game over."; break;
-	case 11: description = "No loot drops from enemies."; break;
-	case 12: description = "Reduces player movement speed by 25%."; break;
-	case 13: description = "Halves player health and medkit effectiveness."; break;
-	case 14: description = "Disables medkits. No health regeneration allowed."; break;
-	case 15: description = "Applies a 25% fire rate reduction to all weapons."; break;
+	case 5: description = "Increases player reload speed by 25%."; break;
+	case 6: description = "Improves enemy loot drops."; break;
+	case 7: description = "Allows the player to attract nearby loot drops."; break;
+	case 8: description = "Gives the player complete immunity to explosive damage."; break;
+	case 9: description = "Gives the player all beneficial modifiers."; break;
+	case 10: description = "Gives the player all detrimental modifiers."; break;
+	case 11: description = "Player HP set to 1. One hit and it's game over."; break;
+	case 12: description = "No loot drops from enemies."; break;
+	case 13: description = "Reduces player reload speed by 25%."; break;
+	case 14: description = "Reduces player movement speed by 25%."; break;
+	case 15: description = "Halves player health and medkit effectiveness."; break;
+	case 16: description = "Disables medkits. No health regeneration allowed."; break;
+	case 17: description = "Applies a 25% fire rate reduction to all weapons."; break;
 	default: description = "???"; break;
 }
 
@@ -84,7 +88,7 @@ draw_text_transformed(menu_x, menu_y + menu_height / 2 + 95, description, 1, 1, 
 
 //Draw match setting label below the modifiers menu
 var matchText;
-switch(global.matchPresetIndex) {
+switch(global.matchPresetIndex){
 	case 0: matchText = "Standard"; break;
 	case 1: matchText = "Elite Invasion"; break;
 	case 2: matchText = "Deadlier Forces"; break;

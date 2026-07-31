@@ -115,7 +115,7 @@ global.WeaponList = {
 		sLMGPickup,
 		//0,//ammo
 		100,//mag size
-		240//reload time
+		180//reload time
 	),
 	bazooka : new create_weapon(
 		"Bazooka - MK.I",//<- name
@@ -128,7 +128,7 @@ global.WeaponList = {
 		sBazookaPickup,
 		//0,//ammo
 		1,//mag size
-		180//reload time
+		120//reload time
 	),
 	hpistol : new create_weapon(
 		"Pistol - MK.II",//<- name
@@ -219,7 +219,7 @@ global.WeaponList = {
 		sHardcoreLMGPickup,
 		//0,//ammo
 		125,//mag size
-		204//reload time
+		153//reload time
 	),
 	hbazooka : new create_weapon(
 		"Bazooka - MK.II",//<- name
@@ -232,7 +232,7 @@ global.WeaponList = {
 		sHardcoreBazookaPickup,
 		//0,//ammo
 		2,//mag size
-		153//reload time
+		102//reload time
 	),
 	upistol : new create_weapon(
 		"Pistol - MK.III",//<- name
@@ -323,7 +323,7 @@ global.WeaponList = {
 		sUltraLMGPickup,
 		//0,//ammo
 		150,//mag size
-		173//reload time
+		130//reload time
 	),
 	ubazooka : new create_weapon(
 		"Bazooka - MK.III",//<- name
@@ -336,6 +336,6 @@ global.WeaponList = {
 		sUltraBazookaPickup,
 		//0,//ammo
 		3,//mag size
-		130//reload time
+		87//reload time
 	),
 }
