@@ -92,17 +92,19 @@ switch(global.perkIndex){
     case 2: modifierText = "Energy Shield"; break;
     case 3: modifierText = "Toughness"; break;
     case 4: modifierText = "Lightweight"; break;
-    case 5: modifierText = "Extra Luck"; break;
-	case 6: modifierText = "Magnet"; break;
-    case 7: modifierText = "Flak Jacket"; break;
-    case 8: modifierText = "Wild Card"; break;
-	case 9: modifierText = "Last Stand"; break;
-    case 10: modifierText = "Sudden Death"; break;
-    case 11: modifierText = "Bad Luck"; break;
-    case 12: modifierText = "Sluggish"; break;
-    case 13: modifierText = "Weakness"; break;
-    case 14: modifierText = "Deprivation"; break;
-    case 15: modifierText = "Heavy Trigger"; break;
+	case 5: modifierText = "Fast Hands"; break;
+    case 6: modifierText = "Extra Luck"; break;
+	case 7: modifierText = "Magnet"; break;
+    case 8: modifierText = "Flak Jacket"; break;
+    case 9: modifierText = "Wild Card"; break;
+	case 10: modifierText = "Last Stand"; break;
+    case 11: modifierText = "Sudden Death"; break;
+    case 12: modifierText = "Bad Luck"; break;
+	case 13: modifierText = "Slow Hands"; break;
+    case 14: modifierText = "Sluggish"; break;
+    case 15: modifierText = "Weakness"; break;
+    case 16: modifierText = "Deprivation"; break;
+    case 17: modifierText = "Heavy Trigger"; break;
     default: modifierText = "???"; break;
 }
 
@@ -113,17 +115,19 @@ switch(global.perkIndex2){
     case 2: modifierText2 = "Energy Shield"; break;
     case 3: modifierText2 = "Toughness"; break;
     case 4: modifierText2 = "Lightweight"; break;
-    case 5: modifierText2 = "Extra Luck"; break;
-	case 6: modifierText2 = "Magnet"; break;
-    case 7: modifierText2 = "Flak Jacket"; break;
-    case 8: modifierText2 = "Wild Card"; break;
-	case 9: modifierText2 = "Last Stand"; break;
-    case 10: modifierText2 = "Sudden Death"; break;
-    case 11: modifierText2 = "Bad Luck"; break;
-    case 12: modifierText2 = "Sluggish"; break;
-    case 13: modifierText2 = "Weakness"; break;
-    case 14: modifierText2 = "Deprivation"; break;
-    case 15: modifierText2 = "Heavy Trigger"; break;
+	case 5: modifierText2 = "Fast Hands"; break;
+    case 6: modifierText2 = "Extra Luck"; break;
+	case 7: modifierText2 = "Magnet"; break;
+    case 8: modifierText2 = "Flak Jacket"; break;
+    case 9: modifierText2 = "Wild Card"; break;
+	case 10: modifierText2 = "Last Stand"; break;
+    case 11: modifierText2 = "Sudden Death"; break;
+    case 12: modifierText2 = "Bad Luck"; break;
+	case 13: modifierText2 = "Slow Hands"; break;
+    case 14: modifierText2 = "Sluggish"; break;
+    case 15: modifierText2 = "Weakness"; break;
+    case 16: modifierText2 = "Deprivation"; break;
+    case 17: modifierText2 = "Heavy Trigger"; break;
     default: modifierText2 = "???"; break;
 }
 

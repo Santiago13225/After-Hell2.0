@@ -33,6 +33,7 @@
   "ForcedPrefabProjectReferences":[
     {"link":"io.gamemaker.gm_filter_edgedetect-1.0.0","name":"io.gamemaker.gm_filter_edgedetect-1.0.0","path":"io.gamemaker.gm_filter_edgedetect-1.0.0.yyp",},
     {"link":"io.gamemaker.gm_filter_mask-1.0.0","name":"io.gamemaker.gm_filter_mask-1.0.0","path":"io.gamemaker.gm_filter_mask-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_fractal_noise-1.0.0","name":"io.gamemaker.gm_filter_fractal_noise-1.0.0","path":"io.gamemaker.gm_filter_fractal_noise-1.0.0.yyp",},
   ],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"GMEXT-Steamworks.html","CopyToMask":-1,"filePath":"datafiles","name":"GMEXT-Steamworks.html","resourceType":"GMIncludedFile","resourceVersion":"2.0",},

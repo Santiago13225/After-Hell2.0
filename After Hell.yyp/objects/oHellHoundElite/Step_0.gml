@@ -1,5 +1,22 @@
 event_inherited();//Inherit the parent event.	
 
+var _paused = instance_exists(oScreenPause);
+
+if(wasPaused && !_paused){//Detect unpause
+	//show_debug_message("sprite speed: " + string(sprite_get_speed(sprite_index)));
+	//image_speed = sprite_get_speed(sprite_index);
+	alarm[0] = irandom(60);//Re-randomize timing
+}
+
+wasPaused = _paused;//Store state
+
+if(_paused){//Pause self. New!
+	image_speed = 0;
+	exit;
+}else{
+	image_speed = 1;
+}
+
 //Trap Dropping — only when not paused
 if(!instance_exists(oScreenPause)){
 	//Trap Dropping — only when on screen

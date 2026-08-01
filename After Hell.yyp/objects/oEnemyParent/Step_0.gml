@@ -191,7 +191,7 @@ if(global.luck){
 	if _chance > 70 && _chance <= 75{//% chance of drop
 		if(global.instakill || global.nomedkit){
 			instance_create_depth(x, y, depth, oGreenbacks);//Create .
-		}else {
+		}else{
 			instance_create_depth(x, y, depth, oMedkit);//Create .
 		}
 	}
@@ -278,5 +278,4 @@ if(instance_exists(oAreaMarker)){
 			create_animated_vfx(sPoof, x, y, depth - 50);
 		}
 	}
-
 }

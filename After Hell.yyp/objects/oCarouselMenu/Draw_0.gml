@@ -92,44 +92,48 @@ if(global.controllerMode == 0){
 
 //Draw the selected modifier label below the map selection menu
 var modifierText;
-switch(global.perkIndex) {
+switch(global.perkIndex){
     case 0: modifierText = "None"; break;
     case 1: modifierText = "Rapid Fire"; break;
     case 2: modifierText = "Energy Shield"; break;
     case 3: modifierText = "Toughness"; break;
     case 4: modifierText = "Lightweight"; break;
-    case 5: modifierText = "Extra Luck"; break;
-	case 6: modifierText = "Magnet"; break;
-    case 7: modifierText = "Flak Jacket"; break;
-    case 8: modifierText = "Wild Card"; break;
-	case 9: modifierText = "Last Stand"; break;
-    case 10: modifierText = "Sudden Death"; break;
-    case 11: modifierText = "Bad Luck"; break;
-    case 12: modifierText = "Sluggish"; break;
-    case 13: modifierText = "Weakness"; break;
-    case 14: modifierText = "Deprivation"; break;
-    case 15: modifierText = "Heavy Trigger"; break;
+	case 5: modifierText = "Fast Hands"; break;
+    case 6: modifierText = "Extra Luck"; break;
+	case 7: modifierText = "Magnet"; break;
+    case 8: modifierText = "Flak Jacket"; break;
+    case 9: modifierText = "Wild Card"; break;
+	case 10: modifierText = "Last Stand"; break;
+    case 11: modifierText = "Sudden Death"; break;
+    case 12: modifierText = "Bad Luck"; break;
+	case 13: modifierText = "Slow Hands"; break;
+    case 14: modifierText = "Sluggish"; break;
+    case 15: modifierText = "Weakness"; break;
+    case 16: modifierText = "Deprivation"; break;
+    case 17: modifierText = "Heavy Trigger"; break;
     default: modifierText = "???"; break;
 }
 
 var modifierText2;
-switch(global.perkIndex2) {
+switch(global.perkIndex2){
     case 0: modifierText2 = "None"; break;
     case 1: modifierText2 = "Rapid Fire"; break;
     case 2: modifierText2 = "Energy Shield"; break;
     case 3: modifierText2 = "Toughness"; break;
     case 4: modifierText2 = "Lightweight"; break;
-    case 5: modifierText2 = "Extra Luck"; break;
-	case 6: modifierText2 = "Magnet"; break;
-    case 7: modifierText2 = "Flak Jacket"; break;
-    case 8: modifierText2 = "Wild Card"; break;
-	case 9: modifierText2 = "Last Stand"; break;
-    case 10: modifierText2 = "Sudden Death"; break;
-    case 11: modifierText2 = "Bad Luck"; break;
-    case 12: modifierText2 = "Sluggish"; break;
-    case 13: modifierText2 = "Weakness"; break;
-    case 14: modifierText2 = "Deprivation"; break;
-    case 15: modifierText2 = "Heavy Trigger"; break;
+	case 5: modifierText2 = "Fast Hands"; break;
+    case 6: modifierText2 = "Extra Luck"; break;
+	case 7: modifierText2 = "Magnet"; break;
+    case 8: modifierText2 = "Flak Jacket"; break;
+    case 9: modifierText2 = "Wild Card"; break;
+	case 10: modifierText2 = "Last Stand"; break;
+    case 11: modifierText2 = "Sudden Death"; break;
+    case 12: modifierText2 = "Bad Luck"; break;
+	case 13: modifierText2 = "Slow Hands"; break;
+    case 14: modifierText2 = "Sluggish"; break;
+    case 15: modifierText2 = "Weakness"; break;
+    case 16: modifierText2 = "Deprivation"; break;
+    case 17: modifierText2 = "Heavy Trigger"; break;
     default: modifierText2 = "???"; break;
 }
 
@@ -141,7 +145,7 @@ draw_text_transformed(menu_x, menu_y + menu_height / 2 + 90, "Modifier 1: " + mo
 
 //Draw match setting label below the modifiers menu
 var matchText;
-switch(global.matchPresetIndex) {
+switch(global.matchPresetIndex){
     case 0: matchText = "Standard"; break;
     case 1: matchText = "Elite Invasion"; break;
     case 2: matchText = "Deadlier Forces"; break;

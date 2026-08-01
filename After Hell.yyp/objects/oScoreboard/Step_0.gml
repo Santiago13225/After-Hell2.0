@@ -3,7 +3,7 @@
 //This event is responsible for setting some variables for the scoreboard screen.
 
 //If the player is gone, kill ourselves
-if(!instance_exists(oPlayer)) {
+if(!instance_exists(oPlayer)){
     instance_destroy();//no player → no need for scoreboard overlay
     exit;
 }

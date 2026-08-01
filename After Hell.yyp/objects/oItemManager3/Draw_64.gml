@@ -6,6 +6,10 @@ var _wy = display_get_gui_height();
 
 draw_set_font(global.font);
 
+if(instance_exists(oPauseMenu2)){
+	exit;
+}
+
 if(instance_exists(oVictoryScreen2) || global.midTransition){
 	exit;
 }

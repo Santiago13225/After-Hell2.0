@@ -51,14 +51,14 @@ if is_controller_connected{
 		//else if(ly > deadzone) { down_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
 		//else if(ly < -deadzone) { up_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
 
-		if(moved) {
-			if(!stick_held) {
+		if(moved){
+			if(!stick_held){
 				stick_delay = delay_initial;//first delay
 				stick_held = true;
-			}else {
+			}else{
 				stick_delay = delay_repeat;//repeat delay
 			}
-		}else {
+		}else{
 			stick_held = false;//reset if neutral
 		}
 	}

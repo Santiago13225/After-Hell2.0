@@ -1,3 +1,7 @@
+if(instance_exists(oPauseMenu2)){
+	exit;
+}
+
 if(!instance_exists(oVictoryScreen2)){
 	if(!instance_exists(oPlayer)){
 	    instance_destroy();//no player → no need for map overlay
@@ -15,8 +19,8 @@ if(!instance_exists(oVictoryScreen2)){
 
 	if(instance_exists(oPlayer)){
 		//1. REBUILD SURFACE (ONLY WHEN NEEDED)
-		if(global.radar_dirty || !surface_exists(radar_surface)) {
-			if(surface_exists(radar_surface)) {
+		if(global.radar_dirty || !surface_exists(radar_surface)){
+			if(surface_exists(radar_surface)){
 				surface_free(radar_surface);
 			}
 
@@ -36,8 +40,8 @@ if(!instance_exists(oVictoryScreen2)){
 				var x2 = bbox_right;
 				var y2 = bbox_bottom;
 
-				for(var wx = x1; wx < x2; wx += cell) {
-					for(var wy = y1; wy < y2; wy += cell) {
+				for(var wx = x1; wx < x2; wx += cell){
+					for(var wy = y1; wy < y2; wy += cell){
 						//var rx = (wx / room_width * _guiwidth);
 						//var ry = (wy / room_height * _guiheight);
 						//draw_rectangle(rx, ry, rx + cell * 0.5, ry + cell * 0.5, false);
@@ -72,7 +76,7 @@ if(!instance_exists(oVictoryScreen2)){
 		//====================================================
 		// DRAW RADAR TO MASK SURFACE
 		//====================================================
-		if(!surface_exists(radar_mask_surface)) {
+		if(!surface_exists(radar_mask_surface)){
 			radar_mask_surface = surface_create(_radarsize * 2, _radarsize * 2);
 		}
 

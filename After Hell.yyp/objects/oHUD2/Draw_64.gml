@@ -12,6 +12,15 @@ if(instance_exists(oVictoryScreen2)){
 	exit;
 }
 
+//Draw the game title
+if(instance_exists(oPlayer)){
+	draw_sprite_ext(sTitleNew, 0, (8 * 3), (8 * 3) + _wy - (35 * 3), .3 * 3, .3 * 3, 0, c_white, 1);
+}
+
+if(instance_exists(oPauseMenu2)){
+	exit;
+}
+
 if(instance_exists(oPlayer)){
 	if(instance_exists(oInvisibleSpawner2)){//If spawner exists...
 		draw_set_font(fnt8Bit);//Should be 8-bit, see part 10 on the YouTube series?
@@ -63,9 +72,8 @@ if(instance_exists(oPlayer)){
 	//Draw the score pool
 	var _scoreString = "$" + string(playerScore);//Set string.
 	draw_text_transformed(0 + _wx - (8 * 3) - (string_width(_scoreString) * 3), 0 + (8 * 3), _scoreString, 3, 3, 0);//Draw string.
-
 	//Draw the game title
-	draw_sprite_ext(sTitleNew, 0, (8 * 3), (8 * 3) + _wy - (35 * 3), .3 * 3, .3 * 3, 0, c_white, 1);
+	//draw_sprite_ext(sTitleNew, 0, (8 * 3), (8 * 3) + _wy - (35 * 3), .3 * 3, .3 * 3, 0, c_white, 1);
 }
 
 
@@ -138,7 +146,7 @@ var spacing = 8;//Padding between icons
 //Draw modifier icon to the left of the 2nd modifier
 if(room != rm_Mission0_2){
 	if(instance_exists(oPlayer)){
-		if(global.perkIndex != -1) {
+		if(global.perkIndex != -1){
 		    var modSprite = sPerksCarouselMenu;
 		    var modIndex = global.perkIndex;
 		    draw_sprite_ext(modSprite, modIndex, 
@@ -152,7 +160,7 @@ if(room != rm_Mission0_2){
 //Draw 2nd modifier icon
 if(room != rm_Mission0_2){
 	if(instance_exists(oPlayer)){
-		if(global.perkIndex2 != -1) {
+		if(global.perkIndex2 != -1){
 		    var modSprite = sPerksCarouselMenu;
 		    var modIndex = global.perkIndex2;
 		    draw_sprite_ext(modSprite, modIndex, 
@@ -188,8 +196,8 @@ if(instance_exists(oPlayer)){
 	}
 }*/
 
-if(instance_exists(oPlayer)) {
-	if(oPlayer.pause_lock_timer > 0) {
+if(instance_exists(oPlayer)){
+	if(oPlayer.pause_lock_timer > 0){
 		var seconds_left = ceil(oPlayer.pause_lock_timer / room_speed);
 		//draw_set_font(global.fontHUD);
 		draw_set_color(c_red);

@@ -18,7 +18,7 @@ var iconScale = 1;//Scale
 var spacing = 8;//Padding between icons
 
 //Ensure the variable exists for tutorial levels
-if(!variable_global_exists("selectedMapSprite")) {
+if(!variable_global_exists("selectedMapSprite")){
     global.selectedMapSprite = 19;//20th frame
 }
 
@@ -26,7 +26,7 @@ draw_sprite_ext(sScoreboardScreen, 0, _cX, _cY, 1, 1, 0, c_white, alpha);
 
 //Draw the selected modifier label below the map selection menu
 var mapText;
-switch(global.selectedMapSprite) {
+switch(global.selectedMapSprite){
 	case 0: mapText = "House"; break;
 	case 1: mapText = "Facility"; break;
 	case 2: mapText = "Temple"; break;
@@ -52,7 +52,7 @@ switch(global.selectedMapSprite) {
 
 //Draw match setting label below the modifiers menu
 var matchText;
-switch(global.matchPresetIndex) {
+switch(global.matchPresetIndex){
     case 0: matchText = "Standard"; break;
     case 1: matchText = "Elite Invasion"; break;
     case 2: matchText = "Deadlier Forces"; break;
@@ -73,11 +73,11 @@ switch(global.matchPresetIndex) {
 }
 
 //Ensure the variable exists for tutorial level
-if(room == rm_Tutorial_Level) {
+if(room == rm_Tutorial_Level){
     mapText = "Tutorial Level";
 }
 
-if(room == rm_Mission0_2) {
+if(room == rm_Mission0_2){
     mapText = "Test_Level";
 }
 
@@ -85,44 +85,48 @@ draw_text_transformed(_cX + 160, _cY + 90, mapText + " - " + matchText, 1, 1, 0)
 
 //Draw the selected modifier label below the map selection menu
 var modifierText;
-switch(global.perkIndex) {
+switch(global.perkIndex){
     case 0: modifierText = "None"; break;
     case 1: modifierText = "Rapid Fire"; break;
     case 2: modifierText = "Energy Shield"; break;
     case 3: modifierText = "Toughness"; break;
     case 4: modifierText = "Lightweight"; break;
-    case 5: modifierText = "Extra Luck"; break;
-	case 6: modifierText = "Magnet"; break;
-    case 7: modifierText = "Flak Jacket"; break;
-    case 8: modifierText = "Wild Card"; break;
-	case 9: modifierText = "Last Stand"; break;
-    case 10: modifierText = "Sudden Death"; break;
-    case 11: modifierText = "Bad Luck"; break;
-    case 12: modifierText = "Sluggish"; break;
-    case 13: modifierText = "Weakness"; break;
-    case 14: modifierText = "Deprivation"; break;
-    case 15: modifierText = "Heavy Trigger"; break;
+	case 5: modifierText = "Fast Hands"; break;
+    case 6: modifierText = "Extra Luck"; break;
+	case 7: modifierText = "Magnet"; break;
+    case 8: modifierText = "Flak Jacket"; break;
+    case 9: modifierText = "Wild Card"; break;
+	case 10: modifierText = "Last Stand"; break;
+    case 11: modifierText = "Sudden Death"; break;
+    case 12: modifierText = "Bad Luck"; break;
+	case 13: modifierText = "Slow Hands"; break;
+    case 14: modifierText = "Sluggish"; break;
+    case 15: modifierText = "Weakness"; break;
+    case 16: modifierText = "Deprivation"; break;
+    case 17: modifierText = "Heavy Trigger"; break;
     default: modifierText = "???"; break;
 }
 
 var modifierText2;
-switch(global.perkIndex2) {
+switch(global.perkIndex2){
     case 0: modifierText2 = "None"; break;
     case 1: modifierText2 = "Rapid Fire"; break;
     case 2: modifierText2 = "Energy Shield"; break;
     case 3: modifierText2 = "Toughness"; break;
     case 4: modifierText2 = "Lightweight"; break;
-    case 5: modifierText2 = "Extra Luck"; break;
-	case 6: modifierText2 = "Magnet"; break;
-    case 7: modifierText2 = "Flak Jacket"; break;
-    case 8: modifierText2 = "Wild Card"; break;
-	case 9: modifierText2 = "Last Stand"; break;
-    case 10: modifierText2 = "Sudden Death"; break;
-    case 11: modifierText2 = "Bad Luck"; break;
-    case 12: modifierText2 = "Sluggish"; break;
-    case 13: modifierText2 = "Weakness"; break;
-    case 14: modifierText2 = "Deprivation"; break;
-    case 15: modifierText2 = "Heavy Trigger"; break;
+	case 5: modifierText = "Fast Hands"; break;
+    case 6: modifierText2 = "Extra Luck"; break;
+	case 7: modifierText2 = "Magnet"; break;
+    case 8: modifierText2 = "Flak Jacket"; break;
+    case 9: modifierText2 = "Wild Card"; break;
+	case 10: modifierText2 = "Last Stand"; break;
+    case 11: modifierText2 = "Sudden Death"; break;
+    case 12: modifierText2 = "Bad Luck"; break;
+	case 13: modifierText = "Slow Hands"; break;
+    case 14: modifierText2 = "Sluggish"; break;
+    case 15: modifierText2 = "Weakness"; break;
+    case 16: modifierText2 = "Deprivation"; break;
+    case 17: modifierText2 = "Heavy Trigger"; break;
     default: modifierText2 = "???"; break;
 }
 
@@ -137,7 +141,7 @@ if(room == rm_Mission0_2){
 }
 
 //Draw the selected map icon
-if(global.selectedMapSprite != undefined) {
+if(global.selectedMapSprite != undefined){
 	draw_sprite_ext(sCarouselMenu3, global.selectedMapSprite, _cX + 160 + 32 + 20, _cY + 90 + 32 + 26, 1, 1, 0, c_white, alpha);
 }
 
@@ -147,13 +151,13 @@ if(global.selectedMapSprite != undefined) {
 }*/
 
 //Draw the 1st selected modifier icon
-if(global.perkIndex != undefined) {
+if(global.perkIndex != undefined){
 	//draw_sprite_ext(sPerksCarouselMenu, global.perkIndex, _cX + 480 - 32 - 20, _cY + 90 + 32 + 26, 1, 1, 0, c_white, alpha);
 	draw_sprite_ext(sPerksCarouselMenu, global.perkIndex, _cX + 320, _cY + 90 + 32 + 26, 1, 1, 0, c_white, alpha);
 }
 
 //Draw the 2nd selected modifier icon
-if(global.perkIndex != undefined) {
+if(global.perkIndex != undefined){
 	draw_sprite_ext(sPerksCarouselMenu, global.perkIndex2, _cX + 480 - 32 - 20, _cY + 90 + 32 + 26, 1, 1, 0, c_white, alpha);
 }
 
@@ -167,9 +171,9 @@ draw_text_transformed(_cX + 160, _cY + _wy/2 + 1, "Waves Survived: " + string(gl
 //Time survived display
 var _secondsTotal;
 
-if(instance_exists(oPlayer)) {
+if(instance_exists(oPlayer)){
 	_secondsTotal = floor(oPlayer.survivalSteps / room_speed);
-}else {
+}else{
 	_secondsTotal = global.playerSurvivalTime;//backup if player is gone
 }
 
@@ -287,7 +291,7 @@ draw_set_halign(fa_left);
 
 for(var i = 0; i < op_length; i++){
 	var _c = c_white;
-	if (pos == i){
+	if(pos == i){
 		draw_sprite_ext(sPixel, 0, x, y + op_border + op_space * i, width, string_height(option[menu_level, i]), 0, c_red, 0.5 * alpha);
 		_c = c_yellow;
 	}
@@ -308,7 +312,7 @@ op_length = array_length(option[menu_level]);
 
 //Input (controller)
 var _gamePad = 0;
-if(gamepad_is_connected(_gamePad)) {
+if(gamepad_is_connected(_gamePad)){
 	//D-pad
 	up_key |= gamepad_button_check_pressed(_gamePad, gp_padu);
 	down_key |= gamepad_button_check_pressed(_gamePad, gp_padd);
@@ -330,20 +334,20 @@ if(gamepad_is_connected(_gamePad)) {
 	if(stick_delay > 0) stick_delay--;
 
 	//Check input
-	if(stick_delay <= 0) {
+	if(stick_delay <= 0){
 		//if(ly > deadzone) { down_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
 		//else if(ly < -deadzone) { up_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
-		if(ly > deadzone) { down_key = true; moved = true; }
+		if(ly > deadzone){ down_key = true; moved = true; }
 		else if(ly < -deadzone) { up_key = true; moved = true; }
 
-		if(moved) {
-			if(!stick_held) {
+		if(moved){
+			if(!stick_held){
 				stick_delay = delay_initial;//first delay
 				stick_held = true;
-			}else {
+			}else{
 				stick_delay = delay_repeat;//repeat delay
 			}
-		}else {
+		}else{
 			stick_held = false;//reset if neutral
 		}
 	}
@@ -351,10 +355,10 @@ if(gamepad_is_connected(_gamePad)) {
 
 //Move through the menu
 pos += down_key - up_key;
-if pos >= op_length{
+if(pos >= op_length){
 	pos = 0;
 }
-if pos < 0{
+if(pos < 0){
 	pos = op_length-1;
 }
 

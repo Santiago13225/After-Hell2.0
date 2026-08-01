@@ -2,13 +2,13 @@
 /*This object represents an introTM2 object.*/
 //This event is responsible for handling introTM2 object behavior.
 
-if(oControllerIndicator.controller_count == 0) {
+if(oControllerIndicator.controller_count == 0){
     global.controllerMode = 0;//force keyboard if no controller
 }
 
-if(skipTimer > 0) {
+if(skipTimer > 0){
     skipTimer -= 1;
-}else {
+}else{
     //If 30 seconds have elapsed, automatically trigger skip.
     fadeout = 1;
 }
@@ -28,7 +28,7 @@ print = string_copy(str, 1, l);
 if(l > string_length(str) + 100) && (next < array_length_1d(strings) - 1){
 	l = 0;
 	next++;
-	if (next == array_length_1d(strings) - 1){
+	if(next == array_length_1d(strings) - 1){
 		holdspace++;
 	}
 }

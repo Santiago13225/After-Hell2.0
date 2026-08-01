@@ -13,8 +13,8 @@ depth = -8500;//Let's you see the health and enemy count.
 
 global.dialog_active = true;//Disable silhouette drawing.
 
-with(oEnemyParent) {//Force all zombies to stop pathfinding and switch to dumb chase mode
-    if(path != -1) {
+with(oEnemyParent){//Force all zombies to stop pathfinding and switch to dumb chase mode
+    if(path != -1){
         path_end();
         path_delete(path);
         path = -1;
@@ -42,9 +42,9 @@ option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) 
 option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 option[1, 2] = "Input: Keyboard and Mouse";
 //Set the initial control mode based on a global variable
-if(global.controllerMode == 0) {
+if(global.controllerMode == 0){
     option[1, 2] = "Input: Keyboard and Mouse";
-}else {
+}else{
     option[1, 2] = "Input: Controller";
 }
 

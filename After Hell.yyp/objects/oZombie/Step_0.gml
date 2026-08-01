@@ -14,7 +14,8 @@ if(_paused){//Pause self. New!
 	image_speed = 0;
 	exit;
 }else{
-    image_speed = 5;
+	image_speed = 5;
+	//image_speed = sprite_get_speed(sprite_index);
 }
 
 //if(screen_pause()){//Pause self. Deprecated.
