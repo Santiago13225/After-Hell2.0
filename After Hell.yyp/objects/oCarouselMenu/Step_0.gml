@@ -4,6 +4,29 @@ accept_key = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter
 left_key = keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A"));
 right_key = keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D"));
 
+//Hold to scroll for keyboard
+var _kb_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
+var _kb_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
+var _kb_moved = false;
+
+if(kb_delay > 0) kb_delay--;
+
+if(kb_delay <= 0){
+	if(_kb_left){ left_key = true; _kb_moved = true; }
+	else if(_kb_right){ right_key = true; _kb_moved = true; }
+	
+	if(_kb_moved){
+		if(!kb_held){
+			kb_delay = 20;
+			kb_held = true;
+		}else{
+			kb_delay = 6;
+		}
+	}else{
+		kb_held = false;
+	}
+}
+
 // --- Update input device status ---
 if(gamepad_is_connected(0)){
 	global.controllerMode = 1;//Controller detected
@@ -15,12 +38,35 @@ if(gamepad_is_connected(0)){
 var _gamePad = 0;
 var is_controller_connected = gamepad_is_connected(_gamePad);
 
-if is_controller_connected{
+if(is_controller_connected){
 	left_key |= gamepad_button_check_pressed(_gamePad, gp_padl);
 	right_key |= gamepad_button_check_pressed(_gamePad, gp_padr);
 	accept_key |= gamepad_button_check_pressed(_gamePad, gp_face1);
 	back_key |= gamepad_button_check_pressed(_gamePad, gp_face2);
 	
+	//Hold to scroll for D-pad
+	var _dp_left = gamepad_button_check(_gamePad, gp_padl);
+	var _dp_right = gamepad_button_check(_gamePad, gp_padr);
+	var _dp_moved = false;
+
+	if(dpad_delay > 0) dpad_delay--;
+
+	if(dpad_delay <= 0){
+		if(_dp_left){ left_key = true; _dp_moved = true; }
+		else if(_dp_right){ right_key = true; _dp_moved = true; }
+		
+		if(_dp_moved){
+			if(!dpad_held){
+				dpad_delay = 20;
+				dpad_held = true;
+			}else{
+				dpad_delay = 6;
+			}
+		}else{
+			dpad_held = false;
+		}
+	}
+
 	//Stick settings
 	var deadzone = 0.5;//threshold
 	var delay_initial = 15;//delay before repeat starts

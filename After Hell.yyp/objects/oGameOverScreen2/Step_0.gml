@@ -2,7 +2,7 @@
 /*This object represents a game over screen.*/
 //This event is responsible for handling game over screen behavior.
 
-shootKey = global.shootKey;//Get the shoot key input.
+//shootKey = global.shootKey;//Get the shoot key input.
 
 if(instance_exists(oTextbox2)){
 	instance_destroy(oTextbox2);

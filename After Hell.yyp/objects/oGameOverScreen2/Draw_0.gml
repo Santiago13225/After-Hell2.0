@@ -168,7 +168,7 @@ if(global.perkIndex2 != undefined){
 //draw_text_transformed(_cX + 160, _cY + _wy/2 + 1, "Waves Survived: " + string(oInvisibleSpawner2.currentWave), 1, 1, 0);
 if(room == rm_Mission0_2){
 	draw_text_transformed(_cX + 160, _cY + _wy/2 + 1, "Waves Survived: 0", 1, 1, 0);
-}else {
+}else{
 	draw_text_transformed(_cX + 160, _cY + _wy/2 + 1, "Waves Survived: " + string(global.finalWave), 1, 1, 0);
 }
 //draw_text_transformed(_cX + 160, _cY + _wy/2 + 11, "Time Survived: 00:00:00", 1, 1, 0);
@@ -305,7 +305,7 @@ draw_set_halign(fa_left);
 
 for(var i = 0; i < op_length; i++){
 	var _c = c_white;
-	if (pos == i){
+	if(pos == i){
 		draw_sprite_ext(sPixel, 0, x, y + op_border + op_space * i, width, string_height(option[menu_level, i]), 0, c_red, 0.5 * alpha);
 		_c = c_yellow;
 	}
@@ -320,6 +320,29 @@ up_key = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
 down_key = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"));
 accept_key = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter);
 
+//Hold to scroll for keyboard
+var _kb_up = keyboard_check(vk_up) || keyboard_check(ord("W"));
+var _kb_down = keyboard_check(vk_down) || keyboard_check(ord("S"));
+var _kb_moved = false;
+
+if(kb_delay > 0) kb_delay--;
+
+if(kb_delay <= 0){
+	if(_kb_up){ up_key = true; _kb_moved = true; }
+	else if(_kb_down){ down_key = true; _kb_moved = true; }
+	
+	if(_kb_moved){
+		if(!kb_held){
+			kb_delay = 20;
+			kb_held = true;
+		}else{
+			kb_delay = 6;
+		}
+	}else{
+		kb_held = false;
+	}
+}
+
 //store number of options in current menu
 op_length = array_length(option[menu_level]);
 
@@ -330,6 +353,29 @@ if(gamepad_is_connected(_gamePad)){
 	up_key |= gamepad_button_check_pressed(_gamePad, gp_padu);
 	down_key |= gamepad_button_check_pressed(_gamePad, gp_padd);
 	accept_key |= gamepad_button_check_pressed(_gamePad, gp_face1);//Confirm button (A on Xbox, Cross on PlayStation)
+
+	//Hold to scroll for D-pad
+	var _dp_up = gamepad_button_check(_gamePad, gp_padu);
+	var _dp_down = gamepad_button_check(_gamePad, gp_padd);
+	var _dp_moved = false;
+
+	if(dpad_delay > 0) dpad_delay--;
+
+	if(dpad_delay <= 0){
+		if(_dp_up){ up_key = true; _dp_moved = true; }
+		else if(_dp_down){ down_key = true; _dp_moved = true; }
+		
+		if(_dp_moved){
+			if(!dpad_held){
+				dpad_delay = 20;
+				dpad_held = true;
+			}else{
+				dpad_delay = 6;
+			}
+		}else{
+			dpad_held = false;
+		}
+	}
 
 	//Stick settings
 	var deadzone = 0.5;//threshold

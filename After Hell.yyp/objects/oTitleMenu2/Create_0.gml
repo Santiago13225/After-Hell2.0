@@ -2,6 +2,11 @@
 /*This object represents the title menu object.*/
 //This event is responsible for setting some variables for the title menu object.
 
+kb_stick_delay = 0;
+kb_stick_held = false;
+dpad_delay = 0;
+dpad_held = false;
+
 //Initialize all global perk variables to false
 global.firerate = false;
 global.energyshield = false;

@@ -14,3 +14,8 @@ menu_height = 50;
 //Initialize these variables in the Create event if not already done:
 arrowLeftAnim = 0;
 arrowRightAnim = 0;
+
+kb_delay = 0;
+kb_held = false;
+dpad_delay = 0;
+dpad_held = false;

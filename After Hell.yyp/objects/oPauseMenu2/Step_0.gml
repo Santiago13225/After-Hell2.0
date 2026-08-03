@@ -21,17 +21,71 @@ back_key = keyboard_check_pressed(vk_backspace);
 left_key = keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A"));
 right_key = keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D"));
 
+//Hold to scroll for keyboard
+var _kb_up = keyboard_check(vk_up) || keyboard_check(ord("W"));
+var _kb_down = keyboard_check(vk_down) || keyboard_check(ord("S"));
+var _kb_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
+var _kb_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
+var _kb_moved = false;
+
+if(kb_stick_delay > 0) kb_stick_delay--;
+
+if(kb_stick_delay <= 0){
+	if(_kb_up){ up_key = true; _kb_moved = true; }
+	else if(_kb_down){ down_key = true; _kb_moved = true; }
+	else if(_kb_left){ left_key = true; _kb_moved = true; }
+	else if(_kb_right){ right_key = true; _kb_moved = true; }
+
+	if(_kb_moved){
+		if(!kb_stick_held){
+			kb_stick_delay = 20;//initial delay
+			kb_stick_held = true;
+		}else{
+			kb_stick_delay = 6;//repeat delay
+		}
+	}else{
+		kb_stick_held = false;
+	}
+}
+
 //Controller inputs
 var _gamePad = 0;
 var is_controller_connected = gamepad_is_connected(_gamePad);
 
-if is_controller_connected{
+if(is_controller_connected){
 	up_key |= gamepad_button_check_pressed(_gamePad, gp_padu);
 	down_key |= gamepad_button_check_pressed(_gamePad, gp_padd);
 	left_key |= gamepad_button_check_pressed(_gamePad, gp_padl);
 	right_key |= gamepad_button_check_pressed(_gamePad, gp_padr);
 	accept_key |= gamepad_button_check_pressed(_gamePad, gp_face1);
 	back_key |= gamepad_button_check_pressed(_gamePad, gp_face2);// B / Circle
+	
+	//Hold to scroll for D-pad
+	var _dp_up = gamepad_button_check(_gamePad, gp_padu);
+	var _dp_down = gamepad_button_check(_gamePad, gp_padd);
+	var _dp_left = gamepad_button_check(_gamePad, gp_padl);
+	var _dp_right = gamepad_button_check(_gamePad, gp_padr);
+	var _dp_moved = false;
+
+	if(dpad_delay > 0) dpad_delay--;
+
+	if(dpad_delay <= 0){
+		if(_dp_up){ up_key = true; _dp_moved = true; }
+		else if(_dp_down){ down_key = true; _dp_moved = true; }
+		else if(_dp_left){ left_key = true; _dp_moved = true; }
+		else if(_dp_right){ right_key = true; _dp_moved = true; }
+
+		if(_dp_moved){
+			if(!dpad_held){
+				dpad_delay = 20;
+				dpad_held = true;
+			}else{
+				dpad_delay = 6;
+			}
+		}else{
+			dpad_held = false;
+		}
+	}
 	
 	//Stick settings
 	var deadzone = 0.5;//threshold
@@ -50,7 +104,7 @@ if is_controller_connected{
 	if(stick_delay > 0) stick_delay--;
 
 	//Check input
-	if(stick_delay <= 0) {
+	if(stick_delay <= 0){
 		if(lx > deadzone){ 
 			right_key = true;
 			//audio_play_sound(sndClick, 10, false);
@@ -59,24 +113,24 @@ if is_controller_connected{
 			left_key = true;
 			//audio_play_sound(sndClick, 10, false);
 			moved = true;
-		}else if(ly > deadzone) {
+		}else if(ly > deadzone){
 			down_key = true;
 			//audio_play_sound(sndClick, 10, false);
 			moved = true;
-		}else if(ly < -deadzone) {
+		}else if(ly < -deadzone){
 			up_key = true;
 			//audio_play_sound(sndClick, 10, false);
 			moved = true;
 		}
 
-		if(moved) {
-			if(!stick_held) {
+		if(moved){
+			if(!stick_held){
 				stick_delay = delay_initial;//first delay
 				stick_held = true;
-			}else {
+			}else{
 				stick_delay = delay_repeat;//repeat delay
 			}
-		}else {
+		}else{
 			stick_held = false;//reset if neutral
 		}
 	}
@@ -134,16 +188,16 @@ if(pos < 0){
 	pos = op_length-1;
 }
 
-if(menu_level == 1) {
-    if(oControllerIndicator.controller_count == 0) {
+if(menu_level == 1){
+    if(oControllerIndicator.controller_count == 0){
         //Lock to Keyboard
         global.controllerMode = 0;
         option[1, 2] = "Input: Keyboard and Mouse";
-    }else {
+    }else{
         //Unlock - keep the toggleable text
-        if(global.controllerMode == 0) {
+        if(global.controllerMode == 0){
             option[1, 2] = "Input: Keyboard and Mouse";
-        }else {
+        }else{
             option[1, 2] = "Input: Controller";
         }
     }
@@ -164,15 +218,13 @@ if(back_key && menu_level != 0){
 }
 
 //Using the options
-if accept_key{
+if(accept_key){
 	var _sml = menu_level;
 	
-	switch(menu_level)
-	{
+	switch(menu_level){
 		//Pause Menu
 		case 0:
-			switch(pos)
-			{
+			switch(pos){
 				//Resume
 				case 0:
 				global.dialog_active = false;
@@ -304,7 +356,7 @@ if accept_key{
 				case 2:
 					//audio_play_sound(sndBeep, 10, false);
 					global.dialog_active = false;
-					if(instance_exists(oHUD2)) {//Reset HUD safely(only if exists)
+					if(instance_exists(oHUD2)){//Reset HUD safely(only if exists)
 						oHUD2.playerScore = 500;
 						oHUD2.playerTotalScore = 500;
 					}

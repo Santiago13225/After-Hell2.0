@@ -2,6 +2,11 @@
 /*This object represents a pause menu.*/
 //This event is responsible for setting some variables for the pause menu.
 
+kb_stick_delay = 0;
+kb_stick_held = false;
+dpad_delay = 0;
+dpad_held = false;
+
 if(audio_is_playing(sndLowHealth)){
 	audio_pause_sound(sndLowHealth);
 }

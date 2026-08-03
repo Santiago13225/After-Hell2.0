@@ -2,6 +2,11 @@
 /*This object represents a game over screen.*/
 //This event is responsible for setting some variables for the game over screen.
 
+kb_delay = 0;
+kb_held = false;
+dpad_delay = 0;
+dpad_held = false;
+
 //Fade in
 alpha = 0;
 alphaSpd = 1/75;

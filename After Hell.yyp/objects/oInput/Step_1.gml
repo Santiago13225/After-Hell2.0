@@ -3,7 +3,7 @@
 //This event is responsible for handling input object begin step event behavior.
 
 //Get inputs
-if global.controllerMode == 0{//If set to keyboard and mouse mode.
+if(global.controllerMode == 0){//If set to keyboard and mouse mode.
 	global.rightKey = keyboard_check(ord("D"));// || keyboard_check(vk_right);
 	global.leftKey = keyboard_check(ord("A"));// || keyboard_check(vk_left);
 	global.upKey = keyboard_check(ord("W"));// || keyboard_check(vk_up);
@@ -18,7 +18,7 @@ if global.controllerMode == 0{//If set to keyboard and mouse mode.
 	global.downSwapKeyPressed = mouse_wheel_down();
 	global.reloadKeyPressed = keyboard_check_pressed(ord("R"));
 
-	global.startKeyPressed = keyboard_check_pressed(vk_enter);
+	global.startKeyPressed = keyboard_check_pressed(vk_escape);
 	//Toggle scoreboard with I
 	global.selectKeyPressed = keyboard_check_pressed(ord("I"));
 	//if(keyboard_check_pressed(ord("I"))) {
@@ -26,9 +26,9 @@ if global.controllerMode == 0{//If set to keyboard and mouse mode.
 	//}
 }
 
-if global.controllerMode == 1{//Controller Mode
+if(global.controllerMode == 1){//Controller Mode
 	var _gamePad = 0;
-	if gamepad_is_connected(_gamePad){//If controller is connected...
+	if(gamepad_is_connected(_gamePad)){//If controller is connected...
 		gamepad_set_axis_deadzone(_gamePad, .2);
 		
 		global.rightKey = gamepad_button_check(_gamePad, gp_padr);
