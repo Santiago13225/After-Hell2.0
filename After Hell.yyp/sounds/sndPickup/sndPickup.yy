@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.600812,
+  "duration":0.6008163,
   "exportDir":"",
   "name":"sndPickup",
   "parent":{

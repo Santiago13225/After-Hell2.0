@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.496327,
+  "duration":0.4643991,
   "exportDir":"",
   "name":"sndHit",
   "parent":{

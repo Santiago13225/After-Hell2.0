@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":2.324875,
+  "duration":2.324898,
   "exportDir":"",
   "name":"sndConnect",
   "parent":{

@@ -18,7 +18,7 @@ if(global.controllerMode == 0){//If set to keyboard and mouse mode.
 	global.downSwapKeyPressed = mouse_wheel_down();
 	global.reloadKeyPressed = keyboard_check_pressed(ord("R"));
 
-	global.startKeyPressed = keyboard_check_pressed(vk_escape);
+	global.startKeyPressed = keyboard_check_pressed(ord("P"));
 	//Toggle scoreboard with I
 	global.selectKeyPressed = keyboard_check_pressed(ord("I"));
 	//if(keyboard_check_pressed(ord("I"))) {

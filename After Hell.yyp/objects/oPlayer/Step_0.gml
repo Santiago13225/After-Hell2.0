@@ -346,9 +346,9 @@ if(swapKeyPressed){//same as upswap key
 		//Cancel reload only when actually switching weapons
 		isReloading = false;
 		reloadTimer = 0;
-	}else{
+	}/*else{
 		audio_play_sound(sndBeep, 8, false);//Play a sound effect
-	}
+	}*/
 	selectedWeapon++;
 	if(selectedWeapon >= array_length(_playerWeapons)){
 		selectedWeapon = 0;	
@@ -369,9 +369,9 @@ if(upSwapKeyPressed){
 		//Cancel reload only when actually switching weapons
 		isReloading = false;
 		reloadTimer = 0;
-	}else{
+	}/*else{
 		audio_play_sound(sndBeep, 8, false);//Play a sound effect
-	}
+	}*/
 	selectedWeapon++;
 	if(selectedWeapon >= array_length(_playerWeapons)){
 		selectedWeapon = 0;	
@@ -392,9 +392,9 @@ if(downSwapKeyPressed){
 		//Cancel reload only when actually switching weapons
 		isReloading = false;
 		reloadTimer = 0;
-	}else{
+	}/*else{
 		audio_play_sound(sndBeep, 8, false);//Play a sound effect
-	}
+	}*/
 	selectedWeapon--;
 	if(selectedWeapon < 0){
 		selectedWeapon = array_length(_playerWeapons) - 1;	

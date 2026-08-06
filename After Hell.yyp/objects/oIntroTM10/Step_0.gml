@@ -2,13 +2,13 @@
 /*This object represents an introTM2 object.*/
 //This event is responsible for handling introTM2 object behavior.
 
-if(oControllerIndicator.controller_count == 0) {
+if(oControllerIndicator.controller_count == 0){
     global.controllerMode = 0;//force keyboard if no controller
 }
 
-if(skipTimer > 0) {
+if(skipTimer > 0){
     skipTimer -= 1;
-}else {
+}else{
     //If 30 seconds have elapsed, automatically trigger skip.
     fadeout = 1;
 }
@@ -18,7 +18,7 @@ xpos = max(xpos - 0.3, 0);
 
 if(!fadeout){
 	a = max(a - 0.005, 0.25); 
-}else {
+}else{
 	a = min(a + 0.005, 1);
 }
 
@@ -35,11 +35,27 @@ if(l > string_length(str) + 100) && (next < array_length_1d(strings) - 1){
 
 str = strings[next];
 
-if (keyboard_check_direct(vk_space)) xor ((global.controllerMode == 1) && gamepad_button_check(0, gp_face1)){
-	holdspace++;
+//if(keyboard_check_direct(vk_space)) xor ((global.controllerMode == 1) && gamepad_button_check(0, gp_face1)){
+//	holdspace++;
+//}
+
+var _skipHeld = keyboard_check_direct(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check(0, gp_face1));
+
+if(fadeout != 1){
+	if(_skipHeld){
+	    holdspace++;
+		/*if(!audio_is_playing(sndClick)){
+			audio_play_sound(sndClick, 8, false);
+		}*/
+		if(holdspace == 80){
+	        audio_play_sound(sndConnect, 8, false);//plays once when bar is full
+	    }
+	}else{
+	    holdspace = max(holdspace - 1, 0);//decline back to 0 when not held
+	}
 }
 
-if (holdspace > 80) || (xpos < 100) fadeout = 1;
+if(holdspace > 80) || (xpos < 100) fadeout = 1;
 
 if(a == 1) && (fadeout == 1){
 	global.dialog_active = false;//Disable silhouette drawing.
@@ -47,7 +63,7 @@ if(a == 1) && (fadeout == 1){
 }
 
 //Controller skip input (like Key Press Any for controller)
-if(global.controllerMode == 1 && gamepad_is_connected(0)) {
+/*if(global.controllerMode == 1 && gamepad_is_connected(0)){
 	var anyButton =
 		gamepad_button_check_pressed(0, gp_face1) ||
 		gamepad_button_check_pressed(0, gp_face2) ||
@@ -73,7 +89,7 @@ if(global.controllerMode == 1 && gamepad_is_connected(0)) {
 	var ry = gamepad_axis_value(0, gp_axisrv);
 	var anyStick = (abs(lx) > 0.2) || (abs(ly) > 0.2) || (abs(rx) > 0.2) || (abs(ry) > 0.2);
 
-	if(anyButton || anyStick) {
+	if(anyButton || anyStick){
 		if(holdspace == 0) holdspace++;
 	}
-}
+}*/

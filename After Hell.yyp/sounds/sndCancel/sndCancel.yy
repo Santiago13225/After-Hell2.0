@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":2.592,
+  "duration":2.5920181,
   "exportDir":"",
   "name":"sndCancel",
   "parent":{

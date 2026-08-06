@@ -388,6 +388,7 @@
     {"id":{"name":"rm_Casino_Level2","path":"rooms/rm_Casino_Level2/rm_Casino_Level2.yy",},},
     {"id":{"name":"rm_Casino_Level3","path":"rooms/rm_Casino_Level3/rm_Casino_Level3.yy",},},
     {"id":{"name":"rm_Cathedral_Level","path":"rooms/rm_Cathedral_Level/rm_Cathedral_Level.yy",},},
+    {"id":{"name":"rm_CB","path":"rooms/rm_CB/rm_CB.yy",},},
     {"id":{"name":"rm_CityBlock_Level1","path":"rooms/rm_CityBlock_Level1/rm_CityBlock_Level1.yy",},},
     {"id":{"name":"rm_Cloudwalk_Level","path":"rooms/rm_Cloudwalk_Level/rm_Cloudwalk_Level.yy",},},
     {"id":{"name":"rm_Disclaimer_Screen","path":"rooms/rm_Disclaimer_Screen/rm_Disclaimer_Screen.yy",},},
@@ -544,6 +545,7 @@
     {"id":{"name":"sndYardTheme","path":"sounds/sndYardTheme/sndYardTheme.yy",},},
     {"id":{"name":"bgCity","path":"sprites/bgCity/bgCity.yy",},},
     {"id":{"name":"bgCity2","path":"sprites/bgCity2/bgCity2.yy",},},
+    {"id":{"name":"bgCity2A","path":"sprites/bgCity2A/bgCity2A.yy",},},
     {"id":{"name":"bgCity3","path":"sprites/bgCity3/bgCity3.yy",},},
     {"id":{"name":"bgFog","path":"sprites/bgFog/bgFog.yy",},},
     {"id":{"name":"bgFog2","path":"sprites/bgFog2/bgFog2.yy",},},
@@ -1031,6 +1033,7 @@
     {"roomId":{"name":"rm_TM11","path":"rooms/rm_TM11/rm_TM11.yy",},},
     {"roomId":{"name":"rm_TM8","path":"rooms/rm_TM8/rm_TM8.yy",},},
     {"roomId":{"name":"rm_TM10","path":"rooms/rm_TM10/rm_TM10.yy",},},
+    {"roomId":{"name":"rm_CB","path":"rooms/rm_CB/rm_CB.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

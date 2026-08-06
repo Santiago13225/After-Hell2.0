@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":60.107754,
+  "duration":60.070023,
   "exportDir":"",
   "name":"sndWind",
   "parent":{

@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":9.822041,
+  "duration":9.7756,
   "exportDir":"",
   "name":"sndLaugh",
   "parent":{
