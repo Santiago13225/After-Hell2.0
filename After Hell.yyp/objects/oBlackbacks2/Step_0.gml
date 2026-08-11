@@ -2,7 +2,7 @@
 /*This object represents a blackback.*/
 //This event is responsible for handling blackback behavior.
 
-if screen_pause(){//Pause self
+if(screen_pause()){//Pause self
 	exit;
 }
 
@@ -11,30 +11,32 @@ if screen_pause(){//Pause self
 //y = ystart + lengthdir_y(2, floatDir);
 //y = ystart + dsin(floatDir)*2;//alternative to line above
 
-var _radius = 256;
-if(global.magnet) {
-	if(instance_exists(oPlayer)) {
-		var _dist = point_distance(x, y, oPlayer.x, oPlayer.y);
+var _radius = 32;
+if(global.magnet){
+	_radius = 256;
+}
 
-		if(_dist < _radius) {
-			//calculate direction to player
-			var _dir = point_direction(x, y, oPlayer.x, oPlayer.y);
-			//var _spd = 1;
-			//calculate speed (faster when closer)
-			var _spd = lerp(0, 3, 1 - (_dist / _radius));//Faster when closer
-			//update x and y positions based on the direction and speed
-			x += lengthdir_x(_spd, _dir);
-			y += lengthdir_y(_spd, _dir);
-		}
+if(instance_exists(oPlayer)){
+	var _dist = point_distance(x, y, oPlayer.x, oPlayer.y);
+
+	if(_dist < _radius){
+		//calculate direction to player
+		var _dir = point_direction(x, y, oPlayer.x, oPlayer.y);
+		//var _spd = 1;
+		//calculate speed (faster when closer)
+		var _spd = lerp(0.5, 3, 1 - (_dist / _radius));//Faster when closer
+		//update x and y positions based on the direction and speed
+		x += lengthdir_x(_spd, _dir);
+		y += lengthdir_y(_spd, _dir);
 	}
 }
 
 //sprite_index = item.sprite;
-if place_meeting(x, y, oPlayer){//If money touches player...
+if(place_meeting(x, y, oPlayer)){//If money touches player...
 	audio_play_sound(sndMoney, 8, false);//Play money sound.
 
-	if instance_exists(oHUD2){//If HUD exists...
-		if !instance_exists(oScoreEffect){//If score effect not shown...
+	if(instance_exists(oHUD2)){//If HUD exists...
+		if(!instance_exists(oScoreEffect)){//If score effect not shown...
 			moneyScoreValue = 100;//Money value is 100.
 			var _scoreInst = instance_create_depth(x, y, -3000, oScoreEffect);//Create instance of score effect.
 			if(_scoreInst){

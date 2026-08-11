@@ -78,21 +78,28 @@ if place_meeting(x, y, oPlayer){//If it touches the player...
 }*/
 #endregion
 
-var _radius = 256;
+var _radius = 32;
 if(global.magnet){
-	if(instance_exists(oPlayer)){
-		var _dist = point_distance(x, y, oPlayer.x, oPlayer.y);
+	_radius = 256;
+}
 
-		if(_dist < _radius){
-			//calculate direction to player
-			var _dir = point_direction(x, y, oPlayer.x, oPlayer.y);
-			//var _spd = 1;
-			//calculate speed (faster when closer)
-			var _spd = lerp(0, 3, 1 - (_dist / _radius));//Faster when closer
-			//update x and y positions based on the direction and speed
-			x += lengthdir_x(_spd, _dir);
-			y += lengthdir_y(_spd, _dir);
-		}
+//Only attract if player has an smg variant
+var _hasWeapon = array_contains(global.PlayerWeapons, global.WeaponList.smg) ||
+				array_contains(global.PlayerWeapons, global.WeaponList.hsmg) ||
+				array_contains(global.PlayerWeapons, global.WeaponList.usmg);
+
+if(instance_exists(oPlayer) && _hasWeapon){
+	var _dist = point_distance(x, y, oPlayer.x, oPlayer.y);
+
+	if(_dist < _radius){
+		//calculate direction to player
+		var _dir = point_direction(x, y, oPlayer.x, oPlayer.y);
+		//var _spd = 1;
+		//calculate speed (faster when closer)
+		var _spd = lerp(0.5, 3, 1 - (_dist / _radius));//Faster when closer
+		//update x and y positions based on the direction and speed
+		x += lengthdir_x(_spd, _dir);
+		y += lengthdir_y(_spd, _dir);
 	}
 }
 

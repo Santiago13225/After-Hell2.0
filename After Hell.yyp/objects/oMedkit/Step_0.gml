@@ -4,7 +4,7 @@
 
 fade_start_time = 60 * 5;//last 5 seconds
 
-if screen_pause(){//Pause self
+if(screen_pause()){//Pause self
 	exit;
 }
 
@@ -48,28 +48,31 @@ if(global.juggernaut){
 	hpVar = 100;
 }
 
-var _radius = 256;
-if(global.magnet) {
-	if(instance_exists(oPlayer)) {
-		if(oPlayer.hp < hpVar){
-			var _dist = point_distance(x, y, oPlayer.x, oPlayer.y);
 
-			if(_dist < _radius) {
-				//calculate direction to player
-				var _dir = point_direction(x, y, oPlayer.x, oPlayer.y);
-				//var _spd = 1;
-				//calculate speed (faster when closer)
-				var _spd = lerp(0, 3, 1 - (_dist / _radius));//Faster when closer
-				//update x and y positions based on the direction and speed
-				x += lengthdir_x(_spd, _dir);
-				y += lengthdir_y(_spd, _dir);
-			}
+var _radius = 32;
+if(global.magnet){
+	_radius = 256;
+}
+
+if(instance_exists(oPlayer)){
+	if(oPlayer.hp < hpVar){
+		var _dist = point_distance(x, y, oPlayer.x, oPlayer.y);
+
+		if(_dist < _radius){
+			//calculate direction to player
+			var _dir = point_direction(x, y, oPlayer.x, oPlayer.y);
+			//var _spd = 1;
+			//calculate speed (faster when closer)
+			var _spd = lerp(0.5, 3, 1 - (_dist / _radius));//Faster when closer
+			//update x and y positions based on the direction and speed
+			x += lengthdir_x(_spd, _dir);
+			y += lengthdir_y(_spd, _dir);
 		}
 	}
 }
 
 //get collected by the player
-if place_meeting(x, y, oPlayer){
+if(place_meeting(x, y, oPlayer)){
 	//heal the player
 	//if(oPlayer.hp < 100){
 	if(oPlayer.hp < hpVar){

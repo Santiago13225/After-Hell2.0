@@ -8,11 +8,31 @@ if(screen_pause()){
 }
 
 //Float in place
-floatDir += floatSpd;
-y = ystart + lengthdir_y(2, floatDir);
+//floatDir += floatSpd;
+//y = ystart + lengthdir_y(2, floatDir);
 //y = ystart + dsin(floatDir)*2;//alternative to line above
 
 sprite_index = item.sprite;
+
+var _radius = 32;
+if(global.magnet){
+	_radius = 256;
+}
+
+if(instance_exists(oPlayer)){
+	var _dist = point_distance(x, y, oPlayer.x, oPlayer.y);
+
+	if(_dist < _radius){
+		//calculate direction to player
+		var _dir = point_direction(x, y, oPlayer.x, oPlayer.y);
+		//var _spd = 1;
+		//calculate speed (faster when closer)
+		var _spd = lerp(0.5, 3, 1 - (_dist / _radius));//Faster when closer
+		//update x and y positions based on the direction and speed
+		x += lengthdir_x(_spd, _dir);
+		y += lengthdir_y(_spd, _dir);
+	}
+}
 
 //Assign item to weapon
 //Add weapon to player's list
