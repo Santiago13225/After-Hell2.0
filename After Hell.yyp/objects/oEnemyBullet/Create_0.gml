@@ -21,5 +21,5 @@ destroy = false;
 playerDestroy = true;
 
 //New: Lifetime control
-lifetime = 60 * 30; //30 seconds
+lifetime = 60 * 15;//15 seconds
 timer = 0;

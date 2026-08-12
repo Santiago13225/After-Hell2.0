@@ -116,7 +116,7 @@ draw_set_halign(fa_left);
 for(var i = 0; i < op_length; i++){
 	var _c = c_white;
 
-	if(menu_level == 3 && i == 1 && (perk_index == 0 || perk_index == 8)){//Lock Perk 2 visually if Perk 1 is None
+	if(menu_level == 3 && i == 1 && (perk_index == 0 || perk_index == 9)){//Lock Perk 2 visually if Perk 1 is None or Wild Card
 		if(pos == i){
 			draw_sprite_ext(sPixel, 0, x, y + op_border + op_space * i, width, string_height(option[menu_level, i]), 0, c_red, 0.5);
 		}
@@ -222,7 +222,7 @@ if(menu_level == 3 && pos == 0){
         case 4: description = "Increases player movement speed by 25%."; break;
 		case 5: description = "Increases player reload speed by 25%."; break;
         case 6: description = "Improves enemy loot drops."; break;
-        case 7: description = "Allows the player to attract nearby loot drops."; break;
+        case 7: description = "Lets the player attract loot drops from a larger radius."; break;
         case 8: description = "Gives the player complete immunity to explosive damage."; break;
         case 9: description = "Gives the player all beneficial modifiers."; break;
         case 10: description = "Gives the player all detrimental modifiers."; break;

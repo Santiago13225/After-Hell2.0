@@ -305,7 +305,7 @@ if(menu_level == 3 && pos == 0){
 if(menu_level == 3 && pos == 1){
 	var old_index = perk_index2;
 
-	if(perk_index != 0 && perk_index != 8){//Only allow changing if Perk 1 is NOT "None" or "Wild Card"
+	if(perk_index != 0 && perk_index != 9){//Only allow changing if Perk 1 is NOT "None" or "Wild Card"
 		var dir = 0;
 		if(left_key){
 			dir = -1;

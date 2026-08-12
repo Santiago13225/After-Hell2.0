@@ -6,3 +6,6 @@ event_inherited();//Inherit the parent event.
 
 damage = 16;//Damage dealt.
 spd = 8;//Speed.
+
+lifetime = 60 * 15;//15 seconds
+timer = 0;
