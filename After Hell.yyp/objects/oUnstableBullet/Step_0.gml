@@ -46,10 +46,12 @@ if hitConfirm == true && enemyDestroy == true{
 if(destroy == true){
 	if(place_meeting(x, y, oSolidWall)){
 		//Play a sound effect
-		audio_play_sound(snd8BitExplosion2, 8, false);
+		//audio_play_sound(snd8BitExplosion2, 8, false);
+		oSFX.enemybulletimpactSnd = true;
 	}else if(place_meeting(x, y, oEnemyParent)){
 		//Play a sound effect
-		audio_play_sound(sndFleshHit, 8, false);
+		//audio_play_sound(sndFleshHit, 8, false);
+		oSFX.enemyhitSnd = true;
 	}
 	//Shoot burst
 	create_animated_vfx(sShootBurst, x, y, depth-50);

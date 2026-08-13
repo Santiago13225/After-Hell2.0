@@ -29,7 +29,8 @@ if place_meeting(x, y, oPlayer){
 
 	//Set as the player's weapon
 	//Play a sound effect
-	audio_play_sound(sndReload, 8, false);
+	//audio_play_sound(sndReload, 8, false);
+	oSFX.reloadSnd = true;
 	oPlayer.selectedWeapon = array_length(global.PlayerWeapons) - 1;
 
 	//Destroy

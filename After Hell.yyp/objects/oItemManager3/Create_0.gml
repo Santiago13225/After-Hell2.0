@@ -123,7 +123,8 @@ global.item_list2 = {
 	false,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 		//draw_text_ext(camera_get_view_x(view_camera[0]) + 32, camera_get_view_y(view_camera[0]) + 16 + 16 * array_length(inv), "Can't discard the pistol!", 12, 80);
 	},
 	oPistol
@@ -137,7 +138,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oShotgun
 	),
@@ -150,7 +152,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oRaygun
 	),
@@ -163,7 +166,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oSniper
 	),
@@ -176,7 +180,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oAssault
 	),
@@ -189,7 +194,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oSMG
 	),
@@ -202,7 +208,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oLMG
 	),
@@ -215,7 +222,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oBazooka
 	),
@@ -228,7 +236,8 @@ global.item_list2 = {
 	false,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oHardcorePistol
 	),
@@ -241,7 +250,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oHardcoreShotgun
 	),
@@ -254,7 +264,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oHardcoreRaygun
 	),
@@ -267,7 +278,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oHardcoreSniper
 	),
@@ -280,7 +292,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oHardcoreAssault
 	),
@@ -293,7 +306,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oHardcoreSMG
 	),
@@ -306,7 +320,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 		//draw_text_ext(camera_get_view_x(view_camera[0]) + 32, camera_get_view_y(view_camera[0]) + 16 + 16 * array_length(inv), "Can't discard the pistol!", 12, 80);
 	},
 	oHardcoreLMG
@@ -320,7 +335,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oHardcoreBazooka
 	),
@@ -333,7 +349,8 @@ global.item_list2 = {
 	false,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oUltraPistol
 	),
@@ -346,7 +363,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oUltraShotgun
 	),
@@ -359,7 +377,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oUltraRaygun
 	),
@@ -372,7 +391,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oUltraSniper
 	),
@@ -385,7 +405,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oUltraAssault
 	),
@@ -398,7 +419,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oUltraSMG
 	),
@@ -411,7 +433,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oUltraLMG
 	),
@@ -424,7 +447,8 @@ global.item_list2 = {
 	true,
 	function()
 	{
-		audio_play_sound(sndBeep, 8, false);
+		//audio_play_sound(sndBeep, 8, false);
+		oSFX.beepSnd = true;
 	},
 	oUltraBazooka
 	),

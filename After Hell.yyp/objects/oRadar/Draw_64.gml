@@ -375,7 +375,8 @@ if(!instance_exists(oVictoryScreen2)){
 	if(global.controllerMode == 0){
 		if(keyboard_check_pressed(ord("M"))){
 			if(!instance_exists(oPauseMenu2) && !instance_exists(oScoreboard) && !instance_exists(oVictoryScreen2)){//if not the case that either the pause menu or the scoreboard exist
-				audio_play_sound(sndBeep, 8, false);//beep
+				//audio_play_sound(sndBeep, 8, false);//beep
+				oSFX.beepSnd = true;
 				show_full_map = !show_full_map;
 				global.dialog_active = show_full_map || instance_exists(oPauseMenu2) || instance_exists(oScoreboard);
 			}
@@ -383,7 +384,8 @@ if(!instance_exists(oVictoryScreen2)){
 	}else if(global.controllerMode == 1){
 		if(gamepad_button_check_pressed(0, gp_face4)){
 			if(!instance_exists(oPauseMenu2) && !instance_exists(oScoreboard) && !instance_exists(oVictoryScreen2)){//if not the case that either the pause menu or the scoreboard exist
-				audio_play_sound(sndBeep, 8, false);//beep
+				//audio_play_sound(sndBeep, 8, false);//beep
+				oSFX.beepSnd = true;
 				show_full_map = !show_full_map;
 				global.dialog_active = show_full_map || instance_exists(oPauseMenu2) || instance_exists(oScoreboard);
 			}

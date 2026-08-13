@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":0,
   "conversionMode":0,
-  "duration":3.936,
+  "duration":3.8893323,
   "exportDir":"",
   "name":"sndSniperBlast",
   "parent":{

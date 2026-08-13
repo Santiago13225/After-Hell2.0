@@ -42,7 +42,8 @@ if (accept_key){
 		switch(pos){
 			//start game
 			case 0:
-				audio_play_sound(sndBeep, 10, false);//Play sound effect.
+				//audio_play_sound(sndBeep, 10, false);//Play sound effect.
+				oSFX.beepSnd = true;
 				//room_goto(rm_Main);
 				TransitionStart(rm_GM_Screen, sqFadeOut, sqFadeIn);
 				break;

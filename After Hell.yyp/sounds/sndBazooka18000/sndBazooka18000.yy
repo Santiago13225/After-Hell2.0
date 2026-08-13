@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.888163,
+  "duration":0.8591383,
   "exportDir":"",
   "name":"sndBazooka18000",
   "parent":{

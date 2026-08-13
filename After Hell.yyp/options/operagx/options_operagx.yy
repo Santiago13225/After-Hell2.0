@@ -17,7 +17,7 @@
   "option_operagx_mod_team_id":"",
   "option_operagx_mod_team_name":"",
   "option_operagx_mod_version":"1.0.0.0",
-  "option_operagx_next_version":"1.4.0.0",
+  "option_operagx_next_version":"1.5.0.0",
   "option_operagx_publicShareUrl":"https://gx.games/games/jltf0i/after-hell/",
   "option_operagx_scale":0,
   "option_operagx_team_id":"4d6ecf90-143a-4482-afae-935ffa714843",

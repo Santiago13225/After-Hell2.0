@@ -195,7 +195,8 @@ if(menu_level == 6 && pos == 0){//Check if in the Settings menu and the first op
     }
 
 	if(global.musicvolume != old_volume){
-		audio_play_sound(sndClick, 10, false);
+		//audio_play_sound(sndClick, 10, false);
+		oSFX.clickSnd = true;
 	}
 }
 //Adjust sound effects volume
@@ -213,7 +214,8 @@ if(menu_level == 6 && pos == 1){//Check if in the Settings menu and the second o
     }
 	
 	if(global.sfxvolume != old_sfx){
-		audio_play_sound(sndClick, 10, false);
+		//audio_play_sound(sndClick, 10, false);
+		oSFX.clickSnd = true;
 	}
 }
 
@@ -261,7 +263,8 @@ if(menu_level == 2 && pos == 0){
 	}
 
 	if(preset_index != old_index){//ONLY play sound if something actually changed
-		audio_play_sound(sndClick, 10, false);
+		//audio_play_sound(sndClick, 10, false);
+		oSFX.clickSnd = true;
 	}
 
 	option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
@@ -286,7 +289,8 @@ if(menu_level == 3 && pos == 0){
 	}
 
 	if(perk_index != old_index){//ONLY play sound if something actually changed
-		audio_play_sound(sndClick, 10, false);
+		//audio_play_sound(sndClick, 10, false);
+		oSFX.clickSnd = true;
 	}
 
 	option[3,0] = "  Mod 1: " + perk_names[perk_index] + "  ";
@@ -372,7 +376,8 @@ if(menu_level == 3 && pos == 1){
 	}
 
 	if(perk_index2 != old_index){//ONLY play sound if something actually changed
-		audio_play_sound(sndClick, 10, false);
+		//audio_play_sound(sndClick, 10, false);
+		oSFX.clickSnd = true;
 	}
 
 	option[3,1] = "  Mod 2: " + perk_names[perk_index2] + "  ";
@@ -387,7 +392,8 @@ var old_pos = pos;
 pos += down_key - up_key;
 
 if(pos != old_pos){
-    audio_play_sound(sndClick, 10, false);
+    //audio_play_sound(sndClick, 10, false);
+	oSFX.clickSnd = true;
 }
 
 if(pos >= op_length){
@@ -426,7 +432,8 @@ if(back_key && menu_level != 0){
 	}
 
 	if(menu_level != _prev){//Only run if something actually changed
-		audio_play_sound(sndBeep, 10, false);
+		//audio_play_sound(sndBeep, 10, false);
+		oSFX.beepSnd = true;
 	}
 	pos = 0;//reset cursor position
 	op_length = array_length(option[menu_level]);// <-- ADD THIS LINE
@@ -442,7 +449,8 @@ if(accept_key){
 			switch(pos){
 				//Story Mode
 				case 0:
-					audio_play_sound(sndBeep, 10, false);
+					//audio_play_sound(sndBeep, 10, false);
+					oSFX.beepSnd = true;
 					global.matchPresetIndex = 0;
 					//preset_index = 0;
 					global.perkIndex = 0;
@@ -499,7 +507,8 @@ if(accept_key){
 					break;
 				//Reset Game	
 				case 4:
-					audio_play_sound(sndBeep, 10, false);
+					//audio_play_sound(sndBeep, 10, false);
+					oSFX.beepSnd = true;
 					//game_end();
 					//draw_set_font(global.font);
 					draw_text(16, 16, "Restarting game...");
@@ -535,7 +544,8 @@ if(accept_key){
 			switch(pos){
 				//Preset option
 				case 0:
-					audio_play_sound(sndBeep, 10, false);
+					//audio_play_sound(sndBeep, 10, false);
+					oSFX.beepSnd = true;
 					pos = 1;
 					break;
 				//Next, go to perk carousel menu
@@ -559,17 +569,20 @@ if(accept_key){
 			switch(pos){
 				//Perk option 1
 				case 0:
-					audio_play_sound(sndBeep, 10, false);
+					//audio_play_sound(sndBeep, 10, false);
+					oSFX.beepSnd = true;
 					pos = 1;
 					break;
 				//Perk option 2
 				case 1:
-					audio_play_sound(sndBeep, 10, false);
+					//audio_play_sound(sndBeep, 10, false);
+					oSFX.beepSnd = true;
 					pos = 2;
 					break;
 				//Next, go to map carousel menu
 				case 2:
-					audio_play_sound(sndBeep, 10, false);
+					//audio_play_sound(sndBeep, 10, false);
+					oSFX.beepSnd = true;
 					//Store selected perks
 					global.perkIndex = perk_index;
 					global.perkIndex2 = perk_index2;
@@ -730,7 +743,8 @@ if(accept_key){
 				case 2:
 					//Controller option
 					if(oControllerIndicator.controller_count != 0) {//only allow toggle if unlocked
-						audio_play_sound(sndBeep, 10, false);
+						//audio_play_sound(sndBeep, 10, false);
+						oSFX.beepSnd = true;
 						if global.controllerMode == 0{
 							option[6, 2] = "Input: Controller";
 							global.controllerMode = 1;
@@ -744,11 +758,13 @@ if(accept_key){
 					break;
 				case 3:
 					if(global.screenShake == true){
-						audio_play_sound(sndBeep, 10, false);
+						//audio_play_sound(sndBeep, 10, false);
+						oSFX.beepSnd = true;
 						option[6, 3] = "Screen Shake: Off";
 						global.screenShake = false;
 					}else{
-						audio_play_sound(sndBeep, 10, false);
+						//audio_play_sound(sndBeep, 10, false);
+						oSFX.beepSnd = true;
 						option[6, 3] = "Screen Shake: On";
 						global.screenShake = true;
 					}
@@ -768,27 +784,32 @@ if(accept_key){
 			switch(pos){
 				//YouTube
 				case 0:
-					audio_play_sound(sndBeep, 10, false);
+					//audio_play_sound(sndBeep, 10, false);
+					oSFX.beepSnd = true;
 					url_open("https://youtube.com/@centillioneons4223?si=NdM79kEtwOOrm_ma");
 					break;
 				//Discord
 				case 1:
-					audio_play_sound(sndBeep, 10, false);
+					//audio_play_sound(sndBeep, 10, false);
+					oSFX.beepSnd = true;
 					url_open("https://discord.gg/M7KNv2xtGq");
 					break;
 				//Peyton Burnham
 				case 2:
-					audio_play_sound(sndBeep, 10, false);
+					//audio_play_sound(sndBeep, 10, false);
+					oSFX.beepSnd = true;
 					url_open("https://youtube.com/@peytonburnham4316?si=p9hPxJ4nZXdwINIe");
 					break;
 				//Vorpal Lance Music
 				case 3:
-					audio_play_sound(sndBeep, 10, false);
+					//audio_play_sound(sndBeep, 10, false);
+					oSFX.beepSnd = true;
 					url_open("https://youtube.com/@VorpalLanceMusic?si=eE-hTWMeYtK5lDDr");
 					break;
 				//Chris Jay
 				case 4:
-					audio_play_sound(sndBeep, 10, false);
+					//audio_play_sound(sndBeep, 10, false);
+					oSFX.beepSnd = true;
 					url_open("https://soundbetter.com/profiles/386761-chris-jay");
 					break;
 				//Main Menu
@@ -801,7 +822,8 @@ if(accept_key){
 	}
 	//Set position back
 	if(_sml != menu_level){
-		audio_play_sound(sndBeep, 10, false);//play confirm sound ONLY if page changed
+		//audio_play_sound(sndBeep, 10, false);//play confirm sound ONLY if page changed
+		oSFX.beepSnd = true;
 		pos = 0;
 	}
 	//Correct option length

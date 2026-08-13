@@ -33,8 +33,8 @@ if(instance_exists(oPlayer)){
 
 //sprite_index = item.sprite;
 if(place_meeting(x, y, oPlayer)){//If money touches player...
-	audio_play_sound(sndMoney, 8, false);//Play money sound.
-
+	//audio_play_sound(sndMoney, 8, false);//Play money sound.
+	oSFX.moneySnd = true;
 	if(instance_exists(oHUD2)){//If HUD exists...
 		if(!instance_exists(oScoreEffect)){//If score effect not shown...
 			moneyScoreValue = 100;//Money value is 100.

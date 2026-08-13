@@ -16,8 +16,8 @@ if(z <= 0){
 		image_yscale = 1.25;//Set explosion y-scale.
 	}
 	
-	audio_play_sound(sndExplosion, 8, false);//Play a sound effect.
-	
+	//audio_play_sound(sndExplosion, 8, false);//Play a sound effect.
+	oSFX.explosionSnd = true;
 	//create_screen_pause();//Screen pause.
 
 	if(global.screenShake){

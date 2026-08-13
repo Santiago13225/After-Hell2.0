@@ -65,7 +65,8 @@ if(hp <= 0){
         }
     }
 
-    audio_play_sound(sndSplatter, 8, false);
+    //audio_play_sound(sndSplatter, 8, false);
+	oSFX.splatterSnd = true;
     create_animated_vfx(sPoof, x, y, depth);
     instance_destroy();
 }

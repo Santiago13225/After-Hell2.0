@@ -45,7 +45,8 @@ if(hitConfirm == true && playerDestroy == true){//Clean Up
 
 if(destroy == true){//Actually destroy self.
 	create_animated_vfx(sShootBurst, x, y, depth-50);//Shoot burst.
-	audio_play_sound(snd8BitExplosion2, 8, false);//Play a sound effect.
+	//audio_play_sound(snd8BitExplosion2, 8, false);//Play a sound effect.
+	oSFX.enemybulletimpactSnd = true;
 	instance_destroy();//Destroy.
 }
 //Wall Collision

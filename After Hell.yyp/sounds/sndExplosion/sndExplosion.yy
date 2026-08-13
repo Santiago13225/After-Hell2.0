@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":6.164898,
+  "duration":6.130068,
   "exportDir":"",
   "name":"sndExplosion",
   "parent":{

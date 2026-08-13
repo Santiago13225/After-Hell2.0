@@ -46,11 +46,13 @@ var createObj   = argument5;*/
 			if(!ownsBase && !ownsHardcore && !ownsUltra){//If none owned → purchase new
 				if(oHUD2.playerScore >= cost){
 					oHUD2.playerScore -= cost;
-					audio_play_sound(sndBuy, 8, false);
+					//audio_play_sound(sndBuy, 8, false);
+					oSFX.buySnd = true;
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, createObj);
 					instance_destroy(oTextbox2);
 				}else{
-					audio_play_sound(sndNoMoney, 8, false);
+					//audio_play_sound(sndNoMoney, 8, false);
+					oSFX.brokeSnd = true;
 					if(!audio_is_playing(sndBroke)) audio_play_sound(sndBroke, 10, false);
 					instance_destroy(oTextbox2);
 				}
@@ -58,11 +60,13 @@ var createObj   = argument5;*/
 				var ammoCost = ceil(cost * 0.5);//half price for refills
 				if(oHUD2.playerScore >= ammoCost){
 					oHUD2.playerScore -= ammoCost;
-					audio_play_sound(sndBuy, 8, false);
+					//audio_play_sound(sndBuy, 8, false);
+					oSFX.buySnd = true;
 					//global.PlayerAmmo[slot] += ammoAdd;//old ammo system code
 					global.PlayerReserve[slot] += ammoAdd;//changed from PlayerAmmo to PlayerReserve
 				}else{
-					audio_play_sound(sndNoMoney, 8, false);
+					//audio_play_sound(sndNoMoney, 8, false);
+					oSFX.brokeSnd = true;
 					if(!audio_is_playing(sndBroke)) audio_play_sound(sndBroke, 10, false);
 					instance_destroy(oTextbox2);
 				}	

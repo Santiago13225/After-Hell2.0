@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":8.421066,
+  "duration":8.421065,
   "exportDir":"",
   "name":"sndRoundStart1",
   "parent":{

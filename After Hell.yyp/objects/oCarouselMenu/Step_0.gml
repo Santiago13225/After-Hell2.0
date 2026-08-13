@@ -120,7 +120,8 @@ if(right_key){
 }
 
 if(right_key || left_key){
-	audio_play_sound(sndClick, 10, false);
+	//audio_play_sound(sndClick, 10, false);
+	oSFX.clickSnd = true;
 }
 
 //Decay the animation variables over time (adjust the decay rate as needed)
@@ -138,7 +139,8 @@ if(item < 0){
 }
 
 if(accept_key){
-	audio_play_sound(sndBeep, 10, false);
+	//audio_play_sound(sndBeep, 10, false);
+	oSFX.beepSnd = true;
 	//Store the selected map sprite in a global variable for the HUD/scoreboard
 	global.selectedMapSprite = item;//Use the sprite you are displaying in the carousel
 	//global.selectedMapName = text;//Store the map name for text display if needed
@@ -248,7 +250,8 @@ if(accept_key){
 }
 
 if(back_key){
-	audio_play_sound(sndBeep, 10, false);
+	//audio_play_sound(sndBeep, 10, false);
+	oSFX.beepSnd = true;
 	//instance_destroy();
 	//instance_create_layer(0, 0, "Instances", oPerkCarouselMenu);
 	//Return to perk select menu

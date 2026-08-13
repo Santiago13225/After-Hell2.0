@@ -150,7 +150,8 @@ if(menu_level == 1 && pos == 0){//Check if in the Settings menu and the first op
 		option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
 	}
 	if(global.musicvolume != old_volume){
-		audio_play_sound(sndClick, 10, false);
+		//audio_play_sound(sndClick, 10, false);
+		oSFX.clickSnd = true;
 	}
 }
 //Adjust sound effects volume
@@ -167,7 +168,8 @@ if(menu_level == 1 && pos == 1){//Check if in the Settings menu and the second o
 		option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 	}
 	if(global.sfxvolume != old_sfx){
-		audio_play_sound(sndClick, 10, false);
+		//audio_play_sound(sndClick, 10, false);
+		oSFX.clickSnd = true;
 	}
 }
 
@@ -179,7 +181,8 @@ var old_pos = pos;
 pos += down_key - up_key;
 
 if(pos != old_pos){
-	audio_play_sound(sndClick, 10, false);
+	//audio_play_sound(sndClick, 10, false);
+	oSFX.clickSnd = true;
 }
 if(pos >= op_length){
 	pos = 0;
@@ -211,7 +214,8 @@ if(back_key && menu_level != 0){
 		//case 2: menu_level = 0; break;
 	}
 	if(menu_level != _prev){//Only run if something actually changed
-		audio_play_sound(sndBeep, 10, false);
+		//audio_play_sound(sndBeep, 10, false);
+		oSFX.beepSnd = true;
 	}
 	pos = 0;//reset cursor position
 	op_length = array_length(option[menu_level]);// <-- ADD THIS LINE
@@ -374,7 +378,8 @@ if(accept_key){
 					
 					//Stop all level music
 					audio_stop_all();
-					audio_play_sound(sndBeep, 10, false);
+					//audio_play_sound(sndBeep, 10, false);
+					oSFX.beepSnd = true;
 					reset_wave_variables();
 					//Transition safely back to the title screen
 					TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
@@ -400,7 +405,8 @@ if(accept_key){
 				case 2:
 					//Controller option
 					if(oControllerIndicator.controller_count != 0){//only allow toggle if unlocked
-						audio_play_sound(sndBeep, 10, false);
+						//audio_play_sound(sndBeep, 10, false);
+						oSFX.beepSnd = true;
 						if(global.controllerMode == 0){
 							option[1, 2] = "Input: Controller";
 							global.controllerMode = 1;
@@ -414,11 +420,13 @@ if(accept_key){
 					break;
 				case 3:
 					if(global.screenShake == true){
-						audio_play_sound(sndBeep, 10, false);
+						//audio_play_sound(sndBeep, 10, false);
+						oSFX.beepSnd = true;
 						option[1, 3] = "Screen Shake: Off";
 						global.screenShake = false;
 					}else{
-						audio_play_sound(sndBeep, 10, false);
+						//audio_play_sound(sndBeep, 10, false);
+						oSFX.beepSnd = true;
 						option[1, 3] = "Screen Shake: On";
 						global.screenShake = true;
 					}
@@ -435,7 +443,8 @@ if(accept_key){
 	}
 	//Set position back
 	if(_sml != menu_level){
-		audio_play_sound(sndBeep, 10, false);//play confirm sound ONLY if page changed
+		//audio_play_sound(sndBeep, 10, false);//play confirm sound ONLY if page changed
+		oSFX.beepSnd = true;
 		pos = 0;
 	}
 	//Correct option length

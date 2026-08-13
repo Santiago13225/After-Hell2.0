@@ -20,7 +20,7 @@ if(songAsset != targetSongAsset){
 	if((array_length(fadeOutInstances) == 0) || songOverlap){
 		if(audio_exists(targetSongAsset)){
 			//play the song and store its instance in a variable
-			songInstance = audio_play_sound(targetSongAsset, 4, true);
+			songInstance = audio_play_sound(targetSongAsset, 100, true);
 	
 			//start the song's volume at 0
 			audio_sound_gain(songInstance, 0, 0);

@@ -32,8 +32,17 @@ if(is_controller_connected){
 
 	//Check input
 	if(stick_delay <= 0){
-		if(lx > deadzone){ right_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
-		else if(lx < -deadzone){ left_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
+		if(lx > deadzone){
+			right_key = true;
+			//audio_play_sound(sndClick, 10, false);
+			oSFX.clickSnd = true;
+			moved = true;
+		}else if(lx < -deadzone){
+			left_key = true;
+			//audio_play_sound(sndClick, 10, false);
+			oSFX.clickSnd = true;
+			moved = true;
+		}
 		//else if(ly > deadzone) { down_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
 		//else if(ly < -deadzone) { up_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
 

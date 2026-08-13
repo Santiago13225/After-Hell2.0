@@ -421,7 +421,8 @@ if(gamepad_is_connected(_gamePad)){
 var old_pos = pos;
 pos += down_key - up_key;
 if(pos != old_pos){
-    audio_play_sound(sndClick, 10, false);
+    //audio_play_sound(sndClick, 10, false);
+	oSFX.clickSnd = true;
 }
 if(pos >= op_length){
 	pos = 0;
@@ -441,7 +442,8 @@ if(accept_key){
 				//restart
 				case 0:
 					room_restart();
-					audio_play_sound(sndBeep, 10, false);
+					//audio_play_sound(sndBeep, 10, false);
+					oSFX.beepSnd = true;
 					reset_wave_variables();
 					global.dialog_active = false;
 					//audio_play_sound(sndBeep, 10, false);
@@ -449,7 +451,8 @@ if(accept_key){
 					break;
 				//quit game
 				case 1:
-					audio_play_sound(sndBeep, 10, false);
+					//audio_play_sound(sndBeep, 10, false);
+					oSFX.beepSnd = true;
 					global.dialog_active = false;
 					instance_deactivate_object(oPlayer);
 					reset_wave_variables();

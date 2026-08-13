@@ -45,7 +45,8 @@ if(place_meeting(x, y, oPlayer)){
 		array_push(global.PlayerMag, global.WeaponList.hpistol.magSize);//full mag
 		array_push(global.PlayerReserve, -1);//unlimited reserve
         //Set as the player's weapon
-        audio_play_sound(sndReload, 8, false);
+		//audio_play_sound(sndReload, 8, false);
+		oSFX.reloadSnd = true;
         oPlayer.selectedWeapon = array_length(global.PlayerWeapons) - 1;
         instance_destroy();//Destroy the object.
     }

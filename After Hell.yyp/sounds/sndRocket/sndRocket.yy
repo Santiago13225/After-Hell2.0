@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":0,
   "conversionMode":0,
-  "duration":4.493061,
+  "duration":4.458273,
   "exportDir":"",
   "name":"sndRocket",
   "parent":{

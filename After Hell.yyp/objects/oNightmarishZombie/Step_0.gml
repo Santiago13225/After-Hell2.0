@@ -128,7 +128,8 @@ switch(state){
             b.dir   = i * step;
             b.state = 1;
         }
-        audio_play_sound(sndThrow, 8, false);
+        //audio_play_sound(sndThrow, 8, false);
+		oSFX.throwSnd = true;
 		bulletInst.state = 1;//Set our bullet's state to the movement state.
         if (instance_exists(bulletInst)) instance_destroy(bulletInst);
 	}

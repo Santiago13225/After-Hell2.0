@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":0,
   "conversionMode":0,
-  "duration":2.04,
+  "duration":2.0400944,
   "exportDir":"",
   "name":"sndAssault",
   "parent":{

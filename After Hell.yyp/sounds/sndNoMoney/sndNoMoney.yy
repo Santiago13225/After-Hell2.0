@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":2.089796,
+  "duration":2.043356,
   "exportDir":"",
   "name":"sndNoMoney",
   "parent":{

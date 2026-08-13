@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":4.048969,
+  "duration":4.0489798,
   "exportDir":"",
   "name":"sndEarthquake",
   "parent":{

@@ -14,7 +14,8 @@ if(!instance_exists(oScreenPause)){
 			var trap = instance_create_depth(x, y, depth, oFire);//Temporary trap object
 			trapTimer = 0;
 			//Optional sound effect
-			audio_play_sound(sndFire, 8, false);
+			//audio_play_sound(sndFire, 8, false);
+			oSFX.fireSnd = true;
 		}
 	}
 }

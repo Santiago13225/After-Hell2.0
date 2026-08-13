@@ -16,8 +16,8 @@ if hp <= 0{//If HP is less than or equal to 0...
 		image_yscale = 2;//Set explosion y-scale.
 	}
 	
-	audio_play_sound(sndExplosion, 8, false);//Play a sound effect.
-	
+	//audio_play_sound(sndExplosion, 8, false);//Play a sound effect.
+	oSFX.explosionSnd = true;
 	//create_screen_pause();//Screen pause.
 
 	if(global.screenShake){

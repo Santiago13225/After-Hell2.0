@@ -202,8 +202,8 @@ if(global.luck){
 		instance_create_depth(x, y, depth, oExplosion);//Create .
 	}*/
 	
-	audio_play_sound(sndSplatter, 8, false);//Play a sound effect.
-	
+	//audio_play_sound(sndSplatter, 8, false);//Play a sound effect.
+	oSFX.splatterSnd = true;
 	//Poof vfx
 	//instance_create_depth(x, y, depth, oAnimatedVFX);
 	create_animated_vfx(sPoof, x, y, depth);//Create visual effect.

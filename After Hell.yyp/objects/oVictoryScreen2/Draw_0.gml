@@ -369,7 +369,8 @@ if(accept_key){
 		case 0:
 			global.dialog_active = false;
 			//room_restart();
-			audio_play_sound(sndBeep, 10, false);
+			//audio_play_sound(sndBeep, 10, false);
+			oSFX.beepSnd = true;
 			instance_destroy(oVictoryScreen2);
 
 			//Stop audio cleanly

@@ -33,8 +33,8 @@ if destroy == true{
 		}
 	
 		//Play a sound effect
-		audio_play_sound(sndExplosion, 8, false);
-	
+		//audio_play_sound(sndExplosion, 8, false);
+		oSFX.explosionSnd = true;
 		//Screen pause
 		//create_screen_pause();
 	
@@ -56,8 +56,8 @@ if destroy == true{
 		}
 	
 		//Play a sound effect
-		audio_play_sound(sndExplosion, 8, false);
-	
+		//audio_play_sound(sndExplosion, 8, false);
+		oSFX.explosionSnd = true;
 		//Screen pause
 		//create_screen_pause();
 	
@@ -88,8 +88,8 @@ if place_meeting(x, y, oSolidWall){
 		}
 	
 		//Play a sound effect
-		audio_play_sound(sndExplosion, 8, false);
-	
+		//audio_play_sound(sndExplosion, 8, false);
+		oSFX.explosionSnd = true;
 		//Screen pause
 		//create_screen_pause();
 	
@@ -112,8 +112,8 @@ if point_distance(xstart, ystart, x, y) > maxDist{
 		}
 	
 		//Play a sound effect
-		audio_play_sound(sndExplosion, 8, false);
-	
+		//audio_play_sound(sndExplosion, 8, false);
+		oSFX.explosionSnd = true;
 		//Screen pause
 		//create_screen_pause();
 	

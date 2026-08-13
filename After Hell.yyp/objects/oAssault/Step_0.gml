@@ -66,7 +66,8 @@ if(place_meeting(x, y, oPlayer)){
 		//global.PlayerAmmo[array_length(global.PlayerAmmo) - 1] += ammoAdd;
 		
 		//Set as the player's weapon
-        audio_play_sound(sndReload, 8, false);
+        //audio_play_sound(sndReload, 8, false);
+		oSFX.reloadSnd = true;
         oPlayer.selectedWeapon = array_length(global.PlayerWeapons) - 1;
         instance_destroy();//Destroy the object.
     }

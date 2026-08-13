@@ -116,7 +116,8 @@ switch(state){
 	}
 
 	if(shootTimer == windupTime && instance_exists(bulletInst)){//Shoot bullet after the windup time is over.
-		audio_play_sound(sndThrow, 8, false);//Play a sound effect.
+		//audio_play_sound(sndThrow, 8, false);//Play a sound effect.
+		oSFX.throwSnd = true;
 		bulletInst.state = 1;//Set our bullet's state to the movement state.
 	}
 	

@@ -121,7 +121,8 @@ if(place_meeting(x, y, oPlayer)){
 
 	//2)If found, give ammo and destroy
 	if(hasShotgun){
-		audio_play_sound(sndAmmo, 8, false);//Play sound effect.
+		//audio_play_sound(sndAmmo, 8, false);//Play sound effect.
+		oSFX.ammoSnd = true;
 		//global.PlayerAmmo[pos] += ammoAdd;//old ammo system code
 		global.PlayerReserve[pos] += ammoAdd;//changed from PlayerAmmo to PlayerReserve
 		instance_destroy();

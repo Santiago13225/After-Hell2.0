@@ -4,10 +4,37 @@
 
 global.MASTER_VOL = 1;
 global.SFX_VOL = 1;
+//global.sfxvolume
 
 pickupSnd = false;
+clickSnd = false;
 beepSnd = false;
 winSnd = false;
+pistolSnd = false;
+raygunSnd = false;
+sniperSnd = false;
+shotgunSnd = false;
+assaultSnd = false;
+smgSnd = false;
+lmgSnd = false;
+bazookaSnd = false;
+enemybulletimpactSnd = false;
+explosionSnd = false;
+earthquakeSnd = false;
+cockSnd = false;
+ammoSnd = false;
+fireSnd = false;
+enemyhitSnd = false;
+playerhitSnd = false;
+emptySnd = false;
+moneySnd = false;
+reloadSnd = false;
+splatterSnd = false;
+throwSnd = false;
+wrongSnd = false;
+buySnd = false;
+brokeSnd = false;
+
 //htSnd = false;
 //raygunSnd = false;
 //looping sfx example

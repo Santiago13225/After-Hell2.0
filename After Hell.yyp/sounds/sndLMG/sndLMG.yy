@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":0,
   "conversionMode":0,
-  "duration":4.344,
+  "duration":4.343977,
   "exportDir":"",
   "name":"sndLMG",
   "parent":{

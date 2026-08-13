@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":0,
   "conversionMode":0,
-  "duration":0.835918,
+  "duration":0.78955007,
   "exportDir":"",
   "name":"sndRGBlast",
   "parent":{

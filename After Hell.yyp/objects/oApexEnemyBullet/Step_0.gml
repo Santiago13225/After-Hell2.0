@@ -51,8 +51,8 @@ if(place_meeting(x, y, oSolidWall)){//If it hits a wall.
 		image_yscale = 1;//Set y-scale of the explosion.
 	}
 
-	audio_play_sound(sndExplosion, 8, false);//Play explosion sound effect.
-	
+	//audio_play_sound(sndExplosion, 8, false);//Play explosion sound effect.
+	oSFX.explosionSnd = true;
 	if(global.screenShake){
 		screen_shake(8);//Screen shake.
 	}
@@ -65,8 +65,8 @@ if(place_meeting(x, y, oSolidWall)){//If it hits a wall.
 		image_yscale = 1;//Set y-scale of the explosion.
 	}
 	
-	audio_play_sound(sndExplosion, 8, false);//Play explosion sound effect.
-	
+	//audio_play_sound(sndExplosion, 8, false);//Play explosion sound effect.
+	oSFX.explosionSnd = true;
 	if(global.screenShake){
 		screen_shake(8);//Screen shake.
 	}

@@ -117,7 +117,8 @@ switch(state){
 	if(sprite_index == sLostSoulAttack && floor(image_index) == attackFrame && !attackTriggered){
 		attackTriggered = true;
 		
-		audio_play_sound(sndEarthquake, 8, false);//Play explosion sound effect.
+		//audio_play_sound(sndEarthquake, 8, false);//Play explosion sound effect.
+		oSFX.earthquakeSnd = true;
 		if(global.screenShake){
 			screen_shake(8);//Screen shake.
 		}

@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":0,
   "conversionMode":0,
-  "duration":2.037551,
+  "duration":1.9969158,
   "exportDir":"",
   "name":"sndSGBlast",
   "parent":{

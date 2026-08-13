@@ -128,7 +128,8 @@ switch(state){
             b.dir   = dir + i * spread;
             b.state = 1;
         }
-        audio_play_sound(sndThrow, 8, false);
+		//audio_play_sound(sndThrow, 8, false);
+		oSFX.throwSnd = true;
 		bulletInst.state = 1;//Set our bullet's state to the movement state.
 
         //destroy the “held” one if you spawned it earlier
