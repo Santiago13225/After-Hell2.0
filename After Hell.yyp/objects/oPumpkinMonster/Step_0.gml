@@ -38,36 +38,41 @@ var _autoSprites = true;
 //State Machine
 switch(state){
 	case -1://Spawn in from spawn object.
-	
-	if(place_meeting(x, y, oInvisibleSpawner2)){//If the zombie is in contact with the spawner object.
-		if(image_alpha >= 1){//Walk Out
+		/*if(place_meeting(x, y, oInvisibleSpawner2)){//If the zombie is in contact with the spawner object.
+			if(image_alpha >= 1){//Walk Out
+				spd = emergeSpd;//Set the right speed.
+				dir = 270;//Set the direction.
+			}
+			image_alpha = 1;//Make the zombie fully visable.
+			if(!place_meeting(x, y, oInvisibleSpawner2)){//Switch to the chasing state after out of the spawner object.
+				state = 0;
+			}
+		}
+		//Fade In
+		if(image_alpha < 1){
+			spd = 0;//Don't walk while fading in.
+			image_alpha += fadeSpd;//Fade in using the fade speed variable.
+		}
+		//Walk Out
+		_wallCollisions = false;//Set wall collisions to false.
+		_getDamage = false;//Set get damage to false.
+		if(image_alpha >= 1){//If completely visible.
 			spd = emergeSpd;//Set the right speed.
 			dir = 270;//Set the direction.
 		}
-		image_alpha = 1;//Make the zombie fully visable.
-
-		if(!place_meeting(x, y, oInvisibleSpawner2)){//Switch to the chasing state after out of the spawner object.
+		if(!place_meeting(x, y, oWall)){//Switch to the chasing state after out of spawner object.
+			state = 0;
+		}*/
+		//Fade In
+		if(image_alpha < 1){
+			spd = 0;//don't move while fading in
+			image_alpha += fadeSpd;
+			_wallCollisions = false;
+			_getDamage = false;
+		}else{
+			//Fully visible, switch to chase state
 			state = 0;
 		}
-	}
-	
-	//Fade In
-	if(image_alpha < 1){
-		spd = 0;//Don't walk while fading in.
-		image_alpha += fadeSpd;//Fade in using the fade speed variable.
-	}
-	
-	//Walk Out
-	_wallCollisions = false;//Set wall collisions to false.
-	_getDamage = false;//Set get damage to false.
-	if(image_alpha >= 1){//If completely visible.
-		spd = emergeSpd;//Set the right speed.
-		dir = 270;//Set the direction.
-	}
-	
-	if(!place_meeting(x, y, oWall)){//Switch to the chasing state after out of spawner object.
-		state = 0;
-	}
 	break;
 	
 	//Chase State
@@ -76,117 +81,124 @@ switch(state){
 			dir = point_direction(x, y, oPlayer.x, oPlayer.y);//Get the player's direction.
 		}
 		spd = chaseSpd;//Set the chasing speed.
-
+		if(!usingPathfinding){
+			dumbChaseTimer++;
+			if(dumbChaseTimer >= maxDumbChaseTime){
+				dumbChaseTimer = 0;
+				alarm_set(0, 1);//force immediate pathfinding retry
+			}
+		}else{
+			dumbChaseTimer = 0;
+		}
 	
-	//transition to shooting state
-	var _camLeft = camera_get_view_x(view_camera[0]);
-	var _camRight = _camLeft + camera_get_view_width(view_camera[0]);
-	var _camTop = camera_get_view_y(view_camera[0]);
-	var _camBottom = _camTop + camera_get_view_height(view_camera[0]);
+		//transition to shooting state
+		var _camLeft = camera_get_view_x(view_camera[0]);
+		var _camRight = _camLeft + camera_get_view_width(view_camera[0]);
+		var _camTop = camera_get_view_y(view_camera[0]);
+		var _camBottom = _camTop + camera_get_view_height(view_camera[0]);
 	
-	//only add to timer if on screen
-	if(bbox_right > _camLeft && bbox_left < _camRight && bbox_bottom > _camTop && bbox_top < _camBottom){
-		shootTimer++;
-	}
+		//only add to timer if on screen
+		if(bbox_right > _camLeft && bbox_left < _camRight && bbox_bottom > _camTop && bbox_top < _camBottom){
+			shootTimer++;
+		}
 	
-	if(shootTimer > cooldownTime){
-		//go to shoot state
-		state = 1;
-		//reset timer so the shooting state can use it too
-		shootTimer = 0;
-	}
+		if(shootTimer > cooldownTime){
+			//go to shoot state
+			state = 1;
+			//reset timer so the shooting state can use it too
+			shootTimer = 0;
+		}
 	break;
 	//Pause and Shoot State
 	#region
 	case 1:
-	
-	//gets player's direction
-	if(instance_exists(oPlayer)){
-		dir = point_direction(x, y, oPlayer.x, oPlayer.y);
-	}
-	//set the correct speed
-	spd = 0;
-	
-	//start the attack animation
-	_autoSprites = false;
-	if(sprite_index != sLostSoulAttack){
-		sprite_index = sLostSoulAttack;
-		image_index = 0;
-	}
-	
-	if(sprite_index == sLostSoulAttack && floor(image_index) == attackFrame && !attackTriggered){
-		attackTriggered = true;
-		
-		//audio_play_sound(sndEarthquake, 8, false);//Play explosion sound effect.
-		oSFX.earthquakeSnd = true;
-		if(global.screenShake){
-			screen_shake(8);//Screen shake.
+		//gets player's direction
+		if(instance_exists(oPlayer)){
+			dir = point_direction(x, y, oPlayer.x, oPlayer.y);
 		}
-
-		var _attackDist = 400;
-		var _attackSep = 20;
-		var _attackNum = round(_attackDist/_attackSep);
-		var _attackDirSep = 10;
+		//set the correct speed
+		spd = 0;
+	
+		//start the attack animation
+		_autoSprites = false;
+		if(sprite_index != sLostSoulAttack){
+			sprite_index = sLostSoulAttack;
+			image_index = 0;
+		}
+	
+		if(sprite_index == sLostSoulAttack && floor(image_index) == attackFrame && !attackTriggered){
+			attackTriggered = true;
 		
-		for(var ds = 0; ds < 3; ds++){
-			var _dir = dir - _attackDirSep + _attackDirSep * ds;
-			for(var i = 1; i < _attackNum; i++){
+			//audio_play_sound(sndEarthquake, 8, false);//Play explosion sound effect.
+			oSFX.earthquakeSnd = true;
+			if(global.screenShake){
+				screen_shake(8);//Screen shake.
+			}
 
-				var _xx = x + lengthdir_x(_attackSep * i, _dir);
-				var _yy = y + lengthdir_y(_attackSep * i, _dir);
+			var _attackDist = 400;
+			var _attackSep = 20;
+			var _attackNum = round(_attackDist/_attackSep);
+			var _attackDirSep = 10;
+		
+			for(var ds = 0; ds < 3; ds++){
+				var _dir = dir - _attackDirSep + _attackDirSep * ds;
+				for(var i = 1; i < _attackNum; i++){
+
+					var _xx = x + lengthdir_x(_attackSep * i, _dir);
+					var _yy = y + lengthdir_y(_attackSep * i, _dir);
 			
-				if(!position_meeting(_xx, _yy, oWall)){
-					var _inst = instance_create_depth(_xx, _yy, depth, oVine);
-					_inst.delay = i * 4;
-				}else{
-					i += 99;
+					if(!position_meeting(_xx, _yy, oWall)){
+						var _inst = instance_create_depth(_xx, _yy, depth, oVine);
+						_inst.delay = i * 4;
+					}else{
+						i += 99;
+					}
 				}
 			}
 		}
-	}
 	
-	//holding the animation
-	if(sprite_index == sLostSoulAttack && floor(image_index) == holdFrame){
-		holdTimer--;
-		if(holdTimer > 0){
-			image_index = holdFrame;
+		//holding the animation
+		if(sprite_index == sLostSoulAttack && floor(image_index) == holdFrame){
+			holdTimer--;
+			if(holdTimer > 0){
+				image_index = holdFrame;
+			}
 		}
-	}
 	
-/*
-	//stop animating / manually set the image index
-	image_index = 0;
+	/*
+		//stop animating / manually set the image index
+		image_index = 0;
 	
-	//shoot a bullet
-	shootTimer++;
+		//shoot a bullet
+		shootTimer++;
 	
-	//create the bullet
-	if shootTimer == 1{
-		bulletInst = instance_create_depth(x + bulletXoff, y + bulletYoff, depth, oEnemyBullet);
-	}
+		//create the bullet
+		if shootTimer == 1{
+			bulletInst = instance_create_depth(x + bulletXoff, y + bulletYoff, depth, oEnemyBullet);
+		}
 	
-	//keep the bullet in the zombie's hands
-	if shootTimer <= windupTime && instance_exists(bulletInst){
-		bulletInst.x = x + bulletXoff;
-		bulletInst.y = y + bulletYoff;
-	}
+		//keep the bullet in the zombie's hands
+		if shootTimer <= windupTime && instance_exists(bulletInst){
+			bulletInst.x = x + bulletXoff;
+			bulletInst.y = y + bulletYoff;
+		}
 	
-	//shoot bullet after the windup time is over
-	if shootTimer == windupTime && instance_exists(bulletInst){
-		//set our bullet's state to the movement state
-		//play a sound effect
-		audio_play_sound(sndThrow, 8, false);
-		bulletInst.state = 1;
-	}
+		//shoot bullet after the windup time is over
+		if shootTimer == windupTime && instance_exists(bulletInst){
+			//set our bullet's state to the movement state
+			//play a sound effect
+			audio_play_sound(sndThrow, 8, false);
+			bulletInst.state = 1;
+		}
 	
-	//recover and return to chasing the player
-	if shootTimer > windupTime + recoverTime{
-		//go back to chasing the player
-		state = 0;
+		//recover and return to chasing the player
+		if shootTimer > windupTime + recoverTime{
+			//go back to chasing the player
+			state = 0;
 		
-		//reset the timer so that we can use it again
-		shootTimer = 0;
-	}*/
+			//reset the timer so that we can use it again
+			shootTimer = 0;
+		}*/
 	break;
 	
 	#endregion

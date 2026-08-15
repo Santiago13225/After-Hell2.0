@@ -57,3 +57,6 @@ if(instance_exists(oPlayer)){//If the player exists.
 calc_path_delay = 30;
 alarm[0] = irandom(60);
 usingPathfinding = false;
+
+dumbChaseTimer = 0;
+maxDumbChaseTime = 30;//if in dumb chase for 30 frames, force retry

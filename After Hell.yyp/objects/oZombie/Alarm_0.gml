@@ -49,7 +49,7 @@ if(instance_exists(oPlayer)){
 		alarm_set(0, calc_path_delay);
     }else{
         usingPathfinding = false;
-		alarm_set(0, 15);//Retry in 15 steps (~0.25 seconds)
+		alarm_set(0, 15);//Retry in 5 steps (~0.25 seconds)
         //Optional: Log if path fails
         //show_debug_message("Zombie failed to find path at: " + string(x) + "," + string(y));
     }

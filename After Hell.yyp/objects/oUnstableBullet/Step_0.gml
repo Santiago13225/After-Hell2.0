@@ -3,7 +3,7 @@
 //This event is responsible for handling the unstable bullet object behavior.
 
 //Pause Self
-if screen_pause(){
+if(screen_pause()){
 	exit;	
 }
 
@@ -33,11 +33,11 @@ depth = -y;
     }
 }*/
 
-if hitConfirm == true && enemyDestroy == true{
+if(hitConfirm == true && enemyDestroy == true){
     maxPierceCount++;
     hitConfirm = false;
     pierceCount = 0;//reset same-place counter for the next group of enemies
-    if maxPierceCount >= maxPierce{
+    if(maxPierceCount >= maxPierce){
         destroy = true;
     }
 }

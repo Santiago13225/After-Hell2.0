@@ -37,45 +37,58 @@ var _getDamage = true;//Set get damage to true.
 //State Machine
 switch(state){
 	case -1://Spawn in from spawn object.
-	
-	if(place_meeting(x, y, oInvisibleSpawner2)){//If the zombie is in contact with the spawner object.
-		if(image_alpha >= 1){//Walk Out
+		/*if(place_meeting(x, y, oInvisibleSpawner2)){//If the zombie is in contact with the spawner object.
+			if(image_alpha >= 1){//Walk Out
+				spd = emergeSpd;//Set the right speed.
+				dir = 270;//Set the direction.
+			}
+			image_alpha = 1;//Make the zombie fully visable.
+			if(!place_meeting(x, y, oInvisibleSpawner2)){//Switch to the chasing state after out of the spawner object.
+				state = 0;
+			}
+		}
+		//Fade In
+		if(image_alpha < 1){
+			spd = 0;//Don't walk while fading in.
+			image_alpha += fadeSpd;//Fade in using the fade speed variable.
+		}
+		//Walk Out
+		_wallCollisions = false;//Set wall collisions to false.
+		_getDamage = false;//Set get damage to false.
+		if(image_alpha >= 1){//If completely visible.
 			spd = emergeSpd;//Set the right speed.
 			dir = 270;//Set the direction.
 		}
-		image_alpha = 1;//Make the zombie fully visable.
-
-		if(!place_meeting(x, y, oInvisibleSpawner2)){//Switch to the chasing state after out of the spawner object.
+		if(!place_meeting(x, y, oWall)){//Switch to the chasing state after out of spawner object.
+			state = 0;
+		}*/
+		//Fade In
+		if(image_alpha < 1){
+			spd = 0;//don't move while fading in
+			image_alpha += fadeSpd;
+			_wallCollisions = false;
+			_getDamage = false;
+		}else{
+			//Fully visible, switch to chase state
 			state = 0;
 		}
-	}
-	
-	//Fade In
-	if(image_alpha < 1){
-		spd = 0;//Don't walk while fading in.
-		image_alpha += fadeSpd;//Fade in using the fade speed variable.
-	}
-	
-	//Walk Out
-	_wallCollisions = false;//Set wall collisions to false.
-	_getDamage = false;//Set get damage to false.
-	if(image_alpha >= 1){//If completely visible.
-		spd = emergeSpd;//Set the right speed.
-		dir = 270;//Set the direction.
-	}
-	
-	if(!place_meeting(x, y, oWall)){//Switch to the chasing state after out of spawner object.
-		state = 0;
-	}
 	break;
-	
+
 	//Chase State
 	case 0:
 		if(instance_exists(oPlayer)){//If the player exists.
 			dir = point_direction(x, y, oPlayer.x, oPlayer.y);//Get the player's direction.
 		}
 		spd = chaseSpd;//Set the chasing speed.
-
+		if(!usingPathfinding){
+			dumbChaseTimer++;
+			if(dumbChaseTimer >= maxDumbChaseTime){
+				dumbChaseTimer = 0;
+				alarm_set(0, 1);//force immediate pathfinding retry
+			}
+		}else{
+			dumbChaseTimer = 0;
+		}
 	/*
 	//transition to shooting state
 	var _camLeft = camera_get_view_x(view_camera[0]);
@@ -99,8 +112,8 @@ switch(state){
 	break;
 	//Pause and Shoot State
 	#region
-	case 1:
-	/*
+	/*case 1:
+	
 	//gets player's direction
 	if instance_exists(oPlayer){
 		dir = point_direction(x, y, oPlayer.x, oPlayer.y);
