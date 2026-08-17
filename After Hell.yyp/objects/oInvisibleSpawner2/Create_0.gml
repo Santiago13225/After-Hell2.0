@@ -32,7 +32,7 @@ if(!variable_global_exists("waveInProgress")){
 	global.maxActiveEnemies = 112;//HARD ACTIVE ENEMY CAP
 }
 
-if(room == rm_Tutorial_Level) {
+if(room == rm_Tutorial_Level){
     global.activeEnemyMax = 1;
     global.zombiesSpawnedThisWave = 0;
     global.zombiesKilledThisWave = 0;
@@ -51,19 +51,19 @@ if(room == rm_Tutorial_Level){
 
 maxActiveEnemyMax = 512;//Set your desired maximum value here.
 
-if(room == rm_Tutorial_Level) {
+if(room == rm_Tutorial_Level){
 	zombieTypes = [
 	    {type: oZombie, probability: 100}
 	];
 }else {
 	//Use the preset selected in the match settings carousel
-	if(is_undefined(global.matchPresets)) {
+	if(is_undefined(global.matchPresets)){
 		show_debug_message("Warning: global.matchPresets undefined. Defaulting to standard zombieTypes.");
 		zombieTypes = [
 			{type: oZombie, probability: 100}
 			// Add more defaults or fallback here if needed...
 		];
-	}else {
+	}else{
 		zombieTypes = global.matchPresets[global.matchPresetIndex];
 		//Cache preset reference
 		presetData = global.matchPresets[global.matchPresetIndex];
@@ -71,8 +71,8 @@ if(room == rm_Tutorial_Level) {
 		//Detect whether this preset uses tiers
 		usesTierSystem = false;
 
-		for(var i = 0; i < array_length(presetData); i++) {
-		    if(variable_struct_exists(presetData[i], "tier")) {
+		for(var i = 0; i < array_length(presetData); i++){
+		    if(variable_struct_exists(presetData[i], "tier")){
 				usesTierSystem = true;
 				break;
 		    }
@@ -81,9 +81,9 @@ if(room == rm_Tutorial_Level) {
 		//Cache highest tier in this preset
 		maxPresetTier = 0;
 
-		if(usesTierSystem) {
-		    for(var i = 0; i < array_length(presetData); i++) {
-		        if(presetData[i].tier > maxPresetTier) {
+		if(usesTierSystem){
+		    for(var i = 0; i < array_length(presetData); i++){
+		        if(presetData[i].tier > maxPresetTier){
 		            maxPresetTier = presetData[i].tier;
 		        }
 		    }
@@ -92,11 +92,11 @@ if(room == rm_Tutorial_Level) {
 }
 
 //Function to perform weighted random selection based on probabilities.
-function chooseZombieType() {// Returns the chosen zombie type.
+function chooseZombieType(){// Returns the chosen zombie type.
     var totalProbability = 0;
     
     //Calculate the total probability sum.
-    for (var i = 0; i < array_length_1d(zombieTypes); i++) {
+    for(var i = 0; i < array_length_1d(zombieTypes); i++){
         totalProbability += zombieTypes[i].probability;
     }
     
@@ -105,9 +105,9 @@ function chooseZombieType() {// Returns the chosen zombie type.
     var currentProbability = 0;
     
     //Iterate over zombie types and find the chosen one based on probabilities.
-    for(var j = 0; j < array_length_1d(zombieTypes); j++) {
-        currentProbability += zombieTypes[j].probability;
-        if (randomNumber <= currentProbability) {
+    for(var j = 0; j < array_length_1d(zombieTypes); j++){
+		currentProbability += zombieTypes[j].probability;
+        if(randomNumber <= currentProbability){
             return zombieTypes[j].type;
         }
     }
@@ -115,7 +115,7 @@ function chooseZombieType() {// Returns the chosen zombie type.
 }
 //zombiesKilledThisWave = 0;//Add a new variable to track zombies killed in the current wave.
 //global.waveStartMessageShown = false;
-function getMaxTierForWave(_wave) {
+function getMaxTierForWave(_wave){
     if (_wave <= 2) return 1;
     if (_wave <= 4) return 2;
     if (_wave <= 6) return 3;

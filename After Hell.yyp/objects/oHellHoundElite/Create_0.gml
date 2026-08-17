@@ -1,5 +1,5 @@
 ///oHellHoundElite Create Event
-/*This object represents a Hellhound ELite.*/
+/*This object represents a Hellhound Elite.*/
 //This event is responsible for creating some variables for the zombie specified.
 
 event_inherited();//Inherit the parent event.
@@ -39,3 +39,6 @@ cooldownTime = 60 * 5;//Adjust as needed for how frequently traps are dropped
 calc_path_delay = 30;
 alarm[0] = irandom(60);
 usingPathfinding = false;
+
+dumbChaseTimer = 0;
+maxDumbChaseTime = 30;//if in dumb chase for 30 frames, force retry
