@@ -244,7 +244,7 @@ if(accept_key){
 		case 19:
 			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM20, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM20_2, sqFadeOut, sqFadeIn);
 			break;
 	}
 }

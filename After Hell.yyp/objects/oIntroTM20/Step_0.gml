@@ -60,6 +60,7 @@ if(holdspace > 80) || (xpos < 100) fadeout = 1;
 if(a == 1) && (fadeout == 1){
 	global.dialog_active = false;//Disable silhouette drawing.
 	TransitionStart(rm_Level1, sqFadeOut, sqFadeIn);
+	//TransitionStart(rm_Arcade_Level, sqFadeOut, sqFadeIn);
 }
 
 //Controller skip input (like Key Press Any for controller)

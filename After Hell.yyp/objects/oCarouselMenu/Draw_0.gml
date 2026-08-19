@@ -69,7 +69,7 @@ switch(item){
 	case 16: text = "Void" break;
 	case 17: text = "Cloudwalk" break;
 	case 18: text = "Inferno" break;
-	case 19: text = "Test_Level" break;
+	case 19: text = "Arcade" break;
 	default: text = "???" break;
 }
 

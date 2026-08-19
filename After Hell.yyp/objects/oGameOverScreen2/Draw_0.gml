@@ -46,7 +46,7 @@ switch(global.selectedMapSprite){
 	case 16: mapText = "Void"; break;
 	case 17: mapText = "Cloudwalk"; break;
 	case 18: mapText = "Inferno"; break;
-	case 19: mapText = "Test_Level"; break;
+	case 19: mapText = "Arcade"; break;
 	default: mapText = "???"; break;
 }
 

@@ -2,7 +2,7 @@
 /*This object represents the player object.*/
 //This event is responsible for handling player object behavior.
 
-if(pause_lock_timer > 0) pause_lock_timer--;
+//if(pause_lock_timer > 0) pause_lock_timer--;
 
 //Get inputs
 #region
@@ -28,7 +28,8 @@ hspd = walking_speed*(keys[KEY_RIGHT]-keys[KEY_LEFT]);
 x += hspd;
 */
 //Pause menu
-if(startKeyPressed && pause_lock_timer <= 0){//if the start key is pressed and pause lock timer is less than or equal to 0.
+if(startKeyPressed){//if the start key is pressed
+//if(startKeyPressed && pause_lock_timer <= 0){//if the start key is pressed and pause lock timer is less than or equal to 0.
 	if(!instance_exists(oScoreboard) && !oRadar.show_full_map && !instance_exists(oVictoryScreen2)){//if not the case that the scoreboard object exists and not the case that the map has been expanded
 		if(!instance_exists(oPauseMenu2)){//if not the case that the pause menu already exists
 			//global.dialog_active = true;//Disable silhouette drawing.
@@ -110,9 +111,9 @@ if(startKeyPressed && pause_lock_timer <= 0){//if the start key is pressed and p
 			global.dialog_active = instance_exists(oPauseMenu2) || instance_exists(oScoreboard) || oRadar.show_full_map;
 		}
 	}
-}else if(startKeyPressed && pause_lock_timer > 0){//else if the start key is pressed and pause lock timer is greater than 0.
+}/*else if(startKeyPressed && pause_lock_timer > 0){//else if the start key is pressed and pause lock timer is greater than 0.
 	audio_play_sound(sndCancel, 8, false);//play the cancel sound effect
-}
+}*/
 
 if(selectKeyPressed){//if the select key is pressed
 	if(!instance_exists(oPauseMenu2) && !oRadar.show_full_map && !instance_exists(oVictoryScreen2)){//if not the case that the pause menu exists and not the case that the map has been expanded

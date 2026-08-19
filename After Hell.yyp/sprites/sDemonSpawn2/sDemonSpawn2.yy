@@ -23,7 +23,7 @@
   ],
   "name":"sDemonSpawn2",
   "nineSlice":null,
-  "origin":7,
+  "origin":4,
   "parent":{
     "name":"Enemies",
     "path":"folders/Enemies.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":13,
-    "yorigin":26,
+    "yorigin":13,
   },
   "swatchColours":null,
   "swfPrecision":2.525,

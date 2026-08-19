@@ -196,7 +196,7 @@ if(instance_exists(oPlayer)){
 	}
 }*/
 
-if(instance_exists(oPlayer)){
+/*if(instance_exists(oPlayer)){
 	if(oPlayer.pause_lock_timer > 0){
 		var seconds_left = ceil(oPlayer.pause_lock_timer / room_speed);
 		//draw_set_font(global.fontHUD);
@@ -204,4 +204,4 @@ if(instance_exists(oPlayer)){
 		draw_text_transformed(24, 24 + _wy - (48 * 3), "Pause Available In: " + string(seconds_left) + "s", 3, 3, 0);
 		draw_set_color(c_white);
 	}
-}
+}*/
