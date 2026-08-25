@@ -1,11 +1,11 @@
 {
   "$GMSprite":"v2",
   "%Name":"sRubble",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":31,
   "bbox_left":0,
-  "bbox_right":29,
-  "bbox_top":0,
+  "bbox_right":31,
+  "bbox_top":16,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":30,
+  "width":32,
 }
