@@ -1,7 +1,7 @@
 ///oIntroTM2 Create Event
 /*This object represents an introTM2 object.*/
 //This event is responsible for setting some variables for the introTM2 object.
-xpos = 1280;
+xpos = 1536;
 a = 1;
 fadeout = 0;
 

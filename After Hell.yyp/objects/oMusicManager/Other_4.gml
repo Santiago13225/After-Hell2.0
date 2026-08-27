@@ -91,14 +91,14 @@ if(room == rm_Inferno_Level){//20
 	set_song_ingame(sndInfernoTheme, 2*60, 10*60, true);
 }
 
-if(room == rm_TM1_2 || room == rm_TM2_2
- || room == rm_TM3_2 || room == rm_TM4_2
- || room == rm_TM5_2 || room == rm_TM6_2
- || room == rm_TM7_3 || room == rm_TM8
+if(room == rm_TM1 || room == rm_TM2
+ || room == rm_TM3_2 || room == rm_TM4
+ || room == rm_TM5 || room == rm_TM6
+ || room == rm_TM7 || room == rm_TM8
  || room == rm_TM9_2 || room == rm_TM10
  || room == rm_TM11 || room == rm_TM12_2
- || room == rm_TM13 || room == rm_TM14
- || room == rm_TM15 || room == rm_TM16
+ || room == rm_TM13_2 || room == rm_TM14
+ || room == rm_TM15_2 || room == rm_TM16
  || room == rm_TM17 || room == rm_TM18
  || room == rm_TM19 || room == rm_TM20
  || room == rm_TM20_2 || room == rm_TM0

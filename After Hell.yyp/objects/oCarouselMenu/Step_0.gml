@@ -149,12 +149,12 @@ if(accept_key){
 		case 0:
 			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM1_2, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM1, sqFadeOut, sqFadeIn);
 			break;
 		case 1:
 			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM2_2, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM2, sqFadeOut, sqFadeIn);
 			break;
 		case 2:
 			//global.screenShake = true;
@@ -164,22 +164,22 @@ if(accept_key){
 		case 3:
 			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM4_2, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM4, sqFadeOut, sqFadeIn);
 			break;
 		case 4:
 			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM5_2, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM5, sqFadeOut, sqFadeIn);
 			break;
 		case 5:
 			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM6_2, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM6, sqFadeOut, sqFadeIn);
 			break;
 		case 6://Labyrinth
 			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM7_3, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM7, sqFadeOut, sqFadeIn);
 			break;
 		case 7:
 			//global.screenShake = true;
@@ -209,7 +209,7 @@ if(accept_key){
 		case 12:
 			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM13, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM13_2, sqFadeOut, sqFadeIn);
 			break;
 		case 13:
 			//global.screenShake = true;
@@ -219,7 +219,7 @@ if(accept_key){
 		case 14:
 			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM15, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM15_2, sqFadeOut, sqFadeIn);
 			break;
 		case 15:
 			//global.screenShake = true;
