@@ -38,7 +38,7 @@ switch(global.selectedMapSprite){
 	case 6: mapText = "Labyrinth"; break;
 	case 7: mapText = "Graveyard"; break;
 	case 8: mapText = "Museum"; break;
-	case 9: mapText = "Water Station"; break;
+	case 9: mapText = "Sewers"; break;
 	case 10: mapText = "City Block"; break;
 	case 11: mapText = "The Yard"; break;
 	case 12: mapText = "Supermarket"; break;

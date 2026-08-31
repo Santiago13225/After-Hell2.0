@@ -680,7 +680,7 @@ if(accept_key){
 					break;
 				//Water Station
 				case 1:
-					TransitionStart(rm_TM10, sqFadeOut, sqFadeIn);
+					TransitionStart(rm_TM10_2, sqFadeOut, sqFadeIn);
 					//TransitionStart(rm_WaterStation_Level1, sqFadeOut, sqFadeIn);
 					break;
 				//City Block

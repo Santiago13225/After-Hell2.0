@@ -59,7 +59,7 @@ switch(item){
 	case 6: text = "Labyrinth" break;
 	case 7: text = "Graveyard" break;
 	case 8: text = "Museum" break;
-	case 9: text = "Water Station" break;
+	case 9: text = "Sewers" break;
 	case 10: text = "City Block" break;
 	case 11: text = "The Yard" break;
 	case 12: text = "Supermarket" break;
