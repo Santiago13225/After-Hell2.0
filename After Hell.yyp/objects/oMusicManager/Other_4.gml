@@ -83,7 +83,7 @@ if(room == rm_Void_Level){//18
 	set_song_ingame(sndVoidTheme, 2*60, 10*60, true);
 }
 
-if(room == rm_Cloudwalk_Level){//19
+if(room == rm_Cloudwalk_Level2){//19
 	set_song_ingame(sndCloudwalkTheme, 2*60, 10*60, true);
 }
 
@@ -99,7 +99,7 @@ if(room == rm_TM1 || room == rm_TM2
  || room == rm_TM11 || room == rm_TM12_2
  || room == rm_TM13_2 || room == rm_TM14
  || room == rm_TM15_2 || room == rm_TM16
- || room == rm_TM17 || room == rm_TM18
+ || room == rm_TM17 || room == rm_TM18_2
  || room == rm_TM19 || room == rm_TM20
  || room == rm_TM20_2 || room == rm_TM0
 ){

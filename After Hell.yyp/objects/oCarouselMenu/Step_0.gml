@@ -234,7 +234,7 @@ if(accept_key){
 		case 17:
 			//global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM18, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM18_2, sqFadeOut, sqFadeIn);
 			break;
 		case 18:
 			//global.screenShake = true;
