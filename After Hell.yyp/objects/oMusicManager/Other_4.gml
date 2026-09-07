@@ -87,7 +87,7 @@ if(room == rm_Cloudwalk_Level2){//19
 	set_song_ingame(sndCloudwalkTheme, 2*60, 10*60, true);
 }
 
-if(room == rm_Inferno_Level){//20
+if(room == rm_Inferno_Level2){//20
 	set_song_ingame(sndInfernoTheme, 2*60, 10*60, true);
 }
 
@@ -100,7 +100,7 @@ if(room == rm_TM1 || room == rm_TM2
  || room == rm_TM13_2 || room == rm_TM14
  || room == rm_TM15_2 || room == rm_TM16
  || room == rm_TM17 || room == rm_TM18_2
- || room == rm_TM19 || room == rm_TM20
+ || room == rm_TM19_2 || room == rm_TM20
  || room == rm_TM20_2 || room == rm_TM0
 ){
 	set_song_ingame(sndAmbient, 2*60, 5*60, true);

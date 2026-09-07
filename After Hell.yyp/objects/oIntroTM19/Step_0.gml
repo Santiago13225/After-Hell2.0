@@ -13,7 +13,7 @@ if(skipTimer > 0){
     fadeout = 1;
 }
 
-camera_set_view_pos(view_camera[1], xpos, 512);
+camera_set_view_pos(view_camera[1], xpos, 496);
 xpos = max(xpos - 0.3, 0);
 
 if(!fadeout){
@@ -59,7 +59,7 @@ if(holdspace > 80) || (xpos < 100) fadeout = 1;
 
 if(a == 1) && (fadeout == 1){
 	global.dialog_active = false;//Disable silhouette drawing.
-	TransitionStart(rm_Inferno_Level, sqFadeOut, sqFadeIn);
+	TransitionStart(rm_Inferno_Level2, sqFadeOut, sqFadeIn);
 }
 
 //Controller skip input (like Key Press Any for controller)
