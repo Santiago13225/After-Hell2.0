@@ -92,7 +92,7 @@ if(room == rm_Inferno_Level2){//20
 }
 
 if(room == rm_TM1 || room == rm_TM2
- || room == rm_TM3_2 || room == rm_TM4
+ || room == rm_TM3 || room == rm_TM4
  || room == rm_TM5 || room == rm_TM6
  || room == rm_TM7 || room == rm_TM8
  || room == rm_TM9_2 || room == rm_TM10_2

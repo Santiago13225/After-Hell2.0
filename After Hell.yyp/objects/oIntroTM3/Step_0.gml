@@ -13,7 +13,7 @@ if(skipTimer > 0){
     fadeout = 1;
 }
 
-camera_set_view_pos(view_camera[1], xpos, 460);
+camera_set_view_pos(view_camera[1], xpos, 528);
 xpos = max(xpos - 0.3, 0);
 
 if(!fadeout){

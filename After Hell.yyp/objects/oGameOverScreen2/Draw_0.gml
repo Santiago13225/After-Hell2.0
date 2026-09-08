@@ -333,7 +333,7 @@ if(kb_delay <= 0){
 	
 	if(_kb_moved){
 		if(!kb_held){
-			kb_delay = 20;
+			kb_delay = 30;
 			kb_held = true;
 		}else{
 			kb_delay = 6;
@@ -367,7 +367,7 @@ if(gamepad_is_connected(_gamePad)){
 		
 		if(_dp_moved){
 			if(!dpad_held){
-				dpad_delay = 20;
+				dpad_delay = 30;
 				dpad_held = true;
 			}else{
 				dpad_delay = 6;

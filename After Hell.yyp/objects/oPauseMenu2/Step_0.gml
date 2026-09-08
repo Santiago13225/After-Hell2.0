@@ -38,7 +38,7 @@ if(kb_stick_delay <= 0){
 
 	if(_kb_moved){
 		if(!kb_stick_held){
-			kb_stick_delay = 20;//initial delay
+			kb_stick_delay = 30;//initial delay
 			kb_stick_held = true;
 		}else{
 			kb_stick_delay = 6;//repeat delay
@@ -77,7 +77,7 @@ if(is_controller_connected){
 
 		if(_dp_moved){
 			if(!dpad_held){
-				dpad_delay = 20;
+				dpad_delay = 30;
 				dpad_held = true;
 			}else{
 				dpad_delay = 6;
