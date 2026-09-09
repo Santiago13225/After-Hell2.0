@@ -904,7 +904,7 @@ if(instance_exists(oMedkitWallbuy3)){
 					oSFX.buySnd = true;
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oMedkit);
 					instance_destroy(oTextbox2);
-			    }else {
+			    }else{
 			        //Play a sound or show a message indicating insufficient points
 			        //Add your insufficient points logic here
 					//audio_play_sound(sndNoMoney, 8, false);
@@ -914,6 +914,40 @@ if(instance_exists(oMedkitWallbuy3)){
 						instance_destroy(oTextbox2);
 					}	
 			    }
+			}
+		}
+	}
+}
+
+if(instance_exists(oSlotWallbuy)){
+	with(oSlotWallbuy){
+		if(distance_to_object(oPlayer) < 32 && instance_exists(oTextbox2)){
+			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
+				wallbuyCost = 50;
+				if(oHUD2.playerScore >= wallbuyCost){
+					oHUD2.playerScore -= wallbuyCost;
+					//oSFX.buySnd = true;
+					//Create slot machine if it doesn't exist
+					if(!instance_exists(oSlot5)){
+						instance_create_depth(0, 0, -7000, oSlot5);
+						instance_destroy(oTextbox2);
+					}
+					if(!oSlot5.spinning && !oSlot5.result_done){
+						oSlot5.spinning = true;
+						for(var i = 0; i < 3; i++){
+							oSlot5.running[i] = true;
+							oSlot5.run_speed[i] = 7 + random(5);
+							oSlot5.stop_timers[i] = oSlot5.stop_delays[i];
+							oSlot5.results[i] = -1;
+						}
+					}
+				}else{
+					oSFX.brokeSnd = true;
+					if(!audio_is_playing(sndBroke)){
+						audio_play_sound(sndBroke, 10, false);
+						instance_destroy(oTextbox2);
+					}
+				}
 			}
 		}
 	}
@@ -1483,6 +1517,7 @@ if((collision_circle(x, y, 32, oShotgunWallbuy2, false, true) ||
 	collision_circle(x, y, 32, oMusicBlockTemple, false, true) ||
 	collision_circle(x, y, 32, oMusicBlockOverlook, false, true) ||
 	collision_circle(x, y, 32, oMusicBlockTestLevel, false, true) ||
+	collision_circle(x, y, 32, oSlotWallbuy, false, true) ||
     collision_circle(x, y, 32, oArmoryAugmentor2, false, true))) && instance_exists(oTextbox2) {
     nearWallbuy = true;
 }

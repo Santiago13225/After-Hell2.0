@@ -202,6 +202,13 @@ if(brokeSnd == true){
 	brokeSnd = false;//Reset the pickup variable.
 }
 
+//Stop sound
+if(stopSnd == true){
+	var _snd = audio_play_sound(sndSlotStop, 6, false);//Play sound.
+	audio_sound_gain(_snd, _sfxVol, 0);
+	stopSnd = false;//Reset the pickup variable.
+}
+
 //win sound
 /*
 if htSnd == true

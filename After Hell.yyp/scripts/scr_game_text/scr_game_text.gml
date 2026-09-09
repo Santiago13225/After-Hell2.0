@@ -55,6 +55,9 @@ function scr_game_text(_text_id){
 		case "MusicBlockTile":
 			scr_text("Music Block \n[Space] to Change the Background Music \n[E] to Dismiss", true);
 			break;
+		case "SlotWallbuy":
+			scr_text("Slot Machine [Bet: 50] \n[Space] to Spin \n[E] to Dismiss", true);
+			break;
 
 		case "ShotgunWallbuyC":
 			scr_text("Shotgun [Cost: 500] \nAmmo [Cost: 250] \n[^] to Purchase \n[#] to Dismiss", true);
@@ -87,7 +90,10 @@ function scr_game_text(_text_id){
 			scr_text("Upgrade [Cost: 5000] \n[^] to Purchase \n[#] to Dismiss", true);
 			break;
 		case "MusicBlockTileC":
-			scr_text("Aww yeah! \n[^] to Change Music \n[#] to Dismiss", true);
+			scr_text("Music Block \n[^] to Change the Background Music \n[#] to Dismiss", true);
+			break;
+		case "SlotWallbuyC":
+			scr_text("Slot Machine [Bet: 50] \n[^] to Spin \n[#] to Dismiss", true);
 			break;
 	}
 }

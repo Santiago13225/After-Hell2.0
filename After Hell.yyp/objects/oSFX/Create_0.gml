@@ -34,6 +34,7 @@ throwSnd = false;
 wrongSnd = false;
 buySnd = false;
 brokeSnd = false;
+stopSnd = false;
 
 //htSnd = false;
 //raygunSnd = false;

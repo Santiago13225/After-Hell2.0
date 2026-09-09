@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sndSlotMachine",
+  "%Name":"sndSlot",
   "audioGroupId":{
     "name":"agSfx",
     "path":"audiogroups/agSfx",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":449.90695,
+  "duration":1.68,
   "exportDir":"",
-  "name":"sndSlotMachine",
+  "name":"sndSlot",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sndSlotMachine.mp3",
+  "soundFile":"sndSlot.mp3",
   "volume":1.0,
 }
