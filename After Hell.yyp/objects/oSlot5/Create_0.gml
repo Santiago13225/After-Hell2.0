@@ -1,6 +1,9 @@
 result_display_time = 180;//3 seconds to display result before destroying
 result_timer = 0;
 result_done = false;
+result_color = c_white;//default color
+flash_timer = 0;
+flash_visible = true;
 
 y1 = [0, 0, 0];
 run_speed = [0, 0, 0];
@@ -118,6 +121,7 @@ function check_results(){
 		oHUD2.playerScore += payout;
 		oHUD2.playerTotalScore += payout;
 		//show_debug_message("Win! Payout: $" + string(payout));
+		result_color = c_lime;//green for win
 	}else{
 		//oHUD2.playerScore -= bet;
 		//if(!audio_is_playing(sndWrong)){
@@ -126,6 +130,7 @@ function check_results(){
 		//instance_destroy(oTextbox2);
 		//}
 		//show_debug_message("No match. Lost $" + string(bet));
+		result_color = c_red;//red for loss
 	}
 
 	result_done = true;//start display timer

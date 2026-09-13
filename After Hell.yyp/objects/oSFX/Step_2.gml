@@ -209,6 +209,20 @@ if(stopSnd == true){
 	stopSnd = false;//Reset the pickup variable.
 }
 
+//Warning sound
+if(warningSnd == true){
+	var _snd = audio_play_sound(sndWarning, 6, false);//Play sound.
+	audio_sound_gain(_snd, _sfxVol, 0);
+	warningSnd = false;//Reset the pickup variable.
+}
+
+//Lightning sound
+if(lightningStrikeSnd == true){
+	var _snd = audio_play_sound(sndLightningStrike, 8, false);//Play sound.
+	audio_sound_gain(_snd, _sfxVol, 0);
+	lightningStrikeSnd = false;//Reset the pickup variable.
+}
+
 //win sound
 /*
 if htSnd == true

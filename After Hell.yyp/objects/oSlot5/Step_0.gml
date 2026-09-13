@@ -58,6 +58,10 @@ for(var i = 0; i < 3; i++){
 }
 
 if(result_done){
+	flash_timer++;
+	if(flash_timer mod 30 == 0){//toggle every 30 frames
+		flash_visible = !flash_visible;
+	}
 	result_timer++;
 	if(result_timer >= result_display_time){
 		instance_destroy();

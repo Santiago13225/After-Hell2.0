@@ -25,14 +25,17 @@ fadeSpd = 1/15;//Speed at which the zombie fades in.
 emergeSpd = .25;//Speed at which the zombie emerges.
 
 //Shooting State
-cooldownTime = 4*60;//Cooldown time between shots (*in frames).
-shootTimer = irandom(cooldownTime);//Initial shoot timer.
+//cooldownTime = 4*60;//Cooldown time between shots (*in frames).
+//shootTimer = irandom(cooldownTime);//Initial shoot timer.
 windupTime = 60;//Time taken for weapon windup.
 recoverTime = 45;//Time taken to recover after shooting.
 bulletInst = noone;//Reference to the bullet instance.
 
 bulletXoff = 5;//Bullet's horizontal offset from the zombie.
 bulletYoff = -8;//Bullet's vertical offset from the zombie.
+
+shootTimer = 0;
+cooldownTime = irandom_range(3 * 60, 7 * 60);//random between 3 and 7 seconds
 
 path = path_add();//Initialize a path for the zombie.
 

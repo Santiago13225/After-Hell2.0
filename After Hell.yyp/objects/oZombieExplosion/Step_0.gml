@@ -1,10 +1,10 @@
 //pause self
-if screen_pause() {
+if(screen_pause()){
 	exit;
 }
 
 //create damage objects
-if createdDamageObjects == false{
+if(createdDamageObjects == false){
 	//create an object to damage enemies
 	damageInst = instance_create_depth(x, y, 0, oDamagePlayer);
 	with(damageInst){

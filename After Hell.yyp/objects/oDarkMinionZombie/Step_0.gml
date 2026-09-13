@@ -245,3 +245,15 @@ switch(state){
 if(_getDamage == true){//If zombie can get damaged.
 	event_inherited();//Inherit getting damaged and dying behavior.
 }
+
+//Lightning strike attack - works from anywhere on map
+if(!instance_exists(oScreenPause)){
+	if(instance_exists(oPlayer)){
+		shootTimer++;
+		if(shootTimer >= cooldownTime){
+			shootTimer = 0;
+			cooldownTime = irandom_range(180, 420); // randomize next cooldown
+			instance_create_depth(oPlayer.x, oPlayer.y, -oPlayer.bbox_top, oEffectDelayedShot);
+		}
+	}
+}
