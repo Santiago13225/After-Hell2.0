@@ -86,8 +86,51 @@ switch(state){
 				dumbChaseTimer = 0;
 				alarm_set(0, 1);//force immediate pathfinding retry
 			}
+			//Only run teleport behavior outside of tutorial
+			if(room != rm_Tutorial_Level){
+				if(!teleportTriggered){//Teleport timer
+					teleportTimer++;
+					if(teleportTimer >= teleportThreshold){
+						teleportTriggered = true;
+						//Create indicator at player's position
+						if(instance_exists(oPlayer)){
+							//Record player's position at this moment
+							teleportTargetX = oPlayer.x;
+							teleportTargetY = oPlayer.y;
+							//Create indicator at that recorded position
+							teleportIndicator = instance_create_depth(teleportTargetX, teleportTargetY, -oPlayer.bbox_top, oEnemyTeleportIndicator);
+						}
+					}
+				}else{
+					//Teleport when indicator is done
+					if(!instance_exists(teleportIndicator)){
+						//if(instance_exists(oPlayer)){
+						//Poof at current position
+						oSFX.smokePuffSnd = true;
+						create_animated_vfx(sPoof, x, y, depth);
+						//Teleport to player's last position
+						x = teleportTargetX;
+						y = teleportTargetY;
+						//Poof at new position
+						create_animated_vfx(sPoof, x, y, depth);
+						//Reset everything
+						teleportTimer = 0;
+						teleportTriggered = false;
+						teleportIndicator = noone;
+						dumbChaseTimer = 0;
+						//Force pathfinding retry
+						alarm_set(0, 1);
+						//}
+					}
+				}
+			}
 		}else{
 			dumbChaseTimer = 0;
+			//Cancel teleport if pathfinding resumes before threshold
+			if(!teleportTriggered){
+				teleportTimer = 0;
+			}
+			//If teleport was triggered, let it complete regardless
 		}
 
 	/*

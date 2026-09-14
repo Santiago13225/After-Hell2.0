@@ -51,3 +51,10 @@ usingPathfinding = false;
 
 dumbChaseTimer = 0;
 maxDumbChaseTime = 30;//if in dumb chase for 30 frames, force retry
+
+teleportTimer = 0;
+teleportThreshold = 600;//10 seconds
+teleportTriggered = false;
+teleportIndicator = noone;
+teleportTargetX = 0;
+teleportTargetY = 0;

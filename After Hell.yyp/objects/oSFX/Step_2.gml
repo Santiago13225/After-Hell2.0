@@ -10,217 +10,224 @@ if(pickupSnd == true){
 	var _snd = audio_play_sound(sndPickup, 8, false);//Play sound.
 	//audio_sound_gain(_snd, _sfxVol, 1000);//1000 takes 1000 ms (*1 sec) to bring the sound vol from m0 to _sfxVol
 	audio_sound_gain(_snd, _sfxVol, 0);
-	pickupSnd = false;//Reset the pickup variable.
+	pickupSnd = false;//Reset the variable.
 }
 
 //Click sound
 if(clickSnd == true){
 	var _snd = audio_play_sound(sndClick, 4, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	clickSnd = false;//Reset the pickup variable.
+	clickSnd = false;//Reset the variable.
 }
 
 //Beep sound
 if(beepSnd == true){
 	var _snd = audio_play_sound(sndBeep, 4, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	beepSnd = false;//Reset the pickup variable.
+	beepSnd = false;//Reset the variable.
 }
 
 //Win sound
 if(winSnd == true){
 	var _snd = audio_play_sound(sndVictory, 10, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	winSnd = false;//Reset the pickup variable.
+	winSnd = false;//Reset the variable.
 }
 
 //Pistol sound
 if(pistolSnd == true){
 	var _snd = audio_play_sound(sndShot, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	pistolSnd = false;//Reset the pickup variable.
+	pistolSnd = false;//Reset the variable.
 }
 
 //Raygun sound
 if(raygunSnd == true){
 	var _snd = audio_play_sound(sndRGBlast, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	raygunSnd = false;//Reset the pickup variable.
+	raygunSnd = false;//Reset the variable.
 }
 
 //Sniper sound
 if(sniperSnd == true){
 	var _snd = audio_play_sound(sndSniperBlast, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	sniperSnd = false;//Reset the pickup variable.
+	sniperSnd = false;//Reset the variable.
 }
 
 //Shotgun sound
 if(shotgunSnd == true){
 	var _snd = audio_play_sound(sndSGBlast, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	shotgunSnd = false;//Reset the pickup variable.
+	shotgunSnd = false;//Reset the variable.
 }
 
 //Assault sound
 if(assaultSnd == true){
 	var _snd = audio_play_sound(sndAssault, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	assaultSnd = false;//Reset the pickup variable.
+	assaultSnd = false;//Reset the variable.
 }
 
 //Smg sound
 if(smgSnd == true){
 	var _snd = audio_play_sound(sndSMG, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	smgSnd = false;//Reset the pickup variable.
+	smgSnd = false;//Reset the variable.
 }
 
 //Lmg sound
 if(lmgSnd == true){
 	var _snd = audio_play_sound(sndLMG, 7, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	lmgSnd = false;//Reset the pickup variable.
+	lmgSnd = false;//Reset the variable.
 }
 
 //Bazooka sound
 if(bazookaSnd == true){
 	var _snd = audio_play_sound(sndRocket, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	bazookaSnd = false;//Reset the pickup variable.
+	bazookaSnd = false;//Reset the variable.
 }
 
 //Enemy bullet impact sound
 if(enemybulletimpactSnd == true){
 	var _snd = audio_play_sound(snd8BitExplosion2, 6, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	enemybulletimpactSnd = false;//Reset the pickup variable.
+	enemybulletimpactSnd = false;//Reset the variable.
 }
 
 //Explosion sound
 if(explosionSnd == true){
 	var _snd = audio_play_sound(sndExplosion, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	explosionSnd = false;//Reset the pickup variable.
+	explosionSnd = false;//Reset the variable.
 }
 
 //Earthquake sound
 if(earthquakeSnd == true){
 	var _snd = audio_play_sound(sndEarthquake, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	earthquakeSnd = false;//Reset the pickup variable.
+	earthquakeSnd = false;//Reset the variable.
 }
 
 //Cock sound
 if(cockSnd == true){
 	var _snd = audio_play_sound(sndCock, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	cockSnd = false;//Reset the pickup variable.
+	cockSnd = false;//Reset the variable.
 }
 
 //Ammo sound
 if(ammoSnd == true){
 	var _snd = audio_play_sound(sndAmmo, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	ammoSnd = false;//Reset the pickup variable.
+	ammoSnd = false;//Reset the variable.
 }
 
 //Fire sound
 if(fireSnd == true){
 	var _snd = audio_play_sound(sndFire, 6, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	fireSnd = false;//Reset the pickup variable.
+	fireSnd = false;//Reset the variable.
 }
 
 //Enemy hit sound
 if(enemyhitSnd == true){
 	var _snd = audio_play_sound(sndFleshHit, 6, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	enemyhitSnd = false;//Reset the pickup variable.
+	enemyhitSnd = false;//Reset the variable.
 }
 
 //Player hit sound
 if(playerhitSnd == true){
 	var _snd = audio_play_sound(sndHit, 10, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	playerhitSnd = false;//Reset the pickup variable.
+	playerhitSnd = false;//Reset the variable.
 }
 
 //Empty sound
 if(emptySnd == true){
 	var _snd = audio_play_sound(sndEmpty, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	emptySnd = false;//Reset the pickup variable.
+	emptySnd = false;//Reset the variable.
 }
 
 //Money sound
 if(moneySnd == true){
 	var _snd = audio_play_sound(sndMoney, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	moneySnd = false;//Reset the pickup variable.
+	moneySnd = false;//Reset the variable.
 }
 
 //Reload sound
 if(reloadSnd == true){
 	var _snd = audio_play_sound(sndReload, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	reloadSnd = false;//Reset the pickup variable.
+	reloadSnd = false;//Reset the variable.
 }
 
 //Splatter sound
 if(splatterSnd == true){
 	var _snd = audio_play_sound(sndSplatter, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	splatterSnd = false;//Reset the pickup variable.
+	splatterSnd = false;//Reset the variable.
 }
 
 //Throw sound
 if(throwSnd == true){
 	var _snd = audio_play_sound(sndThrow, 6, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	throwSnd = false;//Reset the pickup variable.
+	throwSnd = false;//Reset the variable.
 }
 
 //Wrong sound
 if(wrongSnd == true){
 	var _snd = audio_play_sound(sndWrong, 4, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	wrongSnd = false;//Reset the pickup variable.
+	wrongSnd = false;//Reset the variable.
 }
 
 //Buy sound
 if(buySnd == true){
 	var _snd = audio_play_sound(sndBuy, 10, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	buySnd = false;//Reset the pickup variable.
+	buySnd = false;//Reset the variable.
 }
 
 //Broke sound
 if(brokeSnd == true){
 	var _snd = audio_play_sound(sndNoMoney, 10, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	brokeSnd = false;//Reset the pickup variable.
+	brokeSnd = false;//Reset the variable.
 }
 
 //Stop sound
 if(stopSnd == true){
 	var _snd = audio_play_sound(sndSlotStop, 6, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	stopSnd = false;//Reset the pickup variable.
+	stopSnd = false;//Reset the variable.
 }
 
 //Warning sound
 if(warningSnd == true){
 	var _snd = audio_play_sound(sndWarning, 6, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	warningSnd = false;//Reset the pickup variable.
+	warningSnd = false;//Reset the variable.
 }
 
 //Lightning sound
 if(lightningStrikeSnd == true){
 	var _snd = audio_play_sound(sndLightningStrike, 8, false);//Play sound.
 	audio_sound_gain(_snd, _sfxVol, 0);
-	lightningStrikeSnd = false;//Reset the pickup variable.
+	lightningStrikeSnd = false;//Reset the variable.
+}
+
+//Smoke Puff sound
+if(smokePuffSnd == true){
+	var _snd = audio_play_sound(sndSmokePuff, 6, false);//Play sound.
+	audio_sound_gain(_snd, _sfxVol, 0);
+	smokePuffSnd = false;//Reset the variable.
 }
 
 //win sound

@@ -37,6 +37,7 @@ brokeSnd = false;
 stopSnd = false;
 warningSnd = false;
 lightningStrikeSnd = false;
+smokePuffSnd = false;
 
 //htSnd = false;
 //raygunSnd = false;

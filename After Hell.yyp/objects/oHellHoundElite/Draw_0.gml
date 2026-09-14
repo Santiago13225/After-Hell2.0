@@ -12,9 +12,9 @@ draw_sprite_ext(sEnemyHealth, _hpImage, x, y - sprite_height - 1, 1, image_yscal
 //draw_text(x, y, string(hp));//Draw zombie HP as text.
 //if instance_exists(path){
 //if(path != -1){
-/*if(path_exists(path) && usingPathfinding){
+if(path_exists(path) && usingPathfinding){
 	draw_path(path, x, y, 1);//Draw zombie path.
-}*/
+}
 //}
 
 gpu_set_blendenable(false);
