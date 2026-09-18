@@ -22,6 +22,7 @@ reel_gap = 10;//gap between reels
 //Results
 results = [-1, -1, -1];//symbol index for each reel when stopped
 spinning = false;//is the machine currently spinning
+payout = 0;
 
 //spin_sound = sndSlotSpin;//sound that plays while spinning
 //stop_sound = sndSlotStop;//sound that plays when a reel stops
@@ -48,7 +49,7 @@ spinning = false;//is the machine currently spinning
 
 function check_results(){
 	var bet = 50;
-	var payout = 0;
+	payout = 0;
 
 	//Check for three of a kind
 	if(results[0] == results[1] && results[1] == results[2]){

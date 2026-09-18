@@ -199,6 +199,19 @@ if(!instance_exists(oVictoryScreen2)){
 				draw_sprite_ext(sSlotWallbuy, 1, xx, yy, 1, 1 , 0, c_white, 1);
 			}
 		}
+		
+		with(oScratchcardWallbuy){
+			//Get the wall position to draw on the radar
+			//var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
+			//var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
+			var xx = _centerx + (x - oPlayer.x) * _radar_scale;
+			var yy = _centery + (y - oPlayer.y) * _radar_scale;
+
+			//Draw the walls within the radar circle
+			if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+				draw_sprite_ext(sScratchcardWallbuy, 1, xx, yy, 1, 1 , 0, c_white, 1);
+			}
+		}
 
 		with(oAssaultWallbuy2){
 			//Get the wall position to draw on the radar
@@ -434,6 +447,7 @@ if(!instance_exists(oVictoryScreen2)){
 		with(oMusicBlockTestLevel){ if(instance_exists(id)){ draw_sprite_ext(sMusicBlockTile, 5, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); } }
 
 		with(oSlotWallbuy){ if(instance_exists(id)){ draw_sprite_ext(sSlotWallbuy, 1, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); } }
+		with(oScratchcardWallbuy){ if(instance_exists(id)){ draw_sprite_ext(sScratchcardWallbuy, 1, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); } }
 
 		//Wallbuys
 		with(oAssaultWallbuy2){ draw_sprite_ext(sAssaultWallbuy2, 0, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }

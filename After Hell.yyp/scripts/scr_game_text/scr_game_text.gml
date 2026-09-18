@@ -58,6 +58,9 @@ function scr_game_text(_text_id){
 		case "SlotWallbuy":
 			scr_text("Slot Machine [Bet: 50] \n[Space] to Spin \n[E] to Dismiss", true);
 			break;
+		case "ScratchcardWallbuy":
+			scr_text("Lottery [Cost: 50] \n[Space] to Play \n[E] to Dismiss", true);
+			break;
 
 		case "ShotgunWallbuyC":
 			scr_text("Shotgun [Cost: 500] \nAmmo [Cost: 250] \n[^] to Purchase \n[#] to Dismiss", true);
@@ -94,6 +97,9 @@ function scr_game_text(_text_id){
 			break;
 		case "SlotWallbuyC":
 			scr_text("Slot Machine [Bet: 50] \n[^] to Spin \n[#] to Dismiss", true);
+			break;
+		case "ScratchcardWallbuyC":
+			scr_text("Lottery [Cost: 50] \n[^] to Play \n[#] to Dismiss", true);
 			break;
 	}
 }

@@ -43,3 +43,19 @@ for(var i = 0; i < 3; i++){
 
 //Draw frame on top of reels
 draw_sprite_ext(sSlotFrame, 0, _startX - 22, _startY - 16, 1, 1, 0, c_white, 1);
+
+if(result_done){
+	draw_set_font(global.font_main);
+	draw_set_halign(fa_center);
+
+	if(payout > 0){
+		draw_set_color(c_yellow);
+		draw_text_transformed(_guiW / 2, _startY - _symHeight, "Win! $" + string(payout), 2, 2, 0);
+	}else{
+		draw_set_color(c_red);
+		draw_text_transformed(_guiW / 2, _startY - _symHeight, "No win. Better luck next time!", 2, 2, 0);
+	}
+
+	draw_set_color(c_white);
+	draw_set_halign(fa_left);
+}
