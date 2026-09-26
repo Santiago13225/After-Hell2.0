@@ -248,18 +248,75 @@ if(global.speed){
 
 _spd = _moveSpd * _inputLevel;
 
-xspd = lengthdir_x(_spd, moveDir);
-yspd = lengthdir_y(_spd, moveDir);
+/*if(keyboard_check_pressed(ord("H"))){
+	if(state == movementState){
+		state = slidingState;
+	}else{
+		state = movementState;
+	}
+}*/
+
+//get info for each state
+//movement state (full player control)
+if(state == movementState){
+	//set the qualities of the state
+	movementControl = true;
+	//autoSpriteControl = true;
+	animate = true;
+	
+	//state swapping
+	if(place_meeting(x, y, oIceGround) && (xspd != 0 || yspd != 0)){
+		state = slidingState;
+	}
+}
+
+//sliding state
+if(state == slidingState){
+	//set the qualities of the state
+	movementControl = false;
+	//autoSpriteControl = false;
+	animate = false;
+	
+	//state swapping
+	if(!place_meeting(x, y, oIceGround) || (xspd == 0 && yspd == 0)){
+		state = movementState;
+	}
+}
+
+//get xspd and yspd based on button inputs
+if(movementControl == true){
+	xspd = lengthdir_x(_spd, moveDir);
+	yspd = lengthdir_y(_spd, moveDir);
+}
 
 //Collision
+//diagonal ice collision
+if(xspd != 0 && yspd != 0){
+	if(place_meeting(x + xspd, y, oIceGround)){
+		xspd = 0;
+	}
+	if(place_meeting(x, y + yspd, oIceGround)){
+		yspd = 0;
+	}
+}
+
 if(place_meeting(x + xspd, y, oWall)){
+	var _pixelCheck = sign(xspd);
+	while(!place_meeting(x + _pixelCheck, y, oWall)){
+		x += _pixelCheck;
+	}
 	xspd = 0;
 }
-if(place_meeting(x, y + yspd, oWall)){
+
+if(place_meeting(x + xspd, y + yspd, oWall)){
+	var _pixelCheck = sign(yspd);
+	while(!place_meeting(x + xspd, y + _pixelCheck, oWall)){
+		y += _pixelCheck;
+	}
 	yspd = 0;
 }
 
-//Move the player
+//Move the player(*before sliding tutorial)
 x += xspd;
 y += yspd;
 
@@ -325,16 +382,23 @@ if(global.controllerMode == 1){
 }
 
 	//Make sure the player is facing the correct direction
-	face = round(aimDir/90);
+	//if(autoSpriteControl == true){
+		face = round(aimDir/90);
+	//}
 	if(face == 4){
 		face = 0;
 	}
 
 	//Animate
-	if(xspd == 0 && yspd == 0){
-		image_index = 0;
+	if(animate == true){
+		image_speed = 1;
+		if(xspd == 0 && yspd == 0){
+			image_index = 0;
+		}
+	}else{
+		image_speed = 0;
 	}
-	
+
 	//Set the player sprite
 	mask_index = sprite[3];
 	sprite_index = sprite[face];

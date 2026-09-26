@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Other Unused Stuff",
-    "path":"folders/Other Unused Stuff.yy",
+    "name":"Other",
+    "path":"folders/Other.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

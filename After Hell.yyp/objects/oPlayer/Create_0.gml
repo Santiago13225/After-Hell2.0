@@ -55,11 +55,10 @@ global.font2 = font_add_sprite(sHUDFont, 32, true, 1);
 //Variables for movement
 moveDir = 0;
 moveSpd = 2;
-xSpd = 0;
-ySpd = 0;
+xspd = 0;
+yspd = 0;
 
 //Sprite control
-
 centerYOffset = -5;
 centerY = y + centerYOffset;//Set in step event.
 
@@ -104,3 +103,13 @@ weapon = global.PlayerWeapons[selectedWeapon];
 
 //Survival time tracking
 survivalSteps = 0;//total steps survived
+
+//player state control
+state = 0;
+movementState = 0;
+slidingState = 1;
+
+//state information
+movementControl = true;//get xspd and yspd based on button inputs
+//autoSpriteControl = true;//control the sprite swapping
+animate = true;//control the actual animation

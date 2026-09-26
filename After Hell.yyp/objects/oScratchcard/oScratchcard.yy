@@ -10,8 +10,8 @@
   "name":"oScratchcard",
   "overriddenProperties":[],
   "parent":{
-    "name":"Other Unused Stuff",
-    "path":"folders/Other Unused Stuff.yy",
+    "name":"Other",
+    "path":"folders/Other.yy",
   },
   "parentObjectId":null,
   "persistent":false,
