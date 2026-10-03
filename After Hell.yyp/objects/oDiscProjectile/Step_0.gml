@@ -61,10 +61,33 @@ if(destroy == true){
 }
 
 //Collision
-if(place_meeting(x, y, oSolidWall)){
+/*if(place_meeting(x, y, oSolidWall)){
 	//instance_destroy();
 	destroy = true;
+}*/
+
+
+//Horizontal wall bounce
+if(place_meeting(x + lengthdir_x(spd + 1, dir), y, oSolidWall)){
+	dir = 180 - dir;
+	bounces++;
+	//audio_play_sound(sndCling, 10, false);
+	//oSFX.clingSnd = true;
+	if(bounces >= maxBounces){
+		destroy = true;
+	}
 }
+
+//Vertical wall bounce
+if(place_meeting(x, y + lengthdir_y(spd + 1, dir), oSolidWall)){
+	dir = -dir;
+	bounces++;
+	//audio_play_sound(sndCling, 10, false);
+	if(bounces >= maxBounces){
+		destroy = true;
+	}
+}
+
 
 //Bullets out of range
 if(point_distance(xstart, ystart, x, y) > maxDist){

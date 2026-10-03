@@ -291,14 +291,14 @@ if(movementControl == true){
 
 //Collision
 //diagonal ice collision
-if(xspd != 0 && yspd != 0){
+/*if(xspd != 0 && yspd != 0){//If statement used to check diagonal movement.
 	if(place_meeting(x + xspd, y, oIceGround)){
 		xspd = 0;
 	}
 	if(place_meeting(x, y + yspd, oIceGround)){
 		yspd = 0;
 	}
-}
+}*/
 
 if(place_meeting(x + xspd, y, oWall)){
 	var _pixelCheck = sign(xspd);

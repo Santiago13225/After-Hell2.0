@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":121.46939,
+  "duration":121.44036,
   "exportDir":"",
   "name":"sndAmbient2",
   "parent":{

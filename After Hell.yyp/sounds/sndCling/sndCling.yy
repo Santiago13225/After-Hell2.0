@@ -1,18 +1,18 @@
 {
   "$GMSound":"v2",
-  "%Name":"sndAmbient",
+  "%Name":"sndCling",
   "audioGroupId":{
-    "name":"agMusic",
-    "path":"audiogroups/agMusic",
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
   },
   "bitDepth":1,
   "channelFormat":0,
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":42.21388,
+  "duration":0.9840136,
   "exportDir":"",
-  "name":"sndAmbient",
+  "name":"sndCling",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sndAmbient.mp3",
+  "soundFile":"sndCling.mp3",
   "volume":1.0,
 }
