@@ -1,6 +1,17 @@
-if screen_pause() exit;
+if(screen_pause()){
+	exit;
+}
 
-if(delay > 0) {
+//Train collision
+if(place_meeting(x, y, oTrainDamage)){
+	if(instance_exists(damageObj)){
+		instance_destroy(damageObj);
+	}
+	instance_destroy();
+	exit;
+}
+
+if(delay > 0){
 	delay--;
 	image_index = 0;
 	exit;
@@ -17,12 +28,14 @@ if(floor(image_index) == attackFrame && !instance_exists(damageObj)){
 }
 
 //holding the animation
-if(floor(image_index) == holdFrame) {
+if(floor(image_index) == holdFrame){
 	holdTime--;
-	if(holdTime > 0) {
+	if(holdTime > 0){
 		image_index = holdFrame;
 	}
 }
 
 //getting rid of the damage object
-if floor(image_index) > holdFrame && instance_exists(damageObj) { instance_destroy(damageObj); };
+if(floor(image_index) > holdFrame && instance_exists(damageObj)){
+	instance_destroy(damageObj);
+}

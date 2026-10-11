@@ -8,6 +8,12 @@ if(screen_pause()){//Pause self
 	exit;
 }
 
+//Train collision
+if(place_meeting(x, y, oTrainDamage)){
+	instance_destroy();
+	exit;
+}
+
 //Lifetime countdown
 timer++;
 if(timer >= lifetime){
@@ -104,19 +110,19 @@ if(instance_exists(oPlayer) && _hasWeapon){
 }
 
 if(place_meeting(x, y, oPlayer)){
-    //1)Scan the inventory
-    var hasLMG = false;
-    var pos = -1;
-    var len = array_length(global.PlayerWeapons);//get array length :contentReference[oaicite:0]{index=0}
-    for(var i = 0; i < len; i++){
-        var w = global.PlayerWeapons[i];
-        //Check for normal, hardcore or ultra lmg
-        if(w == global.WeaponList.lmg || w == global.WeaponList.hlmg || w == global.WeaponList.ulmg){
-            hasLMG = true;
-            pos = i;
-            break;//exit loop early :contentReference[oaicite:1]{index=1}
-        }
-    }
+	//1)Scan the inventory
+	var hasLMG = false;
+	var pos = -1;
+	var len = array_length(global.PlayerWeapons);//get array length :contentReference[oaicite:0]{index=0}
+	for(var i = 0; i < len; i++){
+		var w = global.PlayerWeapons[i];
+		//Check for normal, hardcore or ultra lmg
+		if(w == global.WeaponList.lmg || w == global.WeaponList.hlmg || w == global.WeaponList.ulmg){
+			hasLMG = true;
+			pos = i;
+			break;//exit loop early :contentReference[oaicite:1]{index=1}
+		}
+	}
 
 	//2)If found, give ammo and destroy
 	if(hasLMG){

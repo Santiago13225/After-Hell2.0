@@ -8,6 +8,12 @@ if(screen_pause()){//Pause self
 	exit;
 }
 
+//Train collision
+if(place_meeting(x, y, oTrainDamage)){
+	instance_destroy();
+	exit;
+}
+
 //Lifetime countdown
 timer++;
 if(timer >= lifetime){
@@ -17,14 +23,14 @@ if(timer >= lifetime){
 var time_left = lifetime - timer;
 
 if(time_left <= fade_start_time){
-    image_alpha = time_left / fade_start_time;
+	image_alpha = time_left / fade_start_time;
 
 	//Optional flicker
 	if(time_left < 60 * 2){//last 2 seconds
 		image_alpha *= 0.5 + random(0.5);
 	}
 }else{
-    image_alpha = 1;
+	image_alpha = 1;
 }
 
 //Float in Place
@@ -63,12 +69,12 @@ if(place_meeting(x, y, oPlayer)){//If money touches player...
 	oSFX.moneySnd = true;
 	if(instance_exists(oHUD2)){//If HUD exists...
 		//if(!instance_exists(oScoreEffect)){//If score effect not shown...
-			moneyScoreValue = 100;//Money value is 100.
-			var _scoreInst = instance_create_depth(x, y, -3000, oScoreEffect);//Create instance of score effect.
-			if(_scoreInst){
-			    _scoreInst.scoreValue = moneyScoreValue;//Assign the score value.
-			    _scoreInst.ShowEffect(moneyScoreValue, x, y);//Call the ShowEffect function.
-			}
+		moneyScoreValue = 100;//Money value is 100.
+		var _scoreInst = instance_create_depth(x, y, -3000, oScoreEffect);//Create instance of score effect.
+		if(_scoreInst){
+			_scoreInst.scoreValue = moneyScoreValue;//Assign the score value.
+			_scoreInst.ShowEffect(moneyScoreValue, x, y);//Call the ShowEffect function.
+		}
 		//}
 		oHUD2.playerScore += 100;//Add to player's score.
 		oHUD2.playerTotalScore += 100;//Add to player's total score.

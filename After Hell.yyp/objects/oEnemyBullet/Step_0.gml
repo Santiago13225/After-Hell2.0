@@ -9,7 +9,7 @@ if(screen_pause()){//Pause Self
 //Lifetime countdown
 timer++;
 if(timer >= lifetime){
-	create_animated_vfx(sPoof, x, y, depth-50);//Shoot burst.
+	create_animated_vfx(sPoof, x, y, depth - 50);//Shoot burst.
 	//destroy = true;
 	instance_destroy();
 }
@@ -22,7 +22,7 @@ switch(state){
 		}
 		depth = -y - 50;//Set depth to make self more visible.
 	break;
-	
+
 	case 1://Shoot/Travel Case
 		//Movement
 		xspd = lengthdir_x(spd, dir);//Set x-speed.
@@ -44,15 +44,22 @@ if(hitConfirm == true && playerDestroy == true){//Clean Up
 }
 
 if(destroy == true){//Actually destroy self.
-	create_animated_vfx(sShootBurst, x, y, depth-50);//Shoot burst.
+	create_animated_vfx(sShootBurst, x, y, depth - 50);//Shoot burst.
 	//audio_play_sound(snd8BitExplosion2, 8, false);//Play a sound effect.
 	oSFX.enemybulletimpactSnd = true;
 	instance_destroy();//Destroy.
 }
+
 //Wall Collision
 if(place_meeting(x, y, oSolidWall)){//If it touches a wall.
 	destroy = true;//Destroy the bullet.
 }
+
+//Train Collision
+if(place_meeting(x, y, oTrainDamage)){//If it touches a wall.
+	destroy = true;//Destroy the bullet.
+}
+
 /*
 if place_meeting(x, y, oPlayer) && playerDestroy == true{
 	destroy = true;

@@ -34,12 +34,12 @@ depth = -y;
 }*/
 
 if(hitConfirm == true && enemyDestroy == true){
-    maxPierceCount++;
-    hitConfirm = false;
-    pierceCount = 0;//reset same-place counter for the next group of enemies
-    if(maxPierceCount >= maxPierce){
-        destroy = true;
-    }
+	maxPierceCount++;
+	hitConfirm = false;
+	pierceCount = 0;//reset same-place counter for the next group of enemies
+	if(maxPierceCount >= maxPierce){
+		destroy = true;
+	}
 }
 
 //Destroy
@@ -52,10 +52,12 @@ if(destroy == true){
 		//Play a sound effect
 		//audio_play_sound(sndFleshHit, 8, false);
 		oSFX.enemyhitSnd = true;
+	}else if(place_meeting(x, y, oTrainDamage)){
+		oSFX.enemybulletimpactSnd = true;
 	}
 	//Shoot burst
 	create_animated_vfx(sShootBurst, x, y, depth - 50);
-	
+
 	//Destroy
 	instance_destroy();
 }
@@ -63,6 +65,11 @@ if(destroy == true){
 //Collision
 if(place_meeting(x, y, oSolidWall)){
 	//instance_destroy();
+	destroy = true;
+}
+
+//Train collision
+if(place_meeting(x, y, oTrainDamage)){
 	destroy = true;
 }
 

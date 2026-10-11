@@ -19,13 +19,13 @@ depth = -y;
 
 //Cleanup
 //Hit confirm destroy
-if hitConfirm == true && enemyDestroy == true{
+if(hitConfirm == true && enemyDestroy == true){
 	destroy = true;
 }
 
 //Destroy
-if destroy == true{
-	if place_meeting(x, y, oSolidWall){
+if(destroy == true){
+	if(place_meeting(x, y, oSolidWall)){
 		var _boomInst = instance_create_depth(x + 8, y + 8, -3000, oUltraExplosion);
 		with(_boomInst){
 			image_xscale = 1.5;
@@ -48,7 +48,7 @@ if destroy == true{
 		
 		//Play a sound effect
 		//audio_play_sound(sndExplosion, 8, false);
-	}else if place_meeting(x, y, oEnemyParent){
+	}else if(place_meeting(x, y, oEnemyParent)){
 		var _boomInst = instance_create_depth(x + 8, y + 8, -3000, oUltraExplosion);
 		with(_boomInst){
 			image_xscale = 1.5;
@@ -79,14 +79,14 @@ if destroy == true{
 }
 
 //Collision
-if place_meeting(x, y, oSolidWall){
+if(place_meeting(x, y, oSolidWall)){
 	//instance_destroy();
 	var _boomInst = instance_create_depth(x + 8, y + 8, -3000, oUltraExplosion);
 		with(_boomInst){
 			image_xscale = 1.5;
 			image_yscale = 1.5;
 		}
-	
+
 		//Play a sound effect
 		//audio_play_sound(sndExplosion, 8, false);
 		oSFX.explosionSnd = true;
@@ -104,26 +104,26 @@ if place_meeting(x, y, oSolidWall){
 }
 
 //Bullets out of range
-if point_distance(xstart, ystart, x, y) > maxDist{
+if(point_distance(xstart, ystart, x, y) > maxDist){
 	var _boomInst = instance_create_depth(x + 8, y + 8, -3000, oUltraExplosion);
-		with(_boomInst){
-			image_xscale = 1.5;
-			image_yscale = 1.5;
-		}
+	with(_boomInst){
+		image_xscale = 1.5;
+		image_yscale = 1.5;
+	}
+
+	//Play a sound effect
+	//audio_play_sound(sndExplosion, 8, false);
+	oSFX.explosionSnd = true;
+	//Screen pause
+	//create_screen_pause();
+
+	//Screen shake
+	if(global.screenShake){
+		screen_shake(8);
+	}
 	
-		//Play a sound effect
-		//audio_play_sound(sndExplosion, 8, false);
-		oSFX.explosionSnd = true;
-		//Screen pause
-		//create_screen_pause();
-	
-		//Screen shake
-		if(global.screenShake){
-			screen_shake(8);
-		}
-		
-		//Destroy self
-		instance_destroy();
+	//Destroy self
+	instance_destroy();
 	destroy = true;
 }
 

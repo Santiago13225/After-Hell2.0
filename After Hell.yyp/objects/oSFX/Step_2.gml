@@ -230,6 +230,20 @@ if(smokePuffSnd == true){
 	smokePuffSnd = false;//Reset the variable.
 }
 
+//Train Warning sound
+if(trainWarningSnd == true){
+	var _snd = audio_play_sound(sndTrainWarning, 8, false);//Play sound.
+	audio_sound_gain(_snd, _sfxVol, 0);
+	trainWarningSnd = false;//Reset the variable.
+}
+
+//Train sound
+if(trainSnd == true){
+	var _snd = audio_play_sound(sndTrain, 12, false);//Play sound.
+	audio_sound_gain(_snd, _sfxVol, 0);
+	trainSnd = false;//Reset the variable.
+}
+
 //win sound
 /*
 if htSnd == true

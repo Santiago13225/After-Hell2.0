@@ -8,6 +8,12 @@ if(screen_pause()){//Pause self
 	exit;
 }
 
+//Train collision
+if(place_meeting(x, y, oTrainDamage)){
+	instance_destroy();
+	exit;
+}
+
 //Lifetime countdown
 timer++;
 if(timer >= lifetime){
@@ -91,7 +97,7 @@ var _hasWeapon = array_contains(global.PlayerWeapons, global.WeaponList.bazooka)
 if(instance_exists(oPlayer) && _hasWeapon){
 	var _dist = point_distance(x, y, oPlayer.x, oPlayer.y);
 
-	if(_dist < _radius) {
+	if(_dist < _radius){
 		//calculate direction to player
 		var _dir = point_direction(x, y, oPlayer.x, oPlayer.y);
 		//var _spd = 1;
@@ -104,26 +110,26 @@ if(instance_exists(oPlayer) && _hasWeapon){
 }
 
 if(place_meeting(x, y, oPlayer)){
-    //1)Scan the inventory
-    var hasBazooka = false;
-    var pos = -1;
-    var len = array_length(global.PlayerWeapons);//get array length :contentReference[oaicite:0]{index=0}
-    for(var i = 0; i < len; i++){
-        var w = global.PlayerWeapons[i];
-        //Check for normal, hardcore or ultra bazooka
-        if(w == global.WeaponList.bazooka || w == global.WeaponList.hbazooka || w == global.WeaponList.ubazooka){
-            hasBazooka = true;
-            pos = i;
-            break;//exit loop early :contentReference[oaicite:1]{index=1}
-        }
-    }
+	//1)Scan the inventory
+	var hasBazooka = false;
+	var pos = -1;
+	var len = array_length(global.PlayerWeapons);//get array length :contentReference[oaicite:0]{index=0}
+	for(var i = 0; i < len; i++){
+		var w = global.PlayerWeapons[i];
+		//Check for normal, hardcore or ultra bazooka
+		if(w == global.WeaponList.bazooka || w == global.WeaponList.hbazooka || w == global.WeaponList.ubazooka){
+			hasBazooka = true;
+			pos = i;
+			break;//exit loop early :contentReference[oaicite:1]{index=1}
+		}
+	}
 
-    //2)If found, give ammo and destroy
-    if(hasBazooka){
+	//2)If found, give ammo and destroy
+	if(hasBazooka){
 		//audio_play_sound(sndAmmo, 8, false);//Play sound effect.
 		oSFX.ammoSnd = true;
-        //global.PlayerAmmo[pos] += ammoAdd;
+		//global.PlayerAmmo[pos] += ammoAdd;
 		global.PlayerReserve[pos] += ammoAdd;
-        instance_destroy();
-    }
+		instance_destroy();
+	}
 }

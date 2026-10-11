@@ -9,8 +9,8 @@
   "name":"oEnemyPositionBomber",
   "overriddenProperties":[],
   "parent":{
-    "name":"Other Unused Stuff",
-    "path":"folders/Other Unused Stuff.yy",
+    "name":"Unused Stuff",
+    "path":"folders/Unused Stuff.yy",
   },
   "parentObjectId":null,
   "persistent":false,

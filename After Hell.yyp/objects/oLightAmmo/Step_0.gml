@@ -8,6 +8,12 @@ if(screen_pause()){//Pause self
 	exit;
 }
 
+//Train collision
+if(place_meeting(x, y, oTrainDamage)){
+	instance_destroy();
+	exit;
+}
+
 //Lifetime countdown
 timer++;
 if(timer >= lifetime){
@@ -104,26 +110,26 @@ if(instance_exists(oPlayer) && _hasWeapon){
 }
 
 if(place_meeting(x, y, oPlayer)){
-    //1)Scan the inventory
-    var hasSMG = false;
-    var pos = -1;
-    var len = array_length(global.PlayerWeapons);//get array length :contentReference[oaicite:0]{index=0}
-    for(var i = 0; i < len; i++){
-        var w = global.PlayerWeapons[i];
-        //Check for normal, hardcore or ultra smg
-        if(w == global.WeaponList.smg || w == global.WeaponList.hsmg || w == global.WeaponList.usmg){
-            hasSMG = true;
-            pos = i;
-            break;//exit loop early :contentReference[oaicite:1]{index=1}
-        }
-    }
+	//1)Scan the inventory
+	var hasSMG = false;
+	var pos = -1;
+	var len = array_length(global.PlayerWeapons);//get array length :contentReference[oaicite:0]{index=0}
+	for(var i = 0; i < len; i++){
+		var w = global.PlayerWeapons[i];
+		//Check for normal, hardcore or ultra smg
+		if(w == global.WeaponList.smg || w == global.WeaponList.hsmg || w == global.WeaponList.usmg){
+			hasSMG = true;
+			pos = i;
+			break;//exit loop early :contentReference[oaicite:1]{index=1}
+		}
+	}
 
-    //2)If found, give ammo and destroy
-    if(hasSMG){
+	//2)If found, give ammo and destroy
+	if(hasSMG){
 		//audio_play_sound(sndAmmo, 8, false);//Play sound effect.
 		oSFX.ammoSnd = true;
-        //global.PlayerAmmo[pos] += ammoAdd;
+		//global.PlayerAmmo[pos] += ammoAdd;
 		global.PlayerReserve[pos] += ammoAdd;
-        instance_destroy();
-    }
+		instance_destroy();
+	}
 }

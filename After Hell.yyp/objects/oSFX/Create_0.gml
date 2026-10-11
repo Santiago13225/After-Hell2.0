@@ -38,6 +38,8 @@ stopSnd = false;
 warningSnd = false;
 lightningStrikeSnd = false;
 smokePuffSnd = false;
+trainWarningSnd = false;
+trainSnd = false;
 
 //htSnd = false;
 //raygunSnd = false;

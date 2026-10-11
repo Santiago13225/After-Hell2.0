@@ -8,6 +8,12 @@ if(screen_pause()){//Pause self
 	exit;
 }
 
+//Train collision
+if(place_meeting(x, y, oTrainDamage)){
+	instance_destroy();
+	exit;
+}
+
 //Lifetime countdown
 timer++;
 if(timer >= lifetime){
@@ -17,14 +23,14 @@ if(timer >= lifetime){
 var time_left = lifetime - timer;
 
 if(time_left <= fade_start_time){
-    image_alpha = time_left / fade_start_time;
-	
+	image_alpha = time_left / fade_start_time;
+
 	//Optional flicker
 	if(time_left < 60 * 2){//last 2 seconds
 		image_alpha *= 0.5 + random(0.5);
 	}
 }else{
-    image_alpha = 1;
+	image_alpha = 1;
 }
 
 //Float in Place
@@ -47,7 +53,6 @@ if(global.juggernaut){
 }else {
 	hpVar = 100;
 }
-
 
 var _radius = 32;
 if(global.magnet){

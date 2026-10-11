@@ -34,8 +34,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"Other Unused Stuff",
-    "path":"folders/Other Unused Stuff.yy",
+    "name":"Unused Stuff",
+    "path":"folders/Unused Stuff.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
