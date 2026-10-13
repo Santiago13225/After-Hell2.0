@@ -238,6 +238,12 @@ if(accept_key){
 						audio_resume_sound(sndLowHealth);
 					}
 				}
+				if(audio_is_paused(sndTrainWarning)){
+					audio_resume_sound(sndTrainWarning);
+				}
+				if(audio_is_paused(sndTrain)){
+					audio_resume_sound(sndTrain);
+				}
 /*
 #region
 				if room == rm_House_Level1{

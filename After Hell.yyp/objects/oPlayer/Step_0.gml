@@ -107,6 +107,17 @@ if(startKeyPressed){//if the start key is pressed
 		}else{
 			//audio_play_sound(sndBeep, 8, false);
 			oSFX.beepSnd = true;
+			if(audio_is_paused(sndTrainWarning)){
+				audio_resume_sound(sndTrainWarning);
+			}
+			if(audio_is_paused(sndTrain)){
+				audio_resume_sound(sndTrain);
+			}
+			if(lowHealth){
+				if(!audio_is_playing(sndLowHealth)){
+					audio_play_sound(sndLowHealth, 9, true);
+				}
+			}
 			instance_destroy(oPauseMenu2);
 			global.dialog_active = instance_exists(oPauseMenu2) || instance_exists(oScoreboard) || oRadar.show_full_map;
 		}
@@ -1567,6 +1578,21 @@ if(hp <= 0){
 	}
 	if(audio_is_playing(sndLowHealth)){
 		audio_stop_sound(sndLowHealth);
+	}
+	if(audio_is_playing(sndTrainWarning)){
+		audio_stop_sound(sndTrainWarning);
+	}
+	if(audio_is_playing(sndTrain)){
+		audio_stop_sound(sndTrain);
+	}
+	if(audio_is_playing(sndRoundEnd1)){
+		audio_stop_sound(sndRoundEnd1);
+	}
+	if(audio_is_playing(sndRoundStart1)){
+		audio_stop_sound(sndRoundStart1);
+	}
+	if(instance_exists(oWaveEndScreen)){
+		instance_destroy(oWaveEndScreen);
 	}
 	set_song_ingame(noone, 0, 0, false);//Fade out music cleanly
 	//Play a sound effect

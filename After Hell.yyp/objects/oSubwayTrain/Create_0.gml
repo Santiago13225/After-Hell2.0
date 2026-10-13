@@ -1,3 +1,5 @@
+depth = -bbox_top;
+
 //Track settings - set these in the room editor creation code per instance
 trackX1 = 1760;//left edge of track
 trackX2 = 2704;//right edge of track

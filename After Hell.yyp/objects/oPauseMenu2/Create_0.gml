@@ -10,6 +10,12 @@ dpad_held = false;
 if(audio_is_playing(sndLowHealth)){
 	audio_pause_sound(sndLowHealth);
 }
+if(audio_is_playing(sndTrainWarning)){
+	audio_pause_sound(sndTrainWarning);
+}
+if(audio_is_playing(sndTrain)){
+	audio_pause_sound(sndTrain);
+}
 
 alpha = .6;
 

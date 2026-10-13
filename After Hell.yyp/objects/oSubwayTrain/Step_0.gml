@@ -41,30 +41,61 @@ if(waiting){
 		}*/
 
 		//Create damage instance
-		damageInst = instance_create_depth(trainX, trackY, depth - 1, oTrainDamage);
+		/*damageInst = instance_create_depth(trainX, trackY, depth - 1, oTrainDamage);
 		with(damageInst){
 			damage = 250;
 			sprite_index = sDamageRect;
 			image_xscale = other.trainW;
 			image_yscale = other.trackH;
-		}
+		}*/
 		//show_debug_message("damageInst x: " + string(damageInst.x) + " xscale: " + string(damageInst.image_xscale) + " sprite width: " + string(sprite_get_width(sDamageRect)));
 	}
 }else{
 	//Train moving phase
 	trainX += trainSpd * moveDir;
-
-	//Screen shake while train is active
-	if(global.screenShake){
-		screen_shake(4);
-	}
 	
-	//Play train sound
-	//if(!audio_is_playing(sndTrain)){
-	oSFX.trainSnd = true;
-	//audio_play_sound(sndTrain, 8, false);
-	//}
+	//Only create and update damage instance when train is within track boundaries
+	if(trainX + trainW > trackX1 && trainX < trackX2){
+		if(!instance_exists(damageInst)){
+			damageInst = instance_create_depth(trainX, trackY, depth - 1, oTrainDamage);
+			with(damageInst){
+				damage = 250;
+				sprite_index = sDamageRect;
+				image_xscale = other.trainW;
+				image_yscale = other.trackH;
+			}
+		}
 
+		//Update damage instance position
+		var _clampedX = clamp(trainX, trackX1, trackX2);
+		var _clampedRight = clamp(trainX + trainW, trackX1, trackX2);
+		var _visibleW = _clampedRight - _clampedX;
+
+		damageInst.x = _clampedX;
+		damageInst.y = trackY;
+		damageInst.image_xscale = max(_visibleW, 1);
+	}else{
+		//Destroy damage instance when outside track boundaries
+		if(instance_exists(damageInst)){
+			instance_destroy(damageInst);
+			damageInst = noone;
+		}
+	}
+
+	//Only play sound and shake screen if player is in tracks area
+	//if(instance_exists(oPlayer) && oPlayer.areaID == 1){
+	//if(instance_exists(oPlayer) && variable_instance_exists(oPlayer, "areaID") && oPlayer.areaID == 1){
+	if(global.playerAreaID == 1){
+	//Screen shake while train is active
+		if(global.screenShake){
+			screen_shake(4);
+		}
+		//Play train sound
+		//if(!audio_is_playing(sndTrain)){
+		oSFX.trainSnd = true;
+		//audio_play_sound(sndTrain, 8, false);
+		//}
+	}
 	//Update damage instance position/old code
 	/*if(instance_exists(damageInst)){
 		damageInst.x = trainX;
@@ -72,10 +103,10 @@ if(waiting){
 	}*/
 	
 	//Update damage instance position
-	if(instance_exists(damageInst)){
+	/*if(instance_exists(damageInst)){
 		damageInst.x = clamp(trainX, trackX1, trackX2);
 		damageInst.y = trackY;
-	}
+	}*/
 	
 	//Update damage instance position/works for left-moving train
 	/*if(instance_exists(damageInst)){
@@ -107,9 +138,10 @@ if(waiting){
 	var _exitedRight = (moveDir == 1 && trainX > trackX2);
 
 	if(_exitedLeft || _exitedRight){
-		audio_stop_sound(sndTrain);
+		//audio_stop_sound(sndTrain);
 		if(instance_exists(damageInst)){
 			instance_destroy(damageInst);
+			damageInst = noone;
 		}
 		trainActive = false;
 		waiting = true;
@@ -135,7 +167,9 @@ if(waiting){
 if(!trainActive && !waiting){
 //	if(!audio_is_playing(sndTrainWarning)){
 //		audio_play_sound(sndTrainWarning, 8, false);//looping
+	if(global.playerAreaID == 1){
 		oSFX.trainWarningSnd = true;
+	}
 //	}
 }
 

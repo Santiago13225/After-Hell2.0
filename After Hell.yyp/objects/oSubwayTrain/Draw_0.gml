@@ -112,3 +112,11 @@ if(trainActive){
 		}
 	}
 }
+
+/*if(instance_exists(damageInst)){
+	draw_set_alpha(0.5);
+	draw_set_color(c_red);
+	draw_rectangle(damageInst.x, damageInst.y, damageInst.x + damageInst.image_xscale, damageInst.y + trackH, false);
+	draw_set_alpha(1);
+	draw_set_color(c_white);
+}*/
