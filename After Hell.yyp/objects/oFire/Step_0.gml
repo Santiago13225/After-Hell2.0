@@ -27,6 +27,6 @@ if(place_meeting(x, y, oPlayer)){
 	destroy = true;
 }
 
-if(place_meeting(x, y, oTrainDamage)){
+if(place_meeting(x, y, oEnvironmentDamage)){
 	destroy = true;
 }

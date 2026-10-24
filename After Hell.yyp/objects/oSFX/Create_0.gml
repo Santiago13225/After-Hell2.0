@@ -40,6 +40,8 @@ lightningStrikeSnd = false;
 smokePuffSnd = false;
 trainWarningSnd = false;
 trainSnd = false;
+waterBurstWarningSnd = false;
+waterBurstSnd = false;
 
 //htSnd = false;
 //raygunSnd = false;
@@ -61,4 +63,9 @@ casinoSndLoop = false;
 casinoSndLoopInst = noone;
 casinoSndLoopVol = 0;
 casinoSndLoopVolSpd = 1 / (60 * 3);
+
+waterBurstSndLoop = false;
+waterBurstSndLoopInst = noone;
+waterBurstSndLoopVol = 0;
+waterBurstSndLoopVolSpd = 1 / (60);
 

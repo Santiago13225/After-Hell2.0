@@ -57,7 +57,7 @@ if(waiting){
 	//Only create and update damage instance when train is within track boundaries
 	if(trainX + trainW > trackX1 && trainX < trackX2){
 		if(!instance_exists(damageInst)){
-			damageInst = instance_create_depth(trainX, trackY, depth - 1, oTrainDamage);
+			damageInst = instance_create_depth(trainX, trackY, depth - 1, oEnvironmentDamage);
 			with(damageInst){
 				damage = 250;
 				sprite_index = sDamageRect;

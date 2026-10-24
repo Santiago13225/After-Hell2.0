@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"oTrainDamage",
+  "%Name":"oPipeVertical2",
   "eventList":[],
   "managed":true,
-  "name":"oTrainDamage",
+  "name":"oPipeVertical2",
   "overriddenProperties":[],
   "parent":{
-    "name":"Other",
-    "path":"folders/Other.yy",
+    "name":"Wall Objects",
+    "path":"folders/Wall Objects.yy",
   },
   "parentObjectId":{
-    "name":"oDamageAll",
-    "path":"objects/oDamageAll/oDamageAll.yy",
+    "name":"oIndestructibleCrate",
+    "path":"objects/oIndestructibleCrate/oIndestructibleCrate.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sPipeVertical2",
+    "path":"sprites/sPipeVertical2/sPipeVertical2.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

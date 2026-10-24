@@ -9,7 +9,7 @@ if(screen_pause()){//Pause Self
 //Lifetime countdown
 timer++;
 if(timer >= lifetime){
-	create_animated_vfx(sPoof, x, y, depth-50);//Shoot burst.
+	create_animated_vfx(sPoof, x, y, depth - 50);//Shoot burst.
 	//destroy = true;
 	instance_destroy();
 }

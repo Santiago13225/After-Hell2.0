@@ -244,6 +244,20 @@ if(trainSnd == true){
 	trainSnd = false;//Reset the variable.
 }
 
+//Water Burst Warning sound
+if(waterBurstWarningSnd == true){
+	var _snd = audio_play_sound(sndWaterBurstWarning, 8, false);//Play sound.
+	audio_sound_gain(_snd, _sfxVol, 0);
+	waterBurstWarningSnd = false;//Reset the variable.
+}
+
+//Water Burst sound
+if(waterBurstSnd == true){
+	var _snd = audio_play_sound(sndWaterBurst, 12, false);//Play sound.
+	audio_sound_gain(_snd, _sfxVol, 0);
+	waterBurstSnd = false;//Reset the variable.
+}
+
 //win sound
 /*
 if htSnd == true
@@ -349,3 +363,29 @@ if(casinoSndLoop == true){//Start the loop and turn up the volume
 		audio_sound_gain(casinoSndLoopInst, casinoSndLoopVol * _sfxVol, 0);
 	}
 	casinoSndLoop = false;//Reset variable
+	
+//Water Burst
+if(waterBurstSndLoop == true){//Start the loop and turn up the volume
+	if(!audio_is_playing(waterBurstSndLoopInst)){//Play the sound
+		waterBurstSndLoopInst = audio_play_sound(sndWaterBurst, 12, true);
+	}
+	if(waterBurstSndLoopVol < 1){//Raise the volume
+		waterBurstSndLoopVol += waterBurstSndLoopVolSpd;
+	}else{
+		waterBurstSndLoopVol = 1;
+	}
+}
+	if(waterBurstSndLoop == false){//Fade out and turn off
+		if(waterBurstSndLoopVol > 0){//Lower the volume
+			waterBurstSndLoopVol -= waterBurstSndLoopVolSpd;
+		}else{
+			waterBurstSndLoopVol = 0;
+		}
+		if(waterBurstSndLoopVol <= 0){//Stop the sound if the gain is 0
+			audio_stop_sound(waterBurstSndLoopInst);
+		}
+	}
+	if(audio_is_playing(waterBurstSndLoopInst)){//Set the volume
+		audio_sound_gain(waterBurstSndLoopInst, waterBurstSndLoopVol * _sfxVol, 0);
+	}
+	waterBurstSndLoop = false;//Reset variable

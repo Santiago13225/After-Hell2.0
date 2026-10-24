@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":129.5412,
+  "duration":129.54123,
   "exportDir":"",
   "name":"sndYardTheme",
   "parent":{

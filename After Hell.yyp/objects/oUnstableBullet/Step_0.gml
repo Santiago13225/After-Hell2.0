@@ -52,7 +52,7 @@ if(destroy == true){
 		//Play a sound effect
 		//audio_play_sound(sndFleshHit, 8, false);
 		oSFX.enemyhitSnd = true;
-	}else if(place_meeting(x, y, oTrainDamage)){
+	}else if(place_meeting(x, y, oEnvironmentDamage)){
 		oSFX.enemybulletimpactSnd = true;
 	}
 	//Shoot burst
@@ -69,7 +69,7 @@ if(place_meeting(x, y, oSolidWall)){
 }
 
 //Train collision
-if(place_meeting(x, y, oTrainDamage)){
+if(place_meeting(x, y, oEnvironmentDamage)){
 	destroy = true;
 }
 

@@ -56,7 +56,7 @@ if(place_meeting(x, y, oSolidWall)){//If it touches a wall.
 }
 
 //Train Collision
-if(place_meeting(x, y, oTrainDamage)){//If it touches a wall.
+if(place_meeting(x, y, oEnvironmentDamage)){//If it touches a wall.
 	destroy = true;//Destroy the bullet.
 }
 

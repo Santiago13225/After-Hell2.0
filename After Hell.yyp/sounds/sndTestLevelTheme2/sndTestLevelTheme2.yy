@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":247.09224,
+  "duration":247.057,
   "exportDir":"",
   "name":"sndTestLevelTheme2",
   "parent":{

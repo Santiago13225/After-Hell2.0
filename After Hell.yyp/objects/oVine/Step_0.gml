@@ -3,7 +3,7 @@ if(screen_pause()){
 }
 
 //Train collision
-if(place_meeting(x, y, oTrainDamage)){
+if(place_meeting(x, y, oEnvironmentDamage)){
 	if(instance_exists(damageObj)){
 		instance_destroy(damageObj);
 	}
