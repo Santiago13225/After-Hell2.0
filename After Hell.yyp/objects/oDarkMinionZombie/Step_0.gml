@@ -295,7 +295,7 @@ if(!instance_exists(oScreenPause)){
 		shootTimer++;
 		if(shootTimer >= cooldownTime){
 			shootTimer = 0;
-			cooldownTime = irandom_range(180, 420); // randomize next cooldown
+			cooldownTime = irandom_range(180, 420);//randomize next cooldown
 			instance_create_depth(oPlayer.x, oPlayer.y, -oPlayer.bbox_top, oEffectDelayedShot);
 		}
 	}
