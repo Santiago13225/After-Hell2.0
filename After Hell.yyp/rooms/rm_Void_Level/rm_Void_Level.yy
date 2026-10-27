@@ -354,6 +354,7 @@
     {"name":"inst_52BE81BE","path":"rooms/rm_Void_Level/rm_Void_Level.yy",},
     {"name":"inst_15F09AD2","path":"rooms/rm_Void_Level/rm_Void_Level.yy",},
     {"name":"inst_70953821","path":"rooms/rm_Void_Level/rm_Void_Level.yy",},
+    {"name":"inst_74AE0D4B","path":"rooms/rm_Void_Level/rm_Void_Level.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -709,6 +710,7 @@
         {"$GMRInstance":"v4","%Name":"inst_52BE81BE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_52BE81BE","objectId":{"name":"oPyramid","path":"objects/oPyramid/oPyramid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2336.0,"y":1552.0,},
         {"$GMRInstance":"v4","%Name":"inst_15F09AD2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_15F09AD2","objectId":{"name":"oPyramid","path":"objects/oPyramid/oPyramid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1952.0,"y":1056.0,},
         {"$GMRInstance":"v4","%Name":"inst_70953821","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_70953821","objectId":{"name":"oMouse","path":"objects/oMouse/oMouse.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":48.0,},
+        {"$GMRInstance":"v4","%Name":"inst_74AE0D4B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_74AE0D4B","objectId":{"name":"oAsteroidManager","path":"objects/oAsteroidManager/oAsteroidManager.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":64.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
     {"$GMRTileLayer":"","%Name":"background_tiles","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"background_tiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":120,"SerialiseWidth":192,"TileCompressedData":[
           -2417,0,-2,28,-189,0,-4,28,-187,0,-6,28,-186,0,-6,28,-186,0,1,64,-4,28,1,64,-187,0,4,64,28,28,64,-171,

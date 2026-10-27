@@ -48,7 +48,7 @@ if(waiting){
 		extendLength = 0;
 
 		//Create damage instance
-		damageInst = instance_create_depth(x, y, depth - 1, oEnvironmentDamage);
+		damageInst = instance_create_depth(x, y, depth - 1, oDamagePlayer);
 		with(damageInst){
 			damage = 250;
 			sprite_index = sDamageRect;
