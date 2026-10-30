@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sTrueBlast",
-    "path":"sprites/sTrueBlast/sTrueBlast.yy",
+    "name":"sTrueWindBlast",
+    "path":"sprites/sTrueWindBlast/sTrueWindBlast.yy",
   },
   "spriteMaskId":null,
   "visible":true,

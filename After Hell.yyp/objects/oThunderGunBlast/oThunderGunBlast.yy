@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sThunderGunBlast",
-    "path":"sprites/sThunderGunBlast/sThunderGunBlast.yy",
+    "name":"sWindBlast",
+    "path":"sprites/sWindBlast/sWindBlast.yy",
   },
   "spriteMaskId":null,
   "visible":true,

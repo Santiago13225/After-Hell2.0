@@ -245,7 +245,7 @@ var _horizKey = global.xaxisLeft;
 var _vertKey = global.yaxisLeft;
 moveDir = point_direction(0, 0, _horizKey, _vertKey);
 
-var_spd = 0;
+var _spd = 0;
 var _inputLevel = point_distance(0, 0, _horizKey, _vertKey);
 _inputLevel = clamp(_inputLevel, 0, 1);
 
@@ -258,6 +258,11 @@ if(global.speed){
 }
 
 _spd = _moveSpd * _inputLevel;
+
+//Fog slows the player
+if(place_meeting(x, y, oColdFog)){
+	_spd *= 0.5;//50% movement speed
+}
 
 /*if(keyboard_check_pressed(ord("H"))){
 	if(state == movementState){
@@ -330,6 +335,14 @@ if(place_meeting(x + xspd, y + yspd, oWall)){
 //Move the player(*before sliding tutorial)
 x += xspd;
 y += yspd;
+
+//Apply and decay wind force
+/*x += windForceX;
+y += windForceY;
+windForceX *= 0.85;
+windForceY *= 0.85;
+if(abs(windForceX) < 0.1) windForceX = 0;
+if(abs(windForceY) < 0.1) windForceY = 0;*/
 
 //Depth
 depth = -bbox_bottom;
