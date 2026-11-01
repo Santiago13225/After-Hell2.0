@@ -16,6 +16,17 @@ if(savedAlarm > 0 && alarm[0] == -1){
 	savedAlarm = 0;
 }
 
+//Track the player if they are in range, until the last 15 frames
+if(!strike_created && alarm[0] > 15 && instance_exists(oPlayer)){
+	if(point_distance(x, y, oPlayer.x, oPlayer.y) < trackRange){
+		//x = oPlayer.x;
+		//y = oPlayer.y;
+		x = lerp(x, oPlayer.x, 0.1);
+		y = lerp(y, oPlayer.y, 0.1);
+		depth = -bbox_top;
+	}
+}
+
 if(!strike_created){
 	//Advance cloud animation, clamp to last frame
 	cloud_image_index = min(cloud_image_index + cloud_image_speed, sprite_get_number(sCloudForming) - 1);
