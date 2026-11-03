@@ -264,6 +264,11 @@ if(place_meeting(x, y, oColdFog)){
 	_spd *= 0.5;//50% movement speed
 }
 
+//Crab slows the player
+/*if(place_meeting(x, y, oCrab)){
+	_spd *= 0.5;//50% movement speed
+}*/
+
 /*if(keyboard_check_pressed(ord("H"))){
 	if(state == movementState){
 		state = slidingState;
@@ -361,9 +366,12 @@ if(get_damage(oDamagePlayer, true)){
 		oSFX.playerhitSnd = true;
 	}else if(place_meeting(x, y, oEnemyBullet)){
 		//Play a sound effect
-		//audio_play_sound(sndHit, 8, false);
+		oSFX.playerhitSnd = true;
+	}else if(place_meeting(x, y, oCrab)){
+		//Play a sound effect
 		oSFX.playerhitSnd = true;
 	}
+	
 	//Hit screen
 	instance_create_depth(0, 0, 0, oHitScreen);
 	
