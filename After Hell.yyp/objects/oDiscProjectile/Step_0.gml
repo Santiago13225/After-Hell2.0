@@ -18,7 +18,6 @@ y += yspd;
 depth = -y;
 
 //Cleanup
-
 //Hit confirm destroy
 /*if(hitConfirm == true && enemyDestroy == true){
 	destroy = true;

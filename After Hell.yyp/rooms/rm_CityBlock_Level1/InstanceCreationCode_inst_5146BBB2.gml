@@ -1,0 +1,1 @@
+angle = 180;//0 = right, 90 = up, 180 = left, 270 = down (*0 is the default)
