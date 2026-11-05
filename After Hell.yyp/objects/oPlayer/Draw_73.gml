@@ -1,6 +1,6 @@
 var _healthPercent = oPlayer.hp / oPlayer.maxHp;
 
-if(global.dialog_active == false) {
+if(global.dialog_active == false){
 	gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha);
 	gpu_set_alphatestenable(true);
 

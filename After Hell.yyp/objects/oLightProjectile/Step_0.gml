@@ -1,0 +1,95 @@
+///oUnstableBullet Step Event
+/*This object represents the unstable bullet object.*/
+//This event is responsible for handling the unstable bullet object behavior.
+
+//Pause Self
+if(screen_pause()){
+	exit;	
+}
+
+//Move
+xspd = lengthdir_x(spd, dir);
+yspd = lengthdir_y(spd, dir);
+
+x += xspd;
+y += yspd;
+
+//Depth
+depth = -y;
+
+//Cleanup
+
+//Hit confirm destroy
+/*if(hitConfirm == true && enemyDestroy == true){
+	destroy = true;
+}*/
+
+//Hit confirm destroy
+/*if(hitConfirm == true && enemyDestroy == true){
+    pierceCount++;
+    hitConfirm = false;//reset it so it can register the next hit
+    if(pierceCount >= pierce){
+        destroy = true;
+    }
+}*/
+
+if(hitConfirm == true && enemyDestroy == true){
+    maxPierceCount++;
+    hitConfirm = false;
+    pierceCount = 0;//reset same-place counter for the next group of enemies
+    if(maxPierceCount >= maxPierce){
+        destroy = true;
+    }
+}
+
+//Destroy
+if(destroy == true){
+	if(place_meeting(x, y, oSolidWall)){
+		//Play a sound effect
+		//audio_play_sound(snd8BitExplosion2, 8, false);
+		oSFX.enemybulletimpactSnd = true;
+	}else if(place_meeting(x, y, oEnemyParent)){
+		//Play a sound effect
+		//audio_play_sound(sndFleshHit, 8, false);
+		oSFX.enemyhitSnd = true;
+	}
+	//Shoot burst
+	create_animated_vfx(sShootBurst, x, y, depth - 50);
+	
+	//Destroy
+	instance_destroy();
+}
+
+//Collision
+if(place_meeting(x, y, oSolidWall)){
+	//instance_destroy();
+	destroy = true;
+}
+
+//Horizontal wall bounce
+/*if(place_meeting(x + lengthdir_x(spd + 1, dir), y, oSolidWall)){
+	dir = 180 - dir;
+	bounces++;
+	//audio_play_sound(sndCling, 10, false);
+	//oSFX.clingSnd = true;
+	if(bounces >= maxBounces){
+		destroy = true;
+	}
+}
+
+//Vertical wall bounce
+if(place_meeting(x, y + lengthdir_y(spd + 1, dir), oSolidWall)){
+	dir = -dir;
+	bounces++;
+	//audio_play_sound(sndCling, 10, false);
+	if(bounces >= maxBounces){
+		destroy = true;
+	}
+}*/
+
+//Bullets out of range
+if(point_distance(xstart, ystart, x, y) > maxDist){
+	destroy = true;
+}
+
+image_angle = dir;
