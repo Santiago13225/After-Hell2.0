@@ -259,15 +259,11 @@ if(global.speed){
 
 _spd = _moveSpd * _inputLevel;
 
-//Fog slows the player
-if(place_meeting(x, y, oColdFog)){
+//Certain objects slow the player
+//if(place_meeting(x, y, oColdFog) || place_meeting(x, y, oToxicGas) || place_meeting(x, y, oCrab)){
+if(place_meeting(x, y, oColdFog) || place_meeting(x, y, oToxicGas)){
 	_spd *= 0.5;//50% movement speed
 }
-
-//Crab slows the player
-/*if(place_meeting(x, y, oCrab)){
-	_spd *= 0.5;//50% movement speed
-}*/
 
 /*if(keyboard_check_pressed(ord("H"))){
 	if(state == movementState){
