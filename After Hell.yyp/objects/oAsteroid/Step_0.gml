@@ -32,7 +32,7 @@ if(hitConfirm == true && playerDestroy == true){
 if(destroy == true){
 	create_animated_vfx(sShootBurst, x, y, depth - 50);
 	//audio_play_sound(snd8BitExplosion2, 8, false);
-	oSFX.enemybulletimpactSnd = true;
+	//oSFX.enemybulletimpactSnd = true;
 	instance_destroy();
 }
 

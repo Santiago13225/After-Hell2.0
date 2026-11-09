@@ -41,5 +41,12 @@ if(spawnTimer >= spawnTime){
 		}
 		var _ast = instance_create_depth(_spawnX, _spawnY, -2000, oAsteroid);
 		_ast.dir = _dir;
+		//Inferno uses frame 1, every other room uses frame 0
+		if(room == rm_Inferno_Level){
+			_ast.image_index = 1;
+		}else{
+			_ast.image_index = 0;
+		}
+		//_ast.image_speed = 0;//keep it on that frame
 	}
 }

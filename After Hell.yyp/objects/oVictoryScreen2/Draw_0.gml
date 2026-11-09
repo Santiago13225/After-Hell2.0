@@ -114,7 +114,7 @@ switch(global.perkIndex2){
     case 2: modifierText2 = "Energy Shield"; break;
     case 3: modifierText2 = "Toughness"; break;
     case 4: modifierText2 = "Lightweight"; break;
-	case 5: modifierText = "Fast Hands"; break;
+	case 5: modifierText2 = "Fast Hands"; break;
     case 6: modifierText2 = "Extra Luck"; break;
 	case 7: modifierText2 = "Magnet"; break;
     case 8: modifierText2 = "Flak Jacket"; break;
@@ -122,7 +122,7 @@ switch(global.perkIndex2){
 	case 10: modifierText2 = "Last Stand"; break;
     case 11: modifierText2 = "Sudden Death"; break;
     case 12: modifierText2 = "Bad Luck"; break;
-	case 13: modifierText = "Slow Hands"; break;
+	case 13: modifierText2 = "Slow Hands"; break;
     case 14: modifierText2 = "Sluggish"; break;
     case 15: modifierText2 = "Weakness"; break;
     case 16: modifierText2 = "Deprivation"; break;
@@ -157,7 +157,7 @@ if(global.perkIndex != undefined){
 }
 
 //Draw the 2nd selected modifier icon
-if(global.perkIndex != undefined){
+if(global.perkIndex2 != undefined){
 	draw_sprite_ext(sPerksCarouselMenu, global.perkIndex2, _cX + 480 - 32 - 20, _cY + 90 + 32 + 26, 1, 1, 0, c_white, alpha);
 }
 
@@ -397,11 +397,13 @@ if(accept_key){
 			global.energyshield = false;
 			global.juggernaut = false;
 			global.speed = false;
+			global.reload = false;
 			global.luck = false;
 			global.magnet = false;
 			global.flakjacket = false;
 			global.instakill = false;
 			global.badluck = false;
+			global.slowreload = false;
 			global.lowspeed = false;
 			global.weakness = false;
 			global.nomedkit = false;

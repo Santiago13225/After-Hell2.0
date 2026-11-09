@@ -34,7 +34,11 @@ if(strikeTimer >= strikeTime){
 					break;
 				}
 			}
-			instance_create_depth(_strikeX, _strikeY, -1, oEffectDelayedShot2);
+			if(room == rm_Inferno_Level){
+				instance_create_depth(_strikeX, _strikeY, -1, oEffectDelayedShot3);
+			}else{
+				instance_create_depth(_strikeX, _strikeY, -1, oEffectDelayedShot2);
+			}
 		}
 	}
 }
