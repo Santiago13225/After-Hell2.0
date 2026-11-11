@@ -230,6 +230,10 @@ if(menu_level == 0 && prev_menu_level != 0){
 	global.matchPresetIndex = 0;
 	preset_index = 0;
 	option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
+	//Reset gimmicks
+	global.gimmickIndex = 0;
+	gimmick_index = 0;
+	option[2,1] = "  Map Features: " + gimmick_names[gimmick_index] + "  ";
 	//Reset perk 1
 	global.perkIndex = 0;
 	perk_index = 0;
@@ -246,7 +250,6 @@ prev_menu_level = menu_level;
 //Preset selection (Survival Mode preset page)
 if(menu_level == 2 && pos == 0){
 	var old_index = preset_index;
-
 	if(left_key){
 		preset_index--;
 		arrowLeftAnim = 1;
@@ -261,18 +264,39 @@ if(menu_level == 2 && pos == 0){
 			preset_index = 0;
 		}
 	}
-
 	if(preset_index != old_index){//ONLY play sound if something actually changed
 		//audio_play_sound(sndClick, 10, false);
 		oSFX.clickSnd = true;
 	}
-
 	option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
+}
+
+//Gimmick selection (Survival Mode preset page)
+if(menu_level == 2 && pos == 1){
+	var old_index = gimmick_index;
+	if(left_key){
+		gimmick_index--;
+		arrowLeftAnim2 = 1;
+		if(gimmick_index < 0){
+			gimmick_index = array_length(gimmick_names) - 1;
+		}
+	}
+	if(right_key){
+		gimmick_index++;
+		arrowRightAnim2 = 1;
+		if(gimmick_index >= array_length(gimmick_names)){
+			gimmick_index = 0;
+		}
+	}
+	if(gimmick_index != old_index){//ONLY play sound if something actually changed
+		//audio_play_sound(sndClick, 10, false);
+		oSFX.clickSnd = true;
+	}
+	option[2,1] = "  Map Features: " + gimmick_names[gimmick_index] + "  ";
 }
 
 if(menu_level == 3 && pos == 0){
 	var old_index = perk_index;
-
 	if(left_key){
 		perk_index--;
 		arrowLeftAnim = 1;
@@ -287,14 +311,11 @@ if(menu_level == 3 && pos == 0){
 			perk_index = 0;
 		}
 	}
-
 	if(perk_index != old_index){//ONLY play sound if something actually changed
 		//audio_play_sound(sndClick, 10, false);
 		oSFX.clickSnd = true;
 	}
-
 	option[3,0] = "  Mod 1: " + perk_names[perk_index] + "  ";
-	
 	/*// --- Reset Perk 2 whenever Perk 1 changes ---
 	if(perk_index == 0){
 		//Perk 1 is "None" -> force Perk 2 to "None"
@@ -308,7 +329,6 @@ if(menu_level == 3 && pos == 0){
 
 if(menu_level == 3 && pos == 1){
 	var old_index = perk_index2;
-
 	if(perk_index != 0 && perk_index != 9){//Only allow changing if Perk 1 is NOT "None" or "Wild Card"
 		var dir = 0;
 		if(left_key){
@@ -452,6 +472,7 @@ if(accept_key){
 					//audio_play_sound(sndBeep, 10, false);
 					oSFX.beepSnd = true;
 					global.matchPresetIndex = 0;
+					global.gimmickIndex = 0;
 					//preset_index = 0;
 					global.perkIndex = 0;
 					global.perkIndex2 = 0;
@@ -483,6 +504,10 @@ if(accept_key){
 					global.matchPresetIndex = 0;
 					preset_index = 0;
 					option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
+					//Reset gimmicks
+					global.gimmickIndex = 0;
+					gimmick_index = 0;
+					option[2,1] = "  Map Features: " + gimmick_names[gimmick_index] + "  ";
 					//Reset perk 1
 					global.perkIndex = 0;
 					perk_index = 0;
@@ -548,16 +573,24 @@ if(accept_key){
 					oSFX.beepSnd = true;
 					pos = 1;
 					break;
-				//Next, go to perk carousel menu
+					
+				//Gimmick option
 				case 1:
+					oSFX.beepSnd = true;
+					pos = 2;
+					break;
+					
+				//Next, go to perk carousel menu or perk page
+				case 2:
 					//Store selected preset
 					global.matchPresetIndex = preset_index;
+					global.gimmickIndex = gimmick_index;
 					menu_level = 3;
 					//instance_destroy();
 					//instance_create_layer(0, 0, "Instances", oPerkCarouselMenu);
 					break;
 				//Go Back to Main Menu
-				case 2:
+				case 3:
 					//global.matchPresetIndex = 0;//reset preset
 					menu_level = 0;
 					break;

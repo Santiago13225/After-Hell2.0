@@ -1,3 +1,8 @@
+if(global.gimmickIndex == 1){
+	instance_destroy();
+	exit;
+}
+
 spd = 0.3;//drift speed, adjust to taste
 dir = irandom(359);
 turnTimer = 0;

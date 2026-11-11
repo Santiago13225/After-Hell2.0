@@ -1,3 +1,8 @@
+if(global.gimmickIndex == 1){
+	instance_destroy();
+	exit;
+}
+
 //Burst direction - set this in room editor creation code
 //270 = down, 0 = right, 180 = left, 90 = up
 depth = -2000;

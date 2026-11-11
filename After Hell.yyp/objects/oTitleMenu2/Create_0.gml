@@ -57,8 +57,9 @@ option[1, 3] = "Back";
 
 //Survival Mode Menu (Preset Selection)
 option[2, 0] = "  Mode: Standard  ";
-option[2, 1] = "Next Page";
-option[2, 2] = "Back";
+option[2, 1] = "  Map Features: Enabled  ";
+option[2, 2] = "Next Page";
+option[2, 3] = "Back";
 
 //Modifier Menu (Perk Selection)
 option[3, 0] = "  Mod 1: None  ";
@@ -135,6 +136,16 @@ if(variable_global_exists("matchPresetIndex")){
 	preset_index = 0;
 }
 
+//Gimmick system
+if(variable_global_exists("gimmickIndex")){
+	gimmick_index = global.gimmickIndex;
+}else{
+	gimmick_index = 0;
+}
+/*if(!variable_global_exists("gimmicksEnabled")) global.gimmicksEnabled = true;
+gimmick_enabled = global.gimmicksEnabled;
+gimmick_names = ["Enabled", "Disabled"];*/
+
 //Perk system
 if(variable_global_exists("perkIndex")){
 	perk_index = global.perkIndex;
@@ -166,6 +177,11 @@ preset_names = [
 "Bare Bones",
 "Dulled Danger",
 "Beginner's Curse"
+];
+
+gimmick_names = [
+"Enabled",//0
+"Disabled"//1
 ];
 
 perk_names = [
@@ -213,6 +229,8 @@ perk_incompatibility = [
 ];
 
 option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
+option[2,1] = "  Map Features: " + gimmick_names[gimmick_index] + "  ";
+//option[2,1] = "  Gimmicks: " + (gimmick_enabled ? "Enabled" : "Disabled") + "  ";
 option[3,0] = "  Mod 1: " + perk_names[perk_index] + "  ";
 option[3,1] = "  Mod 2: " + perk_names[perk_index2] + "  ";
 
@@ -225,6 +243,16 @@ for(var i = 0; i < array_length(preset_names); i++){
 		preset_longest_text = t;
 	}
 }
+
+//Determine longest gimmick string for menu width locking
+/*gimmick_longest_text = "";
+for(var i = 0; i < array_length(gimmick_names); i++){
+	var t = "   Gimmicks: " + gimmick_names[i] + "   ";
+
+	if(string_width(t) > string_width(gimmick_longest_text)){
+		gimmick_longest_text = t;
+	}
+}*/
 
 //Lock width (same idea as presets)
 perk_longest_text = "";

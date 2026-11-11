@@ -1,5 +1,10 @@
 event_inherited();
 
+if(global.gimmickIndex == 1){
+	instance_destroy();
+	exit;
+}
+
 //depth = -bbox_top;
 damage = 20;
 spd = 0.4;//drift speed, adjust to taste

@@ -1,3 +1,8 @@
+if(global.gimmickIndex == 1){
+	instance_destroy();
+	exit;
+}
+
 ///oSMGWallbuy Create Event
 /*This object represents the smg wallbuy object.*/
 //This event is responsible for setting some variables for the smg wallbuy object.

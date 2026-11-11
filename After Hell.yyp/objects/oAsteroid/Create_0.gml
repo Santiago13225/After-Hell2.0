@@ -1,5 +1,10 @@
 event_inherited();
 
+if(global.gimmickIndex == 1){
+	instance_destroy();
+	exit;
+}
+
 //Damage
 damage = 20;//instant kill like other hazards
 

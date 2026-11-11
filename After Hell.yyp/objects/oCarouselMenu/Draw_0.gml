@@ -168,6 +168,40 @@ switch(global.matchPresetIndex){
 //Draw Match Setting Name Below the Menu
 draw_text_transformed(menu_x, menu_y + menu_height / 2 + 105, "Game Mode: " + matchText, 1, 1, 0);
 
+//Draw map features label below the game mode
+var featureText;
+if(global.gimmickIndex == 1){
+	featureText = "Disabled";
+}else{
+	switch(item){
+		case 0: featureText = "N/A"; break;
+		case 1: featureText = "N/A"; break;
+		case 2: featureText = "N/A"; break;
+		case 3: featureText = "N/A"; break;//House, Facility, Temple, Overlook
+		case 4: featureText = "Crabs"; break;//Island
+		case 5: featureText = "Slot Machines"; break;//Casino
+		case 6: featureText = "Disc Launcher Turrets"; break;//Labyrinth
+		case 7: featureText = "Cold Fogs"; break;//Graveyard
+		case 8: featureText = "Laser Tripwires"; break;//Museum
+		case 9: featureText = "Bursting Pipes"; break;//Sewers
+		case 10: featureText = "Turrets"; break;//City Block
+		case 11: featureText = "Toxic Gas, Toxic Spills"; break;//The Yard
+		case 12: featureText = "Slippery Floors, Scratch Cards"; break;//Supermarket
+		case 13: featureText = "Passing Trains"; break;//Subway Station
+		case 14: featureText = "Slippery Floors, Scratch Cards"; break;//Gas Station
+		case 15: featureText = "Guardian Light"; break;//Cathedral
+		case 16: featureText = "Asteroids"; break;//Void
+		case 17: featureText = "Cold Fogs, Storm"; break;//Cloudwalk
+		case 18: featureText = "Asteroids, Toxic Fogs, Storm, Guardian Light"; break;//Inferno
+		case 19: featureText = "N/A"; break;//Arcade
+		default: featureText = "???"; break;
+	}
+}
+
+//Draw Features text below the Menu
+//draw_text_transformed(menu_x, menu_y + menu_height / 2 + 120, "Map Features: " + featureText, 1, 1, 0);
+draw_text_transformed(menu_x, menu_y + menu_height / 2 - 50, "Map Features: " + featureText, 1, 1, 0);
+
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 

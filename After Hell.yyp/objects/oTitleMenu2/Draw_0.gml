@@ -35,6 +35,11 @@ for(var i = 0; i < op_length; i++){//new code loop
 		text_to_measure = preset_longest_text;
 	}
 	
+	//Lock width for Survival Mode gimmick option
+	/*if(menu_level == 2 && i == 1){
+		text_to_measure = gimmick_longest_text;
+	}*/
+	
 	//Lock width for Survival Mode perk option
 	if(menu_level == 3 && i == 0){
 		text_to_measure = perk_longest_text;
@@ -142,6 +147,7 @@ if(menu_level == 2){
 	var leftX = x + 12;
 	var rightX = x + width - 12;
 	
+	//Row 1 (Presets)
 	var y1 = y + op_border + (op_space * 0) + 6;
 
 	var leftScale = 0.5 + arrowLeftAnim * 0.3;
@@ -152,6 +158,18 @@ if(menu_level == 2){
 
 	draw_sprite_ext(sRightArrow, 0, rightX, y1, rightScale, rightScale, 0,
 		merge_color(c_white, c_yellow, arrowRightAnim), 1);
+
+	//Row 2 (Gimmicks)
+	var y2 = y + op_border + (op_space * 1) + 6;
+	
+	var leftScale2 = 0.5 + arrowLeftAnim2 * 0.3;
+	var rightScale2 = 0.5 + arrowRightAnim2 * 0.3;
+	
+	draw_sprite_ext(sLeftArrow, 0, leftX, y2, leftScale2, leftScale2, 0,
+		merge_color(c_white, c_yellow, arrowLeftAnim2), 1);
+
+	draw_sprite_ext(sRightArrow, 0, rightX, y2, rightScale2, rightScale2, 0,
+		merge_color(c_white, c_yellow, arrowRightAnim2), 1);
 }
 
 if(menu_level == 2 && pos == 0){
@@ -178,6 +196,19 @@ if(menu_level == 2 && pos == 0){
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_top);
 	draw_text(x + width/2, y + height + 20, "Game Mode Description:\n" + description);
+	draw_set_halign(fa_left);
+}
+
+if(menu_level == 2 && pos == 1){
+	var description;
+	
+	switch(gimmick_index){
+		case 0: description = "Enabled. All maps include their unique features during gameplay."; break;
+		case 1: description = "Disabled. All unique map features are removed during gameplay."; break;
+	}
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_top);
+	draw_text(x + width/2, y + height + 20, "Map Features Description:\n" + description);
 	draw_set_halign(fa_left);
 }
 

@@ -1,5 +1,10 @@
 event_inherited();
 
+if(global.gimmickIndex == 1){
+	instance_destroy();
+	exit;
+}
+
 damage = 5;
 spd = 0.3;//drift speed, adjust to taste
 dir = irandom(359);
