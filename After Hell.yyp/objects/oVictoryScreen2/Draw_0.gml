@@ -151,7 +151,7 @@ if(global.selectedMapSprite != undefined){
 }*/
 
 //Draw the 1st selected modifier icon
-if(global.perkIndex != undefined){
+/*if(global.perkIndex != undefined){
 	//draw_sprite_ext(sPerksCarouselMenu, global.perkIndex, _cX + 480 - 32 - 20, _cY + 90 + 32 + 26, 1, 1, 0, c_white, alpha);
 	draw_sprite_ext(sPerksCarouselMenu, global.perkIndex, _cX + 320, _cY + 90 + 32 + 26, 1, 1, 0, c_white, alpha);
 }
@@ -159,7 +159,55 @@ if(global.perkIndex != undefined){
 //Draw the 2nd selected modifier icon
 if(global.perkIndex2 != undefined){
 	draw_sprite_ext(sPerksCarouselMenu, global.perkIndex2, _cX + 480 - 32 - 20, _cY + 90 + 32 + 26, 1, 1, 0, c_white, alpha);
+}*/
+
+//Draw map features for the selected map
+var featureText;
+if(global.gimmickIndex == 1){
+	featureText = "Disabled";
+}else{
+	switch(global.selectedMapSprite){
+		case 0: featureText = "N/A"; break;//House
+		case 1: featureText = "N/A"; break;//Facility
+		case 2: featureText = "N/A"; break;//Temple
+		case 3: featureText = "N/A"; break;//Overlook
+		case 4: featureText = "Crabs"; break;//Island
+		case 5: featureText = "Slot Machines"; break;//Casino
+		case 6: featureText = "Disc Launcher Turrets"; break;//Labyrinth
+		case 7: featureText = "Cold Fogs"; break;//Graveyard
+		case 8: featureText = "Laser Tripwires"; break;//Museum
+		case 9: featureText = "Bursting Pipes"; break;//Sewers
+		case 10: featureText = "Turrets"; break;//City Block
+		case 11: featureText = "Toxic Gas, Toxic Spills"; break;//The Yard
+		case 12: featureText = "Slippery Floors,\nScratch Cards"; break;//Supermarket
+		case 13: featureText = "Passing Trains"; break;//Subway Station
+		case 14: featureText = "Slippery Floors,\nScratch Cards"; break;//Gas Station
+		case 15: featureText = "Guardian Light"; break;//Cathedral
+		case 16: featureText = "Asteroids"; break;//Void
+		case 17: featureText = "Cold Fogs, Storm"; break;//Cloudwalk
+		case 18: featureText = "Asteroids, Toxic Fogs,\nStorm, Guardian Light"; break;//Inferno
+		case 19: featureText = "N/A"; break;//Arcade
+		default: featureText = "???"; break;
+	}
 }
+
+//Tutorial and sandbox rooms have no features
+if(room == rm_Tutorial_Level || room == rm_Mission0_2){
+	featureText = "N/A";
+}
+
+//Shrink the scale if the text is too wide for the space
+var _featScale = 1;
+var _maxW = 150;//adjust to the width between your divider line and the right frame edge
+if(string_width(featureText) > _maxW){
+	_featScale = 0.67;
+}
+
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_text_transformed(_cX + 373, _cY + 90 + 32 + 26, "Map Features:\n" + featureText, _featScale, _featScale, 0);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
 
 //Draw stats for single player
 //draw_text_transformed(_cX + 160, _cY + _wy/2 + 1, "Waves Survived: " + string(oInvisibleSpawner2.currentWave), 1, 1, 0);
