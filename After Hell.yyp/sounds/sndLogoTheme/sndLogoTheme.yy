@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":35.213024,
+  "duration":35.213062,
   "exportDir":"",
   "name":"sndLogoTheme",
   "parent":{

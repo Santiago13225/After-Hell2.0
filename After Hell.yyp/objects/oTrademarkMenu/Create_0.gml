@@ -1,3 +1,6 @@
+global.fontTM = font_add_sprite(sTMFont, 32, true, 1);
+global.fontController = font_add_sprite(sControllerFont, 32, true, 1);
+
 width = 64;
 height = 32;
 

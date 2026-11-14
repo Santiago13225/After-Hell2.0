@@ -6,7 +6,8 @@ guiheight = display_get_gui_height();
 
 //Position radar on GUI
 x = (guiwidth) - 175;
-y = (guiheight) - 850;
+//y = (guiheight) - 850;
+y = (guiheight) - 905;
 
 //Radar size - the size of the radar being displayed
 radarsize = 150;

@@ -71,7 +71,8 @@ draw_set_font(global.fontHUD);
 if(instance_exists(oPlayer)){
 	//Draw the score pool
 	var _scoreString = "$" + string(playerScore);//Set string.
-	draw_text_transformed(0 + _wx - (8 * 3) - (string_width(_scoreString) * 3), 0 + (8 * 3), _scoreString, 3, 3, 0);//Draw string.
+	//draw_text_transformed(0 + _wx - (8 * 3) - (string_width(_scoreString) * 3), 0 + (8 * 3), _scoreString, 3, 3, 0);//Draw string.
+	draw_text_transformed(0 + (8 * 3), _wy - (35 * 3) - (8 * 3), _scoreString, 3, 3, 0);//Draw string.
 	//Draw the game title
 	//draw_sprite_ext(sTitleNew, 0, (8 * 3), (8 * 3) + _wy - (35 * 3), .3 * 3, .3 * 3, 0, c_white, 1);
 }
@@ -147,12 +148,10 @@ var spacing = 8;//Padding between icons
 if(room != rm_Mission0_2){
 	if(instance_exists(oPlayer)){
 		if(global.perkIndex != -1){
-		    var modSprite = sPerksCarouselMenu;
-		    var modIndex = global.perkIndex;
-		    draw_sprite_ext(modSprite, modIndex, 
-		        56, 
-		        64 + 136, 
-		        iconScale, iconScale, 0, c_white, 1);
+			var modSprite = sPerksCarouselMenu;
+			var modIndex = global.perkIndex;
+			draw_sprite_ext(modSprite, modIndex, 56, 64 + 136, iconScale, iconScale, 0, c_white, 1);
+			//draw_sprite_ext(modSprite, modIndex, _wx - 56 - (iconSize * iconScale) - spacing, _wy - (iconSize * iconScale) - 64, iconScale, iconScale, 0, c_white, 1);
 		}
 	}
 }
@@ -161,12 +160,10 @@ if(room != rm_Mission0_2){
 if(room != rm_Mission0_2){
 	if(instance_exists(oPlayer)){
 		if(global.perkIndex2 != -1){
-		    var modSprite = sPerksCarouselMenu;
-		    var modIndex = global.perkIndex2;
-		    draw_sprite_ext(modSprite, modIndex, 
-		        56 + (iconSize * iconScale) + spacing, 
-		        64 + 136, 
-		        iconScale, iconScale, 0, c_white, 1);
+			var modSprite = sPerksCarouselMenu;
+			var modIndex = global.perkIndex2;
+			draw_sprite_ext(modSprite, modIndex, 56 + (iconSize * iconScale) + spacing, 64 + 136, iconScale, iconScale, 0, c_white, 1);
+			//draw_sprite_ext(modSprite, modIndex, _wx - 56, _wy - (iconSize * iconScale) - 64, iconScale, iconScale, 0, c_white, 1);
 		}
 	}
 }

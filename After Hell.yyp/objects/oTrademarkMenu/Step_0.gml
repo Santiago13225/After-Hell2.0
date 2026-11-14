@@ -53,8 +53,8 @@ if (accept_key){
 				//audio_play_sound(sndBeep, 10, false);//Play sound effect.
 				oSFX.beepSnd = true;
 				//room_goto(rm_Main);
-				TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
-				//TransitionStart(rm_Logo_Screen, sqFadeOut, sqFadeIn);
+				//TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
+				TransitionStart(rm_Logo_Screen, sqFadeOut, sqFadeIn);
 				//TransitionStart(rm_Disclaimer_Screen, sqFadeOut, sqFadeIn);
 				break;
 		}
@@ -62,7 +62,7 @@ if (accept_key){
 	}
 	
 	//set position back
-	if (_sml != menu_level){
+	if(_sml != menu_level){
 		pos = 0;
 	}
 	

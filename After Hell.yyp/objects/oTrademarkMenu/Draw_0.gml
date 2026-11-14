@@ -1,6 +1,3 @@
-global.fontTM = font_add_sprite(sTMFont, 32, true, 1);
-global.fontController = font_add_sprite(sControllerFont, 32, true, 1);
-
 draw_set_font(global.fontTM);
 
 var _new_w = 0;

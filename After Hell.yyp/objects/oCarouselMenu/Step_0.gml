@@ -28,10 +28,15 @@ if(kb_delay <= 0){
 }
 
 // --- Update input device status ---
-if(gamepad_is_connected(0)){
+/*if(gamepad_is_connected(0)){
 	global.controllerMode = 1;//Controller detected
 }else{
 	global.controllerMode = 0;//No controller, use keyboard/mouse
+}*/
+
+// --- Fall back to keyboard/mouse only if the controller is gone ---
+if(oControllerIndicator.controller_count == 0){
+	global.controllerMode = 0;
 }
 
 //Controller inputs

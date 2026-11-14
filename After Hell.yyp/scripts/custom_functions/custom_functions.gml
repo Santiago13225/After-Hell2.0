@@ -35,14 +35,32 @@ function draw_my_weapon(){
 function draw_my_laser(){
 	//Draw the Weapon
 	//Get the weapon off the player's body
-	var _xOffset = lengthdir_x(weaponOffsetDist, aimDir);
-	var _yOffset = lengthdir_y(weaponOffsetDist, aimDir);
-	
-	var endX = x + lengthdir_x(600, aimDir);
-	var endY = y + lengthdir_y(600, aimDir);
-	
-    //Draw the laser line
-	draw_line_width_color(x + _xOffset, centerY + _yOffset, endX, endY, 1, c_red, c_blue);
+	//var _xOffset = lengthdir_x(weaponOffsetDist, aimDir);
+	//var _yOffset = lengthdir_y(weaponOffsetDist, aimDir);
+	var _xOffset = lengthdir_x(weapon.length + weaponOffsetDist, aimDir);
+	var _yOffset = lengthdir_y(weapon.length + weaponOffsetDist, aimDir);
+
+	var startX = x + _xOffset;
+	var startY = centerY + _yOffset;
+
+	var endX = startX + lengthdir_x(600, aimDir);
+	var endY = startY + lengthdir_y(600, aimDir);
+
+	//var endX = x + lengthdir_x(600, aimDir);
+	//var endY = y + lengthdir_y(600, aimDir);
+
+	//Green laser on the Inferno map, since red/blue gets lost against the orange
+	var _col1 = c_red;
+	var _col2 = c_blue;
+	if(room == rm_Inferno_Level){
+		_col1 = c_lime;
+		_col2 = c_green;
+	}
+
+	//draw_line_width_color(x + _xOffset, centerY + _yOffset, endX, endY, 1, _col1, _col2);
+	draw_line_width_color(startX, startY, endX, endY, 1, _col1, _col2);
+	//Draw the laser line
+	//draw_line_width_color(x + _xOffset, centerY + _yOffset, endX, endY, 1, c_red, c_blue);
 }
 
 //VFX
