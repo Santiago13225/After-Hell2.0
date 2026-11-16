@@ -8,8 +8,8 @@
   "name":"oTempleSoundBlock",
   "overriddenProperties":[],
   "parent":{
-    "name":"Parallax Control",
-    "path":"folders/Parallax Control.yy",
+    "name":"Unused Stuff",
+    "path":"folders/Unused Stuff.yy",
   },
   "parentObjectId":null,
   "persistent":false,

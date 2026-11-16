@@ -9,7 +9,7 @@ var camCenterY = camY + (camH * 0.5);
 var dx = x - camCenterX;
 var dy = y - camCenterY;
 
-if!(instance_exists(oPauseMenu2) || instance_exists(oVictoryScreen2) || instance_exists(oGameOverScreen2)){
+if!(instance_exists(oPauseMenu) || instance_exists(oVictoryScreen) || instance_exists(oGameOverScreen)){
 	draw_set_font(fnt8Bit);//Should be 8-bit, see part 10 on YouTube series.
 	//draw_set_font(global.font2);
 	var _wx = display_get_gui_width();

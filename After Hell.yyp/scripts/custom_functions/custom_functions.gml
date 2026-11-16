@@ -291,7 +291,7 @@ function clear_weapons(){
 			}
 		}
 		oItemManager3.inv = [global.item_list2.pistol];
-		oHUD2.playerScore = 500;
+		oHUD.playerScore = 500;
 		//oHUD2.playerTotalScore = 500;
 		
 		//Reset all ammo arrays

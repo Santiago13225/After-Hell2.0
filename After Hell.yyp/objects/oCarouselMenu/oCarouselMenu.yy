@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sCarouselMenu3",
-    "path":"sprites/sCarouselMenu3/sCarouselMenu3.yy",
+    "name":"sCarouselMenu",
+    "path":"sprites/sCarouselMenu/sCarouselMenu.yy",
   },
   "spriteMaskId":null,
   "visible":true,

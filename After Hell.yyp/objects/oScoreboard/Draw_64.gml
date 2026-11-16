@@ -81,7 +81,7 @@ if(room == rm_Tutorial_Level){
 }
 
 //Ensure the map text variable exists for sandbox level
-if(room == rm_Mission0_2){
+if(room == rm_Mission0){
     mapText = "Test_Level";
 }
 
@@ -144,14 +144,14 @@ if(room == rm_Tutorial_Level){
 }
 
 //Ensure the map sprite icon variable exists for sandbox level
-if(room == rm_Mission0_2){
+if(room == rm_Mission0){
 	global.selectedMapSprite = 19;//20th frame
 }
 
 //Draw the selected map icon
 if(global.selectedMapSprite != undefined){
 	//draw_sprite_ext(sCarouselMenu3, global.selectedMapSprite, 160 * 3 + (32 * 3) + 30, (90 * 3) + (32 * 3) + 80, 3, 3, 0, c_white, 1);
-	draw_sprite_ext(sCarouselMenu3, global.selectedMapSprite, 160 * 3 + (32 * 3) + 60, (90 * 3) + (32 * 3) + 78, 3, 3, 0, c_white, 1);
+	draw_sprite_ext(sCarouselMenu, global.selectedMapSprite, 160 * 3 + (32 * 3) + 60, (90 * 3) + (32 * 3) + 78, 3, 3, 0, c_white, 1);
 }
 
 //Draw the selected mode icon
@@ -203,7 +203,7 @@ if(global.gimmickIndex == 1){
 }
 
 //Tutorial and sandbox rooms have no features
-if(room == rm_Tutorial_Level || room == rm_Mission0_2){
+if(room == rm_Tutorial_Level || room == rm_Mission0){
 	featureText = "N/A";
 }
 
@@ -222,7 +222,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
 //Draw stats for single player
-if(room == rm_Mission0_2){
+if(room == rm_Mission0){
 	draw_text_transformed(160 * 3, _wy/2 + 3, "Waves Survived: 0", 3, 3, 0);
 }else{
 	draw_text_transformed(160 * 3, _wy/2 + 3, "Waves Survived: " + string(global.currentWave), 3, 3, 0);
@@ -299,10 +299,10 @@ draw_text_transformed(340 * 3, _wy/2 + 85, "Score:", 3, 3, 0);
 draw_text_transformed(160 * 3, _wy/2 + 140, "Player 1", 3, 3, 0);
 draw_text_transformed(260 * 3, _wy/2 + 140, string(global.enemyKillCount), 3, 3, 0);
 //draw_text_transformed(340 * 3, _wy/2 + 140, "500", 3, 3, 0);
-if(room == rm_Mission0_2){
+if(room == rm_Mission0){
 	draw_text_transformed(340 * 3, _wy/2 + 140, "10000000", 3, 3, 0);
 }else {
-	draw_text_transformed(340 * 3, _wy/2 + 140, string(oHUD2.playerTotalScore), 3, 3, 0);
+	draw_text_transformed(340 * 3, _wy/2 + 140, string(oHUD.playerTotalScore), 3, 3, 0);
 }
 
 draw_text_transformed(160 * 3, _wy/2 + 170, "-", 3, 3, 0);

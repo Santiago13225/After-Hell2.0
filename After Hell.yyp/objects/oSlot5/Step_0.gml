@@ -13,7 +13,7 @@ if(!instance_exists(oPlayer)){
 }
 
 //Destroy if victory or game over screen appears
-if(instance_exists(oVictoryScreen2) || instance_exists(oGameOverScreen2)){
+if(instance_exists(oVictoryScreen) || instance_exists(oGameOverScreen)){
 	instance_destroy();
 	exit;
 }

@@ -7,13 +7,12 @@
 	page_number++;//Increment the page number for the next text.
 }*/
 
-
 /// @function scr_text(_text, [_instant])
 /// @param text
 /// @param [instant]  If true, text appears instantly
 function scr_text(_text){
 	var _instant = false;
-	if(argument_count > 1) {
+	if(argument_count > 1){
 		_instant = argument[1];
 	}
 

@@ -153,102 +153,102 @@ if(accept_key){
 	switch(global.selectedMapSprite){
 		case 0:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
+			oHUD.playerTotalScore = 500;
 			TransitionStart(rm_TM1, sqFadeOut, sqFadeIn);
 			break;
 		case 1:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
+			oHUD.playerTotalScore = 500;
 			TransitionStart(rm_TM2, sqFadeOut, sqFadeIn);
 			break;
 		case 2:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
+			oHUD.playerTotalScore = 500;
 			TransitionStart(rm_TM3, sqFadeOut, sqFadeIn);
 			break;
 		case 3:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
+			oHUD.playerTotalScore = 500;
 			TransitionStart(rm_TM4, sqFadeOut, sqFadeIn);
 			break;
 		case 4:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
+			oHUD.playerTotalScore = 500;
 			TransitionStart(rm_TM5, sqFadeOut, sqFadeIn);
 			break;
 		case 5:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
+			oHUD.playerTotalScore = 500;
 			TransitionStart(rm_TM6, sqFadeOut, sqFadeIn);
 			break;
 		case 6://Labyrinth
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
+			oHUD.playerTotalScore = 500;
 			TransitionStart(rm_TM7, sqFadeOut, sqFadeIn);
 			break;
 		case 7:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
+			oHUD.playerTotalScore = 500;
 			TransitionStart(rm_TM8, sqFadeOut, sqFadeIn);
 			break;
 		case 8:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM9_2, sqFadeOut, sqFadeIn);
+			oHUD.playerTotalScore = 500;
+			TransitionStart(rm_TM9, sqFadeOut, sqFadeIn);
 			break;
 		case 9:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM10_2, sqFadeOut, sqFadeIn);
+			oHUD.playerTotalScore = 500;
+			TransitionStart(rm_TM10, sqFadeOut, sqFadeIn);
 			break;
 		case 10:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
+			oHUD.playerTotalScore = 500;
 			TransitionStart(rm_TM11, sqFadeOut, sqFadeIn);
 			break;
 		case 11:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM12_2, sqFadeOut, sqFadeIn);
+			oHUD.playerTotalScore = 500;
+			TransitionStart(rm_TM12, sqFadeOut, sqFadeIn);
 			break;
 		case 12:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM13_2, sqFadeOut, sqFadeIn);
+			oHUD.playerTotalScore = 500;
+			TransitionStart(rm_TM13, sqFadeOut, sqFadeIn);
 			break;
 		case 13:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
+			oHUD.playerTotalScore = 500;
 			TransitionStart(rm_TM14, sqFadeOut, sqFadeIn);
 			break;
 		case 14:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM15_2, sqFadeOut, sqFadeIn);
+			oHUD.playerTotalScore = 500;
+			TransitionStart(rm_TM15, sqFadeOut, sqFadeIn);
 			break;
 		case 15:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
+			oHUD.playerTotalScore = 500;
 			TransitionStart(rm_TM16, sqFadeOut, sqFadeIn);
 			break;
 		case 16:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
+			oHUD.playerTotalScore = 500;
 			TransitionStart(rm_TM17, sqFadeOut, sqFadeIn);
 			break;
 		case 17:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM18_2, sqFadeOut, sqFadeIn);
+			oHUD.playerTotalScore = 500;
+			TransitionStart(rm_TM18, sqFadeOut, sqFadeIn);
 			break;
 		case 18:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
+			oHUD.playerTotalScore = 500;
 			TransitionStart(rm_TM19, sqFadeOut, sqFadeIn);
 			break;
 		case 19:
 			//global.screenShake = true;
-			oHUD2.playerTotalScore = 500;
+			oHUD.playerTotalScore = 500;
 			TransitionStart(rm_TM20_2, sqFadeOut, sqFadeIn);
 			break;
 	}
@@ -261,7 +261,7 @@ if(back_key){
 	//instance_create_layer(0, 0, "Instances", oPerkCarouselMenu);
 	//Return to perk select menu
 	instance_destroy();
-	var m = instance_create_layer(0, 0, "Instances", oTitleMenu2);
+	var m = instance_create_layer(0, 0, "Instances", oTitleMenu);
 	m.menu_level = 3;
 	m.pos = 0;
 }

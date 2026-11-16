@@ -60,8 +60,8 @@
   },
   "origin":4,
   "parent":{
-    "name":"Menu System",
-    "path":"folders/Menu System.yy",
+    "name":"Unused Stuff",
+    "path":"folders/Unused Stuff.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

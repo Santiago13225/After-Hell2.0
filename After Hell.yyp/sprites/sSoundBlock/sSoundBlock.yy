@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Parallax Control",
-    "path":"folders/Parallax Control.yy",
+    "name":"Other",
+    "path":"folders/Other.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

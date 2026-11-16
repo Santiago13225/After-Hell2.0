@@ -2,7 +2,7 @@
 /*This object represents a wave end screen object.*/
 //This event is responsible for handling the wave end screen object drawing.
 
-if(instance_exists(oVictoryScreen2) || global.midTransition){
+if(instance_exists(oVictoryScreen) || global.midTransition){
 	exit;
 }
 

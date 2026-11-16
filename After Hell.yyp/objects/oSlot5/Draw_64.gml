@@ -15,7 +15,7 @@ for(var i = 0; i < 3; i++){
 	draw_sprite_part(sprite_index, image_index, 0, y1[i] - sprite_height, sprite_width, _symHeight, _drawX, y_gui);
 }*/
 
-if(instance_exists(oPauseMenu2) || instance_exists(oVictoryScreen2) || instance_exists(oGameOverScreen2)){
+if(instance_exists(oPauseMenu) || instance_exists(oVictoryScreen) || instance_exists(oGameOverScreen)){
 	exit;
 }
 

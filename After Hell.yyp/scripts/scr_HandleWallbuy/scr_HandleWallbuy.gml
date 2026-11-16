@@ -44,8 +44,8 @@ var createObj   = argument5;*/
 			}
 
 			if(!ownsBase && !ownsHardcore && !ownsUltra){//If none owned → purchase new
-				if(oHUD2.playerScore >= cost){
-					oHUD2.playerScore -= cost;
+				if(oHUD.playerScore >= cost){
+					oHUD.playerScore -= cost;
 					//audio_play_sound(sndBuy, 8, false);
 					oSFX.buySnd = true;
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, createObj);
@@ -58,8 +58,8 @@ var createObj   = argument5;*/
 				}
 			}else{//Already own one variant → top up ammo
 				var ammoCost = ceil(cost * 0.5);//half price for refills
-				if(oHUD2.playerScore >= ammoCost){
-					oHUD2.playerScore -= ammoCost;
+				if(oHUD.playerScore >= ammoCost){
+					oHUD.playerScore -= ammoCost;
 					//audio_play_sound(sndBuy, 8, false);
 					oSFX.buySnd = true;
 					//global.PlayerAmmo[slot] += ammoAdd;//old ammo system code

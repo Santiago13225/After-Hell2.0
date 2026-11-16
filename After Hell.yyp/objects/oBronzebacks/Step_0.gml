@@ -67,7 +67,7 @@ if(instance_exists(oPlayer)){
 if(place_meeting(x, y, oPlayer)){//If money touches player...
 	//audio_play_sound(sndMoney, 8, false);//Play money sound.
 	oSFX.moneySnd = true;
-	if(instance_exists(oHUD2)){//If HUD exists...
+	if(instance_exists(oHUD)){//If HUD exists...
 		//if(!instance_exists(oScoreEffect)){//If score effect not shown...
 		moneyScoreValue = 10;//Money value is 10.
 		var _scoreInst = instance_create_depth(x, y, -3000, oScoreEffect);//Create instance of score effect.
@@ -76,8 +76,8 @@ if(place_meeting(x, y, oPlayer)){//If money touches player...
 			_scoreInst.ShowEffect(moneyScoreValue, x, y);//Call the ShowEffect function.
 		}
 		//}
-		oHUD2.playerScore += 10;//Add to player's score.
-		oHUD2.playerTotalScore += 10;//Add to player's total score.
+		oHUD.playerScore += 10;//Add to player's score.
+		oHUD.playerTotalScore += 10;//Add to player's total score.
 	}
 	instance_destroy();//Destroy instance.
 }

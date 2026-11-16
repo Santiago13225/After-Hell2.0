@@ -1,4 +1,4 @@
-if(instance_exists(oPauseMenu2) || instance_exists(oVictoryScreen2) || instance_exists(oGameOverScreen2)){
+if(instance_exists(oPauseMenu) || instance_exists(oVictoryScreen) || instance_exists(oGameOverScreen)){
 	exit;
 }
 

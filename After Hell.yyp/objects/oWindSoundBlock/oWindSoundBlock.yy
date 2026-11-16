@@ -8,8 +8,8 @@
   "name":"oWindSoundBlock",
   "overriddenProperties":[],
   "parent":{
-    "name":"Parallax Control",
-    "path":"folders/Parallax Control.yy",
+    "name":"Other",
+    "path":"folders/Other.yy",
   },
   "parentObjectId":null,
   "persistent":false,

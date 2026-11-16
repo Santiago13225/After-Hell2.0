@@ -1,10 +1,5 @@
 //draw_set_font(global.fontHUD);
 
-/*scroll = [	"Disclaimer:",
-			"This game is currently in its development stage.",
-			"Please note that many features are still under development, and the gameplay, graphics, mechanics, and content may be subject to change."
-		]*/
-
 previousMode = global.controllerMode;
 
 var scrollKeyboard = [	"Hint:",
@@ -14,7 +9,7 @@ var scrollKeyboard = [	"Hint:",
 			"Use the left and right arrow keys to scroll through options in certain menu pages.",
 			"The controller mode option in the settings page of the menu is locked until you connect a Bluetooth controller to your device."
 		]
-		
+
 var scrollController = [	"Hint:",
 			"Use the left analog stick or d-pad to navigate through the menu.",
 			"Use [@] to select, and use [#] to go back.",
@@ -25,7 +20,6 @@ var scrollController = [	"Hint:",
 // --- Initial setup
 scroll = (global.controllerMode == 1) ? scrollController : scrollKeyboard;
 
-//arraylength = array_length(scrollKeyboard);
 arraylength = array_length(scroll);
 
 scrollX = 640;

@@ -3,7 +3,7 @@
 //This event is responsible for creating some variables for the zombie specified.
 
 //if screen_pause() {
-if(instance_exists(oPauseMenu2)){
+if(instance_exists(oPauseMenu)){
     exit;
 }
 
@@ -13,7 +13,7 @@ if(path_exists(path)){
 }
 path = path_add();
 
-if(instance_exists(oPauseMenu2)){
+if(instance_exists(oPauseMenu)){
 	pathspeed = 0;
 }else{
 	pathspeed = 1.5;

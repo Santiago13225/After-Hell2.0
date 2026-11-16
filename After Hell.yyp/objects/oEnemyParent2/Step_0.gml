@@ -12,7 +12,7 @@ if(place_meeting(x, y, oUnstableBullet)){
 
 // Death
 if(hp <= 0){
-    if(instance_exists(oHUD2)){
+    if(instance_exists(oHUD)){
         if(!instance_exists(oScoreEffect)){
             var zombieScoreValue = 100;
             var _scoreInst = instance_create_depth(x, y, -3000, oScoreEffect);
@@ -21,7 +21,7 @@ if(hp <= 0){
                 _scoreInst.ShowEffect(zombieScoreValue, x, y);
             }
         }
-        oHUD2.playerScore += 100;
+        oHUD.playerScore += 100;
     }
     
     global.enemyKillCount++;

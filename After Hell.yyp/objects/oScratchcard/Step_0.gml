@@ -5,7 +5,7 @@ if(!instance_exists(oPlayer)){
 	instance_destroy();
 	exit;
 }
-if(instance_exists(oVictoryScreen2) || instance_exists(oGameOverScreen2)){
+if(instance_exists(oVictoryScreen) || instance_exists(oGameOverScreen)){
 	instance_destroy();
 	exit;
 }

@@ -28,7 +28,7 @@ if(setup == false){
 	setup = true;
 	draw_set_valign(fa_top);//Set vertical alignment.
 	draw_set_halign(fa_left);//Set horizontal alignment.
-	
+
 	//Loop Through the Pages
 	for(var p = 0; p < page_number; p++){//For each page...
 		text_length[p] = string_length(text[p]);//Find how many characters are on each page and store that number in the "text_length" array.
@@ -36,7 +36,7 @@ if(setup == false){
 		//no character(center the textbox)
 	}
 }
-	
+
 //Typing the Text
 /*if(draw_char < text_length[page]){//If the current character index value is less than the "length" of the text.
 	draw_char += text_spd;//Typing animation at stored speed.
@@ -44,9 +44,9 @@ if(setup == false){
 }*/
 
 //Typing the Text (*2nd Version)
-if(text_instant[page]) {
+if(text_instant[page]){
 	draw_char = text_length[page];
-}else if(draw_char < text_length[page]) {
+}else if(draw_char < text_length[page]){
 	draw_char += text_spd;
 	draw_char = clamp(draw_char, 0, text_length[page]);
 }
@@ -57,14 +57,14 @@ if(accept_key){//If the accept key has been pressed.
 		if(page < page_number - 1){//If the page is less than the page number.
 			page++;//Go to the next page.
 			draw_char = 0;//Reset draw_char index.
-		}else {//Destroy Textbox
+		}else{//Destroy Textbox
 			//Link text for options
 			if(option_number > 0){//If there are options.
 				create_textbox(option_link_id[option_pos]);//Create a textbox for that specific option.
 			}
 			instance_destroy();//Destroy the textbox.
 		}
-	}else {//If not done typing.
+	}else{//If not done typing.
 		draw_char = text_length[page];//Set the draw_char variable again for safety.
 	}
 }
@@ -79,13 +79,12 @@ txtb_spr_h = sprite_get_height(txtb_spr);//Width of the sprite for the textbox.
 
 draw_sprite_ext(txtb_spr, txtb_img, _txtb_x, _txtb_y, textbox_width/txtb_spr_w * 3, textbox_height/txtb_spr_h * 3, 0, c_white, 1);//Back of the textbox.
 
-
 //Options
 if(draw_char == text_length[page] && page == page_number - 1){//If we are at the point where the last text has been printed and the last page has been printed.
 	//Option Selection
 	option_pos += keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);//Select options.
 	option_pos = clamp(option_pos, 0, option_number-1);//Clamp select option.
-	
+
 	//Draw the Options
 	var _op_space = 15;//Spacing between options.
 	var _op_bord = 4;//Border for the options.
@@ -93,7 +92,7 @@ if(draw_char == text_length[page] && page == page_number - 1){//If we are at the
 		//Draw the option box.
 		var _o_w = string_width(option[op]) + _op_bord * 2;//Set the width of the option box.
 		draw_sprite_ext(txtb_spr, txtb_img, _txtb_x + 16, _txtb_y - _op_space*option_number + _op_space * op, _o_w/txtb_spr_w, (_op_space-1)/txtb_spr_h, 0, c_white, 1);//Draw the option box.
-	
+
 		//Arrow
 		if(option_pos == op){//Wherever the position is...
 			draw_sprite(sArrow, 0, _txtb_x,  _txtb_y - _op_space * option_number + _op_space * op);//Draw the arrow for the selected option.

@@ -119,8 +119,8 @@ function check_results(){
 		//audio_play_sound(sndBuy, 10, false);
 		//instance_destroy(oTextbox2);
 		//}
-		oHUD2.playerScore += payout;
-		oHUD2.playerTotalScore += payout;
+		oHUD.playerScore += payout;
+		oHUD.playerTotalScore += payout;
 		//show_debug_message("Win! Payout: $" + string(payout));
 		result_color = c_lime;//green for win
 	}else{

@@ -87,8 +87,8 @@ function check_scratch_results(){
 	//Apply payout
 	if(payout > 0){
 		oSFX.buySnd = true;
-		oHUD2.playerScore += payout;
-		oHUD2.playerTotalScore += payout;
+		oHUD.playerScore += payout;
+		oHUD.playerTotalScore += payout;
 	}else{
 		oSFX.wrongSnd = true;
 	}

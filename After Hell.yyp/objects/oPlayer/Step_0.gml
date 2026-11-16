@@ -30,8 +30,8 @@ x += hspd;
 //Pause menu
 if(startKeyPressed){//if the start key is pressed
 //if(startKeyPressed && pause_lock_timer <= 0){//if the start key is pressed and pause lock timer is less than or equal to 0.
-	if(!instance_exists(oScoreboard) && !oRadar.show_full_map && !instance_exists(oVictoryScreen2)){//if not the case that the scoreboard object exists and not the case that the map has been expanded
-		if(!instance_exists(oPauseMenu2)){//if not the case that the pause menu already exists
+	if(!instance_exists(oScoreboard) && !oMinimap.show_full_map && !instance_exists(oVictoryScreen)){//if not the case that the scoreboard object exists and not the case that the map has been expanded
+		if(!instance_exists(oPauseMenu)){//if not the case that the pause menu already exists
 			//global.dialog_active = true;//Disable silhouette drawing.
 			/*if audio_is_playing(sndTutorialTheme){
 				audio_pause_sound(sndTutorialTheme);
@@ -102,8 +102,8 @@ if(startKeyPressed){//if the start key is pressed
 			//audio_pause_sound(sndUniversal);
 			//audio_play_sound(sndBeep, 8, false);//beep
 			oSFX.beepSnd = true;
-			instance_create_depth(0, 0, 0, oPauseMenu2);//create a pause menu
-			global.dialog_active = instance_exists(oPauseMenu2) || instance_exists(oScoreboard) || oRadar.show_full_map;
+			instance_create_depth(0, 0, 0, oPauseMenu);//create a pause menu
+			global.dialog_active = instance_exists(oPauseMenu) || instance_exists(oScoreboard) || oMinimap.show_full_map;
 		}else{
 			//audio_play_sound(sndBeep, 8, false);
 			oSFX.beepSnd = true;
@@ -118,8 +118,8 @@ if(startKeyPressed){//if the start key is pressed
 					audio_play_sound(sndLowHealth, 9, true);
 				}
 			}
-			instance_destroy(oPauseMenu2);
-			global.dialog_active = instance_exists(oPauseMenu2) || instance_exists(oScoreboard) || oRadar.show_full_map;
+			instance_destroy(oPauseMenu);
+			global.dialog_active = instance_exists(oPauseMenu) || instance_exists(oScoreboard) || oMinimap.show_full_map;
 		}
 	}
 }/*else if(startKeyPressed && pause_lock_timer > 0){//else if the start key is pressed and pause lock timer is greater than 0.
@@ -127,19 +127,19 @@ if(startKeyPressed){//if the start key is pressed
 }*/
 
 if(selectKeyPressed){//if the select key is pressed
-	if(!instance_exists(oPauseMenu2) && !oRadar.show_full_map && !instance_exists(oVictoryScreen2)){//if not the case that the pause menu exists and not the case that the map has been expanded
+	if(!instance_exists(oPauseMenu) && !oMinimap.show_full_map && !instance_exists(oVictoryScreen)){//if not the case that the pause menu exists and not the case that the map has been expanded
 		if(!instance_exists(oScoreboard)){//if not the case that the scoreboard already exists
 			//global.dialog_active = true;//Disable silhouette drawing.
 			//audio_play_sound(sndBeep, 8, false);//beep
 			oSFX.beepSnd = true;
 			instance_create_depth(0, 0, 0, oScoreboard);//create scoreboard
-			global.dialog_active = instance_exists(oPauseMenu2) || instance_exists(oScoreboard) || oRadar.show_full_map;
+			global.dialog_active = instance_exists(oPauseMenu) || instance_exists(oScoreboard) || oMinimap.show_full_map;
 		}else{//else if the scoreboard does exist
 			//global.dialog_active = false;//Enable silhouette drawing.
 			//audio_play_sound(sndBeep, 8, false);//beep
 			oSFX.beepSnd = true;
 			instance_destroy(oScoreboard);//destroy the scoreboard
-			global.dialog_active = instance_exists(oPauseMenu2) || instance_exists(oScoreboard) || oRadar.show_full_map;
+			global.dialog_active = instance_exists(oPauseMenu) || instance_exists(oScoreboard) || oMinimap.show_full_map;
 		}
 	}
 }
@@ -989,9 +989,9 @@ if(instance_exists(oMedkitWallbuy3)){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 500;
 				//Check if the player has enough points to buy the weapon
-			    if(oHUD2.playerScore >= wallbuyCost) {
+			    if(oHUD.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
-			        oHUD2.playerScore -= wallbuyCost;
+			        oHUD.playerScore -= wallbuyCost;
 					//audio_play_sound(sndBuy, 8, false);
 					oSFX.buySnd = true;
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oMedkit);
@@ -1016,8 +1016,8 @@ if(instance_exists(oSlotWallbuy)){
 		if(distance_to_object(oPlayer) < 32 && instance_exists(oTextbox2)){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 50;
-				if(oHUD2.playerScore >= wallbuyCost){
-					oHUD2.playerScore -= wallbuyCost;
+				if(oHUD.playerScore >= wallbuyCost){
+					oHUD.playerScore -= wallbuyCost;
 					//oSFX.buySnd = true;
 					//Create slot machine if it doesn't exist
 					if(!instance_exists(oSlot5)){
@@ -1051,8 +1051,8 @@ if(instance_exists(oScratchcardWallbuy)){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 50;
 				if(!instance_exists(oScratchcard)){
-					if(oHUD2.playerScore >= wallbuyCost){
-						oHUD2.playerScore -= wallbuyCost;
+					if(oHUD.playerScore >= wallbuyCost){
+						oHUD.playerScore -= wallbuyCost;
 						//oSFX.buySnd = true;
 						instance_create_depth(0, 0, -7000, oScratchcard);
 						instance_destroy(oTextbox2);
@@ -1078,9 +1078,9 @@ if(instance_exists(oDebris)){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 500;
 				//Check if the player has enough points to buy the weapon
-			    if(oHUD2.playerScore >= wallbuyCost) {
+			    if(oHUD.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
-			        oHUD2.playerScore -= wallbuyCost;
+			        oHUD.playerScore -= wallbuyCost;
 					//audio_play_sound(sndBuy, 8, false);
 					oSFX.buySnd = true;
 					instance_destroy();
@@ -1187,9 +1187,9 @@ if(instance_exists(oArmoryAugmentor2)){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 5000;
 				//Check if the player has enough points to buy the weapon
-			    if(oHUD2.playerScore >= wallbuyCost) {
+			    if(oHUD.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
-			        oHUD2.playerScore -= wallbuyCost;
+			        oHUD.playerScore -= wallbuyCost;
 					//audio_play_sound(sndBuy, 8, false);
 					instance_destroy(oTextbox2);
 					
@@ -1567,7 +1567,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.ubazooka);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreBazooka);
 					}else {
-						oHUD2.playerScore += wallbuyCost;
+						oHUD.playerScore += wallbuyCost;
 						if(!audio_is_playing(sndMax)){
 							audio_play_sound(sndMax, 10, false);
 						}
@@ -1615,12 +1615,12 @@ if(hp <= 0){
 	//Play a sound effect
 	audio_play_sound(sndGameOver, 8, false);
 	//Create the game over object
-	instance_create_depth(0, 0, -10000, oGameOverScreen2);
+	instance_create_depth(0, 0, -10000, oGameOverScreen);
 	
 	//Poof
 	//instance_create_depth(x, y, depth, oAnimatedVFX);
 	create_animated_vfx(sPoof, x, y, depth);
-	oHUD2.playerScore = 500;
+	oHUD.playerScore = 500;
 	clear_weapons();
 	//array_resize(global.PlayerAmmo, 1);
 	array_resize(global.PlayerMag, 1);
@@ -1685,7 +1685,7 @@ if(global.energyshield && shield < maxShield) {
 //global.playerSurvivalTime = current_time - spawnTime;
 
 //Only increment if NOT paused
-if(!instance_exists(oPauseMenu2)) {
+if(!instance_exists(oPauseMenu)) {
 	survivalSteps++;
 }
 
