@@ -1,5 +1,5 @@
 if(controller_count > 0) {//if there is more than one conttroller
-	if(room == rm_Title_Screen){//if we are in the title screen
+	if(room == rm_Main_Menu){//if we are in the title screen
 		var spr = sController;//your controller icon sprite
 		var xPos = display_get_gui_width() - (28 * 3);
 		var yPos = display_get_gui_height() - (26 * 3);

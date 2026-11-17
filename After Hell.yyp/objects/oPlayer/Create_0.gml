@@ -68,10 +68,10 @@ weaponOffsetDist = 4;
 aimDir = 0;
 
 face = 3;
-sprite[0] = sPlayerRightNew;
-sprite[1] = sPlayerUpNew;
-sprite[2] = sPlayerLeftNew;
-sprite[3] = sPlayerDownNew;
+sprite[0] = sPlayerRight;
+sprite[1] = sPlayerUp;
+sprite[2] = sPlayerLeft;
+sprite[3] = sPlayerDown;
 
 //sprite_index = sprite[face];
 //weapon info

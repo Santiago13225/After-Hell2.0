@@ -388,7 +388,7 @@ if(accept_key){
 					oSFX.beepSnd = true;
 					reset_wave_variables();
 					//Transition safely back to the title screen
-					TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
+					TransitionStart(rm_Main_Menu, sqFadeOut, sqFadeIn);
 
 					//global.PlayerAmmo = [];//Completely reset the ammo array.
 					break;

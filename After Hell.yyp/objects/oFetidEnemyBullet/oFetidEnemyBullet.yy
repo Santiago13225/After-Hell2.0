@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sFetidEnemyBullet2",
-    "path":"sprites/sFetidEnemyBullet2/sFetidEnemyBullet2.yy",
+    "name":"sFetidEnemyBullet",
+    "path":"sprites/sFetidEnemyBullet/sFetidEnemyBullet.yy",
   },
   "spriteMaskId":null,
   "visible":true,

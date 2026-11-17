@@ -148,7 +148,7 @@ global.item_list2 = {
 	(
 	"Raygun",
 	"Standard.\nDamage: 1\nFire Rate: +++\nPierce: Yes\nAmmo Type: Special Rounds\nPros: Splash Damage\nCons: Injurious to Player",
-	sRaygunPickup2,
+	sRaygunPickup,
 	true,
 	function()
 	{

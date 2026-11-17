@@ -13,7 +13,7 @@ if(skipTimer > 0){
     fadeout = 1;
 }
 
-camera_set_view_pos(view_camera[1], xpos, 360);
+camera_set_view_pos(view_camera[1], xpos, 480);
 xpos = max(xpos - 0.3, 0);
 
 if(!fadeout){
@@ -59,8 +59,8 @@ if(holdspace > 80) || (xpos < 100) fadeout = 1;
 
 if(a == 1) && (fadeout == 1){
 	global.dialog_active = false;//Disable silhouette drawing.
-	TransitionStart(rm_Level1, sqFadeOut, sqFadeIn);
-	//TransitionStart(rm_Arcade_Level, sqFadeOut, sqFadeIn);
+	//TransitionStart(rm_Level1, sqFadeOut, sqFadeIn);
+	TransitionStart(rm_Arcade_Level, sqFadeOut, sqFadeIn);
 }
 
 //Controller skip input (like Key Press Any for controller)

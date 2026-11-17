@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sTeleportSpawnPoint",
-    "path":"sprites/sTeleportSpawnPoint/sTeleportSpawnPoint.yy",
+    "name":"sPentacle3",
+    "path":"sprites/sPentacle3/sPentacle3.yy",
   },
   "spriteMaskId":null,
   "visible":true,

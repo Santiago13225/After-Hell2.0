@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sWarpV2",
-    "path":"sprites/sWarpV2/sWarpV2.yy",
+    "name":"sWarp2",
+    "path":"sprites/sWarp2/sWarp2.yy",
   },
   "spriteMaskId":null,
   "visible":true,

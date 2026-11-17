@@ -25,9 +25,9 @@ if(hp <= 0){
     }
     
     global.enemyKillCount++;
-    oInvisibleSpawner2.zombiesKilledThisWave++;
+    oSpawner.zombiesKilledThisWave++;
     
-    if(oInvisibleSpawner2.zombiesKilledThisWave == oInvisibleSpawner2.activeEnemyMax && !waveCompletionMessageShown){
+    if(oSpawner.zombiesKilledThisWave == oSpawner.activeEnemyMax && !waveCompletionMessageShown){
         audio_play_sound(sndRoundEnd1, 10, false);
         instance_create_depth(x, y, -8000, oWaveEndScreen);
         waveCompletionMessageShown = true;
@@ -80,7 +80,7 @@ if(instance_exists(oAreaMarker)){
     
     if(areaID != global.playerAreaID){
         var spawnList = [];
-        with(oZombieAreaSpawn){
+        with(oAreaSpawner){
             if(areaID == global.playerAreaID) array_push(spawnList, id);
         }
         if(array_length(spawnList) > 0){

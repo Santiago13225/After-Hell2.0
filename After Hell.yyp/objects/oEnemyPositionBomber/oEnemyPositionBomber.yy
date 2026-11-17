@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sDarkMinionZombie",
-    "path":"sprites/sDarkMinionZombie/sDarkMinionZombie.yy",
+    "name":"sDarkMinion",
+    "path":"sprites/sDarkMinion/sDarkMinion.yy",
   },
   "spriteMaskId":null,
   "visible":true,

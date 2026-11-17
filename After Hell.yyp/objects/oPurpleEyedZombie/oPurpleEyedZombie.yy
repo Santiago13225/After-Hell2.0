@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPurpleEyedSkeleton2",
-    "path":"sprites/sPurpleEyedSkeleton2/sPurpleEyedSkeleton2.yy",
+    "name":"sPurpleEyedZombie",
+    "path":"sprites/sPurpleEyedZombie/sPurpleEyedZombie.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sRaygunPickup2",
-    "path":"sprites/sRaygunPickup2/sRaygunPickup2.yy",
+    "name":"sRaygunPickup",
+    "path":"sprites/sRaygunPickup/sRaygunPickup.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -20,10 +20,10 @@ function TransitionStart(_roomTarget, _typeOut, _typeIn){
 		global.roomTarget = _roomTarget;
 
 		//Destroy oMouse and reset cursor before transitioning
-		if(instance_exists(oMouse)){
+		if(instance_exists(oAimCursor)){
 			cursor_sprite = -1;
 			window_set_cursor(cr_none);
-			instance_destroy(oMouse);
+			instance_destroy(oAimCursor);
         }
 		
 		TransitionPlaceSequence(_typeOut);

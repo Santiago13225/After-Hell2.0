@@ -1,5 +1,5 @@
-///oZombie Create Event
-/*This object represents a Zombie.*/
+///oFetidZombie Create Event
+/*This object represents a Fetid Zombie.*/
 //This event is responsible for creating some variables for the zombie specified.
 
 event_inherited();//Inherit the parent event.
@@ -8,12 +8,12 @@ wasPaused = false;
 
 //Movement Variables
 spd = 0;//Zombie's initial speed.
-chaseSpd = .5;//Speed used when chasing a target.
+chaseSpd = .6;//Speed used when chasing a target.
 dir = 0;//Direction the zombie is facing.
 xspd = 0;//Horizontal speed.
 yspd = 0;//Vertical speed.
 
-pathspeed = 0.5;
+pathspeed = 0.6;
 
 face = 1;//Default facing direction (1 for right).
 

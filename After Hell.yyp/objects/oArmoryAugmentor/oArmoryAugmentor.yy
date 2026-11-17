@@ -13,8 +13,8 @@
     "path":"folders/Wall Objects.yy",
   },
   "parentObjectId":{
-    "name":"oWall",
-    "path":"objects/oWall/oWall.yy",
+    "name":"oInteract",
+    "path":"objects/oInteract/oInteract.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -20,8 +20,8 @@ if(instance_exists(oPlayer)){
 }
 
 //Victory Screen
-if(instance_exists(oInvisibleSpawner2)){//If spawner exists...
-	if(global.enemyKillCount == oInvisibleSpawner2.maxTotalEnemies && playerHp != 0){//If the  player reaches the total number of enemies to kill.
+if(instance_exists(oSpawner)){//If spawner exists...
+	if(global.enemyKillCount == oSpawner.maxTotalEnemies && playerHp != 0){//If the  player reaches the total number of enemies to kill.
 		//audio_pause_sound(global.MUSIC);//Pause the music.
 		audio_pause_all();
 

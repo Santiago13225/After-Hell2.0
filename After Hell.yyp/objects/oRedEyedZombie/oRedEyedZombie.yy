@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sRedEyedSkeleton2",
-    "path":"sprites/sRedEyedSkeleton2/sRedEyedSkeleton2.yy",
+    "name":"sRedEyedZombie",
+    "path":"sprites/sRedEyedZombie/sRedEyedZombie.yy",
   },
   "spriteMaskId":null,
   "visible":true,

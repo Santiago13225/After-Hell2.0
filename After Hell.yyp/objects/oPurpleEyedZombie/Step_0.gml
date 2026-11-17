@@ -1,5 +1,5 @@
-///oPurpleEyedZombie Step Event
-/*This object represents a Purple Eyed Zombie.*/
+///oFetidPurpleEyedZombie Step Event
+/*This object represents a Fetid Purple Eyed Zombie.*/
 //This event is resposible for handling zombie behavior.
 
 var _paused = instance_exists(oScreenPause);
@@ -14,10 +14,10 @@ if(_paused){//Pause self. New!
 	image_speed = 0;
 	exit;
 }else{
-    image_speed = 5;
+	image_speed = 5;
 }
 
-//if screen_pause(){//Pause Self
+//if(screen_pause()){//Pause Self
 //	exit;
 //}
 
@@ -43,6 +43,7 @@ switch(state){
 				dir = 270;//Set the direction.
 			}
 			image_alpha = 1;//Make the zombie fully visable.
+
 			if(!place_meeting(x, y, oInvisibleSpawner2)){//Switch to the chasing state after out of the spawner object.
 				state = 0;
 			}
@@ -133,7 +134,6 @@ switch(state){
 			}
 			//If teleport was triggered, let it complete regardless
 		}
-
 		//Transition to Shooting State
 		var _camLeft = camera_get_view_x(view_camera[0]);//Left of camera variable.
 		var _camRight = _camLeft + camera_get_view_width(view_camera[0]);//Right of camera variable.
@@ -155,14 +155,13 @@ switch(state){
 		if(instance_exists(oPlayer)){//If the player exists...
 			dir = point_direction(x, y, oPlayer.x, oPlayer.y);//Get the player's direction.
 		}
-
 		spd = 0;//Set the correct speed.
 		image_index = 0;//Stop animating / manually set the image index.
 		shootTimer++;//Shoot a bullet.
-	
+
 		if(shootTimer == 1){//Create the bullet.
-			bulletInst = instance_create_depth(x + bulletXoff*face, y + bulletYoff, depth, oEnemyBullet);
-		}
+			bulletInst = instance_create_depth(x + bulletXoff*face, y + bulletYoff, depth, oFetidEnemyBullet);
+		}	
 		if(shootTimer <= windupTime && instance_exists(bulletInst)){//Keep the bullet in the zombie's hands.
 			bulletInst.x = x + bulletXoff*face;
 			bulletInst.y = y + bulletYoff;
@@ -174,6 +173,7 @@ switch(state){
 		}
 		if(shootTimer > windupTime + recoverTime){//Recover and return to chasing the player.
 			state = 0;//Go back to chasing the player.
+		
 			shootTimer = 0;//Reset the timer so that we can use it again.
 		}	
 	break;
@@ -198,10 +198,10 @@ switch(state){
 	        yspd = lengthdir_y(spd, dir);
 	    }
 	}*/
-
+	
 	if(screen_pause()){
-		xspd = 0;
-		yspd = 0;
+	    xspd = 0;
+	    yspd = 0;
 	}else{
 		if(!usingPathfinding){
 			xspd = lengthdir_x(spd, dir);

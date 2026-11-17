@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sEvolvedEnemyBullet2",
-    "path":"sprites/sEvolvedEnemyBullet2/sEvolvedEnemyBullet2.yy",
+    "name":"sEvolvedEnemyBullet",
+    "path":"sprites/sEvolvedEnemyBullet/sEvolvedEnemyBullet.yy",
   },
   "spriteMaskId":null,
   "visible":true,

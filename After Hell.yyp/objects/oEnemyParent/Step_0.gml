@@ -260,7 +260,7 @@ if(instance_exists(oAreaMarker)){
 		var spawnList = [];
 
 		//Collect all spawn points in the player's area
-		with(oZombieAreaSpawn){
+		with(oAreaSpawner){
 			if(areaID == global.playerAreaID){
 				array_push(spawnList, id);
 			}

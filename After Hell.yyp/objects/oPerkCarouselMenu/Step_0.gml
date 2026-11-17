@@ -159,7 +159,7 @@ if(accept_key){
 if(back_key){
 	//Return to match settings menu
 	instance_destroy();
-	var m = instance_create_layer(0, 0, "Instances", oTitleMenu);
+	var m = instance_create_layer(0, 0, "Instances", oMainMenu);
 	m.menu_level = 2;
 	m.pos = 0;
 	//instance_create_layer(0, 0, "Instances", oSettingsCarouselMenu);

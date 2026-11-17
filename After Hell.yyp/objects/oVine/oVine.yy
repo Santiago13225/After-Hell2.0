@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sVine2",
-    "path":"sprites/sVine2/sVine2.yy",
+    "name":"sVine",
+    "path":"sprites/sVine/sVine.yy",
   },
   "spriteMaskId":null,
   "visible":true,

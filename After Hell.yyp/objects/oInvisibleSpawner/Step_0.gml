@@ -13,10 +13,10 @@ if instance_number(oEnemyParent) >= global.activeEnemyMax || global.totalEnemies
 	timer = 0;
 }
 
-if timer >= spawnTime && !place_meeting(x, y, oZombie)
+if timer >= spawnTime && !place_meeting(x, y, oSkeleton)
 {
 	//create an enemy
-	var _inst = instance_create_depth(x, y, depth - 1, oZombie);
+	var _inst = instance_create_depth(x, y, depth - 1, oSkeleton);
 	with(_inst)
 	{
 		//make the zombie invisible at first

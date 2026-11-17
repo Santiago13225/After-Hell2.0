@@ -16,8 +16,8 @@
     "path":"folders/Enemies.yy",
   },
   "parentObjectId":{
-    "name":"oEliteEnemyParent2",
-    "path":"objects/oEliteEnemyParent2/oEliteEnemyParent2.yy",
+    "name":"oEliteEnemyParent",
+    "path":"objects/oEliteEnemyParent/oEliteEnemyParent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -719,11 +719,11 @@ if(lowHealth){
 	image_blend = c_white;
 }
 
-with(oShotgunWallbuy2){
+with(oShotgunBuyPad){
 	scr_HandleWallbuy(500, 32, global.WeaponList.shotgun, global.WeaponList.hshotgun, global.WeaponList.ushotgun, oShotgun);
 }
 
-with(oRaygunWallbuy2){
+with(oRaygunBuyPad){
 	scr_HandleWallbuy(
 		5000,										//cost
 		60,											//ammoAdd
@@ -734,23 +734,23 @@ with(oRaygunWallbuy2){
 	);
 }
 
-with(oSniperWallbuy2){
+with(oSniperBuyPad){
 	scr_HandleWallbuy(1500, 20, global.WeaponList.sniper, global.WeaponList.hsniper, global.WeaponList.usniper, oSniper);
 }
 
-with(oAssaultWallbuy2){
+with(oAssaultBuyPad){
 	scr_HandleWallbuy(1500, 120, global.WeaponList.assault, global.WeaponList.hassault, global.WeaponList.uassault, oAssault);
 }
 
-with(oBazookaWallbuy2){
+with(oBazookaBuyPad){
 	scr_HandleWallbuy(6000, 9, global.WeaponList.bazooka, global.WeaponList.hbazooka, global.WeaponList.ubazooka, oBazooka);
 }
 
-with(oSMGWallbuy2){
+with(oSMGBuyPad){
 	scr_HandleWallbuy(1300, 150, global.WeaponList.smg, global.WeaponList.hsmg, global.WeaponList.usmg, oSMG);
 }
 
-with(oLMGWallbuy2){
+with(oLMGBuyPad){
 	scr_HandleWallbuy(2500, 200, global.WeaponList.lmg, global.WeaponList.hlmg, global.WeaponList.ulmg, oLMG);
 }
 
@@ -982,8 +982,8 @@ if(instance_exists(oLMGWallbuy2)){
 */
 #endregion
 
-if(instance_exists(oMedkitWallbuy3)){
-	with(oMedkitWallbuy3){
+if(instance_exists(oMedkitBuyPad)){
+	with(oMedkitBuyPad){
 		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
 			//if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
@@ -1011,8 +1011,8 @@ if(instance_exists(oMedkitWallbuy3)){
 	}
 }
 
-if(instance_exists(oSlotWallbuy)){
-	with(oSlotWallbuy){
+if(instance_exists(oSlotBuyPad)){
+	with(oSlotBuyPad){
 		if(distance_to_object(oPlayer) < 32 && instance_exists(oTextbox2)){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 50;
@@ -1045,8 +1045,8 @@ if(instance_exists(oSlotWallbuy)){
 	}
 }
 
-if(instance_exists(oScratchcardWallbuy)){
-	with(oScratchcardWallbuy){
+if(instance_exists(oScratchcardBuyPad)){
+	with(oScratchcardBuyPad){
 		if(distance_to_object(oPlayer) < 32 && instance_exists(oTextbox2)){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 50;
@@ -1180,8 +1180,8 @@ if(instance_exists(oMusicBlockTestLevel)){
 	}
 }
 
-if(instance_exists(oArmoryAugmentor2)){
-	with(oArmoryAugmentor2){
+if(instance_exists(oArmoryAugmentor)){
+	with(oArmoryAugmentor){
 		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
 			//if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
@@ -1636,23 +1636,23 @@ if(hp <= 0){
 var nearWallbuy = false;
 
 //Check collision with every wallbuy object type
-if((collision_circle(x, y, 32, oShotgunWallbuy2, false, true) ||
-    collision_circle(x, y, 32, oRaygunWallbuy2, false, true) ||
-    collision_circle(x, y, 32, oSniperWallbuy2, false, true) ||
-    collision_circle(x, y, 32, oAssaultWallbuy2, false, true) ||
-    collision_circle(x, y, 32, oBazookaWallbuy2, false, true) ||
-    collision_circle(x, y, 32, oSMGWallbuy2, false, true) ||
-    collision_circle(x, y, 32, oLMGWallbuy2, false, true) ||
-    collision_circle(x, y, 32, oMedkitWallbuy3, false, true) ||
+if((collision_circle(x, y, 32, oShotgunBuyPad, false, true) ||
+    collision_circle(x, y, 32, oRaygunBuyPad, false, true) ||
+    collision_circle(x, y, 32, oSniperBuyPad, false, true) ||
+    collision_circle(x, y, 32, oAssaultBuyPad, false, true) ||
+    collision_circle(x, y, 32, oBazookaBuyPad, false, true) ||
+    collision_circle(x, y, 32, oSMGBuyPad, false, true) ||
+    collision_circle(x, y, 32, oLMGBuyPad, false, true) ||
+    collision_circle(x, y, 32, oMedkitBuyPad, false, true) ||
     collision_circle(x, y, 32, oDebris, false, true) ||
 	collision_circle(x, y, 32, oMusicBlockHouse, false, true) ||
 	collision_circle(x, y, 32, oMusicBlockFacility, false, true) ||
 	collision_circle(x, y, 32, oMusicBlockTemple, false, true) ||
 	collision_circle(x, y, 32, oMusicBlockOverlook, false, true) ||
 	collision_circle(x, y, 32, oMusicBlockTestLevel, false, true) ||
-	collision_circle(x, y, 32, oSlotWallbuy, false, true) ||
-	collision_circle(x, y, 32, oScratchcardWallbuy, false, true) ||
-    collision_circle(x, y, 32, oArmoryAugmentor2, false, true))) && instance_exists(oTextbox2) {
+	collision_circle(x, y, 32, oSlotBuyPad, false, true) ||
+	collision_circle(x, y, 32, oScratchcardBuyPad, false, true) ||
+    collision_circle(x, y, 32, oArmoryAugmentor, false, true))) && instance_exists(oTextbox2) {
     nearWallbuy = true;
 }
 

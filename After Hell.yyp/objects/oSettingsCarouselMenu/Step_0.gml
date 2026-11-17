@@ -95,5 +95,5 @@ if(accept_key){
 if(back_key){
 	//Cancel and go back
 	instance_destroy();
-	instance_create_layer(0, 0, "Instances", oTitleMenu);
+	instance_create_layer(0, 0, "Instances", oMainMenu);
 }

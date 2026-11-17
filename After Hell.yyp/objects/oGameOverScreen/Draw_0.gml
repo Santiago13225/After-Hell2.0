@@ -504,7 +504,7 @@ if(accept_key){
 					global.dialog_active = false;
 					instance_deactivate_object(oPlayer);
 					reset_wave_variables();
-					TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
+					TransitionStart(rm_Main_Menu, sqFadeOut, sqFadeIn);
 					break;
 			}
 			break;

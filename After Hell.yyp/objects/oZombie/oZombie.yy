@@ -16,8 +16,8 @@
     "path":"folders/Enemies.yy",
   },
   "parentObjectId":{
-    "name":"oEnemyParent",
-    "path":"objects/oEnemyParent/oEnemyParent.yy",
+    "name":"oFetidEnemyParent",
+    "path":"objects/oFetidEnemyParent/oFetidEnemyParent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sSkeleton",
-    "path":"sprites/sSkeleton/sSkeleton.yy",
+    "name":"sZombie",
+    "path":"sprites/sZombie/sZombie.yy",
   },
   "spriteMaskId":null,
   "visible":true,

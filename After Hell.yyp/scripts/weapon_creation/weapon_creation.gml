@@ -41,13 +41,13 @@ global.WeaponList = {
 	),
 	raygun : new create_weapon(
 		"Raygun - MK.I",//<- name
-		sRaygun2,
-		sprite_get_bbox_right(sRaygun2) - sprite_get_xoffset(sRaygun2),
+		sRaygun,
+		sprite_get_bbox_right(sRaygun) - sprite_get_xoffset(sRaygun),
 		oRayGunBlast,
 		9,//weapon shot delay
 		1,//1 shot
 		0,//bullet spread angle
-		sRaygunPickup2,
+		sRaygunPickup,
 		//0,//ammo
 		20,//mag size
 		120//reload time
@@ -145,8 +145,8 @@ global.WeaponList = {
 	),
 	hraygun : new create_weapon(
 		"Raygun - MK.II",//<- name
-		sHardcoreRaygun2,
-		sprite_get_bbox_right(sHardcoreRaygun2) - sprite_get_xoffset(sHardcoreRaygun2),
+		sHardcoreRaygun,
+		sprite_get_bbox_right(sHardcoreRaygun) - sprite_get_xoffset(sHardcoreRaygun),
 		oHardcoreRayGunBlast,
 		8,//weapon shot delay
 		1,//1 shot
@@ -249,8 +249,8 @@ global.WeaponList = {
 	),
 	uraygun : new create_weapon(
 		"Raygun - MK.III",//<- name
-		sUltraRaygun2,
-		sprite_get_bbox_right(sUltraRaygun2) - sprite_get_xoffset(sUltraRaygun2),
+		sUltraRaygun,
+		sprite_get_bbox_right(sUltraRaygun) - sprite_get_xoffset(sUltraRaygun),
 		oUltraRayGunBlast,
 		7,//weapon shot delay
 		1,//1 shot

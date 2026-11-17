@@ -249,7 +249,7 @@ if(accept_key){
 		case 19:
 			//global.screenShake = true;
 			oHUD.playerTotalScore = 500;
-			TransitionStart(rm_TM20_2, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM20, sqFadeOut, sqFadeIn);
 			break;
 	}
 }
@@ -261,7 +261,7 @@ if(back_key){
 	//instance_create_layer(0, 0, "Instances", oPerkCarouselMenu);
 	//Return to perk select menu
 	instance_destroy();
-	var m = instance_create_layer(0, 0, "Instances", oTitleMenu);
+	var m = instance_create_layer(0, 0, "Instances", oMainMenu);
 	m.menu_level = 3;
 	m.pos = 0;
 }

@@ -1,5 +1,5 @@
-///oZombie Step Event
-/*This object represents a Zombie.*/
+///oFetidZombie Step Event
+/*This object represents a Fetid Zombie.*/
 //This event is resposible for handling zombie behavior.
 
 var _paused = instance_exists(oScreenPause);
@@ -15,10 +15,9 @@ if(_paused){//Pause self. New!
 	exit;
 }else{
 	image_speed = 5;
-	//image_speed = sprite_get_speed(sprite_index);
 }
 
-//if(screen_pause()){//Pause self. Deprecated.
+//if(screen_pause()){//Pause self.
 //	exit;
 //}
 
@@ -47,7 +46,7 @@ switch(state){
 			if(!place_meeting(x, y, oInvisibleSpawner2)){//Switch to the chasing state after out of the spawner object.
 				state = 0;
 			}
-		}	
+		}
 		//Fade In
 		if(image_alpha < 1){
 			spd = 0;//Don't walk while fading in.
@@ -74,7 +73,7 @@ switch(state){
 			state = 0;
 		}
 	break;
-	
+
 	//Chase State
 	case 0:
 		if(instance_exists(oPlayer)){//If the player exists.
@@ -222,13 +221,13 @@ switch(state){
 	        yspd = lengthdir_y(spd, dir);
 	    }
 	}*/
-	
-	if(screen_pause()){//if screen is paused
-		xspd = 0;//set dumb-chase movement speed to 0
-		yspd = 0;
-	}else{//else...
-		if(!usingPathfinding){//if not using pathfinding behavior
-			xspd = lengthdir_x(spd, dir);//set dumb-chase speed
+
+	if(screen_pause()){
+	    xspd = 0;
+	    yspd = 0;
+	}else{
+		if(!usingPathfinding){
+			xspd = lengthdir_x(spd, dir);
 			yspd = lengthdir_y(spd, dir);
 		}/*else{
 			xspd = 0;

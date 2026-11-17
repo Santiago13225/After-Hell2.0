@@ -187,7 +187,7 @@ if(!instance_exists(oVictoryScreen)){
 			}
 		}
 		
-		with(oSlotWallbuy){
+		with(oSlotBuyPad){
 			//Get the wall position to draw on the radar
 			//var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
 			//var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
@@ -196,11 +196,11 @@ if(!instance_exists(oVictoryScreen)){
 
 			//Draw the walls within the radar circle
 			if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-				draw_sprite_ext(sSlotWallbuy, 1, xx, yy, 1, 1 , 0, c_white, 1);
+				draw_sprite_ext(sSlotBuyPad, 1, xx, yy, 1, 1 , 0, c_white, 1);
 			}
 		}
 		
-		with(oScratchcardWallbuy){
+		with(oScratchcardBuyPad){
 			//Get the wall position to draw on the radar
 			//var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
 			//var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
@@ -209,11 +209,11 @@ if(!instance_exists(oVictoryScreen)){
 
 			//Draw the walls within the radar circle
 			if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-				draw_sprite_ext(sScratchcardWallbuy, 1, xx, yy, 1, 1 , 0, c_white, 1);
+				draw_sprite_ext(sScratchcardBuyPad, 1, xx, yy, 1, 1 , 0, c_white, 1);
 			}
 		}
 
-		with(oAssaultWallbuy2){
+		with(oAssaultBuyPad){
 			//Get the wall position to draw on the radar
 			//var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
 			//var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
@@ -222,11 +222,11 @@ if(!instance_exists(oVictoryScreen)){
 
 			//Draw the walls within the radar circle
 			if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-				draw_sprite_ext(sAssaultWallbuy2, 0, xx, yy, 1, 1 , 0, c_white, 1);
+				draw_sprite_ext(sAssaultBuyPad2, 0, xx, yy, 1, 1 , 0, c_white, 1);
 			}
 		}
 
-		with(oBazookaWallbuy2){
+		with(oBazookaBuyPad){
 			//Get the wall position to draw on the radar
 			//var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
 			//var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
@@ -235,11 +235,11 @@ if(!instance_exists(oVictoryScreen)){
 
 			//Draw the walls within the radar circle
 			if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-				draw_sprite_ext(sBazookaWallbuy2, 0, xx, yy, 1, 1 , 0, c_white, 1);
+				draw_sprite_ext(sBazookaBuyPad2, 0, xx, yy, 1, 1 , 0, c_white, 1);
 			}
 		}
 
-		with(oLMGWallbuy2){
+		with(oLMGBuyPad){
 			//Get the wall position to draw on the radar
 			//var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
 			//var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
@@ -248,11 +248,11 @@ if(!instance_exists(oVictoryScreen)){
 
 			//Draw the walls within the radar circle
 			if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-				draw_sprite_ext(sLMGWallbuy2, 0, xx, yy, 1, 1 , 0, c_white, 1);
+				draw_sprite_ext(sLMGBuyPad2, 0, xx, yy, 1, 1 , 0, c_white, 1);
 			}
 		}
 
-		with(oRaygunWallbuy2){
+		with(oRaygunBuyPad){
 			//Get the wall position to draw on the radar
 			//var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
 			//var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
@@ -261,11 +261,11 @@ if(!instance_exists(oVictoryScreen)){
 
 			//Draw the walls within the radar circle
 			if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-				draw_sprite_ext(sRaygunWallbuyAlt2, 0, xx, yy, 1, 1 , 0, c_white, 1);
+				draw_sprite_ext(sRaygunBuyPad2, 0, xx, yy, 1, 1 , 0, c_white, 1);
 			}
 		}
 
-		with(oShotgunWallbuy2){
+		with(oShotgunBuyPad){
 			//Get the wall position to draw on the radar
 			//var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
 			//var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
@@ -274,11 +274,11 @@ if(!instance_exists(oVictoryScreen)){
 
 			//Draw the walls within the radar circle
 			if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-				draw_sprite_ext(sShotgunWallbuy2, 0, xx, yy, 1, 1 , 0, c_white, 1);
+				draw_sprite_ext(sShotgunBuyPad2, 0, xx, yy, 1, 1 , 0, c_white, 1);
 			}
 		}
 
-		with(oSMGWallbuy2){
+		with(oSMGBuyPad){
 			//Get the wall position to draw on the radar
 			//var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
 			//var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);	
@@ -287,11 +287,11 @@ if(!instance_exists(oVictoryScreen)){
 
 			//Draw the walls within the radar circle
 			if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-				draw_sprite_ext(sSMGWallbuy2, 0, xx, yy, 1, 1 , 0, c_white, 1);
+				draw_sprite_ext(sSMGBuyPad2, 0, xx, yy, 1, 1 , 0, c_white, 1);
 			}
 		}
 
-		with(oSniperWallbuy2){
+		with(oSniperBuyPad){
 			//Get the wall position to draw on the radar
 			//var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
 			//var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
@@ -300,11 +300,11 @@ if(!instance_exists(oVictoryScreen)){
 
 			//Draw the walls within the radar circle
 			if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-				draw_sprite_ext(sSniperWallbuy2, 0, xx, yy, 1, 1 , 0, c_white, 1);
+				draw_sprite_ext(sSniperBuyPad2, 0, xx, yy, 1, 1 , 0, c_white, 1);
 			}
 		}
 
-		with(oMedkitWallbuy3){
+		with(oMedkitBuyPad){
 			//Get the wall position to draw on the radar
 			//var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
 			//var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
@@ -313,11 +313,11 @@ if(!instance_exists(oVictoryScreen)){
 
 			//Draw the walls within the radar circle
 			if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-				draw_sprite_ext(sMedkitWallbuy, 1, xx, yy, 1, 1 , 0, c_white, 1);
+				draw_sprite_ext(sMedkitBuyPad, 1, xx, yy, 1, 1 , 0, c_white, 1);
 			}
 		}
 
-		with(oArmoryAugmentor2){
+		with(oArmoryAugmentor){
 			//Get the wall position to draw on the radar
 			//var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
 			//var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
@@ -327,7 +327,7 @@ if(!instance_exists(oVictoryScreen)){
 			//Draw the walls within the radar circle
 			if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
 				//draw_sprite_ext(sBanner3, 0, xx, yy, 1, 1 , 0, c_white, 1);
-				draw_sprite_ext(sArmoryAugmentor2, 1, xx, yy, 1, 1 , 0, c_white, 1);
+				draw_sprite_ext(sArmoryAugmentor, 1, xx, yy, 1, 1 , 0, c_white, 1);
 			}
 		}
 
@@ -446,19 +446,19 @@ if(!instance_exists(oVictoryScreen)){
 		with(oMusicBlockOverlook){ if(instance_exists(id)){ draw_sprite_ext(sMusicBlockTile, 5, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); } }
 		with(oMusicBlockTestLevel){ if(instance_exists(id)){ draw_sprite_ext(sMusicBlockTile, 5, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); } }
 
-		with(oSlotWallbuy){ if(instance_exists(id)){ draw_sprite_ext(sSlotWallbuy, 1, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); } }
-		with(oScratchcardWallbuy){ if(instance_exists(id)){ draw_sprite_ext(sScratchcardWallbuy, 1, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); } }
+		with(oSlotBuyPad){ if(instance_exists(id)){ draw_sprite_ext(sSlotBuyPad, 1, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); } }
+		with(oScratchcardBuyPad){ if(instance_exists(id)){ draw_sprite_ext(sScratchcardBuyPad, 1, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); } }
 
 		//Wallbuys
-		with(oAssaultWallbuy2){ draw_sprite_ext(sAssaultWallbuy2, 0, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
-		with(oBazookaWallbuy2){ draw_sprite_ext(sBazookaWallbuy2, 0, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
-		with(oLMGWallbuy2){ draw_sprite_ext(sLMGWallbuy2, 0, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
-		with(oRaygunWallbuy2){ draw_sprite_ext(sRaygunWallbuyAlt2, 0, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
-		with(oShotgunWallbuy2){ draw_sprite_ext(sShotgunWallbuy2, 0, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
-		with(oSMGWallbuy2){ draw_sprite_ext(sSMGWallbuy2, 0, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
-		with(oSniperWallbuy2){ draw_sprite_ext(sSniperWallbuy2, 0, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
-		with(oMedkitWallbuy3){ draw_sprite_ext(sMedkitWallbuy, 1, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
-		with(oArmoryAugmentor2){ draw_sprite_ext(sArmoryAugmentor2, 1, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
+		with(oAssaultBuyPad){ draw_sprite_ext(sAssaultBuyPad2, 0, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
+		with(oBazookaBuyPad){ draw_sprite_ext(sBazookaBuyPad2, 0, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
+		with(oLMGBuyPad){ draw_sprite_ext(sLMGBuyPad2, 0, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
+		with(oRaygunBuyPad){ draw_sprite_ext(sRaygunBuyPad2, 0, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
+		with(oShotgunBuyPad){ draw_sprite_ext(sShotgunBuyPad2, 0, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
+		with(oSMGBuyPad){ draw_sprite_ext(sSMGBuyPad2, 0, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
+		with(oSniperBuyPad){ draw_sprite_ext(sSniperBuyPad2, 0, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
+		with(oMedkitBuyPad){ draw_sprite_ext(sMedkitBuyPad, 1, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
+		with(oArmoryAugmentor){ draw_sprite_ext(sArmoryAugmentor, 1, _sx + x * _fs, _sy + y * _fs, 1, 1, 0, c_white, 1); }
     
 		//Warp blocks
 		with(oWarpBlock){

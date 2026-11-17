@@ -12,15 +12,15 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"e4432946-817b-417a-93ec-e71b2fd22bb2","name":"e4432946-817b-417a-93ec-e71b2fd22bb2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"866696d2-ea21-46f6-b0d3-68e9a6abd91a","name":"866696d2-ea21-46f6-b0d3-68e9a6abd91a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"476709da-e04c-4497-b105-7e6e8f40c8c5","name":"476709da-e04c-4497-b105-7e6e8f40c8c5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ce4423fd-ad54-4f49-8811-deaa167bd81c","name":"ce4423fd-ad54-4f49-8811-deaa167bd81c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":27,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"a744a76f-14db-4b51-95f8-6bb32245cf69","blendMode":0,"displayName":"default","isLocked":false,"name":"a744a76f-14db-4b51-95f8-6bb32245cf69","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"ba9be855-5de5-417c-b17f-ecec0e4f8dac","blendMode":0,"displayName":"default","isLocked":false,"name":"ba9be855-5de5-417c-b17f-ecec0e4f8dac","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sBlueEyedZombie",
   "nineSlice":null,
@@ -70,11 +70,11 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e4432946-817b-417a-93ec-e71b2fd22bb2","path":"sprites/sBlueEyedZombie/sBlueEyedZombie.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"ba6eee8c-7c39-48d5-aee9-00adc8a40fe8","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"476709da-e04c-4497-b105-7e6e8f40c8c5","path":"sprites/sBlueEyedZombie/sBlueEyedZombie.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"8fae0356-4b5f-467e-9701-08a049bb2ab8","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"866696d2-ea21-46f6-b0d3-68e9a6abd91a","path":"sprites/sBlueEyedZombie/sBlueEyedZombie.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"e1a74bf3-9039-47ff-a227-e97500adbbcf","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ce4423fd-ad54-4f49-8811-deaa167bd81c","path":"sprites/sBlueEyedZombie/sBlueEyedZombie.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"c25fcd39-3280-4ba6-9d83-72c1095e155c","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

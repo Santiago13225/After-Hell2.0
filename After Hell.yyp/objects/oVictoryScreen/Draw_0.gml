@@ -465,7 +465,7 @@ if(accept_key){
 				instance_destroy(oPlayer);
 			}
 
-			TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_Main_Menu, sqFadeOut, sqFadeIn);
 			//game_restart();//Reset wave-related data.
 			//audio_pause_sound(sndLaugh);
 			break;

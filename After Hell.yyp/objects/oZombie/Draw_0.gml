@@ -1,5 +1,5 @@
-///oZombie Draw Event
-/*This object represents a Zombie.*/
+///oFetidZombie Draw Event
+/*This object represents a Fetid Zombie.*/
 //This event is responsible for drawing the zombie.
 
 draw_sprite_ext(sprite_index, image_index, x, y, face, image_yscale, image_angle, image_blend, image_alpha);//Draw zombie flipped the right way.
@@ -10,10 +10,12 @@ var _hpImage = _healthPercent * (sprite_get_number(sEnemyHealth) - 1);//Grab hea
 draw_sprite_ext(sEnemyHealth, _hpImage, x, y - sprite_height - 1, 1, image_yscale, image_angle, image_blend, image_alpha);//Draw health bar based on zombie health.
 
 //draw_text(x, y, string(hp));//Draw zombie HP as text.
+//if instance_exists(path){
 //if(path != -1){
 if(path_exists(path) && usingPathfinding){
 	draw_path(path, x, y, 1);//Draw zombie path.
 }
+//}
 
 gpu_set_blendenable(false);
 gpu_set_colorwriteenable(false, false, false, true);

@@ -14,7 +14,7 @@ if(instance_exists(oVictoryScreen)){
 
 //Draw the game title
 if(instance_exists(oPlayer)){
-	draw_sprite_ext(sTitleNew, 0, (8 * 3), (8 * 3) + _wy - (35 * 3), .3 * 3, .3 * 3, 0, c_white, 1);
+	draw_sprite_ext(sTitle, 0, (8 * 3), (8 * 3) + _wy - (35 * 3), .3 * 3, .3 * 3, 0, c_white, 1);
 }
 
 if(instance_exists(oPauseMenu)){
@@ -22,7 +22,7 @@ if(instance_exists(oPauseMenu)){
 }
 
 if(instance_exists(oPlayer)){
-	if(instance_exists(oInvisibleSpawner2)){//If spawner exists...
+	if(instance_exists(oSpawner)){//If spawner exists...
 		draw_set_font(fnt8Bit);//Should be 8-bit, see part 10 on the YouTube series?
 		var _enemyCountOffset = 24 * 3;
 		var _ecHudX = 8 * 3;

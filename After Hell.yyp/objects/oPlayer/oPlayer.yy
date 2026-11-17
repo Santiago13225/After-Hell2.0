@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPlayerDownNew",
-    "path":"sprites/sPlayerDownNew/sPlayerDownNew.yy",
+    "name":"sPlayerDown",
+    "path":"sprites/sPlayerDown/sPlayerDown.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sEnemyBullet2",
-    "path":"sprites/sEnemyBullet2/sEnemyBullet2.yy",
+    "name":"sEnemyBullet",
+    "path":"sprites/sEnemyBullet/sEnemyBullet.yy",
   },
   "spriteMaskId":null,
   "visible":true,
