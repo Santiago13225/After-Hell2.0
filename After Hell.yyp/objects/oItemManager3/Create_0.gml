@@ -260,7 +260,7 @@ global.item_list2 = {
 	(
 	"Raygun",
 	"Hardcore.\nDamage: 2\nFire Rate: +++\nPierce: Yes\nAmmo Type: Special Rounds\nPros: Splash Damage\nCons: Injurious to Player",
-	sHardcoreRaygunPickup2,
+	sHardcoreRaygunPickup,
 	true,
 	function()
 	{
@@ -373,7 +373,7 @@ global.item_list2 = {
 	(
 	"Raygun",
 	"Ultra.\nDamage: 3\nFire Rate: +++\nPierce: Yes\nAmmo Type: Special Rounds\nPros: Splash Damage\nCons: Injurious to Player",
-	sUltraRaygunPickup2,
+	sUltraRaygunPickup,
 	true,
 	function()
 	{

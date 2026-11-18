@@ -151,7 +151,7 @@ global.WeaponList = {
 		8,//weapon shot delay
 		1,//1 shot
 		0,//bullet spread angle
-		sHardcoreRaygunPickup2,
+		sHardcoreRaygunPickup,
 		//0,//ammo
 		30,//mag size
 		102//reload time
@@ -255,7 +255,7 @@ global.WeaponList = {
 		7,//weapon shot delay
 		1,//1 shot
 		0,//bullet spread angle
-		sUltraRaygunPickup2,
+		sUltraRaygunPickup,
 		//0,//ammo
 		40,//mag size
 		87//reload time

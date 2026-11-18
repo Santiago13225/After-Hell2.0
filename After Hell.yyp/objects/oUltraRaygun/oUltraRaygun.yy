@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sUltraRaygunPickup2",
-    "path":"sprites/sUltraRaygunPickup2/sUltraRaygunPickup2.yy",
+    "name":"sUltraRaygunPickup",
+    "path":"sprites/sUltraRaygunPickup/sUltraRaygunPickup.yy",
   },
   "spriteMaskId":null,
   "visible":true,
