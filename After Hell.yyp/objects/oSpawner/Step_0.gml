@@ -1,17 +1,16 @@
-///oInvisibleSpawner2 Step Event
+///oSpawner Step Event
 /*This object represents a spawner.*/
 //This event is responsible for handling spawner behavior.
 
 #region
-
 //var countdownInitialized = false;//Set countdown initialized to false.
 if(screen_pause()){//Pause self
     exit;
 }
 
-var activeSpawns = ds_list_create();//Declare activeSpawns as a list.
+//var activeSpawns = ds_list_create();//Declare activeSpawns as a list.
 
-timer++;//Spawn an enemy.
+timer++;//Count up to next spawn.
 
 /*if instance_number(oEnemyParent) >= activeEnemyMax || global.totalEnemiesSpawned >= maxTotalEnemies{//Reset timer when enemy limits have been reached.
     timer = 0;
@@ -25,7 +24,8 @@ timer++;//Spawn an enemy.
 if(timer >= spawnTime && global.zombiesSpawnedThisWave < global.activeEnemyMax && instance_number(oEnemyParent) < global.maxActiveEnemies){
     //Find all active oSpawn objects and add them to the activeSpawns list.
     //if(waveBufferTimer <= 0 && zombiesSpawnedThisWave < activeEnemyMax) {
-	ds_list_clear(activeSpawns);
+	//ds_list_clear(activeSpawns);
+	var activeSpawns = ds_list_create();//new
     with(oSpawner){
         if(isActive){
             ds_list_add(activeSpawns, id);
@@ -35,7 +35,6 @@ if(timer >= spawnTime && global.zombiesSpawnedThisWave < global.activeEnemyMax &
     var numActiveSpawns = ds_list_size(activeSpawns);
     if(numActiveSpawns > 0){
         var chosenSpawn = activeSpawns[|irandom(numActiveSpawns - 1)];
-
 		//Spawn a zombie at the chosen oSpawn object.
 		//var chosenZombieType = chooseZombieType();//old code
 		var filteredTypes = [];
@@ -88,6 +87,7 @@ if(timer >= spawnTime && global.zombiesSpawnedThisWave < global.activeEnemyMax &
 		//global.totalEnemiesSpawned++;//new
 		timer = 0;//Reset the timer.
     }
+	ds_list_destroy(activeSpawns);
 }
 
 //if(room != rm_Tutorial_Level && !global.waveInProgress && global.zombiesKilledThisWave >= global.activeEnemyMax && global.zombiesSpawnedThisWave >= global.activeEnemyMax){
@@ -109,11 +109,11 @@ if(global.waveInProgress){
 	//timer = 0;
 		//instance_destroy(oEnemyParent);
 	//}
-	// Check if the countdown has been initialized for the current wave
-    if(!countdownInitialized){
+	//Check if the countdown has been initialized for the current wave
+    /*if(!countdownInitialized){
         countdownInitialized = true;//Initialize the countdown once.
         //show_message("Get ready for Wave " + string(currentWave + 1) + "!");
-    }
+    }*/
 	
     if(global.timeSinceLastWave >= waveDuration){
         global.waveInProgress = false;
@@ -149,19 +149,16 @@ if(global.waveInProgress){
         //show_message("Get ready for Wave " + string(currentWave + 1) + "!");
         global.zombiesKilledThisWave = 0;//Reset zombiesKilledThisWave to 0 for the next wave.
         global.zombiesSpawnedThisWave = 0;
-		countdownInitialized = false;//Reset the countdown initialization for the next wave.
+		//countdownInitialized = false;//Reset the countdown initialization for the next wave.
 		//timer = irandom_range(0, spawnTime * 3);
 		timer = 0;
 	}
 }
 
-ds_list_destroy(activeSpawns);//Clear the activeSpawns list.
+//ds_list_destroy(activeSpawns);//Clear the activeSpawns list.
 
 #endregion
 
-//Copy stats before destroying the spawner
-
-if(instance_exists(oSpawner)){
-    global.finalWave = global.currentWave;
-    //global.finalTime = global.timeSurvived;//or however you track time
-}
+//Copy stats
+global.finalWave = global.currentWave;
+//global.finalTime = global.timeSurvived;

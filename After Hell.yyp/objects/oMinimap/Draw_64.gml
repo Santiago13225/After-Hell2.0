@@ -420,8 +420,8 @@ if(!instance_exists(oVictoryScreen)){
 
 	if(show_full_map){
 		//global.dialog_active = true;//Disable silhouette drawing.
-		if(instance_exists(oTextbox2)){
-			instance_destroy(oTextbox2);
+		if(instance_exists(oTextbox)){
+			instance_destroy(oTextbox);
 		}
 
 		//Draw green background

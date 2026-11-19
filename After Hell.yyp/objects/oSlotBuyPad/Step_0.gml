@@ -13,7 +13,7 @@ if(!has_been_interacted){//If we have not interacted with anything yet
 		if(!audio_is_playing(sndSlot)){
 			audio_play_sound(sndSlot, 10, false);
 		}
-		if(!instance_exists(oTextbox2) && !instance_exists(oSlot5)){
+		if(!instance_exists(oTextbox) && !instance_exists(oSlot5)){
 			if(global.controllerMode == 0){
 				create_textbox("SlotWallbuy");
 			}else {

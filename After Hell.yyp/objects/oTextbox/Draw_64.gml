@@ -3,10 +3,8 @@
 can interact with in game.*/
 //This event is responsible for handling the drawing of the textbox object.
 if(global.controllerMode == 0){
-	//accept_key = keyboard_check_pressed(vk_space);//Store the space key as a variable.
 	accept_key = keyboard_check_pressed(ord("E"));
-}
-if(global.controllerMode == 1){
+}else{
 	accept_key = gamepad_button_check_pressed(0, gp_face2);
 }
 
@@ -20,7 +18,6 @@ var _wx = display_get_gui_width();
 var _wy = display_get_gui_height();
 
 textbox_x = _wx/2 - (textbox_width/2 * 3) - 42;//X-position of the textbox.
-//textbox_x = (camera_get_view_x(view_camera[0])/2) + (camera_get_view_width(view_camera[0])/2) -textbox_width/4;
 textbox_y = _wy - (textbox_height * 3);//Y-position of the textbox.
 
 //Setup
@@ -38,12 +35,6 @@ if(setup == false){
 }
 
 //Typing the Text
-/*if(draw_char < text_length[page]){//If the current character index value is less than the "length" of the text.
-	draw_char += text_spd;//Typing animation at stored speed.
-	draw_char = clamp(draw_char, 0, text_length[page]);//Clamp the typing position.
-}*/
-
-//Typing the Text (*2nd Version)
 if(text_instant[page]){
 	draw_char = text_length[page];
 }else if(draw_char < text_length[page]){
@@ -65,7 +56,7 @@ if(accept_key){//If the accept key has been pressed.
 			instance_destroy();//Destroy the textbox.
 		}
 	}else{//If not done typing.
-		draw_char = text_length[page];//Set the draw_char variable again for safety.
+		draw_char = text_length[page];//Skip the typing animation and show the whole page
 	}
 }
 
@@ -104,5 +95,4 @@ if(draw_char == text_length[page] && page == page_number - 1){//If we are at the
 
 //Draw the Text
 var _drawtext = string_copy(text[page], 1, draw_char);//Prepare the text to be drawn.
-//draw_text_ext(_txtb_x + border, _txtb_y + border, _drawtext, line_sep, line_width);//Draw the text.
 draw_text_ext_transformed(_txtb_x + border, _txtb_y + border - 6, _drawtext, line_sep, line_width, 3, 3, 0);//Draw the text.

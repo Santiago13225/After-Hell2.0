@@ -8,10 +8,10 @@ depth = -9999;//Sets the drawing depth for this textbox object.
 //Textbox Parameters
 textbox_width = 200;//Width of the textbox.
 textbox_height = 64;//Height of the textbox.
-border = 8;//Border size around the text.
+border = 8 * 3;//Border size around the text.
 line_sep = 12;//Line separation within the textbox.
-line_width = textbox_width - border * 2;//Calculating the width available for text.
-txtb_spr = sMenuH;//The sprite to be used for the textbox appearance.
+line_width = (textbox_width - border * 2);//Calculating the width available for text.
+txtb_spr = sMenu2;//The sprite to be used for the textbox appearance.
 txtb_img = 0;//The current image index for animation.
 txtb_img_spd = 6/60;//Animation speed for changing textbox images.
 
@@ -20,6 +20,7 @@ page = 0;//Current page of text being displayed.
 page_number = 0;//Total number of pages.
 text[0] = "";//Initialize text on the first page.
 text_length[0] = string_length(text[0]);//Store the length of the text.
+text_instant[0] = false;
 draw_char = 0;//Current character being drawn.
 text_spd = 1;//Text drawing speed.
 

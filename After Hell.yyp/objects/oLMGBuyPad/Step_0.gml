@@ -8,7 +8,7 @@ if(!has_been_interacted){//If we have not interacted with anything yet
 		if(!audio_is_playing(sndLMG2500)){
 			audio_play_sound(sndLMG2500, 10, false);
 		}
-		if(!instance_exists(oTextbox2)){
+		if(!instance_exists(oTextbox)){
 			if(global.controllerMode == 0){
 				create_textbox("LMGWallbuy");
 			}else {

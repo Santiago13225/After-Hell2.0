@@ -14,7 +14,7 @@ shootKey = global.shootKey;
 swapKeyPressed = global.swapKeyPressed;
 upSwapKeyPressed = global.upSwapKeyPressed;
 downSwapKeyPressed = global.downSwapKeyPressed;
-reloadKeyPressed = global.reloadKeyPressed && !instance_exists(oTextbox2);
+reloadKeyPressed = global.reloadKeyPressed && !instance_exists(oTextbox);
 startKeyPressed = global.startKeyPressed;
 selectKeyPressed = global.selectKeyPressed;
 
@@ -984,7 +984,7 @@ if(instance_exists(oLMGWallbuy2)){
 
 if(instance_exists(oMedkitBuyPad)){
 	with(oMedkitBuyPad){
-		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox)) {
 			//if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 500;
@@ -995,7 +995,7 @@ if(instance_exists(oMedkitBuyPad)){
 					//audio_play_sound(sndBuy, 8, false);
 					oSFX.buySnd = true;
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oMedkit);
-					instance_destroy(oTextbox2);
+					instance_destroy(oTextbox);
 			    }else{
 			        //Play a sound or show a message indicating insufficient points
 			        //Add your insufficient points logic here
@@ -1003,7 +1003,7 @@ if(instance_exists(oMedkitBuyPad)){
 					oSFX.brokeSnd = true;
 					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
-						instance_destroy(oTextbox2);
+						instance_destroy(oTextbox);
 					}	
 			    }
 			}
@@ -1013,7 +1013,7 @@ if(instance_exists(oMedkitBuyPad)){
 
 if(instance_exists(oSlotBuyPad)){
 	with(oSlotBuyPad){
-		if(distance_to_object(oPlayer) < 32 && instance_exists(oTextbox2)){
+		if(distance_to_object(oPlayer) < 32 && instance_exists(oTextbox)){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 50;
 				if(oHUD.playerScore >= wallbuyCost){
@@ -1022,7 +1022,7 @@ if(instance_exists(oSlotBuyPad)){
 					//Create slot machine if it doesn't exist
 					if(!instance_exists(oSlot5)){
 						instance_create_depth(0, 0, -7000, oSlot5);
-						instance_destroy(oTextbox2);
+						instance_destroy(oTextbox);
 					}
 					if(!oSlot5.spinning && !oSlot5.result_done){
 						oSlot5.spinning = true;
@@ -1037,7 +1037,7 @@ if(instance_exists(oSlotBuyPad)){
 					oSFX.brokeSnd = true;
 					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
-						instance_destroy(oTextbox2);
+						instance_destroy(oTextbox);
 					}
 				}
 			}
@@ -1047,7 +1047,7 @@ if(instance_exists(oSlotBuyPad)){
 
 if(instance_exists(oScratchcardBuyPad)){
 	with(oScratchcardBuyPad){
-		if(distance_to_object(oPlayer) < 32 && instance_exists(oTextbox2)){
+		if(distance_to_object(oPlayer) < 32 && instance_exists(oTextbox)){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 50;
 				if(!instance_exists(oScratchcard)){
@@ -1055,13 +1055,13 @@ if(instance_exists(oScratchcardBuyPad)){
 						oHUD.playerScore -= wallbuyCost;
 						//oSFX.buySnd = true;
 						instance_create_depth(0, 0, -7000, oScratchcard);
-						instance_destroy(oTextbox2);
+						instance_destroy(oTextbox);
 					}else{
 						//audio_play_sound(sndNoMoney, 8, false);
 						oSFX.brokeSnd = true;
 						if(!audio_is_playing(sndBroke)){
 							audio_play_sound(sndBroke, 10, false);
-							instance_destroy(oTextbox2);
+							instance_destroy(oTextbox);
 						}
 					}
 				}
@@ -1073,7 +1073,7 @@ if(instance_exists(oScratchcardBuyPad)){
 
 if(instance_exists(oDebris)){
 	with(oDebris){
-		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox)) {
 			//if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 500;
@@ -1092,7 +1092,7 @@ if(instance_exists(oDebris)){
 					oSFX.brokeSnd = true;
 					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
-						instance_destroy(oTextbox2);
+						instance_destroy(oTextbox);
 					}
 			    }
 			}
@@ -1102,7 +1102,7 @@ if(instance_exists(oDebris)){
 
 if(instance_exists(oMusicBlockHouse)){
 	with(oMusicBlockHouse){
-		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox)){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				audio_play_sound(sndRadio, 10, false);
 				if(audio_is_playing(sndHouseTheme1)){
@@ -1110,7 +1110,7 @@ if(instance_exists(oMusicBlockHouse)){
 				}else{
 					set_song_ingame(sndHouseTheme1, 2 * 60, 2 *60, true);
 				}
-				instance_destroy(oTextbox2);
+				instance_destroy(oTextbox);
 			}
 		}
 	}
@@ -1118,7 +1118,7 @@ if(instance_exists(oMusicBlockHouse)){
 
 if(instance_exists(oMusicBlockFacility)){
 	with(oMusicBlockFacility){
-		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox)){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				audio_play_sound(sndRadio, 10, false);
 				if(audio_is_playing(sndFacilityTheme1)){
@@ -1126,7 +1126,7 @@ if(instance_exists(oMusicBlockFacility)){
 				}else{
 					set_song_ingame(sndFacilityTheme1, 2 * 60, 2 *60, true);
 				}
-				instance_destroy(oTextbox2);
+				instance_destroy(oTextbox);
 			}
 		}
 	}
@@ -1134,7 +1134,7 @@ if(instance_exists(oMusicBlockFacility)){
 
 if(instance_exists(oMusicBlockTemple)){
 	with(oMusicBlockTemple){
-		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox)){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				audio_play_sound(sndRadio, 10, false);
 				if(audio_is_playing(sndTempleTheme1)){
@@ -1142,7 +1142,7 @@ if(instance_exists(oMusicBlockTemple)){
 				}else{
 					set_song_ingame(sndTempleTheme1, 2 * 60, 2 *60, true);
 				}
-				instance_destroy(oTextbox2);
+				instance_destroy(oTextbox);
 			}
 		}
 	}
@@ -1150,7 +1150,7 @@ if(instance_exists(oMusicBlockTemple)){
 
 if(instance_exists(oMusicBlockOverlook)){
 	with(oMusicBlockOverlook){
-		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox)){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				audio_play_sound(sndRadio, 10, false);
 				if(audio_is_playing(sndOverlookTheme1)){
@@ -1158,7 +1158,7 @@ if(instance_exists(oMusicBlockOverlook)){
 				}else{
 					set_song_ingame(sndOverlookTheme1, 2 * 60, 2 *60, true);
 				}
-				instance_destroy(oTextbox2);
+				instance_destroy(oTextbox);
 			}
 		}
 	}
@@ -1166,7 +1166,7 @@ if(instance_exists(oMusicBlockOverlook)){
 
 if(instance_exists(oMusicBlockTestLevel)){
 	with(oMusicBlockTestLevel){
-		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox)){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				audio_play_sound(sndRadio, 10, false);
 				if(audio_is_playing(sndTestLevelTheme1)){
@@ -1174,7 +1174,7 @@ if(instance_exists(oMusicBlockTestLevel)){
 				}else{
 					set_song_ingame(sndTestLevelTheme1, 2 * 60, 2 *60, true);
 				}
-				instance_destroy(oTextbox2);
+				instance_destroy(oTextbox);
 			}
 		}
 	}
@@ -1182,7 +1182,7 @@ if(instance_exists(oMusicBlockTestLevel)){
 
 if(instance_exists(oArmoryAugmentor)){
 	with(oArmoryAugmentor){
-		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox)) {
 			//if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 5000;
@@ -1191,7 +1191,7 @@ if(instance_exists(oArmoryAugmentor)){
 			        //Deduct the cost from the player's score
 			        oHUD.playerScore -= wallbuyCost;
 					//audio_play_sound(sndBuy, 8, false);
-					instance_destroy(oTextbox2);
+					instance_destroy(oTextbox);
 					
 					//var droppedItem = instance_create_depth(oPlayer.x - 1, oPlayer.y + 16, -y, inv[selected_item].droppedItem);
 					//droppedItem.item = oItemManager2.inv[selected_item];
@@ -1579,7 +1579,7 @@ if(instance_exists(oArmoryAugmentor)){
 					oSFX.brokeSnd = true;
 					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
-						instance_destroy(oTextbox2);
+						instance_destroy(oTextbox);
 					}	
 			    }
 			}
@@ -1652,13 +1652,13 @@ if((collision_circle(x, y, 32, oShotgunBuyPad, false, true) ||
 	collision_circle(x, y, 32, oMusicBlockTestLevel, false, true) ||
 	collision_circle(x, y, 32, oSlotBuyPad, false, true) ||
 	collision_circle(x, y, 32, oScratchcardBuyPad, false, true) ||
-    collision_circle(x, y, 32, oArmoryAugmentor, false, true))) && instance_exists(oTextbox2) {
+    collision_circle(x, y, 32, oArmoryAugmentor, false, true))) && instance_exists(oTextbox) {
     nearWallbuy = true;
 }
 
 if(!nearWallbuy) {//Only destroy the textbox if the player isn't near any wallbuy object.
-    if(instance_exists(oTextbox2)) {
-        instance_destroy(oTextbox2);
+    if(instance_exists(oTextbox)) {
+        instance_destroy(oTextbox);
     }
 	//nearWallbuy = false;
 }

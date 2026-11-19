@@ -4,8 +4,8 @@
 
 //shootKey = global.shootKey;//Get the shoot key input.
 
-if(instance_exists(oTextbox2)){
-	instance_destroy(oTextbox2);
+if(instance_exists(oTextbox)){
+	instance_destroy(oTextbox);
 }
 
 //Fade in

@@ -34,6 +34,6 @@ if(instance_exists(oPlayer)){//Check if the player object exists in the game.
 		usingPathfinding = false;
 		alarm_set(0, 15);//Retry in 15 steps (~0.25 seconds)
 		//Optional: Log if path fails
-		//show_debug_message("Zombie failed to find path at: " + string(x) + "," + string(y));
+		//show_debug_message("Skeleton failed to find path at: " + string(x) + "," + string(y));
 	}
 }

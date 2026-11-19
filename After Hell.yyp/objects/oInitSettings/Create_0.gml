@@ -1,10 +1,13 @@
-///oSettings2 Create Event
+///oInitSettings Create Event
 /*This object initializes textbox settings and resources and 
  handles the cleanup of the textboxes that will be shown in 
  game as well.*/
 //This event is responsible for loading the HUD font from a sprite.
+//Create the HUD font from a sprite. 32 is the first character in the sprite (the space character),
+//true makes it a proportional font, and 1 is the pixel gap between letters
 global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1);//Set the global fontHUD to the created sprite.
 
+//No dialogue is open at the start of the game
 global.dialog_active = false;//Init at beginning of game
 //The font is used for the heads-up display (HUD) to display scores, messages, etc.
 //The font size is set to 32 pixels.

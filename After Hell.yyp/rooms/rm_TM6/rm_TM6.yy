@@ -168,7 +168,7 @@
   "layers":[
     {"$GMREffectLayer":"","%Name":"Effect_1","depth":-2300,"effectEnabled":true,"effectType":"_filter_edgedetect","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_1","properties":[
         {"name":"g_Threshold","type":0,"value":"0",},
-      ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
+      ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"ground_level_2","depth":-2200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"ground_level_2","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":135,"SerialiseWidth":240,"TileCompressedData":[
           1,0,-4,-2147483648,-10,0,-2,-2147483648,-7,0,-3,-2147483648,-60,0,-2,-2147483648,-7,0,-3,-2147483648,
           -13,0,-2,-2147483648,-7,0,-119,-2147483648,-10,0,-3,-2147483648,-99,0,-2,-2147483648,-7,0,-119,-2147483648,

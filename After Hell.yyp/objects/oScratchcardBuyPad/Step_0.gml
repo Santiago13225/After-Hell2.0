@@ -4,7 +4,7 @@ if(!has_been_interacted){
 		if(!audio_is_playing(sndLottery)){
 			audio_play_sound(sndLottery, 10, false);
 		}
-		if(!instance_exists(oTextbox2) && !instance_exists(oScratchcard)){
+		if(!instance_exists(oTextbox) && !instance_exists(oScratchcard)){
 			if(global.controllerMode == 0){
 				create_textbox("ScratchcardWallbuy");
 			}else{

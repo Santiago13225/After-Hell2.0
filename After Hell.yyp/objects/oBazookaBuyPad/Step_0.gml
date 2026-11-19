@@ -8,7 +8,7 @@ if(!has_been_interacted){//If we have not interacted with anything yet
 		if(!audio_is_playing(sndBazooka18000)){
 			audio_play_sound(sndBazooka18000, 10, false);
 		}
-		if(!instance_exists(oTextbox2)){
+		if(!instance_exists(oTextbox)){
 			if(global.controllerMode == 0){
 				create_textbox("BazookaWallbuy");
 			}else {

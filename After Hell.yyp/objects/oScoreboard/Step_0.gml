@@ -8,8 +8,8 @@ if(!instance_exists(oPlayer)){
     exit;
 }
 
-if(instance_exists(oTextbox2)){
-	instance_destroy(oTextbox2);
+if(instance_exists(oTextbox)){
+	instance_destroy(oTextbox);
 }
 
 //Screen Pause

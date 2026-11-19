@@ -1,4 +1,4 @@
-///oInvisibleSpawner2 Step Event
+///oSpawner2 Step Event
 /*This object represents a spawner.*/
 //This event is responsible for handling spawner behavior.
 

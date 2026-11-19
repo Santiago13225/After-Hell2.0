@@ -1,4 +1,4 @@
-///oInvisibleSpawner2 Create Event
+///oSpawner2 Create Event
 /*This object represents a spawner.*/
 //This event is responsible for initializing some spawner values.
 

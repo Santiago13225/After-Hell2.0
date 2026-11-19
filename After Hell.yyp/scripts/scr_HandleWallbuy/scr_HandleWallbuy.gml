@@ -20,7 +20,7 @@ var createObj   = argument5;*/
 	var createObj = _createObj;
 
 	//Only interact when in range and the textbox exists
-	if(distance_to_object(oPlayer) < 32 && instance_exists(oTextbox2)){
+	if(distance_to_object(oPlayer) < 32 && instance_exists(oTextbox)){
 		//if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
 		if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 			//1)If player can afford AND doesn’t own any variant → buy
@@ -49,12 +49,12 @@ var createObj   = argument5;*/
 					//audio_play_sound(sndBuy, 8, false);
 					oSFX.buySnd = true;
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, createObj);
-					instance_destroy(oTextbox2);
+					instance_destroy(oTextbox);
 				}else{
 					//audio_play_sound(sndNoMoney, 8, false);
 					oSFX.brokeSnd = true;
 					if(!audio_is_playing(sndBroke)) audio_play_sound(sndBroke, 10, false);
-					instance_destroy(oTextbox2);
+					instance_destroy(oTextbox);
 				}
 			}else{//Already own one variant → top up ammo
 				var ammoCost = ceil(cost * 0.5);//half price for refills
@@ -68,9 +68,9 @@ var createObj   = argument5;*/
 					//audio_play_sound(sndNoMoney, 8, false);
 					oSFX.brokeSnd = true;
 					if(!audio_is_playing(sndBroke)) audio_play_sound(sndBroke, 10, false);
-					instance_destroy(oTextbox2);
+					instance_destroy(oTextbox);
 				}	
-				instance_destroy(oTextbox2);
+				instance_destroy(oTextbox);
 			}
 		}
 	}
