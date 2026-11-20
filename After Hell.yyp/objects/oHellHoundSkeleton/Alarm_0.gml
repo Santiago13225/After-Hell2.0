@@ -2,9 +2,8 @@
 /*This object represents  Hell Hound.*/
 //This event is responsible for creating some variables for the zombie specified.
 
-//if screen_pause() {
 if(instance_exists(oPauseMenu)){
-    exit;
+	exit;
 }
 
 //Reset the current path by deleting the previous one and creating a new path.

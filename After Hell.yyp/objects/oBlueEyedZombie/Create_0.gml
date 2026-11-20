@@ -1,5 +1,5 @@
-///oFetidBlueEyedZombie Create Event
-/*This object represents a Fetid Blue-Eyed Zombie.*/
+///oBlueEyedZombie Create Event
+/*This object represents a Blue-Eyed Zombie.*/
 //This event is responsible for creating some variables for the zombie specified.
 
 event_inherited();//Inherit the parent event.
@@ -11,6 +11,3 @@ chaseSpd = 1.2;//Speed used when chasing a target.
 
 trapTimer = 0;
 cooldownTime = 60 * 5;//Adjust as needed for how frequently traps are dropped
-
-//calc_path_delay = 30;
-//alarm[0] = irandom(60);

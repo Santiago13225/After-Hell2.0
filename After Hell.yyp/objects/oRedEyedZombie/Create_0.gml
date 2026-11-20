@@ -1,5 +1,5 @@
-///oFetidRedEyedZombie Create Event
-/*This object represents a Fetid Red Eyed Zombie.*/
+///oRedEyedZombie Create Event
+/*This object represents a Red Eyed Zombie.*/
 //This event is responsible for creating some variables for the zombie specified.
 
 event_inherited();//Inherit the parent event.

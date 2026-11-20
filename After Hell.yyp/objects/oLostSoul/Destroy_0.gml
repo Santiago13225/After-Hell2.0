@@ -1,6 +1,6 @@
-///oZombie Destroy Event
-/*This object represents a Zombie.*/
-//This event is responsible for destroying bullets.
+///oLostSoul Destroy Event
+/*This object represents a Lost Sou.*/
+//This event is responsible for destroying the lost soul.
 
-//pumpkin bomb
+//lost soul bomb
 instance_create_depth(x, y, depth, oLostSoulBomb);

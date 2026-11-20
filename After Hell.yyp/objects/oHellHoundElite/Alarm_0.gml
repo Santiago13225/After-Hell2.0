@@ -1,8 +1,7 @@
 ///oHellHoundElite Alarm 0 Event
 /*This object represents a Hellhound Elite.*/
-//This event is responsible for creating a path for the zombie to track the player.
+//This event is responsible for creating a path for the hellhound to track the player.
 
-//if screen_pause() {
 if(instance_exists(oPauseMenu)){
     exit;
 }
@@ -34,6 +33,6 @@ if(instance_exists(oPlayer)){//Check if the player object exists in the game.
 		usingPathfinding = false;
 		alarm_set(0, 15);//Retry in 15 steps (~0.25 seconds)
 		//Optional: Log if path fails
-		//show_debug_message("Zombie failed to find path at: " + string(x) + "," + string(y));
+		//show_debug_message("Hellhound failed to find path at: " + string(x) + "," + string(y));
 	}
 }

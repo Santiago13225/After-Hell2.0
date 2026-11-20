@@ -1,10 +1,9 @@
-///oFetidBlueEyedZombie Alarm 0 Event
-/*This object represents a Fetid Blue-Eyed Zombie.*/
+///oBlueEyedZombie Alarm 0 Event
+/*This object represents a Blue-Eyed Zombie.*/
 //This event is responsible for creating a path for the zombie to track the player.
 
-//if screen_pause() {
 if(instance_exists(oPauseMenu)){
-    exit;
+	exit;
 }
 
 //Reset the current path by deleting the previous one and creating a new path.

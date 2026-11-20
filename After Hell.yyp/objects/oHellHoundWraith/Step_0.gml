@@ -11,7 +11,7 @@ if(!instance_exists(oScreenPause)){
 	if(bbox_right > _camLeft && bbox_left < _camRight && bbox_bottom > _camTop && bbox_top < _camBottom){
 		trapTimer++;
 		if(trapTimer >= cooldownTime){
-			var trap = instance_create_depth(x, y, depth, oEvolvedFire);//Temporary trap object
+			instance_create_depth(x, y, depth, oEvolvedFire);//Temporary trap object
 			trapTimer = 0;
 			//Optional sound effect
 			//audio_play_sound(sndFire, 8, false);

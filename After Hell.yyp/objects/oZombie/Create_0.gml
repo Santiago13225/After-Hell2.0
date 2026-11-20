@@ -1,5 +1,5 @@
-///oFetidZombie Create Event
-/*This object represents a Fetid Zombie.*/
+///oZombie Create Event
+/*This object represents a Zombie.*/
 //This event is responsible for creating some variables for the zombie specified.
 
 event_inherited();//Inherit the parent event.
@@ -41,7 +41,6 @@ if(instance_exists(oPlayer)){//If the player exists.
 	target_y = oPlayer.y;//Set the target y-coordinate to the player's y-coordinate.
 }
 
-//alarm[0] = 1;//Set Alarm 0 to true, which triggers it almost immediately.
 calc_path_delay = 30;
 alarm[0] = irandom(60);
 usingPathfinding = false;

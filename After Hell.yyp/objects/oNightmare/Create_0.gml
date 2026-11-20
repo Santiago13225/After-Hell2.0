@@ -1,15 +1,15 @@
-///oNightmarishZombie Create Event
-/*This object represents a Nightmarish Zombie.*/
-//This event is responsible for creating some variables for the zombie specified.
+///oNightmare Create Event
+/*This object represents a Nightmare.*/
+//This event is responsible for creating some variables for the nightmare specified.
 
 event_inherited();//Inherit the parent event.
 
 wasPaused = false;
 
 //Movement Variables
-spd = 0;//Zombie's initial speed.
+spd = 0;//Hellhound's initial speed.
 chaseSpd = .9;//Speed used when chasing a target.
-dir = 0;//Direction the zombie is facing.
+dir = 0;//Direction the hellhound is facing.
 xspd = 0;//Horizontal speed.
 yspd = 0;//Vertical speed.
 
@@ -18,11 +18,11 @@ pathspeed = 0.9;
 face = 1;//Default facing direction (1 for right).
 
 //State Machine
-state = 0;//Zombie's current state.
+state = 0;//Hellhound's current state.
 //^Spawn from mausoleum state(*might be deprecated).
 //Note: State values represent different states like spawning or shooting.
-fadeSpd = 1/15;//Speed at which the zombie fades in.
-emergeSpd = .25;//Speed at which the zombie emerges.
+fadeSpd = 1/15;//Speed at which the hellhound fades in.
+emergeSpd = .25;//Speed at which the hellhound emerges.
 
 //Shooting State
 cooldownTime = 4*60;//Cooldown time between shots (*in frames).
@@ -31,17 +31,16 @@ windupTime = 60;//Time taken for weapon windup.
 recoverTime = 45;//Time taken to recover after shooting.
 bulletInst = noone;//Reference to the bullet instance.
 
-bulletXoff = 5;//Bullet's horizontal offset from the zombie.
-bulletYoff = -8;//Bullet's vertical offset from the zombie.
+bulletXoff = 5;//Bullet's horizontal offset from the hellhound.
+bulletYoff = -8;//Bullet's vertical offset from the hellhound.
 
-path = path_add();//Initialize a path for the zombie.
+path = path_add();//Initialize a path for the hellhound.
 
 if(instance_exists(oPlayer)){//If the player exists.
 	target_x = oPlayer.x;//Set the target x-coordinate to the player's x-coordinate.
 	target_y = oPlayer.y;//Set the target y-coordinate to the player's y-coordinate.
 }
 
-//alarm[0] = 1;//Set Alarm 0 to true, which triggers it almost immediately.
 calc_path_delay = 30;
 alarm[0] = irandom(60);
 usingPathfinding = false;

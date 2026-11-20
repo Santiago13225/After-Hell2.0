@@ -1,10 +1,9 @@
-///oEvolvedZombie Alarm 0 Event
-/*This object represents an Evolved Zombie.*/
-//This event is responsible for creating a path for the zombie to track the player.
+///oWraith Alarm 0 Event
+//This object represents an Wraith
+//This event is responsible for creating a path for the wraith to track the player.
 
-//if screen_pause() {
 if(instance_exists(oPauseMenu)){
-    exit;
+	exit;
 }
 
 //Reset the current path by deleting the previous one and creating a new path.
@@ -34,6 +33,6 @@ if(instance_exists(oPlayer)){//Check if the player object exists in the game.
 		usingPathfinding = false;
 		alarm_set(0, 15);//Retry in 15 steps (~0.25 seconds)
 		//Optional: Log if path fails
-		//show_debug_message("Zombie failed to find path at: " + string(x) + "," + string(y));
+		//show_debug_message("Wraith failed to find path at: " + string(x) + "," + string(y));
 	}
 }
